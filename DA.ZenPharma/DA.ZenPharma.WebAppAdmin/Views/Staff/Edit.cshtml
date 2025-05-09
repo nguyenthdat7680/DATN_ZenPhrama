@@ -1,0 +1,78 @@
+﻿@model DA.ZenPharma.Application.Dtos.UserDto.UserUpdateDto
+
+@{
+    ViewData["Title"] = "Cập nhật nhân viên";
+}
+
+<div class="nk-content">
+    <div class="container-fluid">
+        <div class="nk-content-inner">
+            <div class="nk-content-body">
+                <div class="nk-block-head nk-block-head-sm">
+                    <div class="nk-block-between g-3">
+                        <div class="nk-block-head-content">
+                            <h3 class="nk-block-title page-title">Cập nhật nhân viên</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card card-bordered">
+                    <div class="card-inner">
+                        <form method="post">
+                            <input type="hidden" asp-for="Id" />
+
+                            <div class="form-group">
+                                <label asp-for="FirstName">Họ</label>
+                                <input asp-for="FirstName" class="form-control" />
+                                <span asp-validation-for="FirstName" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="LastName">Tên</label>
+                                <input asp-for="LastName" class="form-control" />
+                                <span asp-validation-for="LastName" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="Email">Email</label>
+                                <input asp-for="Email" class="form-control" />
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="PhoneNumber">Số điện thoại</label>
+                                <input asp-for="PhoneNumber" class="form-control" />
+                                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="AvatarImagePath">Đường dẫn ảnh đại diện</label>
+                                <input asp-for="AvatarImagePath" class="form-control" />
+                                <span asp-validation-for="AvatarImagePath" class="text-danger"></span>
+                            </div>
+
+                            <input type="hidden" asp-for="PasswordHash" />
+
+                            <div class="form-group">
+                                <label asp-for="RoleId">Chức vụ</label>
+                                <select asp-for="RoleId" class="form-control" asp-items="ViewBag.Roles"></select>
+                                <span asp-validation-for="RoleId" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-check mt-2 mb-3">
+                                <input asp-for="IsActive" class="form-check-input" />
+                                <label asp-for="IsActive" class="form-check-label">Kích hoạt</label>
+                            </div>
+
+                            <div class="form-group mt-3">
+                                <button type="submit" class="btn btn-primary">Cập nhật</button>
+                                <a href="/Staff/Index" class="btn btn-secondary">Hủy</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

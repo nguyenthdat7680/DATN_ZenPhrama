@@ -1,0 +1,73 @@
+﻿@model DA.ZenPharma.Application.Dtos.UserDto.UserCreateDto
+
+@{
+    ViewData["Title"] = "Thêm nhân viên";
+}
+
+<div class="container mt-5 pt-5">
+    <h2 class="mb-4">Thêm nhân viên</h2>
+
+    <form asp-action="Create" method="post" class="needs-validation" novalidate>
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label asp-for="FirstName" class="form-label">Tên *</label>
+                <input asp-for="FirstName" class="form-control" required />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+
+            <div class="col-md-6">
+                <label asp-for="LastName" class="form-label">Họ *</label>
+                <input asp-for="LastName" class="form-control" required />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label asp-for="Email" class="form-label">Email *</label>
+                <input asp-for="Email" class="form-control" type="email" required />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+
+            <div class="col-md-6">
+                <label asp-for="PhoneNumber" class="form-label">Số điện thoại *</label>
+                <input asp-for="PhoneNumber" class="form-control" required />
+                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label asp-for="PasswordHash" class="form-label">Mật khẩu *</label>
+                <input asp-for="PasswordHash" class="form-control" type="password" required />
+                <span asp-validation-for="PasswordHash" class="text-danger"></span>
+            </div>
+
+            <div class="col-md-6">
+                <label asp-for="RoleId" class="form-label">Chức vụ *</label>
+                <select asp-for="RoleId" asp-items="ViewBag.Roles" class="form-select" required>
+                    <option value="">-- Chọn chức vụ --</option>
+                </select>
+                <span asp-validation-for="RoleId" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="AvatarImagePath" class="form-label">Ảnh đại diện (URL)</label>
+            <input asp-for="AvatarImagePath" class="form-control" />
+            <span asp-validation-for="AvatarImagePath" class="text-danger"></span>
+        </div>
+
+        <div class="form-check mb-3">
+            <input asp-for="IsActive" class="form-check-input" />
+            <label asp-for="IsActive" class="form-check-label">Hoạt động</label>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Thêm nhân viên</button>
+        <a asp-action="Index" class="btn btn-secondary">Quay lại</a>
+    </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

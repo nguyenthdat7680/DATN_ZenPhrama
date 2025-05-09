@@ -1,0 +1,78 @@
+﻿@model DA.ZenPharma.Application.Dtos.OrderDto.OrderDto
+
+@{
+    ViewData["Title"] = "Chi tiết đơn hàng";
+    ViewBag.BodyClass = "body-with-fixed-navbar"; 
+}
+
+<div class="container-fluid p-4 mt-5">
+    <div class="card shadow-sm mb-4">
+        <div class="card-header">
+            <h4 class="mb-0">Thông tin đơn hàng</h4>
+        </div>
+        <div class="card-body">
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label class="form-label">Mã đơn</label>
+                    <input class="form-control" value="@Model.OrderCode" readonly />
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">Khách hàng</label>
+                    <input class="form-control" value="@Model.CustomerName" readonly />
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label class="form-label">Số điện thoại</label>
+                    <input class="form-control" value="@Model.CustomerPhone" readonly />
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">Ngày đặt hàng</label>
+                    <input class="form-control" value="@Model.OrderDate.ToString("dd/MM/yyyy")" readonly />
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label class="form-label">Trạng thái</label>
+                    <input class="form-control" value="@(string.IsNullOrEmpty(Model.OrderStatus) ? "Completed" : Model.OrderStatus)" readonly />
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">Tổng tiền</label>
+                    <input class="form-control fw-bold text-end" value="@Model.TotalAmount.ToString("N0") đ" readonly />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card shadow-sm">
+        <div class="card-header">
+            <h5 class="mb-0">Chi tiết sản phẩm</h5>
+        </div>
+        <div class="card-body table-responsive">
+            <table class="table table-bordered align-middle">
+                <thead class="table-light">
+                    <tr>
+                        <th>#</th>
+                        <th>Sản phẩm</th>
+                        <th>Số lượng</th>
+                        <th>Đơn giá</th>
+                        <th>Thành tiền</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for (int i = 0; i < Model.OrderDetails.Count; i++)
+                    {
+                        var item = Model.OrderDetails[i];
+                        <tr>
+                            <td>@(i + 1)</td>
+                            <td>@item.ProductName</td>
+                            <td>@item.Quantity</td>
+                            <td>@item.UnitPrice.ToString("N0") đ</td>
+                            <td>@item.TotalAmount.ToString("N0") đ</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

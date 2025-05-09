@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35527.113
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DA.ZenPharma.WebAPI", "DA.ZenPharma.WebAPI\DA.ZenPharma.WebAPI.csproj", "{AC1AD1CB-1A62-4D5B-9033-70CA4DBEC374}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DA.ZenPharma.Application", "DA.ZenPharma.Application\DA.ZenPharma.Application.csproj", "{BA38FA61-C6F2-4E78-B6C5-A7CECA6B89EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DA.ZenPharma.Domain", "DA.ZenPharama.Domain\DA.ZenPharma.Domain.csproj", "{B7CBFFD8-A4CB-4D74-AC56-D6EA10D00791}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DA.ZenPharma.Infrastructure", "DA.ZenPharma.Infrastructure\DA.ZenPharma.Infrastructure.csproj", "{18A75699-4F91-455C-8479-FCE3291C70DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DA.ZenPharma.WebAppAdmin", "DA.ZenPharma.WebAppAdmin\DA.ZenPharma.WebAppAdmin.csproj", "{48874CA6-31A5-4785-BF47-96B2CAAFE5ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DA.ZenPharma.WebAppCustomer", "DA.ZenPharma.WebAppCustomer\DA.ZenPharma.WebAppCustomer.csproj", "{3543B306-82C6-4239-98EB-4E6D2E8D2AF6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AC1AD1CB-1A62-4D5B-9033-70CA4DBEC374}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC1AD1CB-1A62-4D5B-9033-70CA4DBEC374}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC1AD1CB-1A62-4D5B-9033-70CA4DBEC374}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC1AD1CB-1A62-4D5B-9033-70CA4DBEC374}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA38FA61-C6F2-4E78-B6C5-A7CECA6B89EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA38FA61-C6F2-4E78-B6C5-A7CECA6B89EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA38FA61-C6F2-4E78-B6C5-A7CECA6B89EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA38FA61-C6F2-4E78-B6C5-A7CECA6B89EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7CBFFD8-A4CB-4D74-AC56-D6EA10D00791}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7CBFFD8-A4CB-4D74-AC56-D6EA10D00791}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7CBFFD8-A4CB-4D74-AC56-D6EA10D00791}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7CBFFD8-A4CB-4D74-AC56-D6EA10D00791}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18A75699-4F91-455C-8479-FCE3291C70DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18A75699-4F91-455C-8479-FCE3291C70DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18A75699-4F91-455C-8479-FCE3291C70DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18A75699-4F91-455C-8479-FCE3291C70DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48874CA6-31A5-4785-BF47-96B2CAAFE5ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48874CA6-31A5-4785-BF47-96B2CAAFE5ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48874CA6-31A5-4785-BF47-96B2CAAFE5ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48874CA6-31A5-4785-BF47-96B2CAAFE5ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3543B306-82C6-4239-98EB-4E6D2E8D2AF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3543B306-82C6-4239-98EB-4E6D2E8D2AF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3543B306-82C6-4239-98EB-4E6D2E8D2AF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3543B306-82C6-4239-98EB-4E6D2E8D2AF6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

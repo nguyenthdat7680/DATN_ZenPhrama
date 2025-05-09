@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "DA.ZenPharma.WebAPI\\DA.ZenPharma.WebAPI.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "DA.ZenPharma.WebAppAdmin\\DA.ZenPharma.WebAppAdmin.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

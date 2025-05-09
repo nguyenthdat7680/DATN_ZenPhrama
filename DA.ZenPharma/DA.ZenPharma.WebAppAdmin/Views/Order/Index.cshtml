@@ -1,0 +1,199 @@
+﻿@model DA.ZenPharma.Application.Dtos.BaseDto.PageResultDto<DA.ZenPharma.Application.Dtos.OrderDto.OrderDto>
+
+@{
+    ViewData["Title"] = "Danh sách đơn hàng";
+    int currentPage = ViewBag.Page;
+    int totalPages = ViewBag.TotalPages;
+    int startPage = Math.Max(1, currentPage - 1);
+    int endPage = Math.Min(totalPages, currentPage + 1);
+}
+
+
+<div class="nk-content mt-5 pt-5">
+    <div class="container-fluid">
+        <div class="nk-content-inner">
+            <div class="nk-content-body">
+                <div class="nk-block-head nk-block-head-sm">
+                    <div class="nk-block-between">
+                        <div class="nk-block-head-content">
+                            <h3 class="nk-block-title page-title">Danh sách đơn hàng</h3>
+                        </div>
+                    </div>
+                </div>
+                <form method="get" class="row g-3 align-items-center mb-4">
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <div class="col-auto">
+                            <select name="branchId" class="form-select">
+                                <option value="">-- Tất cả chi nhánh --</option>
+                                @foreach (var branch in (SelectList)ViewBag.Branches)
+                                {
+                                    var isSelected = ViewBag.BranchFilter == branch.Value ? "selected=\"selected\"" : "";
+                                    @:<option value="@branch.Value" @Html.Raw(isSelected)>@branch.Text</option>
+                                }
+                            </select>
+                        </div>
+                    }
+
+                    <div class="col-auto">
+                        <select name="status" class="form-select">
+                            <option value="">-- Tất cả trạng thái --</option>
+                            @{
+                                var statusOptions = new[] { "Pending", "Confirmed", "Cancelled", "Đã giao" };
+                                var statusTexts = new Dictionary<string, string>
+                                {
+                                    { "Pending", "Chờ xử lý" },
+                                    { "Confirmed", "Đã xác nhận" },
+                                    { "Cancelled", "Đã hủy" },
+                                    { "Đã giao", "Hoàn thành" }
+                                };
+                            }
+                            @foreach (var status in statusOptions)
+                            {
+                                var isSelected = ViewBag.StatusFilter == status ? "selected=\"selected\"" : "";
+                                @:<option value="@status" @Html.Raw(isSelected)>@statusTexts[status]</option>
+                            }
+                        </select>
+                    </div>
+
+                    <div class="col-auto">
+                        <button type="submit" class="btn btn-primary">Lọc</button>
+                    </div>
+                </form>
+
+
+
+                <div class="nk-block">
+                    <div class="card card-bordered card-stretch">
+                        <div class="card-inner-group">
+                            <div class="card-inner p-0">
+                                <div class="nk-tb-list nk-tb-ulist">
+                                    <div class="nk-tb-item nk-tb-head">
+                                        <div class="nk-tb-col nk-tb-col-check">
+                                            <div class="custom-control custom-control-sm custom-checkbox notext"><input type="checkbox" class="custom-control-input" id="uid"><label class="custom-control-label" for="uid"></label></div>
+                                        </div>
+                                        <div class="nk-tb-col"><span class="sub-text">Mã đơn</span></div>
+                                        <div class="nk-tb-col tb-col-lg"><span class="sub-text">Ngày đặt</span></div>
+                                        <div class="nk-tb-col"><span class="sub-text">Khách hàng</span></div>
+                                        <div class="nk-tb-col"><span class="sub-text">Tổng tiền</span></div>
+                                        <div class="nk-tb-col"><span class="sub-text">Trạng thái</span></div>
+                                        <div class="nk-tb-col nk-tb-col-tools"><span class="sub-text">Thao tác</span></div>
+                                    </div>
+
+                                    @foreach (var item in Model.Items)
+                                    {
+                                        <div class="nk-tb-item">
+                                            <div class="nk-tb-col nk-tb-col-check">
+                                                <div class="custom-control custom-control-sm custom-checkbox notext"><input type="checkbox" class="custom-control-input" id="@item.Id"><label class="custom-control-label" for="@item.Id"></label></div>
+                                            </div>
+                                            <div class="nk-tb-col">
+                                                <span class="fw-medium">#@item.OrderCode</span>
+                                            </div>
+                                            <div class="nk-tb-col tb-col-lg">
+                                                <span>@item.OrderDate.ToString("dd/MM/yyyy")</span>
+                                            </div>
+                                            <div class="nk-tb-col">
+                                                <div class="user-card">
+                                                    <div class="user-avatar bg-primary-dim"><span>@item.CustomerName.Substring(0,1)</span></div>
+                                                    <div class="user-info">
+                                                        <span class="tb-lead">@item.CustomerName</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="nk-tb-col">
+                                                <span>@item.TotalAmount.ToString("N0") đ</span>
+                                            </div>
+                                            <div class="nk-tb-col">
+                                                <div class="nk-tb-col">
+                                                    <span class="badge
+                                                        @(item.OrderStatus == "Pending" ? "bg-warning" :
+                                                          item.OrderStatus == "Confirmed" ? "bg-info" :
+                                                          item.OrderStatus == "Completed" ? "bg-success" :
+                                                          item.OrderStatus == "Cancelled" ? "bg-danger" : "bg-secondary")">
+                                                         @item.OrderStatus
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="nk-tb-col nk-tb-col-tools">
+                                                <a class="btn btn-sm btn-primary" href="@Url.Action("Details", new { id = item.Id })" title="Chi tiết">
+                                                    <em class="icon ni ni-eye"></em>
+                                                </a>
+                                            </div>
+                                            
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+
+                            <div class="card-inner">
+                                <div class="nk-block-between-md g-3">
+                                    <div class="g">
+                                        <ul class="pagination justify-content-center justify-content-md-start">
+                                            <li class="page-item @(currentPage == 1 ? "disabled" : "")">
+                                                <a class="page-link" href="@Url.Action("Index", new { page = currentPage - 1 })">Trước</a>
+                                            </li>
+
+                                            @if (startPage > 1)
+                                            {
+                                                <li class="page-item"><a class="page-link" href="@Url.Action("Index", new { page = 1 })">1</a></li>
+                                                @if (startPage > 2)
+                                                {
+                                                    <li class="page-item disabled"><span class="page-link">...</span></li>
+                                                }
+                                            }
+
+                                            @for (int i = startPage; i <= endPage; i++)
+                                            {
+                                                <li class="page-item @(i == currentPage ? "active" : "")">
+                                                    <a class="page-link" href="@Url.Action("Index", new { page = i })">@i</a>
+                                                </li>
+                                            }
+
+                                            @if (endPage < totalPages)
+                                            {
+                                                @if (endPage < totalPages - 1)
+                                                {
+                                                    <li class="page-item disabled"><span class="page-link">...</span></li>
+                                                }
+                                                <li class="page-item">
+                                                    <a class="page-link" href="@Url.Action("Index", new { page = totalPages })">@totalPages</a>
+                                                </li>
+                                            }
+
+                                            <li class="page-item @(currentPage == totalPages ? "disabled" : "")">
+                                                <a class="page-link" href="@Url.Action("Index", new { page = currentPage + 1 })">Sau</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="g">
+                                        <div class="pagination-goto d-flex justify-content-center justify-content-md-start gx-3">
+                                            <div>Trang</div>
+                                            <div>
+                                                <select class="form-select form-select-sm js-select2"
+                                                        onchange="location = this.value;">
+                                                    @for (int i = 1; i <= totalPages; i++)
+                                                    {
+                                                        if (i == currentPage)
+                                                        {
+                                                            <option selected value="@Url.Action("Index", new { page = i })">@i</option>
+                                                        }
+                                                        else
+                                                        {
+                                                            <option value="@Url.Action("Index", new { page = i })">@i</option>
+                                                        }
+                                                    }
+                                                </select>
+                                            </div>
+                                            <div>của @totalPages</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- .card-inner -->
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

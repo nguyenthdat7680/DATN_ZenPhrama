@@ -1,0 +1,147 @@
+﻿@model DA.ZenPharma.Application.Dtos.BaseDto.PageResultDto<DA.ZenPharma.Application.Dtos.CategoryDto.CategoryDto>
+
+@{
+    ViewData["Title"] = "Danh sách danh mục";
+    int currentPage = ViewBag.Page;
+    int totalPages = ViewBag.TotalPages;
+    int startPage = Math.Max(1, currentPage - 1);
+    int endPage = Math.Min(totalPages, currentPage + 1);
+}
+
+<div class="nk-content mt-5 pt-5">
+    <div class="container-fluid">
+        <div class="nk-content-inner">
+            <div class="nk-content-body">
+                <div class="nk-block-head nk-block-head-sm">
+                    <div class="nk-block-between g-3">
+                        <div class="nk-block-head-content">
+                            <h3 class="nk-block-title page-title">Danh sách danh mục</h3>
+                        </div>
+                        <div class="nk-block-head-content">
+                            <a asp-action="Create" class="btn btn-primary">
+                                <em class="icon ni ni-plus"></em><span>Thêm mới</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="nk-block">
+                    <div class="card card-bordered card-stretch">
+                        <div class="card-inner-group">
+                            <div class="card-inner p-0">
+                                <div class="nk-tb-list nk-tb-ulist">
+                                    <div class="nk-tb-item nk-tb-head">
+                                        <div class="nk-tb-col nk-tb-col-check">
+                                            <div class="custom-control custom-control-sm custom-checkbox notext"><input type="checkbox" class="custom-control-input" id="uid"><label class="custom-control-label" for="uid"></label></div>
+                                        </div>
+                                        <div class="nk-tb-col"><span class="sub-text">Tên danh mục</span></div>
+                                        <div class="nk-tb-col"><span class="sub-text">Mô tả</span></div>
+                                        <div class="nk-tb-col"><span class="sub-text">Trạng thái</span></div>
+                                        <div class="nk-tb-col nk-tb-col-tools text-end"><span class="sub-text">Thao tác</span></div>
+                                    </div>
+
+                                    @foreach (var item in Model.Items)
+                                    {
+                                        <div class="nk-tb-item">
+                                            <div class="nk-tb-col nk-tb-col-check">
+                                                <div class="custom-control custom-control-sm custom-checkbox notext"><input type="checkbox" class="custom-control-input" id="@item.Id"><label class="custom-control-label" for="@item.Id"></label></div>
+                                            </div>
+                                            <div class="nk-tb-col"><span>@item.CategoryName</span></div>
+                                            <div class="nk-tb-col"><span>@item.CategoryDescription</span></div>
+                                            <div class="nk-tb-col">
+                                                <span class="badge bg-@(item.IsActive ? "success" : "danger")">
+                                                    @(item.IsActive ? "Hoạt động" : "Tạm ngưng")
+                                                </span>
+                                            </div>
+                                            <div class="nk-tb-col nk-tb-col-tools text-end">
+                                                <ul class="nk-tb-actions gx-1">
+                                                    <li>
+                                                        <a class="btn btn-sm btn-primary" asp-action="Edit" asp-route-id="@item.Id" title="Chỉnh sửa">
+                                                            <em class="icon ni ni-edit"></em>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="btn btn-sm btn-danger"
+                                                           asp-action="Delete" asp-route-id="@item.Id"
+                                                           onclick="return confirm('Bạn có chắc chắn muốn xoá danh mục này?');"
+                                                           title="Xoá">
+                                                            <em class="icon ni ni-trash"></em>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+
+                            <div class="card-inner">
+                                <div class="nk-block-between-md g-3">
+                                    <div class="g">
+                                        <ul class="pagination justify-content-center justify-content-md-start">
+                                            <li class="page-item @(currentPage == 1 ? "disabled" : "")">
+                                                <a class="page-link" href="@Url.Action("Index", new { page = currentPage - 1 })">Trước</a>
+                                            </li>
+
+                                            @if (startPage > 1)
+                                            {
+                                                <li class="page-item"><a class="page-link" href="@Url.Action("Index", new { page = 1 })">1</a></li>
+                                                @if (startPage > 2)
+                                                {
+                                                    <li class="page-item disabled"><span class="page-link">...</span></li>
+                                                }
+                                            }
+
+                                            @for (int i = startPage; i <= endPage; i++)
+                                            {
+                                                <li class="page-item @(i == currentPage ? "active" : "")">
+                                                    <a class="page-link" href="@Url.Action("Index", new { page = i })">@i</a>
+                                                </li>
+                                            }
+
+                                            @if (endPage < totalPages)
+                                            {
+                                                @if (endPage < totalPages - 1)
+                                                {
+                                                    <li class="page-item disabled"><span class="page-link">...</span></li>
+                                                }
+                                                <li class="page-item"><a class="page-link" href="@Url.Action("Index", new { page = totalPages })">@totalPages</a></li>
+                                            }
+
+                                            <li class="page-item @(currentPage == totalPages ? "disabled" : "")">
+                                                <a class="page-link" href="@Url.Action("Index", new { page = currentPage + 1 })">Sau</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="g">
+                                        <div class="pagination-goto d-flex justify-content-center justify-content-md-start gx-3">
+                                            <div>Trang</div>
+                                            <div>
+                                                <select class="form-select form-select-sm js-select2" onchange="location = this.value;">
+                                                    @for (int i = 1; i <= totalPages; i++)
+                                                    {
+                                                        if (i == currentPage)
+                                                        {
+                                                            <option selected value="@Url.Action("Index", new { page = i })">@i</option>
+                                                        }
+                                                        else
+                                                        {
+                                                            <option value="@Url.Action("Index", new { page = i })">@i</option>
+                                                        }
+                                                    }
+                                                </select>
+                                            </div>
+                                            <div>của @totalPages</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- .card-inner -->
+                        </div>
+                    </div>
+                </div><!-- .nk-block -->
+            </div>
+        </div>
+    </div>
+</div>

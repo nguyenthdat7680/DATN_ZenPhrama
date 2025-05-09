@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "eubfMfg5CuAX7oj1cQe5k7HLMc+KWdErOrERy7KXVhw=",
+  "Source": "DA.ZenPharma.WebAPI",
+  "BasePath": "_content/DA.ZenPharma.WebAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

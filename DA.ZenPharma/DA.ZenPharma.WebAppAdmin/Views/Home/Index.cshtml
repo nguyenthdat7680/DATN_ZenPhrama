@@ -1,0 +1,429 @@
+﻿@{
+    ViewData["Title"] = "Trang chủ";
+}
+<style>
+    .nk-content {
+        margin-top: 80px;
+    }
+</style>
+<div class="nk-content">
+    <div class="container-fluid">
+        <div class="nk-content-inner">
+            <div class="nk-content-body">
+                <div class="nk-block-head nk-block-head-sm">
+                    <div class="nk-block-between">
+                        <div class="nk-block-head-content">
+                            <h3 class="nk-block-title page-title">Trang chủ</h3>
+                            <div class="nk-block-des text-soft"><p></p></div>
+                        </div>
+                        <div class="nk-block-head-content">
+                            <div class="toggle-wrap nk-block-tools-toggle">
+                                <a href="#" class="btn btn-icon btn-trigger toggle-expand me-n1" data-target="pageMenu"><em class="icon ni ni-more-v"></em></a>
+                                <div class="toggle-expand-content" data-content="pageMenu">
+                                    <ul class="nk-block-tools g-3">
+                                        <li>
+                                            <div class="drodown">
+                                                <a href="#" class="dropdown-toggle btn btn-white btn-dim btn-outline-light" data-bs-toggle="dropdown">
+                                                    <em class="d-none d-sm-inline icon ni ni-calender-date"></em><span><span class="d-none d-md-inline"></span> 7 ngày gần đây</span>
+                                                    <em class="dd-indc icon ni ni-chevron-right"></em>
+                                                </a>
+                                                <div class="dropdown-menu dropdown-menu-end">
+                                                    <ul class="link-list-opt no-bdr">
+                                                        <li>
+                                                            <a href="#"><span>30 ngày gần đây</span></a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#"><span>6 tháng gần đây</span></a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#"><span>1 năm gần đây</span></a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="nk-block">
+                    <div class="row g-gs">
+                        <div class="col-xxl-3 col-sm-6">
+                            <div class="card">
+                                <div class="nk-ecwg nk-ecwg6">
+                                    <div class="card-inner">
+                                        <div class="card-title-group">
+                                            <div class="card-title"><h6 class="title">Số đơn đặt hàng</h6></div>
+                                        </div>
+                                        <div class="data">
+                                            <div class="data-group">
+                                                <div class="amount">376</div>
+                                                <div class="nk-ecwg6-ck"><canvas class="ecommerce-line-chart-s3" id="todayOrders"></canvas></div>
+                                            </div>
+                                            <div class="info">
+                                                <span class="change up text-danger"><em class="icon ni ni-arrow-long-up"></em>4.63%</span><span> so với tuần trước</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xxl-3 col-sm-6">
+                            <div class="card">
+                                <div class="nk-ecwg nk-ecwg6">
+                                    <div class="card-inner">
+                                        <div class="card-title-group">
+                                            <div class="card-title"><h6 class="title">Doanh thu tuần này ( VNĐ )</h6></div>
+                                        </div>
+                                        <div class="data">
+                                            <div class="data-group">
+                                                <div class="amount">236,800,000</div>
+                                            </div>
+                                            <div class="info">
+                                                <span class="change down text-danger"><em class="icon ni ni-arrow-long-down"></em>5.34%</span><span> so với tuần trước</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xxl-3 col-sm-6">
+                            <div class="card">
+                                <div class="nk-ecwg nk-ecwg6">
+                                    <div class="card-inner">
+                                        <div class="card-title-group">
+                                            <div class="card-title"><h6 class="title">Khách hàng đăng ký mới</h6></div>
+                                        </div>
+                                        <div class="data">
+                                            <div class="data-group">
+                                                <div class="amount">347</div>
+                                                <div class="nk-ecwg6-ck"><canvas class="ecommerce-line-chart-s3" id="todayCustomers"></canvas></div>
+                                            </div>
+                                            <div class="info">
+                                                <span class="change up text-danger"><em class="icon ni ni-arrow-long-up"></em>2.97%</span><span> so với tuần trước</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xxl-3 col-sm-6">
+                            <div class="card">
+                                <div class="nk-ecwg nk-ecwg6">
+                                    <div class="card-inner">
+                                        <div class="card-title-group">
+                                            <div class="card-title"><h6 class="title">Khách vãng lai</h6></div>
+                                        </div>
+                                        <div class="data">
+                                            <div class="data-group">
+                                                <div class="amount">1,885</div>
+                                                <div class="nk-ecwg6-ck"><canvas class="ecommerce-line-chart-s3" id="todayVisitors"></canvas></div>
+                                            </div>
+                                            <div class="info">
+                                                <span class="change down text-danger"><em class="icon ni ni-arrow-long-down"></em>4.22%</span><span> so với tuần trước</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xxl-6">
+                            <div class="card card-full">
+                                <div class="nk-ecwg nk-ecwg8 h-100">
+                                    <div class="card-inner">
+                                        <div class="card-title-group mb-3">
+                                            <div class="card-title"><h6 class="title">Thống kê bán hàng</h6></div>
+                                            <div class="card-tools">
+                                                <div class="dropdown">
+                                                    <a href="#" class="dropdown-toggle link link-light link-sm dropdown-indicator" data-bs-toggle="dropdown">Mỗi tuần</a>
+                                                    <div class="dropdown-menu dropdown-menu-sm dropdown-menu-end">
+                                                        <ul class="link-list-opt no-bdr">
+                                                            <li>
+                                                                <a href="#"><span>Mỗi ngày</span></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#" class="active"><span>Mỗi tuần</span></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#"><span>Mỗi tháng</span></a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <ul class="nk-ecwg8-legends">
+                                            <li>
+                                                <div class="title"><span class="dot dot-lg sq" data-bg="#0fac81"></span><span>Đơn tạo</span></div>
+                                            </li>
+                                            <li>
+                                                <div class="title"><span class="dot dot-lg sq" data-bg="#eb6459"></span><span>Đơn hủy</span></div>
+                                            </li>
+                                        </ul>
+                                        <div class="nk-ecwg8-ck"><img src="/assets2/page/wavechart.jpg" class="w-100" /></div>
+                                        <div class="chart-label-group ps-5">
+                                            <div class="chart-label">01 Dec, 2023</div>
+                                            <div class="chart-label">30 Dec, 2023</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xxl-3 col-md-6">
+                            <div class="card card-full overflow-hidden">
+                                <div class="nk-ecwg nk-ecwg7 h-100">
+                                    <div class="card-inner flex-grow-1">
+                                        <div class="card-title-group mb-4">
+                                            <div class="card-title"><h6 class="title">Thống kê đơn hàng</h6></div>
+                                        </div>
+                                        <img src="/assets2/page/piechart.jpg" class="h-50 ml-3" />
+                                        <ul class="nk-ecwg7-legends mr-4">
+                                            <li>
+                                                <div class="title"><span class="dot dot-lg sq" data-bg="#0fac81"></span><span>Hoàn thành</span></div>
+                                            </li>
+                                            <li>
+                                                <div class="title"><span class="dot dot-lg sq" data-bg="#e85347"></span><span>Đã hủy</span></div>
+                                            </li>
+                                            <li>
+                                                <div class="title"><span class="dot dot-lg sq" data-bg="#816bff"></span><span>Đang xử lý</span></div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xxl-3 col-md-6">
+                            <div class="card h-100">
+                                <div class="card-inner">
+                                    <div class="card-title-group mb-2">
+                                        <div class="card-title"><h6 class="title">Thống kê cửa hàng</h6></div>
+                                    </div>
+                                    <ul class="nk-store-statistics">
+                                        <li class="item">
+                                            <div class="info">
+                                                <div class="title">Số đơn hàng</div>
+                                                <div class="count">7,607</div>
+                                            </div>
+                                            <em class="icon bg-primary-dim ni ni-bag"></em>
+                                        </li>
+                                        <li class="item">
+                                            <div class="info">
+                                                <div class="title">Số khách hàng</div>
+                                                <div class="count">14,827</div>
+                                            </div>
+                                            <em class="icon bg-info-dim ni ni-users"></em>
+                                        </li>
+                                        <li class="item">
+                                            <div class="info">
+                                                <div class="title">Số sản phẩm trong kho</div>
+                                                <div class="count">8,674</div>
+                                            </div>
+                                            <em class="icon bg-pink-dim ni ni-box"></em>
+                                        </li>
+                                        <li class="item">
+                                            <div class="info">
+                                                <div class="title">Sản phẩm sắp hết hạn</div>
+                                                <div class="count">204</div>
+                                            </div>
+                                            <em class="icon bg-purple-dim ni ni-server"></em>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xxl-7">
+                            <div class="card card-full">
+                                <div class="card-inner">
+                                    <div class="card-title-group">
+                                        <div class="card-title"><h6 class="title">Đơn hàng gần đây</h6></div>
+                                    </div>
+                                </div>
+                                <div class="nk-tb-list mt-n2">
+                                    <div class="nk-tb-item nk-tb-head">
+                                        <div class="nk-tb-col"><span>Mã Order</span></div>
+                                        <div class="nk-tb-col tb-col-sm"><span>Khách hàng</span></div>
+                                        <div class="nk-tb-col tb-col-md"><span>Ngày đặt</span></div>
+                                        <div class="nk-tb-col"><span>Số tiền</span></div>
+                                        <div class="nk-tb-col"><span class="d-none d-sm-inline">Trạng thái</span></div>
+                                    </div>
+                                    <div class="nk-tb-item">
+                                        <div class="nk-tb-col">
+                                            <span class="tb-lead"><a href="#">#7807</a></span>
+                                        </div>
+                                        <div class="nk-tb-col tb-col-sm">
+                                            <div class="user-card">
+                                                <div class="user-avatar sm bg-purple-dim"><span>MT</span></div>
+                                                <div class="user-name"><span class="tb-lead">Tran Manh The</span></div>
+                                            </div>
+                                        </div>
+                                        <div class="nk-tb-col tb-col-md"><span class="tb-sub">23/12/2023</span></div>
+                                        <div class="nk-tb-col">
+                                            <span class="tb-sub tb-amount">867,000</span>
+                                        </div>
+                                        <div class="nk-tb-col"><span class="badge  bg-success">Đã thanh toán</span></div>
+                                    </div>
+                                    <div class="nk-tb-item">
+                                        <div class="nk-tb-col">
+                                            <span class="tb-lead"><a href="#">#7806</a></span>
+                                        </div>
+                                        <div class="nk-tb-col tb-col-sm">
+                                            <div class="user-card">
+                                                <div class="user-avatar sm bg-azure-dim"><span>DT</span></div>
+                                                <div class="user-name"><span class="tb-lead">Duc Tam</span></div>
+                                            </div>
+                                        </div>
+                                        <div class="nk-tb-col tb-col-md"><span class="tb-sub">23/12/2023</span></div>
+                                        <div class="nk-tb-col">
+                                            <span class="tb-sub tb-amount">276,000</span>
+                                        </div>
+                                        <div class="nk-tb-col"><span class="badge  bg-danger">Đã hủy</span></div>
+                                    </div>
+                                    <div class="nk-tb-item">
+                                        <div class="nk-tb-col">
+                                            <span class="tb-lead"><a href="#">#7805</a></span>
+                                        </div>
+                                        <div class="nk-tb-col tb-col-sm">
+                                            <div class="user-card">
+                                                <div class="user-avatar sm bg-azure-dim"><span>MC</span></div>
+
+                                                <div class="user-name"><span class="tb-lead">Nguyen Manh Cuong</span></div>
+                                            </div>
+                                        </div>
+                                        <div class="nk-tb-col tb-col-md"><span class="tb-sub">23/12/2023</span></div>
+                                        <div class="nk-tb-col">
+                                            <span class="tb-sub tb-amount">643,000</span>
+                                        </div>
+                                        <div class="nk-tb-col"><span class="badge  bg-success">Đã thanh toán</span></div>
+                                    </div>
+                                    <div class="nk-tb-item">
+                                        <div class="nk-tb-col">
+                                            <span class="tb-lead"><a href="#">#7804</a></span>
+                                        </div>
+                                        <div class="nk-tb-col tb-col-sm">
+                                            <div class="user-card">
+                                                <div class="user-avatar sm bg-purple-dim"><span>VA</span></div>
+                                                <div class="user-name"><span class="tb-lead">Viet Anh Nguyen</span></div>
+                                            </div>
+                                        </div>
+                                        <div class="nk-tb-col tb-col-md"><span class="tb-sub">23/12/2023</span></div>
+                                        <div class="nk-tb-col">
+                                            <span class="tb-sub tb-amount">1,790,000</span>
+                                        </div>
+                                        <div class="nk-tb-col"><span class="badge  bg-success">Đã thanh toán</span></div>
+                                    </div>
+                                    <div class="nk-tb-item">
+                                        <div class="nk-tb-col">
+                                            <span class="tb-lead"><a href="#">#7803</a></span>
+                                        </div>
+                                        <div class="nk-tb-col tb-col-sm">
+                                            <div class="user-card">
+                                                <div class="user-avatar sm bg-success-dim"><span>HD</span></div>
+                                                <div class="user-name"><span class="tb-lead">Hoang Dung</span></div>
+                                            </div>
+                                        </div>
+                                        <div class="nk-tb-col tb-col-md"><span class="tb-sub">23/12/2023</span></div>
+                                        <div class="nk-tb-col">
+                                            <span class="tb-sub tb-amount">120,000</span>
+                                        </div>
+                                        <div class="nk-tb-col"><span class="badge  bg-warning">Đang chờ</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xxl-5 col-md-8 col-lg-6">
+                            <div class="card h-100">
+                                <div class="card-inner">
+                                    <div class="card-title-group mb-2">
+                                        <div class="card-title"><h6 class="title">Sản phẩm bán nhiều nhất</h6></div>
+                                        <div class="card-tools">
+                                            <div class="dropdown">
+                                                <a href="#" class="dropdown-toggle link link-light link-sm dropdown-indicator" data-bs-toggle="dropdown">Theo tuần</a>
+                                                <div class="dropdown-menu dropdown-menu-sm dropdown-menu-end">
+                                                    <ul class="link-list-opt no-bdr">
+                                                        <li>
+                                                            <a href="#"><span>Theo ngày </span></a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#" class="active"><span>Theo tuần</span></a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#"><span>Theo tháng</span></a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <ul class="nk-top-products">
+                                        <li class="item">
+                                            <div class="thumb"><img src="~/assets2/images/product/khau-trang.webp" alt="" /></div>
+                                            <div class="info">
+                                                <div class="title">Khẩu trang 4 lớp</div>
+                                                <div class="price">60,000 VNĐ</div>
+                                            </div>
+                                            <div class="total">
+                                                <div class="amount">-</div>
+                                                <div class="count">24 đã bán</div>
+                                            </div>
+                                        </li>
+                                        </li>
+                                        <li class="item">
+                                            <div class="thumb"><img src="~/assets2/images/product/dr-caci-ocavill-60vien-1.jpeg" alt="" /></div>
+                                            <div class="info">
+                                                <div class="title">Viên uống Dr. Caci Ocavill bổ sung canxi</div>
+                                                <div class="price">570,000 VNĐ</div>
+                                            </div>
+                                            <div class="total">
+                                                <div class="amount">-</div>
+                                                <div class="count">10 đã bán</div>
+                                            </div>
+                                        </li>
+                                        <li class="item">
+                                            <div class="thumb"><img src="~/assets2/images/product/DSC_09921_be2fbb84bf.jpg" alt="" /></div>
+                                            <div class="info">
+                                                <div class="title">Tổ yến tinh chế sợi dài Kami Nest </div>
+                                                <div class="price">2,700,000 vnđ</div>
+                                            </div>
+                                            <div class="total">
+                                                <div class="amount">-</div>
+                                                <div class="count">5 đã bán</div>
+                                            </div>
+                                        </li>
+                                        <li class="item">
+                                            <div class="thumb"><img src="~/assets2/images/product/00028635_may_do_duong_huyet_tu_dong_mediusa_gm3300_1967_5fc9_large_62c3104a1c.webp" alt="" /></div>
+                                            <div class="info">
+                                                <div class="title">Máy đo đường huyết tự động MediUSA GM3300 </div>
+                                                <div class="price">1.025.100đ VNĐ</div>
+                                            </div>
+                                            <div class="total">
+                                                <div class="amount">-</div>
+                                                <div class="count">5 đã bán</div>
+                                            </div>
+                                        </li>
+                                        <li class="item">
+                                            <div class="thumb"><img src="~/assets2/images/product/bo-mau.png" alt="" /></div>
+                                            <div class="info">
+                                                <div class="title">Viên uống Feroglobin B12 Vitabiotics bổ máu</div>
+                                                <div class="price">100,000 VNĐ</div>
+                                            </div>
+                                            <div class="total">
+                                                <div class="amount">-</div>
+                                                <div class="count">5 đã bán</div>
+                                            </div>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

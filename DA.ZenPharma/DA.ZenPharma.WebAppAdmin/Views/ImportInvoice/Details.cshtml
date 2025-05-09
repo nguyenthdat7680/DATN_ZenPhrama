@@ -1,0 +1,110 @@
+﻿@model DA.ZenPharma.Application.Dtos.ImportInvoiceDtos.ImportInvoiceDto
+
+@{
+    ViewData["Title"] = "Chi tiết hóa đơn nhập";
+}
+
+<div class="container mt-4">
+    <div class="card shadow-sm mb-4">
+        <div class="card-header">
+            <h4>Thông tin hóa đơn nhập</h4>
+        </div>
+        <div class="card-body">
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label class="form-label">Số hóa đơn</label>
+                    <input class="form-control" value="@Model.InvoiceNumber" readonly />
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">Nhà cung cấp</label>
+                    <input class="form-control" value="@Model.SupplierName" readonly />
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label class="form-label">Chi nhánh</label>
+                    <input class="form-control" value="@Model.BranchName" readonly />
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">Ngày nhập</label>
+                    <input class="form-control" value="@Model.InvoiceDate.ToString("dd/MM/yyyy")" readonly />
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label class="form-label">Nhân viên nhập</label>
+                    <input class="form-control" value="@Model.HandledByStaffName" readonly />
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">Tổng tiền</label>
+                    <input class="form-control fw-bold text-end" value="@Model.TotalAmount.ToString("N0") đ" readonly />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card shadow-sm mb-4">
+        <div class="card-header">
+            <h5 class="mb-0">Chi tiết sản phẩm nhập</h5>
+        </div>
+        <div class="card-body table-responsive">
+            <table class="table table-bordered">
+                <thead class="table-light">
+                    <tr>
+                        <th>#</th>
+                        <th>Sản phẩm</th>
+                        <th>Số lượng</th>
+                        <th>Đơn giá</th>
+                        <th>Thành tiền</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for (int i = 0; i < Model.Details.Count; i++)
+                    {
+                        var item = Model.Details[i];
+                        <tr>
+                            <td>@(i + 1)</td>
+                            <td>@item.ProductName</td>
+                            <td>@item.Quantity</td>
+                            <td>@item.UnitPrice.ToString("N0") đ</td>
+                            <td>@item.TotalAmount.ToString("N0") đ</td>
+                        </tr>
+
+                        if (item.InventoryBatches.Any())
+                        {
+                            <tr>
+                                <td></td>
+                                <td colspan="4">
+                                    <strong>Lô hàng:</strong>
+                                    <table class="table table-sm table-bordered mt-2 mb-0">
+                                        <thead>
+                                            <tr>
+                                                <th>Tên lô</th>
+                                                <th>NSX</th>
+                                                <th>HSD</th>
+                                                <th>Số lượng</th>
+                                                <th>Vị trí</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach (var batch in item.InventoryBatches)
+                                            {
+                                                <tr>
+                                                    <td>@batch.BatchName</td>
+                                                    <td>@(batch.ManufacturingDate?.ToString("dd/MM/yyyy") ?? "-")</td>
+                                                    <td>@batch.ExpireDate.ToString("dd/MM/yyyy")</td>
+                                                    <td>@batch.Quantity</td>
+                                                    <td>@batch.LocationCode</td>
+                                                </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

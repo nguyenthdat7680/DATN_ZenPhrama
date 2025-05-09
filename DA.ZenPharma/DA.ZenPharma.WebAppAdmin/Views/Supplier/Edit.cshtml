@@ -1,0 +1,59 @@
+﻿@model DA.ZenPharma.Application.Dtos.SupplierDto.SupplierUpdateDto
+
+@{
+    ViewData["Title"] = "Cập nhật nhà cung cấp";
+}
+
+<div class="nk-content">
+    <div class="container-fluid">
+        <div class="nk-content-inner">
+            <div class="nk-content-body">
+                <div class="nk-block-head nk-block-head-sm">
+                    <div class="nk-block-between g-3">
+                        <div class="nk-block-head-content">
+                            <h3 class="nk-block-title page-title">Cập nhật nhà cung cấp</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card card-bordered">
+                    <div class="card-inner">
+                        <form method="post">
+                            <input type="hidden" name="Id" value="@Model.Id" />
+
+                            <div class="form-group">
+                                <label for="Name">Tên nhà cung cấp</label>
+                                <input type="text" class="form-control" id="Name" name="Name" value="@Model.Name" required />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="ContactPerson">Người liên hệ</label>
+                                <input type="text" class="form-control" id="ContactPerson" name="ContactPerson" value="@Model.ContactPerson" />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="Phone">Điện thoại</label>
+                                <input type="text" class="form-control" id="Phone" name="Phone" value="@Model.Phone" required />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="Email">Email</label>
+                                <input type="email" class="form-control" id="Email" name="Email" value="@Model.Email" />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="Address">Địa chỉ</label>
+                                <input type="text" class="form-control" id="Address" name="Address" value="@Model.Address" required />
+                            </div>
+
+                            <div class="form-group mt-3">
+                                <button type="submit" class="btn btn-primary">Cập nhật</button>
+                                <a href="/Supplier/Index" class="btn btn-secondary">Hủy</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

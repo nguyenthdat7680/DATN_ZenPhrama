@@ -1,0 +1,328 @@
+﻿@model DA.ZenPharma.Application.Dtos.ImportInvoiceDtos.ImportInvoiceCreateDto
+
+@{
+    ViewData["Title"] = "Tạo hóa đơn nhập hàng";
+    ViewBag.BodyClass = "body-with-fixed-navbar";
+}
+
+<div class="container-fluid p-4 mt-5">
+    <div class="card shadow-sm">
+        <div class="card-header">
+            <h4 class="mb-0">Tạo hóa đơn nhập hàng</h4>
+        </div>
+
+        <div class="card-body">
+            <form asp-action="Create" method="post">
+
+                <h5 class="mb-3">Thông tin chung</h5>
+
+                <div class="row g-3">
+
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">Nhân viên xử lý</label>
+                        <div class="input-group rounded-3">
+                            <span class="input-group-text bg-light">
+                                <i class="fas fa-user-circle"></i>
+                            </span>
+                            <span class="form-control bg-white rounded-end" style="font-size: 16px;">
+                                @ViewBag.StaffName
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label for="SupplierId" class="form-label">Nhà cung cấp</label>
+                        <select name="SupplierId" class="form-select select2-supplier" style="height: 44px; font-size: 16px;">
+                            <option value="">-- Chọn --</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-4">
+                        <label asp-for="BranchLocationId" class="form-label">Chi nhánh</label>
+                        <select asp-for="BranchLocationId" class="form-select" asp-items="ViewBag.Branches">
+                            <option value="">-- Chọn --</option>
+                        </select>
+                    </div>
+                    
+                </div>
+
+                <hr class="my-4" />
+
+                <h5 class="mb-3">Chi tiết sản phẩm</h5>
+
+                <div class="mb-3 position-relative">
+                    <input type="text" id="searchProduct" class="form-control" placeholder="Tìm sản phẩm..." autocomplete="off" />
+                    <div id="searchResults" class="list-group position-absolute w-100" style="z-index: 1000;"></div>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table table-bordered align-middle" id="detailTable">
+                        <thead class="table-light">
+                            <tr>
+                                <th>STT</th>
+                                <th>Mã hàng</th>
+                                <th>Tên hàng</th>
+                                <th>Đơn vị tính</th>
+                                <th>Số lượng</th>
+                                <th>Đơn giá</th>
+                                <th>Giảm giá (%)</th>
+                                <th>Thành tiền</th>
+                                <th>Thao tác</th>
+                            </tr>
+                        </thead>
+                        <tbody id="detailBody"></tbody>
+                    </table>
+                </div>
+
+                <div class="row my-4">
+                    <div class="col-md-4 ms-auto">
+                        <label for="totalAmount" class="form-label">Tổng tiền</label>
+                        <input asp-for="TotalAmount" class="form-control fw-bold text-end" readonly id="totalAmount" />
+                    </div>
+                </div>
+
+                <div class="text-end">
+                    <button type="submit" class="btn btn-success px-4">Lưu hóa đơn</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Modal nhập lô hàng -->
+<div class="modal fade" id="batchModal" tabindex="-1" aria-labelledby="batchModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form id="batchForm">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="batchModalLabel">Thêm lô hàng</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <input type="hidden" id="modalProductIndex" />
+                    <input type="hidden" id="modalProductId" />
+
+                    <div class="mb-3">
+                        <label for="batchName" class="form-label">Tên lô hàng</label>
+                        <input type="text" id="batchName" class="form-control" required />
+                    </div>
+                    <div class="mb-3">
+                        <label for="expireDate" class="form-label">Hạn sử dụng</label>
+                        <input type="date" id="expireDate" class="form-control" required />
+                    </div>
+                    <div class="mb-3">
+                        <label for="batchQuantity" class="form-label">Số lượng</label>
+                        <input type="number" id="batchQuantity" class="form-control" min="1" required />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Lưu</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+@section Scripts {
+    <script>
+        let productIndex = 0;
+        let batchModalInstance;
+         $('#searchProduct').on('input', function () {
+            const keyword = $(this).val().trim();
+
+            if (keyword.length < 2) {
+                $('#searchResults').hide();
+                return;
+            }
+
+            $.ajax({
+                url: 'https://localhost:7034/api/product/search',
+                type: 'GET',
+                data: { keyword: keyword },
+                success: function (data) {
+                    let html = '';
+                    data.forEach(p => {
+                        const safeName = p.productName.replace(/'/g, "\\'");
+                        html += `<a href="#" class="list-group-item list-group-item-action"
+                            onclick="selectProduct('${p.id}', '${safeName}', '${p.productCode}', '${p.unitDisplayName}', event)">
+                            ${p.productName}</a>`;
+                    });
+                    $('#searchResults').html(html).show();
+                }   
+            });
+        });
+
+
+        function selectProduct(id, name, productCode, unit, event) {
+            event.preventDefault();
+
+            const row = `
+                <tr data-product-index="${productIndex}">
+                    <td>${productIndex + 1}</td>
+                    <td>
+                        <input type="hidden" name="Details[${productIndex}].ProductId" value="${id}" />
+                        ${productCode}
+                    </td>
+                    <td>${name}</td>
+                    <td>${unit}</td>
+                    <td><input name="Details[${productIndex}].Quantity" type="number" class="form-control form-control-sm quantity" min="1" value="1" /></td>
+                    <td><input name="Details[${productIndex}].UnitPrice" type="number" class="form-control form-control-sm unitPrice" step="0.01" min="0" value="0" /></td>
+                    <td><input name="Details[${productIndex}].Discount" type="number" class="form-control form-control-sm discount" step="0.1" min="0" max="100" value="0" /></td>
+                    <td><input class="form-control form-control-sm total text-end" readonly /></td>
+                    <td class="text-center">
+                        <button type="button" class="btn btn-sm btn-danger" onclick="removeProduct(this)">X</button>
+                    </td>
+                </tr>
+                        <tr>
+            <td colspan="9" class="pt-3 pb-4 border-top-0">
+                <div class="d-flex justify-content-between align-items-start flex-wrap gap-2">
+                    <!-- Các lô hàng bên trái -->
+                    <div class="batch-list-${productIndex} d-flex flex-wrap gap-2"></div>
+
+                    <!-- Nút thêm lô bên phải, luôn thẳng hàng bên phải -->
+                    <div class="ms-auto">
+                        <button type="button" class="btn btn-outline-primary btn-sm" onclick="openBatchModal(${productIndex}, '${id}')">
+                            + Lô hàng
+                        </button>
+                    </div>
+                </div>
+            </td>
+        </tr>
+
+            `;
+
+            $('#detailBody').append(row);
+            $('#searchProduct').val('');
+            $('#searchResults').hide();
+            productIndex++;
+        }
+
+        function removeProduct(btn) {
+            $(btn).closest('tr').next().remove();
+            $(btn).closest('tr').remove();
+            calculateTotal();
+        }
+
+        function openBatchModal(productIndex, productId) {
+            $('#modalProductIndex').val(productIndex);
+            $('#modalProductId').val(productId);
+            $('#batchForm')[0].reset();
+
+            const modalEl = document.getElementById('batchModal');
+            batchModalInstance = new bootstrap.Modal(modalEl); 
+            batchModalInstance.show(); 
+        }
+
+        $('#batchForm').on('submit', function (e) {
+            e.preventDefault();
+
+            const index = $('#modalProductIndex').val();
+            const productId = $('#modalProductId').val();
+            const name = $('#batchName').val();
+            const expireDate = $('#expireDate').val();
+            const quantity = $('#batchQuantity').val();
+
+            const container = $(`.batch-list-${index}`);
+            const count = container.children().length;
+
+            const html = `
+                <div class="border px-3 py-2 bg-light rounded-pill small d-flex align-items-center gap-2">
+                    <div class="text-nowrap">
+                        <strong>${name}</strong> | SL: ${quantity} | HSD: ${expireDate}
+                        <input type="hidden" name="Details[${index}].Batches[${count}].ProductId" value="${productId}" />
+                        <input type="hidden" name="Details[${index}].Batches[${count}].BatchName" value="${name}" />
+                        <input type="hidden" name="Details[${index}].Batches[${count}].ExpireDate" value="${expireDate}" />
+                        <input type="hidden" name="Details[${index}].Batches[${count}].Quantity" value="${quantity}" />
+                    </div>
+                    <button type="button" class="btn btn-outline-danger btn-sm px-2 py-0" onclick="removeBatch(this, ${index})" title="Xóa lô">×</button>
+                </div>
+            `;
+
+            container.append(html);
+            updateBatchQuantity(index);
+
+            // Đóng modal
+            if (batchModalInstance) {
+                batchModalInstance.hide();
+            }
+
+            $('#batchForm')[0].reset();
+        });
+
+
+        $(document).on('input', '.quantity, .unitPrice, .discount', function () {
+            const row = $(this).closest('tr');
+            const qty = parseFloat(row.find('.quantity').val()) || 0;
+            const price = parseFloat(row.find('.unitPrice').val()) || 0;
+            const discount = parseFloat(row.find('.discount').val()) || 0;
+            const total = qty * price * (1 - discount / 100);
+            row.find('.total').val(total.toFixed(2));
+            calculateTotal();
+        });
+
+        function calculateTotal() {
+            let total = 0;
+            $('.total').each(function () {
+                total += parseFloat($(this).val()) || 0;
+            });
+            $('#totalAmount').val(total.toFixed(2));
+        }
+
+        function updateBatchQuantity(index) {
+            let total = 0;
+            $(`.batch-list-${index} input[name^="Details[${index}].Batches"]`).each(function () {
+                if (this.name.includes("Quantity")) {
+                    total += parseInt($(this).val()) || 0;
+                }
+            });
+            $(`input[name="Details[${index}].Quantity"]`).val(total).trigger('input');
+        }
+
+        function removeBatch(btn, index) {
+            $(btn).parent().remove();
+            updateBatchQuantity(index);
+        }
+
+    </script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
+    <script>
+        $(document).ready(function () {
+            $('.select2-supplier').select2({
+                placeholder: "-- Chọn nhà cung cấp --",
+                allowClear: true,
+                minimumInputLength: 0,
+                width: 'resolve',
+                ajax: {
+                    url: 'https://localhost:7034/api/supplier/search',
+                    dataType: 'json',
+                    delay: 250,
+                    data: function (params) {
+                        return {
+                            keyword: params.term || ""
+                        };
+                    },
+                    processResults: function (data) {
+                        return {
+                            results: data.map(s => ({
+                                id: s.id,
+                                text: s.name
+                            }))
+                        };
+                    },
+                    cache: true
+                }
+            });
+        });
+    </script>
+
+
+
+}

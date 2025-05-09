@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - DA.ZenPharma.WebAppAdmin</title>
+
+    <!-- Bootstrap + site.css -->
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/DA.ZenPharma.WebAppAdmin.styles.css" asp-append-version="true" />
+
+    <!-- Custom dashboard CSS -->
+    <link href="~/assets/css/app.min.css" rel="stylesheet" asp-append-version="true" />
+    <link href="~/assets2/css/dashlitee5ca.css" rel="stylesheet" asp-append-version="true" />
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="app">
+            <div class="layout">
+                <!-- Header & Sidebar -->
+                <partial name="_HeaderPartial" />
+                <partial name="_SiteNavPartial" />
+
+                <!-- Main Content -->
+                <div class="page-container" >
+                    <main role="main" class="pb-3">
+                        @RenderBody()
+                    </main>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <!-- Custom dashboard JS -->
+    <script src="~/assets/js/vendors.min.js"></script>
+    <script src="~/assets/vendors/chartjs/Chart.min.js"></script>
+    <script src="~/assets2/js/charts/chart-ecommercee5ca.js?ver=3.2.3"></script>
+    <script src="~/assets/js/pages/dashboard-default.js"></script>
+    <script src="~/assets/js/app.min.js"></script>
+
+    <!-- Render optional sections -->
+    @await RenderSectionAsync("Scripts", required: false)
+    @await RenderSectionAsync("ScriptsCkEditor", required: false)
+</body>
+</html>
