@@ -50,6 +50,14 @@
                 </select>
                 <span asp-validation-for="RoleId" class="text-danger"></span>
             </div>
+            <div class="col-md-6">
+                <label asp-for="BranchId" class="form-label">Chi nhánh *</label>
+                <select asp-for="BranchId" asp-items="ViewBag.Branches" class="form-select" required>
+                    <option value="">-- Chọn chi nhánh --</option>
+                </select>
+                <span asp-validation-for="BranchId" class="text-danger"></span>
+            </div>
+
         </div>
 
         <div class="mb-3">

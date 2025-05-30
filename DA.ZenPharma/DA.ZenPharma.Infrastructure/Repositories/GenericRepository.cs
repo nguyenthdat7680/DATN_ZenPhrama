@@ -47,5 +47,9 @@ namespace DA.ZenPharma.Infrastructure.Repositories
             _context.Entry(entity).State = EntityState.Modified;
             return Task.CompletedTask;
         }
+        public async Task RemoveRangeAsync(IEnumerable<T> entities)
+        {
+            _context.RemoveRange(entities);
+        }
     }
 }

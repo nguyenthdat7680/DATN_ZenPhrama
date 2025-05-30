@@ -13,6 +13,11 @@ var builder = WebApplication.CreateBuilder(args);
 
 var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 
+builder.Services.AddControllers()
+    .ConfigureApiBehaviorOptions(options =>
+    {
+        options.SuppressModelStateInvalidFilter = true;
+    });
 builder.Services.AddCors(options =>
 {
     options.AddPolicy(name: MyAllowSpecificOrigins,
@@ -44,6 +49,7 @@ builder.Services.AddScoped<IRoleService, RoleService>();
 builder.Services.AddScoped<ISupplierService, SupplierService>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IInventoryBatchService, InventoryBatchService>();
+builder.Services.AddScoped<IReportService,ReportService >();
 
 // UnitOfWork
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();

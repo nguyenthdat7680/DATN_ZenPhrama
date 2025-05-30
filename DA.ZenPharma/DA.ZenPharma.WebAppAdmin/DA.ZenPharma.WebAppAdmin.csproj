@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <Folder Include="Views\User\" />
+    <Folder Include="wwwroot\images\products\" />
   </ItemGroup>
 
 </Project>

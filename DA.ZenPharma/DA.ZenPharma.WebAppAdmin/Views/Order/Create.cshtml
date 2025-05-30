@@ -1,98 +1,217 @@
 ﻿@model DA.ZenPharma.Application.Dtos.OrderDto.OrderCreateDto
 
 @{
-    ViewData["Title"] = "Bán hàng tại quầy";
-    ViewBag.BodyClass = "body-with-fixed-navbar";
+    ViewData["Title"] = "Sửa đơn bán hàng";
+    ViewBag.BodyClass = "nk-body bg-lighter npc-default has-sidebar";
 }
 
-<div class="container-fluid p-4 mt-5">
-    <div class="card shadow-sm">
-        <div class="card-header">
-            <h4 class="mb-0">Tạo đơn bán hàng</h4>
-        </div>
-
-        <div class="card-body">
-            <form asp-action="Create" method="post">
-                @if (User.IsInRole("Admin"))
-                {
-                    <div class="mb-3">
-                        <label asp-for="BranchId" class="form-label">Chi nhánh</label>
-                        <select asp-for="BranchId" class="form-select" asp-items="ViewBag.Branches">
-                            <option value="">-- Chọn chi nhánh --</option>
-                        </select>
-                    </div>
-                }
-                else
-                {
-                    <input type="hidden" asp-for="BranchId" value="@ViewBag.BranchId" />
-                    <div class="mb-3">
-                        <label class="form-label">Chi nhánh</label>
-                        <input class="form-control" value="@ViewBag.BranchName" disabled />
-                    </div>
-                }
-                <div class="row mb-3">
-                    <div class="col-md-6">
-                        <label asp-for="CustomerName" class="form-label">Tên khách hàng</label>
-                        <input asp-for="CustomerName" class="form-control" />
-                    </div>
-                    <div class="col-md-6">
-                        <label asp-for="CustomerPhone" class="form-label">Số điện thoại</label>
-                        <input asp-for="CustomerPhone" class="form-control" />
+<div class="nk-content">
+    <div class="container-fluid">
+        <div class="nk-content-inner">
+            <div class="nk-content-body">
+                <div class="nk-block-head nk-block-head-sm">
+                    <div class="nk-block-between">
+                        <div class="nk-block-head-content">
+                            <h3 class="nk-block-title page-title">Sửa đơn bán hàng</h3>
+                        </div>
                     </div>
                 </div>
+                <div class="nk-block">
+                    <div class="card card-bordered">
+                        <div class="card-inner">
+                            <form asp-action="Edit" method="post" class="form-validate" novalidate="novalidate" id="orderForm">
+                                @Html.AntiForgeryToken()
+                                <input type="hidden" asp-for="Id" />
+                                <input type="hidden" asp-for="OrderStatus" id="orderStatus" value="@Model.OrderStatus" />
+                                <input type="hidden" asp-for="HandledById" value="@Model.HandledById" />
+                                <input type="hidden" asp-for="UpdatedAt" value="@DateTime.UtcNow.ToString("O")" />
 
-                <div class="mb-3 position-relative">
-                    <input type="text" id="searchProduct" class="form-control" placeholder="Tìm sản phẩm..." autocomplete="off" />
-                    <div id="searchResults" class="list-group position-absolute w-100" style="z-index: 1000;"></div>
-                </div>
+                                @if (User.IsInRole("Admin"))
+                                {
+                                    <div class="form-group">
+                                        <label class="form-label" asp-for="BranchId">Chi nhánh</label>
+                                        <div class="form-control-wrap">
+                                            <select asp-for="BranchId" class="form-select js-select2" data-placeholder="-- Chọn chi nhánh --" asp-items="ViewBag.Branches">
+                                                <option value=""></option>
+                                            </select>
+                                            <span asp-validation-for="BranchId" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <input type="hidden" asp-for="BranchId" value="@ViewBag.BranchId" />
+                                    <div class="form-group">
+                                        <label class="form-label">Chi nhánh</label>
+                                        <div class="form-control-wrap">
+                                            <input class="form-control" value="@ViewBag.BranchName" disabled />
+                                        </div>
+                                    </div>
+                                }
 
-                <div class="table-responsive">
-                    <table class="table table-bordered align-middle" id="detailTable">
-                        <thead class="table-light">
-                            <tr>
-                                <th>STT</th>
-                                <th>Tên hàng</th>
-                                <th>Đơn vị</th>
-                                <th>Số lượng</th>
-                                <th>Đơn giá</th>
-                                <th>Lô hàng</th>
-                                <th>Thành tiền</th>
-                                <th>Xóa</th>
-                            </tr>
-                        </thead>
-                        <tbody id="detailBody"></tbody>
-                    </table>
-                </div>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="form-label" asp-for="CustomerName">Tên khách hàng</label>
+                                            <div class="form-control-wrap">
+                                                <input asp-for="CustomerName" class="form-control" required value="@(Model?.CustomerName ?? "Khách lẻ")" />
+                                                <span asp-validation-for="CustomerName" class="text-danger"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="form-label" asp-for="CustomerPhone">Số điện thoại</label>
+                                            <div class="form-control-wrap">
+                                                <input asp-for="CustomerPhone" class="form-control" value="@Model?.CustomerPhone" />
+                                                <span asp-validation-for="CustomerPhone" class="text-danger"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
-                <div class="row my-4">
-                    <div class="col-md-4 ms-auto">
-                        <label class="form-label">Tổng tiền</label>
-                        <input asp-for="TotalAmount" class="form-control fw-bold text-end" readonly id="totalAmount" />
+                                <div class="form-group">
+                                    <label class="form-label">Tìm sản phẩm</label>
+                                    <div class="form-control-wrap">
+                                        <input type="text" id="searchProduct" class="form-control" placeholder="Nhập tên hoặc mã sản phẩm..." autocomplete="off" />
+                                        <div id="searchResults" class="dropdown-menu w-100" style="z-index: 1000;"></div>
+                                    </div>
+                                </div>
+
+                                <div class="card card-bordered mt-3">
+                                    <div class="card-inner">
+                                        <div class="table-responsive">
+                                            <table class="table table-striped table-middle" id="detailTable">
+                                                <thead>
+                                                    <tr>
+                                                        <th>STT</th>
+                                                        <th>Tên hàng</th>
+                                                        <th>Đơn vị</th>
+                                                        <th>Số lượng</th>
+                                                        <th>Đơn giá</th>
+                                                        <th>Lô hàng</th>
+                                                        <th>Thành tiền</th>
+                                                        <th class="text-center">Xóa</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="detailBody"></tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row g-3 mt-3">
+                                    <div class="col-md-4 ms-auto">
+                                        <div class="form-group">
+                                            <label class="form-label">Tổng tiền</label>
+                                            <div class="form-control-wrap">
+                                                <input asp-for="TotalAmount" class="form-control fw-bold text-end" readonly id="totalAmount" value="@Model?.TotalAmount.ToString("F2")" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group mt-4 text-end">
+                                    <button type="button" class="btn btn-secondary btn-lg" onclick="saveDraft()">Lưu tạm thời</button>
+                                    <button type="submit" class="btn btn-primary btn-lg" onclick="saveConfirmed()">Lưu đơn hàng</button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
-
-                <div class="text-end">
-                    <button type="submit" class="btn btn-success px-4">Lưu đơn hàng</button>
-                </div>
-            </form>
+            </div>
         </div>
     </div>
 </div>
-
 @section Scripts {
     <script>
         let productIndex = 0;
+        let unitConversions = {};
+        let productNames = @Html.Raw(Json.Serialize(ViewBag.ProductNames ?? new Dictionary<Guid, string>()));
+
+        $(document).ready(function () {
+            console.log('jQuery:', typeof jQuery, 'Select2:', typeof $.fn.select2);
+            try {
+                $('.js-select2').select2({
+                    theme: 'bootstrap4',
+                    placeholder: '-- Chọn chi nhánh --'
+                });
+            } catch (e) {
+                console.error('Select2 init error:', e);
+            }
+
+            // Initialize existing order details
+            initializeOrderDetails();
+        });
+
+        function initializeOrderDetails() {
+        @if (Model?.Details != null && Model.Details.Any())
+        {
+            <text>
+                        productIndex = @Model.Details.Count;
+                @foreach (var detail in Model.Details)
+                {
+                    var index = Model.Details.IndexOf(detail);
+                    <text>
+                                    let index = @index;
+                                    let productId = '@detail.ProductId';
+                                    let productName = productNames['@detail.ProductId'] || 'Không rõ';
+                                    let unit = '@detail.Unit';
+                                    let quantity = @detail.Quantity;
+                                    let unitPrice = @detail.UnitPrice.ToString("F2");
+                                    let inventoryBatchId = '@detail.InventoryBatchId';
+                                    let detailId = '@(detail.Id ?? Guid.Empty)';
+
+                                    console.log('Initializing detail:', { index, productId, unit, inventoryBatchId });
+
+                                    let row = `<tr data-index="${index}">
+                                        <td>${index + 1}</td>
+                                        <td>
+                                            <input type="hidden" name="Details[${index}].ProductId" value="${productId}" />
+                                            ${productName}
+                                        </td>
+                                        <td>
+                                            <select name="Details[${index}].Unit" class="form-select form-select-sm unit-select" onchange="updateQuantity(${index}); loadBatches('${productId}', ${index});"></select>
+                                        </td>
+                                        <td>
+                                            <input type="number" name="Details[${index}].Quantity" class="form-control form-control-sm quantity" value="${quantity}" min="1" step="1" oninput="updateQuantity(${index})" />
+                                            <input type="hidden" name="Details[${index}].UnitPrice" class="hidden-unitPrice" value="${unitPrice}" />
+                                            <input type="hidden" name="Details[${index}].Id" value="${detailId}" />
+                                        </td>
+                                        <td>
+                                            <input type="number" class="form-control form-control-sm unitPrice" value="${unitPrice}" step="0.01" min="0" readonly />
+                                        </td>
+                                        <td>
+                                            <select name="Details[${index}].InventoryBatchId" class="form-select form-select-sm batch-select"></select>
+                                        </td>
+                                        <td>
+                                            <input class="form-control form-control-sm total text-end" readonly value="${(quantity * unitPrice).toFixed(2)}" />
+                                        </td>
+                                        <td class="text-center">
+                                            <button type="button" class="btn btn-sm btn-icon btn-danger" onclick="removeProduct(this)">
+                                                <em class="icon ni ni-trash"></em>
+                                            </button>
+                                        </td>
+                                    </tr>`;
+
+                                    $('#detailBody').append(row);
+                                    loadUnits(productId, index, unit, inventoryBatchId);
+                    </text>
+                }
+                        calculateTotal();
+            </text>
+        }
+        }
 
         $('#searchProduct').on('input', function () {
             const keyword = $(this).val().trim();
-
             if (keyword.length < 2) {
                 $('#searchResults').hide();
                 return;
             }
 
             $.ajax({
-                url: 'https://localhost:7034/api/product/search',
+                url: 'https://localhost:7034/api/product/search1',
                 type: 'GET',
                 data: { keyword: keyword },
                 success: function (data) {
@@ -100,79 +219,184 @@
                     data.forEach(p => {
                         const safeName = p.productName.replace(/'/g, "\\'");
                         const sellingPrice = (p.discountPrice > 0 && p.discountPrice < p.regularPrice) ? p.discountPrice : p.regularPrice;
-
-                        html += `<a href="#" class="list-group-item list-group-item-action"
-                            onclick="selectProduct('${p.id}', '${safeName}', '${p.productCode}', '${p.unitDisplayName}', ${sellingPrice}, event)">
-                            ${p.productName}</a>`;
-
+                        html += `<a href="#" class="dropdown-item" onclick="selectProduct('${p.id}', '${safeName}', '${p.productCode}', ${sellingPrice}, event)">${p.productName}</a>`;
                     });
                     $('#searchResults').html(html).show();
+                },
+                error: function (xhr) {
+                    console.error('Lỗi tìm kiếm sản phẩm:', xhr.status, xhr.responseText);
+                    alert('Không thể tìm kiếm sản phẩm.');
                 }
             });
         });
 
-        function selectProduct(id, name, productCode, unit, price, event) {
+        function selectProduct(id, name, productCode, price, event) {
             event.preventDefault();
             let index = productIndex++;
 
             let row = `<tr data-index="${index}">
                 <td>${index + 1}</td>
                 <td><input type="hidden" name="Details[${index}].ProductId" value="${id}" />${name}</td>
-                <td>${unit}</td>
-                <td><input type="number" name="Details[${index}].Quantity" class="form-control form-control-sm quantity" value="1" min="1" /></td>
-                <td><input type="number" name="Details[${index}].UnitPrice" class="form-control form-control-sm unitPrice" value="${price}" step="0.01" min="0" /></td>
+                <td>
+                    <select name="Details[${index}].Unit" class="form-select form-select-sm unit-select" onchange="updateQuantity(${index}); loadBatches('${id}', ${index});"></select>
+                </td>
+                <td>
+                    <input type="number" name="Details[${index}].Quantity" class="form-control form-control-sm quantity" value="1" min="1" step="1" oninput="updateQuantity(${index})" />
+                    <input type="hidden" name="Details[${index}].UnitPrice" class="hidden-unitPrice" value="${price}" />
+                    <input type="hidden" name="Details[${index}].Id" value="" />
+                </td>
+                <td><input type="number" class="form-control form-control-sm unitPrice" value="${price}" step="0.01" min="0" readonly /></td>
                 <td>
                     <select name="Details[${index}].InventoryBatchId" class="form-select form-select-sm batch-select"></select>
                 </td>
-                <td><input class="form-control form-control-sm total text-end" readonly /></td>
+                <td><input class="form-control form-control-sm total text-end" readonly value="${(1 * price).toFixed(2)}" /></td>
                 <td class="text-center">
-                    <button type="button" class="btn btn-sm btn-danger" onclick="removeProduct(this)">X</button>
+                    <button type="button" class="btn btn-sm btn-icon btn-danger" onclick="removeProduct(this)">
+                        <em class="icon ni ni-trash"></em>
+                    </button>
                 </td>
             </tr>`;
 
             $('#detailBody').append(row);
             $('#searchResults').hide();
             $('#searchProduct').val('');
-            loadBatches(id, index);
-
-            const newRow = $(`tr[data-index="${index}"]`);
-            calculateLineTotal(newRow);
+            loadUnits(id, index);
             calculateTotal();
         }
 
-        function loadBatches(productId, index) {
+        function loadUnits(productId, index, selectedUnit = null, selectedBatchId = null) {
+            console.log('loadUnits called:', { productId, index, selectedUnit, selectedBatchId });
             $.ajax({
-                url: `https://localhost:7034/api/InventoryBatch/by-product/${productId}`,
+                url: `https://localhost:7034/api/product/${productId}/units`,
                 type: 'GET',
                 success: function (data) {
-                    data.sort((a, b) => new Date(a.expireDate) - new Date(b.expireDate));
-
-
-                    const select = $(`select[name='Details[${index}].InventoryBatchId']`);
+                    console.log('Units loaded:', data);
+                    unitConversions[productId] = data.reduce((acc, u) => {
+                        acc[u.unit] = u.conversionFactor;
+                        return acc;
+                    }, {});
+                    const select = $(`select[name='Details[${index}].Unit']`);
                     select.empty();
-
-                    data.forEach(batch => {
-                        const hsd = batch.expireDate ? new Date(batch.expireDate).toLocaleDateString() : "Không rõ";
-                        const optionText = `${batch.batchName ?? "Không tên"} - HSD: ${hsd} - SL: ${batch.quantity ?? 0}`;
-                        select.append(`<option value="${batch.id}">${optionText}</option>`);
+                    select.append('<option value="">-- Chọn đơn vị --</option>');
+                    data.forEach(unit => {
+                        const isSelected = unit.unit === selectedUnit ? 'selected' : '';
+                        select.append(`<option value="${unit.unit}" data-conversion="${unit.conversionFactor}" ${isSelected}>${unit.unit}</option>`);
                     });
+
+                    if (selectedUnit && select.val() !== selectedUnit) {
+                        select.val(selectedUnit).trigger('change');
+                    }
+
+                    updateQuantity(index);
+                    loadBatches(productId, index, selectedBatchId);
+                },
+                error: function (xhr) {
+                    console.error('Lỗi tải đơn vị:', xhr.status, xhr.responseText);
+                    alert('Không thể tải danh sách đơn vị cho sản phẩm.');
                 }
             });
         }
 
-        function removeProduct(button) {
-            const row = $(button).closest('tr');
-            const index = row.data('index');
-            row.next('tr').remove(); 
-            row.remove();
+        function loadBatches(productId, index, selectedBatchId = null) {
+            console.log('loadBatches called:', { productId, index, selectedBatchId });
+            const branchId = $('select[name="BranchId"]').val() || $('input[name="BranchId"]').val();
+            console.log('BranchId:', branchId);
+            if (!branchId) {
+                console.warn('BranchId is empty');
+                alert('Vui lòng chọn chi nhánh trước khi tải lô hàng.');
+                return;
+            }
+
+            $.ajax({
+                url: `https://localhost:7034/api/InventoryBatch/by-product/${productId}`,
+                type: 'GET',
+                data: { branchId: branchId },
+                success: function (data) {
+                    console.log('Batches loaded:', data);
+                    data.sort((a, b) => {
+                        if (!a.expireDate) return 1;
+                        if (!b.expireDate) return -1;
+                        return new Date(a.expireDate) - new Date(b.expireDate);
+                    });
+
+                    const select = $(`select[name='Details[${index}].InventoryBatchId']`);
+                    select.empty();
+                    select.append('<option value="">-- Chọn lô --</option>');
+                    data.forEach(batch => {
+                        const hsd = batch.expireDate ? new Date(batch.expireDate).toLocaleDateString('vi-VN') : 'Không rõ';
+                        const optionText = `${batch.batchName ?? 'Lô không tên'} - HSD: ${hsd} - SL: ${batch.quantity ?? 0} ${batch.unit ?? 'Viên'}`;
+                        const isSelected = batch.id === selectedBatchId ? 'selected' : '';
+                        select.append(`<option value="${batch.id}" data-quantity="${batch.quantity}" data-unit="${batch.unit}" ${isSelected}>${optionText}</option>`);
+                    });
+
+                    if (selectedBatchId && select.val() !== selectedBatchId) {
+                        select.val(selectedBatchId).trigger('change');
+                    }
+
+                    validateQuantity($(`tr[data-index="${index}"]`));
+                },
+                error: function (xhr) {
+                    console.error('Lỗi tải lô hàng:', xhr.status, xhr.responseText);
+                    alert('Không thể tải danh sách lô hàng.');
+                }
+            });
+        }
+
+        function updateQuantity(index) {
+            const row = $(`tr[data-index="${index}"]`);
+            const productId = row.find(`input[name='Details[${index}].ProductId']`).val();
+            const unitSelect = row.find('.unit-select');
+            const selectedUnit = unitSelect.val();
+            const quantityInput = row.find('.quantity');
+            const unitPriceInput = row.find('.unitPrice');
+            const hiddenUnitPrice = row.find('.hidden-unitPrice');
+
+            if (!unitConversions[productId] || !selectedUnit) return;
+
+            const conversionFactor = parseFloat(unitSelect.find(`option[value="${selectedUnit}"]`).data('conversion')) || 1;
+            const baseUnitPrice = parseFloat(hiddenUnitPrice.val()) || 0;
+
+            const unitPriceInSelectedUnit = baseUnitPrice / conversionFactor;
+            unitPriceInput.val(unitPriceInSelectedUnit.toFixed(2));
+
+            validateQuantity(row);
+            calculateLineTotal(row);
             calculateTotal();
         }
 
-        $(document).on('input', '.quantity, .unitPrice', function () {
-            const row = $(this).closest('tr');
-            calculateLineTotal(row);
-            calculateTotal();
-        });
+        function validateQuantity(row) {
+            const index = row.data('index');
+            const quantityInput = row.find('.quantity');
+            const batchSelect = row.find('.batch-select');
+            const selectedOption = batchSelect.find('option:selected');
+            const productId = row.find(`input[name='Details[${index}].ProductId']`).val();
+            const selectedUnit = row.find('.unit-select').val();
+            const conversionFactor = parseFloat(row.find('.unit-select option:selected').data('conversion')) || 1;
+
+            if (!selectedOption.val()) return;
+
+            const batchQuantity = parseFloat(selectedOption.data('quantity')) || 0;
+            const batchUnit = selectedOption.data('unit') || 'Viên';
+            const batchConversionFactor = unitConversions[productId]?.[batchUnit] || 1;
+            const currentQuantity = parseFloat(quantityInput.val()) || 0;
+
+            const smallestConversionFactor = Math.max(...Object.values(unitConversions[productId]));
+            const batchQuantityInSmallestUnit = batchQuantity * (batchConversionFactor / smallestConversionFactor);
+            const currentQuantityInSmallestUnit = currentQuantity * (conversionFactor / smallestConversionFactor);
+
+            if (currentQuantityInSmallestUnit > batchQuantityInSmallestUnit) {
+                const maxInSelectedUnit = Math.floor(batchQuantityInSmallestUnit * smallestConversionFactor / conversionFactor);
+                quantityInput.val(maxInSelectedUnit || 1);
+                alert(`Số lượng không được vượt quá ${maxInSelectedUnit} ${selectedUnit} (tương đương ${batchQuantity} ${batchUnit}) cho lô hàng này.`);
+                updateQuantity(index);
+            }
+        }
+
+        function calculateLineTotal(row) {
+            const qty = parseFloat(row.find('.quantity').val()) || 0;
+            const price = parseFloat(row.find('.unitPrice').val()) || 0;
+            row.find('.total').val((qty * price).toFixed(2));
+        }
 
         function calculateTotal() {
             let total = 0;
@@ -181,11 +405,67 @@
             });
             $('#totalAmount').val(total.toFixed(2));
         }
-        function calculateLineTotal(row) {
-            const qty = parseFloat(row.find('.quantity').val()) || 0;
-            const price = parseFloat(row.find('.unitPrice').val()) || 0;
-            row.find('.total').val((qty * price).toFixed(2));
+
+        function removeProduct(button) {
+            const row = $(button).closest('tr');
+            row.remove();
+            updateRowIndices();
+            calculateTotal();
         }
 
+        function updateRowIndices() {
+            $('#detailBody tr').each(function (index) {
+                $(this).attr('data-index', index);
+                $(this).find('td:first').text(index + 1);
+                $(this).find('input, select').each(function () {
+                    const name = $(this).attr('name');
+                    if (name) {
+                        $(this).attr('name', name.replace(/Details\[\d+\]/, `Details[${index}]`));
+                    }
+                });
+            });
+            productIndex = $('#detailBody tr').length;
+        }
+
+        function saveDraft() {
+            $('#orderStatus').val('Draft');
+            $('#orderForm').submit();
+        }
+
+        function saveConfirmed() {
+            $('#orderStatus').val('Confirmed');
+            $('#orderForm').submit();
+        }
+
+        $(document).on('input', '.quantity', function () {
+            const row = $(this).closest('tr');
+            const index = row.data('index');
+            updateQuantity(index);
+        });
+
+        $(document).on('change', '.batch-select', function () {
+            const row = $(this).closest('tr');
+            validateQuantity(row);
+        });
+
+        // Client-side validation before submit
+        $('#orderForm').on('submit', function(e) {
+            if ($('#detailBody tr').length === 0) {
+                e.preventDefault();
+                alert('Đơn hàng phải có ít nhất một chi tiết.');
+            }
+            $('.unit-select').each(function() {
+                if (!$(this).val()) {
+                    e.preventDefault();
+                    alert('Vui lòng chọn đơn vị cho tất cả sản phẩm.');
+                }
+            });
+            $('.batch-select').each(function() {
+                if (!$(this).val()) {
+                    e.preventDefault();
+                    alert('Vui lòng chọn lô hàng cho tất cả sản phẩm.');
+                }
+            });
+        });
     </script>
 }

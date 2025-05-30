@@ -1,0 +1,69 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAPI\\wwwroot\\images\\products\\46f954cf-2514-4fce-9f4c-5086ed81d4e8.png",
+      "PackagePath": "staticwebassets\\images\\products\\46f954cf-2514-4fce-9f4c-5086ed81d4e8.png"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAPI\\wwwroot\\images\\products\\6b7209f4-20c7-4e28-9baa-bb76cc8242c3.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\6b7209f4-20c7-4e28-9baa-bb76cc8242c3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAPI\\wwwroot\\images\\products\\8329c0fc-5bac-4c61-a2c8-e07f1d2e46da.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\8329c0fc-5bac-4c61-a2c8-e07f1d2e46da.jpg"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAPI\\wwwroot\\images\\products\\8c361076-654e-4354-b049-6b07712fc2b2.png",
+      "PackagePath": "staticwebassets\\images\\products\\8c361076-654e-4354-b049-6b07712fc2b2.png"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAPI\\wwwroot\\images\\products\\9611c10c-f507-4cdc-ba31-07b1010b979a.png",
+      "PackagePath": "staticwebassets\\images\\products\\9611c10c-f507-4cdc-ba31-07b1010b979a.png"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAPI\\wwwroot\\images\\products\\973b5127-8e86-484b-95a3-bc54b5d65fd3.png",
+      "PackagePath": "staticwebassets\\images\\products\\973b5127-8e86-484b-95a3-bc54b5d65fd3.png"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAPI\\wwwroot\\images\\products\\a72af4ce-e86f-437a-8ff6-2e268a75dcb2.png",
+      "PackagePath": "staticwebassets\\images\\products\\a72af4ce-e86f-437a-8ff6-2e268a75dcb2.png"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAPI\\wwwroot\\images\\products\\ad0c2672-536b-4696-888e-26f5cd09ebbd.png",
+      "PackagePath": "staticwebassets\\images\\products\\ad0c2672-536b-4696-888e-26f5cd09ebbd.png"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAPI\\wwwroot\\images\\products\\b0ddbdff-28ea-4061-9073-be9961fd4b0d.png",
+      "PackagePath": "staticwebassets\\images\\products\\b0ddbdff-28ea-4061-9073-be9961fd4b0d.png"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAPI\\wwwroot\\images\\products\\c695dffc-eb7e-4dc5-97d7-57df887a8bb4.png",
+      "PackagePath": "staticwebassets\\images\\products\\c695dffc-eb7e-4dc5-97d7-57df887a8bb4.png"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAPI\\wwwroot\\images\\products\\eb3ccf20-d809-4993-ac69-5e214f53e66d.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\eb3ccf20-d809-4993-ac69-5e214f53e66d.jpg"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.DA.ZenPharma.WebAPI.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.DA.ZenPharma.WebAPI.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.DA.ZenPharma.WebAPI.props",
+      "PackagePath": "build\\DA.ZenPharma.WebAPI.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.DA.ZenPharma.WebAPI.props",
+      "PackagePath": "buildMultiTargeting\\DA.ZenPharma.WebAPI.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.DA.ZenPharma.WebAPI.props",
+      "PackagePath": "buildTransitive\\DA.ZenPharma.WebAPI.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

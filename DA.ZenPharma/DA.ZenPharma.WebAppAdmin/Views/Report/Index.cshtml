@@ -1,0 +1,444 @@
+﻿@{
+    ViewData["Title"] = "Trang chủ";
+}
+
+<style>
+    .nk-content {
+        margin-top: 80px;
+    }
+</style>
+
+<div class="nk-content">
+    <div class="container-fluid">
+        <div class="nk-content-inner">
+            <div class="nk-content-body">
+                <div class="nk-block-head nk-block-head-sm">
+                    <div class="nk-block-between">
+                        <div class="nk-block-head-content">
+                            <h3 class="nk-block-title page-title">Trang chủ</h3>
+                            <div class="nk-block-des text-soft"><p></p></div>
+                        </div>
+                        <div class="nk-block-head-content">
+                            <div class="toggle-wrap nk-block-tools-toggle">
+                                <a href="#" class="btn btn-icon btn-trigger toggle-expand me-n1" data-target="pageMenu">
+                                    <em class="icon ni ni-more-v"></em>
+                                </a>
+                                <div class="toggle-expand-content" data-content="pageMenu">
+                                    <ul class="nk-block-tools g-3">
+                                        @if (User.IsInRole("Admin"))
+                                        {
+                                            <li>
+                                                <div class="dropdown">
+                                                    <a href="#" class="dropdown-toggle btn btn-white btn-dim btn-outline-light" data-bs-toggle="dropdown">
+                                                        <em class="d-none d-sm-inline icon ni ni-home"></em>
+                                                        <span id="selected-branch-label">Chi nhánh</span>
+                                                        <em class="dd-indc icon ni ni-chevron-right"></em>
+                                                    </a>
+                                                    <div class="dropdown-menu dropdown-menu-end">
+                                                        <ul class="link-list-opt no-bdr">
+                                                            <li><a href="#" class="branch-option" data-id=""><span>Tất cả chi nhánh</span></a></li>
+                                                            @foreach (var branch in (SelectList)ViewBag.Branches)
+                                                            {
+                                                                <li><a href="#" class="branch-option" data-id="@branch.Value"><span>@branch.Text</span></a></li>
+                                                            }
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        }
+
+                                        <li>
+                                            <div class="dropdown">
+                                                <a href="#" class="dropdown-toggle btn btn-white btn-dim btn-outline-light" data-bs-toggle="dropdown" id="date-range-btn">
+                                                    <em class="d-none d-sm-inline icon ni ni-calender-date"></em>
+                                                    <span id="selected-label">7 ngày gần đây</span>
+                                                    <em class="dd-indc icon ni ni-chevron-right"></em>
+                                                </a>
+                                                <div class="dropdown-menu dropdown-menu-end">
+                                                    <ul class="link-list-opt no-bdr">
+                                                        <li id="seven-days-option"><a href="#" class="date-range-option" data-days="7" data-label="7 ngày gần đây"><span>7 ngày gần đây</span></a></li>
+                                                        <li><a href="#" class="date-range-option" data-days="30" data-label="30 ngày gần đây"><span>30 ngày gần đây</span></a></li>
+                                                        <li><a href="#" class="date-range-option" data-days="180" data-label="6 tháng gần đây"><span>6 tháng gần đây</span></a></li>
+                                                        <li><a href="#" class="date-range-option" data-days="365" data-label="1 năm gần đây"><span>1 năm gần đây</span></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="nk-block">
+                    <div class="row g-gs">
+
+                        <!-- Đơn hàng -->
+                        <div class="col-xxl-3 col-sm-6">
+                            <div class="card">
+                                <div class="nk-ecwg nk-ecwg6">
+                                    <div class="card-inner">
+                                        <div class="card-title-group">
+                                            <div class="card-title"><h6 class="title">Số đơn đặt hàng</h6></div>
+                                        </div>
+                                        <div class="data">
+                                            <div class="data-group">
+                                                <div class="amount" id="total-orders">0</div>
+                                                <div class="nk-ecwg6-ck"><canvas class="ecommerce-line-chart-s3" id="todayOrders"></canvas></div>
+                                            </div>
+                                            <div class="info">
+                                                <span id="order-change" class="change text-danger"><em id="order-icon" class="icon ni"></em> <span id="order-change-val">0%</span></span>
+                                                <span> so với tuần trước</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Doanh thu -->
+                        <div class="col-xxl-3 col-sm-6">
+                            <div class="card">
+                                <div class="nk-ecwg nk-ecwg6">
+                                    <div class="card-inner">
+                                        <div class="card-title-group">
+                                            <div class="card-title"><h6 class="title">Doanh thu tuần này (VNĐ)</h6></div>
+                                        </div>
+                                        <div class="data">
+                                            <div class="data-group">
+                                                <div class="amount" id="total-revenue">0</div>
+                                            </div>
+                                            <div class="info">
+                                                <span id="revenue-change" class="change text-danger"><em id="revenue-icon" class="icon ni"></em> <span id="revenue-change-val">0%</span></span>
+                                                <span> so với tuần trước</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Khách hàng đăng ký -->
+                        <div class="col-xxl-3 col-sm-6">
+                            <div class="card">
+                                <div class="nk-ecwg nk-ecwg6">
+                                    <div class="card-inner">
+                                        <div class="card-title-group">
+                                            <div class="card-title"><h6 class="title">Khách hàng đăng ký mới</h6></div>
+                                        </div>
+                                        <div class="data">
+                                            <div class="data-group">
+                                                <div class="amount" id="new-customers">0</div>
+                                                <div class="nk-ecwg6-ck"><canvas class="ecommerce-line-chart-s3" id="todayCustomers"></canvas></div>
+                                            </div>
+                                            <div class="info">
+                                                <span id="customer-change" class="change text-danger"><em id="customer-icon" class="icon ni"></em> <span id="customer-change-val">0%</span></span>
+                                                <span> so với tuần trước</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Khách vãng lai -->
+                        <div class="col-xxl-3 col-sm-6">
+                            <div class="card">
+                                <div class="nk-ecwg nk-ecwg6">
+                                    <div class="card-inner">
+                                        <div class="card-title-group">
+                                            <div class="card-title"><h6 class="title">Khách vãng lai</h6></div>
+                                        </div>
+                                        <div class="data">
+                                            <div class="data-group">
+                                                <div class="amount" id="guest-visits">0</div>
+                                                <div class="nk-ecwg6-ck"><canvas class="ecommerce-line-chart-s3" id="todayVisitors"></canvas></div>
+                                            </div>
+                                            <div class="info">
+                                                <span id="visitor-change" class="change text-danger"><em id="visitor-icon" class="icon ni"></em> <span id="visitor-change-val">0%</span></span>
+                                                <span> so với tuần trước</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card mt-4">
+                            <div class="card-header">
+                                <h6 class="title">Biểu đồ doanh thu</h6>
+                            </div>
+                            <div class="card-body" style="position: relative; height: 350px;">
+                                <canvas id="revenueChart"></canvas>
+                            </div>
+                        </div>
+
+
+                        <div class="col-xxl-7">
+                            <div class="card card-full">
+                                <div class="card-inner">
+                                    <div class="card-title-group">
+                                        <div class="card-title"><h6 class="title">Đơn hàng gần đây</h6></div>
+                                    </div>
+                                </div>
+                                <div class="nk-tb-list mt-n2" id="recent-orders-list">
+                                    <div class="nk-tb-item nk-tb-head">
+                                        <div class="nk-tb-col"><span>Mã Order</span></div>
+                                        <div class="nk-tb-col tb-col-sm"><span>Khách hàng</span></div>
+                                        <div class="nk-tb-col tb-col-md"><span>Ngày đặt</span></div>
+                                        <div class="nk-tb-col"><span>Số tiền</span></div>
+                                        <div class="nk-tb-col"><span class="d-none d-sm-inline">Trạng thái</span></div>
+                                    </div>
+                                    <!-- Append đơn hàng tại đây -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xxl-5 col-md-8 col-lg-6">
+                            <div class="card h-100">
+                                <div class="card-inner">
+                                    <div class="card-title-group mb-2">
+                                        <div class="card-title"><h6 class="title">Sản phẩm bán nhiều nhất</h6></div>
+                                        <div class="card-tools">
+                                            <div class="dropdown">
+                                                <a href="#" class="dropdown-toggle link link-light link-sm dropdown-indicator" data-bs-toggle="dropdown">Theo tuần</a>
+                                                <div class="dropdown-menu dropdown-menu-sm dropdown-menu-end">
+                                                    <ul class="link-list-opt no-bdr">
+                                                        <li><a href="#"><span>Theo ngày </span></a></li>
+                                                        <li><a href="#" class="active"><span>Theo tuần</span></a></li>
+                                                        <li><a href="#"><span>Theo tháng</span></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Append sản phẩm tại đây -->
+                                    <ul class="nk-top-products" id="top-products-list"></ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- end row -->
+                    
+                    
+
+
+                </div> <!-- end nk-block -->
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        let currentBranchId = "";
+        $(document).ready(function () {
+            let currentDays = 7;
+            loadDashboardData(currentDays);
+            $('.date-range-option').each(function () {
+                const optionDays = $(this).data('days');
+                if (optionDays === 7) {
+                    $(this).parent().hide();  
+                }
+            });
+                
+            $('.date-range-option').click(function (e) {
+                e.preventDefault();
+                const days = $(this).data('days');
+                const label = $(this).data('label');
+                $('#selected-label').text(label);
+                currentDays = days;
+                loadDashboardData(currentDays);
+                $('.date-range-option').each(function () {
+                    const optionDays = $(this).data('days');
+                    if (optionDays === days) {
+                        $(this).parent().hide();  
+                    } else {
+                        $(this).parent().show();  
+                    }
+                });
+            });
+
+            $('.branch-option').click(function (e) {
+                e.preventDefault();
+                currentBranchId = $(this).data('id');
+                const branchLabel = $(this).text();
+                $('#selected-branch-label').text(branchLabel);
+                loadDashboardData(currentDays);
+            });
+
+            function loadDashboardData(days) {
+                let branchId = currentBranchId;
+                loadSummary(days, branchId);
+                loadRecentOrders(days, branchId);
+                loadTopProducts(days, branchId);
+            }
+
+            function loadSummary(days) {
+                let branchId = currentBranchId;
+
+                $.ajax({
+                    url: `https://localhost:7034/api/report/summary?days=${days}&branchId=${branchId}`,
+                    type: 'GET',
+                    success: function (data) {
+                        $('#total-orders').text(data.totalOrders);
+                        $('#total-revenue').text(data.totalRevenue.toLocaleString());
+                        $('#new-customers').text(data.newCustomers);
+                        $('#guest-visits').text(data.guestVisits);
+
+                        updateChange('order', data.orderChangeRate);
+                        updateChange('revenue', data.revenueChangeRate);
+                        updateChange('customer', data.customerChangeRate);
+                        updateChange('visitor', data.visitorChangeRate);
+                    },
+                    error: function (err) {
+                        console.error("Lỗi khi tải dữ liệu thống kê:", err);
+                    }
+                });
+                loadRevenueChart(days, branchId);
+            }
+
+            function updateChange(type, rate) {
+                const rateAbs = Math.abs(rate).toFixed(2);
+                $(`#${type}-change-val`).text(`${rateAbs}%`);
+                $(`#${type}-icon`).attr('class', `icon ni ${rate >= 0 ? 'ni-arrow-long-up' : 'ni-arrow-long-down'}`);
+                $(`#${type}-change`)
+                    .removeClass('up down')
+                    .addClass(rate >= 0 ? 'up' : 'down');
+            }
+        });
+
+        //Chart
+        let revenueChart;
+
+        function loadRevenueChart(days, branchId) {
+            $.ajax({
+                url: `https://localhost:7034/api/report/revenue-chart?days=${days}&branchId=${branchId}`,
+                type: 'GET',
+                success: function (data) {
+                    const labels = data.map(item => item.date);
+                    const revenues = data.map(item => item.revenue);
+
+                    const chartData = {
+                        labels: labels,
+                        datasets: [{
+                            label: 'Doanh thu',
+                            data: revenues,
+                            fill: true,
+                            backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                            borderColor: 'rgba(54, 162, 235, 1)',
+                            tension: 0.3
+                        }]
+                    };
+
+                    const config = {
+                        type: 'line',
+                        data: chartData,
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            scales: {
+                                y: {
+                                    beginAtZero: true
+                                }
+                            }
+                        }
+                    };
+
+                    if (revenueChart) {
+                        revenueChart.destroy();
+                    }
+
+                    const ctx = document.getElementById('revenueChart').getContext('2d');
+                    revenueChart = new Chart(ctx, config);
+                },
+                error: function (err) {
+                    console.error("Lỗi khi tải biểu đồ doanh thu:", err);
+                }
+            });
+        }
+
+        function loadRecentOrders(days, branchId) {
+            $.ajax({
+                url: `https://localhost:7034/api/report/recent-orders?days=${days}&branchId=${branchId}`,
+                type: 'GET',
+                success: function (orders) {
+                            const container = $('#recent-orders-list');
+                            container.find('.nk-tb-item:not(.nk-tb-head)').remove();
+
+                            orders.forEach(order => {
+            const statusClass = order.status === 'Đã thanh toán' ? 'badge-success'
+                              : order.status === 'Đã hủy' ? 'badge-danger'
+                              : 'badge-warning';
+
+            const html = `
+                <div class="nk-tb-item">
+                    <div class="nk-tb-col">
+                        <span class="tb-lead text-primary"><a href="#">#${order.code}</a></span>
+                    </div>
+                    <div class="nk-tb-col tb-col-sm">
+                        <div class="user-card">
+                            <div class="user-avatar sm bg-purple-dim">
+                                <span>${order.customerName.charAt(0)}</span>
+                            </div>
+                            <div class="user-name">
+                                <span class="tb-lead">${order.customerName}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nk-tb-col tb-col-md">
+                        <span class="tb-sub">${new Date(order.orderDate).toLocaleString()}</span>
+                    </div>
+                    <div class="nk-tb-col">
+                        <span class="tb-sub tb-amount">${order.totalAmount.toLocaleString()} VNĐ</span>
+                    </div>
+                    <div class="nk-tb-col">
+                        <span class="badge ${statusClass}">${order.status}</span>
+                    </div>
+                </div>
+            `;
+            container.append(html);
+        });
+
+                },
+                error: function (err) {
+                    console.error("Lỗi khi tải đơn hàng gần đây:", err);
+                }
+            });
+        }
+
+        function loadTopProducts(days, branchId) {
+            $.ajax({
+                url: `https://localhost:7034/api/report/top-selling-products?days=${days}&branchId=${branchId}`,
+                type: 'GET',
+                success: function (products) {
+                    const container = $('#top-products-list');
+                    container.empty();
+
+                    products.forEach(product => {
+                        const html = `
+                            <li class="item">
+                                <div class="thumb"><img src="${product.imageUrl}" alt="" /></div>
+                                <div class="info">
+                                    <div class="title">${product.productName}</div>
+                                    <div class="price">${product.price.toLocaleString()} VNĐ</div>
+                                </div>
+                                <div class="total">
+                                    <div class="amount">-</div>
+                                    <div class="count">${product.totalQuantitySold} đã bán</div>
+                                </div>
+                            </li>
+                        `;
+                        container.append(html);
+                    });
+                },
+                error: function (err) {
+                    console.error("Lỗi khi tải sản phẩm bán chạy:", err);
+                }
+            });
+        }
+
+
+    </script>
+
+
+}

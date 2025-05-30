@@ -36,11 +36,8 @@
                         </div>
                     </div>
                     <div class="nk-block row p-0 m-0">
-                        @* <div class="card card-bordered col-3 p-0"> *@
-                        @*     <img height="200px" class="img-fluid" loading="lazy" src="@Model.ImageUrl" /> *@
-                        @* </div> *@
                         <div class="card card-bordered col-3 p-0">
-                            <img height="200px" class="img-fluid" loading="lazy" src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZHVjdHxlbnwwfHwwfHx8MA%3D%3D" />
+                            <img height="200px" class="img-fluid" loading="lazy" src="@Url.Content(Model.ThumbnailImagePath)" alt="@Model.ProductName" />
                         </div>
                         <div class="card card-bordered col-9">
                             <div class="card-aside-wrap">
@@ -141,7 +138,11 @@
                                                 <div class="col-md-3 col-sm-4">
                                                     <div class="profile-stats">
                                                         <span class="profile-ud-label">Giá bán</span>
-                                                        <span class="amount">@Model.DiscountPrice.ToString("N0") VNĐ</span>
+                                                        <span class="amount">
+                                                            @(Model.DiscountPrice.HasValue
+                                                                ? $"{Model.DiscountPrice.Value.ToString("N0")} VNĐ / {Model.BaseUnit}"
+                                                                : $"{Model.RegularPrice.ToString("N0")} VNĐ / {Model.BaseUnit}")
+                                                        </span>
                                                     </div>
                                                 </div>
                                             </div>

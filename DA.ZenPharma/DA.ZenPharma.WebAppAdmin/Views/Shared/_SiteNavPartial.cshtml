@@ -2,7 +2,7 @@
     <div class="side-nav-inner">
         <ul class="side-nav-menu scrollable">
             <li class="nav-item dropdown open">
-                <a class="dropdown-toggle" asp-action="Index" asp-controller="Home">
+                <a class="dropdown-toggle" asp-action="Index" asp-controller="Report">
                     <span class="icon-holder">
                         <i class="anticon anticon-dashboard"></i>
                     </span>
@@ -74,9 +74,6 @@
                     </li>
                     <li>
                         <a asp-action="Create" asp-controller="ImportInvoice">Nhập hàng</a>
-                    </li>
-                    <li>
-                        <a asp-action="Index" asp-controller="InventoryBatch">Tồn kho</a>
                     </li>
 
                 </ul>
@@ -160,12 +157,6 @@
                         <a asp-action="Index" asp-controller="Prescription">Đơn thuốc khách hàng</a>
                     </li>
                     <li>
-                        <a asp-action="Create" asp-controller="Coupon">Thêm phiếu giảm giá</a>
-                    </li>
-                    <li>
-                        <a asp-action="Index" asp-controller="Coupon">Danh sách phiếu giảm giá</a>
-                    </li>
-                    <li>
                         <a asp-action="Create" asp-controller="Category">Thêm danh mục</a>
                     </li>
                     <li>
@@ -173,6 +164,9 @@
                     </li>
                     <li>
                         <a asp-action="Create" asp-controller="Role">Thêm quyền truy cập</a>
+                    </li>
+                    <li>
+                        <a asp-action="Index" asp-controller="Role">Quản lý quyền truy cập</a>
                     </li>
                     </li>
                     <li>
@@ -196,11 +190,11 @@
                 <ul class="dropdown-menu">
 
                     <li>
-                        <a asp-action="StockReport" asp-controller="Statictis">Sản phẩm còn tồn kho</a>
+                    <a asp-action="Index" asp-controller="InventoryBatch">Sản phẩm còn tồn kho</a>
                     </li>
 
                     <li>
-                        <a asp-action="SalesReport" asp-controller="Statictis">Báo cáo bán hàng</a>
+                        <a asp-action="Index" asp-controller="Report">Báo cáo bán hàng</a>
                     </li>
 
                 </ul>

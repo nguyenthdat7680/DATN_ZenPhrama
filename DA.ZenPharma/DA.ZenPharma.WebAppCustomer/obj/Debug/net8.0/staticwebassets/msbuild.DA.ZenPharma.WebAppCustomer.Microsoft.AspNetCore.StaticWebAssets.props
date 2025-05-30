@@ -1,5 +1,1445 @@
 ﻿<Project>
   <ItemGroup>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\css\about.css'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>assets/css/about.css</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>1ks78h1jdo</Fingerprint>
+      <Integrity>UUiCW61FZxABqjyiqfbzCtmVjXvaPlASsKfkoc9IrGo=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\css\about.css'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\css\app.css'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>assets/css/app.css</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>uhc996tn34</Fingerprint>
+      <Integrity>fkeDkPVJA2WFXxVYj8LxHFCWxxtXp+8V1Y/9GyoSx5s=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\css\app.css'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\css\dropdown.css'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>assets/css/dropdown.css</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>1kkclsuii0</Fingerprint>
+      <Integrity>EXjDpc3Zo5k7/2fuuzs622fnnLgm50W6BQDg1ZVJLUM=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\css\dropdown.css'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\css\layout.css'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>assets/css/layout.css</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>sdf386u663</Fingerprint>
+      <Integrity>YE8Vb4DXtMLg8zRRSTmYqBim9jgwgAA0ryFstzJy9WA=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\css\layout.css'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\css\productdetail.css'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>assets/css/productdetail.css</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>4ab9we7c4a</Fingerprint>
+      <Integrity>pNb/iCBi+KKehqj83IApRYBeSQq6YzWjOi5BKK+v1Dc=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\css\productdetail.css'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\banner\banner 5.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>assets/img/banner/banner 5.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>re0daaw5eb</Fingerprint>
+      <Integrity>UzWnod3TalVutqAvsfwibgqxI2J4+KPZLoe5qgpNCMU=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\banner\banner 5.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\banner\banner1.webp'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>assets/img/banner/banner1.webp</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>6aanfhzlcv</Fingerprint>
+      <Integrity>MqnXzxFtekzUs9wJqlKxpRQRJSppgBZ3g/rM/kIFuAw=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\banner\banner1.webp'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\banner\banner2.webp'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>assets/img/banner/banner2.webp</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>tuhwxb3a3x</Fingerprint>
+      <Integrity>m2Dzw+LhG7P2oHteglAuiC2Q15EJYQSdyDOMVV2S+IM=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\banner\banner2.webp'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\banner\banner3.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>assets/img/banner/banner3.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>yb4r6l7czb</Fingerprint>
+      <Integrity>rvhvYWTgCRFoIk4Sbj4u+h1LjLDwSb4gX2P18kFqJMU=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\banner\banner3.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\banner\banner4.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>assets/img/banner/banner4.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>q65p5m5lt7</Fingerprint>
+      <Integrity>fkwEEl0oLk2/Rw3wIGfuBrT0A1c8OoO9lJ/S5jEcEAU=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\banner\banner4.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\banner\banner6.webp'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>assets/img/banner/banner6.webp</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>npcnwyramg</Fingerprint>
+      <Integrity>5UdG+h7cOXGKrGVTteJNDeRIzLN6eSD7TX4njMXMldw=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\banner\banner6.webp'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\banner\banner7.webp'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>assets/img/banner/banner7.webp</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>9faxooypir</Fingerprint>
+      <Integrity>BYvAnuNd0pk+wpqHHPOilG9yx3FVv5SeL8B9Ugz7/Go=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\banner\banner7.webp'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\banner\banner8.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>assets/img/banner/banner8.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>c529hewawz</Fingerprint>
+      <Integrity>4GPkOZOlQ1KWw55GqeKoKGS8XC/+mJBxYWL/jLCJonM=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\banner\banner8.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\banner\banner8.webp'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>assets/img/banner/banner8.webp</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>tuhwxb3a3x</Fingerprint>
+      <Integrity>m2Dzw+LhG7P2oHteglAuiC2Q15EJYQSdyDOMVV2S+IM=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\banner\banner8.webp'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\banner\banner9.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>assets/img/banner/banner9.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>c529hewawz</Fingerprint>
+      <Integrity>4GPkOZOlQ1KWw55GqeKoKGS8XC/+mJBxYWL/jLCJonM=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\banner\banner9.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\banner\promotion-pmc-app-banner.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>assets/img/banner/promotion-pmc-app-banner.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>a040a8yd2f</Fingerprint>
+      <Integrity>tiGj0opce0u4djJUZbtiCk9CqXo1YEN4LacxkKVvcbo=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\banner\promotion-pmc-app-banner.png'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\brand-img\7_Vitabella.webp'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>assets/img/brand-img/7_Vitabella.webp</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>q7j2gphpbi</Fingerprint>
+      <Integrity>Os6ifFFJcsOTh3n9pBI/FDGT1y2R4BoTrnAqgp1h4tA=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\brand-img\7_Vitabella.webp'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\brand-img\Group_23973.webp'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>assets/img/brand-img/Group_23973.webp</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>qtk25bho88</Fingerprint>
+      <Integrity>7hblY4L3xGx6ndk9O+CkKLnAfwwcGnecC18yEhITjak=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\brand-img\Group_23973.webp'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\brand-img\Kudos_logo.webp'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>assets/img/brand-img/Kudos_logo.webp</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>fs2inoeh6j</Fingerprint>
+      <Integrity>YSovAkHxsu/LQ4zaH1CcKVVQQU0PtO24VEpvLTvcFYg=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\brand-img\Kudos_logo.webp'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\brand-img\Life_Space_logo (1).webp'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>assets/img/brand-img/Life_Space_logo (1).webp</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>n6vxl9c82v</Fingerprint>
+      <Integrity>H9VWntg76jchmgJqJwo2W/oQNJdzenDYa8qyPRjwS+I=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\brand-img\Life_Space_logo (1).webp'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\brand-img\Life_Space_logo.webp'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>assets/img/brand-img/Life_Space_logo.webp</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>n6vxl9c82v</Fingerprint>
+      <Integrity>H9VWntg76jchmgJqJwo2W/oQNJdzenDYa8qyPRjwS+I=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\brand-img\Life_Space_logo.webp'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\brand-img\Nutrigen.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>assets/img/brand-img/Nutrigen.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>n4de660aqh</Fingerprint>
+      <Integrity>91dQnOy8J0BsWDPY6yQrSEY81MyPPJPGVWq0yTIN8tU=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\brand-img\Nutrigen.png'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\brand-img\PF_1.webp'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>assets/img/brand-img/PF_1.webp</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>bqdshj6qay</Fingerprint>
+      <Integrity>fQ5/Xo4XAg/nUe0dePeDw2NApL/wwTVxlim4La+7A00=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\brand-img\PF_1.webp'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\brand-img\pmc.webp'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>assets/img/brand-img/pmc.webp</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>raqtkumdjt</Fingerprint>
+      <Integrity>Y5ZwHYbzGitGjKE9uvHVOBPZHnRMXpUi0PFLxOF/mkc=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\brand-img\pmc.webp'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\brand-img\Sa_Sâm_Việt.webp'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>assets/img/brand-img/Sa_Sâm_Việt.webp</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>el08qthmdy</Fingerprint>
+      <Integrity>/szsoRAhXHX7LkzJgBG+Ce+mcP6b5ybs3tXHMWZfB8o=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\brand-img\Sa_Sâm_Việt.webp'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\category-img\Group_10378.webp'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>assets/img/category-img/Group_10378.webp</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>kokhs565wv</Fingerprint>
+      <Integrity>9PIcVCN9V0Ex3OBlCKUVLlMUufau/ZqOF7M8EKE9cPQ=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\category-img\Group_10378.webp'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\category-img\Group_10378-1.webp'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>assets/img/category-img/Group_10378-1.webp</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>2pgt58zwc8</Fingerprint>
+      <Integrity>xm49UZewvfdMgLtWRWMKMjdhTgsMkD8f6bI0cYYL4qU=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\category-img\Group_10378-1.webp'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\category-img\Group_10378-2.webp'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>assets/img/category-img/Group_10378-2.webp</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>00rvlggsex</Fingerprint>
+      <Integrity>cA99i+GCjYFeC3OAIBOFDQPHXQhghBBGBEyHaEXemDk=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\category-img\Group_10378-2.webp'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\category-img\Group_10378-3.webp'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>assets/img/category-img/Group_10378-3.webp</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>frtitpa2oh</Fingerprint>
+      <Integrity>K8gdZWdzHOcRMlgkjh0t+PItEXNucGbd0gyNyFe1ru4=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\category-img\Group_10378-3.webp'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\category-img\Group_10378-4.webp'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>assets/img/category-img/Group_10378-4.webp</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>u487qhjfvh</Fingerprint>
+      <Integrity>Eq0Es1jtJ7aYAK/tPeQreJjww4dUMC4t5Ds+AaT4Sak=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\category-img\Group_10378-4.webp'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\category-img\Group_10378-5.webp'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>assets/img/category-img/Group_10378-5.webp</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>lwp0edaukl</Fingerprint>
+      <Integrity>2zpk3S9fl2+p4ZpL25OAFHxXfwITx1bAxFCHHSnB43A=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\category-img\Group_10378-5.webp'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\category-img\Group_10378-6.webp'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>assets/img/category-img/Group_10378-6.webp</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>019s6ijqns</Fingerprint>
+      <Integrity>tBoVM90GMsBXuRnmY9WjehpgyQEcP72WdOuQwFcnsQU=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\category-img\Group_10378-6.webp'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\category-img\MicrosoftTeams-image_24.webp'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>assets/img/category-img/MicrosoftTeams-image_24.webp</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>bcfqr1aqck</Fingerprint>
+      <Integrity>K4+GFLNKwKQE2hV1IEOYBdVS7FULjyXhh3CCUZ0uetA=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\category-img\MicrosoftTeams-image_24.webp'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\icon\134216_menu_lines_hamburger_icon.svg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>assets/img/icon/134216_menu_lines_hamburger_icon.svg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>4ln2g7uwb4</Fingerprint>
+      <Integrity>6E/tz9qLq+5GS3NgyYgAb8IlGAZ+xyBM2K+PRhvuEL4=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\icon\134216_menu_lines_hamburger_icon.svg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\icon\4092564_profile_about_mobile ui_user_icon.svg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>assets/img/icon/4092564_profile_about_mobile ui_user_icon.svg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>hfiq00lhrz</Fingerprint>
+      <Integrity>zW/48SSjjMgO4I2qwbFB4i33Mht7Oy7dwgX2pazxJVI=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\icon\4092564_profile_about_mobile ui_user_icon.svg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\icon\arrow_back_left_previous_icon.svg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>assets/img/icon/arrow_back_left_previous_icon.svg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>1i7iaqmxx6</Fingerprint>
+      <Integrity>h3ejGVY950zxBst5pl5UYBcK5lCDTLSA4cYlYYfJX/k=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\icon\arrow_back_left_previous_icon.svg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\icon\arrow_forward_next_right_icon.svg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>assets/img/icon/arrow_forward_next_right_icon.svg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>eq0e2f9ta5</Fingerprint>
+      <Integrity>ylbQMN0HC8yG9Vbc8JGiDMZGY7ag2b+0q9JuW0qN0j8=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\icon\arrow_forward_next_right_icon.svg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\icon\bell_dot_notification_icon.svg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>assets/img/icon/bell_dot_notification_icon.svg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>4tsp1deywm</Fingerprint>
+      <Integrity>6EwapSN29EGq730UJxxc4h9PZp3B6tjowG7RoAqCefA=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\icon\bell_dot_notification_icon.svg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\icon\bell_icon.svg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>assets/img/icon/bell_icon.svg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>cipu97bc96</Fingerprint>
+      <Integrity>XE4HU7YCcRiAASn/DxtPqPCFJs0BpFtq4mzMk2i1fPE=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\icon\bell_icon.svg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\icon\coupon_icon.svg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>assets/img/icon/coupon_icon.svg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>mhe7gfzy65</Fingerprint>
+      <Integrity>GqF8xnkW9NpF5xXEw3hrtJG83txoCW1gFj9J5QpJ03M=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\icon\coupon_icon.svg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\icon\delete_min_minus_icon.svg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>assets/img/icon/delete_min_minus_icon.svg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>oeuu95egwd</Fingerprint>
+      <Integrity>cLL8ZmLkrdEcTFplB3D74dbVdp1m2eFUCGSI0Hr9hpc=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\icon\delete_min_minus_icon.svg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\icon\exclamation_triangle_fill_icon.svg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>assets/img/icon/exclamation_triangle_fill_icon.svg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>8lx42cyxcy</Fingerprint>
+      <Integrity>9Co/kysXeUvbHoYIP0qfkzDMrQ4igoqlGsFsk00X6Vs=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\icon\exclamation_triangle_fill_icon.svg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\icon\file_image_icon.svg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>assets/img/icon/file_image_icon.svg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>903q01m3uv</Fingerprint>
+      <Integrity>R6qiSpcXtkK54gBTySKRdYnPEGBcZzFZQdoKux5Eako=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\icon\file_image_icon.svg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\icon\google_icon.svg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>assets/img/icon/google_icon.svg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>6nqcc3iue3</Fingerprint>
+      <Integrity>Htb+laH81l2G/DN20ZaLhAfsgiNEG7iwKfd9hFWyqlM=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\icon\google_icon.svg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\icon\history_icon.svg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>assets/img/icon/history_icon.svg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>02a8wwbgii</Fingerprint>
+      <Integrity>6DTS9GW34y4BwNH7ht8rkSZhCr0yc3buervEq5jR/90=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\icon\history_icon.svg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\icon\history_order_icon.svg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>assets/img/icon/history_order_icon.svg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>xizex6qzhm</Fingerprint>
+      <Integrity>p1tU0YPveE/kCZrs6jwC0j4oZZTryzQM4e6cclmrOjk=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\icon\history_order_icon.svg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\icon\local_phone_icon.svg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>assets/img/icon/local_phone_icon.svg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>jizjeaq06i</Fingerprint>
+      <Integrity>de9qjKWe+APDH87PcfQsaOB7EBc21lVBCOEG5xMB0ms=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\icon\local_phone_icon.svg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\icon\location_icon.svg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>assets/img/icon/location_icon.svg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>812m839ykb</Fingerprint>
+      <Integrity>zLfI6hErEhIDSBKKIdnEuzqpYJQFrD7VGc3KJW5YYbM=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\icon\location_icon.svg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\icon\location_map_icon.svg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>assets/img/icon/location_map_icon.svg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>ql19hhuatk</Fingerprint>
+      <Integrity>opoBL6NQvuOmObsSY/NMQ/Qxvr7i4A2KlWFVsF7sEHM=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\icon\location_map_icon.svg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\icon\logo.svg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>assets/img/icon/logo.svg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>9jkn4g5o80</Fingerprint>
+      <Integrity>tdsaUn+uD+QiBtQfo4P4JSFSHLGeIwrbwwPGufREhDg=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\icon\logo.svg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\icon\menu_bars_icon.svg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>assets/img/icon/menu_bars_icon.svg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>24id5pt3dy</Fingerprint>
+      <Integrity>Dqo39vJ9LYCHcQ+KcyYGgfhbJUSM4FHNTXc1xUKgLnA=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\icon\menu_bars_icon.svg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\icon\mxh_facebook_icon.svg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>assets/img/icon/mxh_facebook_icon.svg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>633y385t0d</Fingerprint>
+      <Integrity>3ih5r2ZtmXyPnVLkckQ+v91F0RhBoxbhtGvDn+qgOMw=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\icon\mxh_facebook_icon.svg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\icon\mxh_youtube_icon.svg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>assets/img/icon/mxh_youtube_icon.svg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>nvdabornb0</Fingerprint>
+      <Integrity>wx9qPRlrUuM4Oysq1quxLEUOwq15GhlvJeCCoSsPiUw=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\icon\mxh_youtube_icon.svg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\icon\mxh_zalo_icon.svg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>assets/img/icon/mxh_zalo_icon.svg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>pakuyfmlp4</Fingerprint>
+      <Integrity>v59DRVRfZbXrQXjBIoPCERn3f8NvKl/gNe7nbt9OL0I=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\icon\mxh_zalo_icon.svg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\icon\plus_icon.svg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>assets/img/icon/plus_icon.svg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>nf6o02fdke</Fingerprint>
+      <Integrity>k67d0IXnsEoYKSWgzm9dDJK+M9Nnd/zDBAoyq7NisLc=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\icon\plus_icon.svg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\icon\search_icon.svg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>assets/img/icon/search_icon.svg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>a87jprxumz</Fingerprint>
+      <Integrity>WkDseT274G5mRV7/YmoUXh8rep4RRpe//FlC/exMScU=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\icon\search_icon.svg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\icon\search_min_icon.svg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>assets/img/icon/search_min_icon.svg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>p4iqmptltw</Fingerprint>
+      <Integrity>ScjtmuKvW7k9LEiU9a9iPYz8O7DryR5y8zQithPvAmM=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\icon\search_min_icon.svg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\icon\shopping_cart_light_icon.svg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>assets/img/icon/shopping_cart_light_icon.svg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>lqc3cgfjip</Fingerprint>
+      <Integrity>Pd82fNSvsF8Utxb2IrzPeNZcENqrdlA5RawQcxWLT2E=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\icon\shopping_cart_light_icon.svg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\icon\trash_icon.svg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>assets/img/icon/trash_icon.svg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>or9w3odku5</Fingerprint>
+      <Integrity>dAw2qlWG2mdlgWvf5CcrdpzugsPhG2PtY0Vj8fB/v40=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\icon\trash_icon.svg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\icon\user-default.svg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>assets/img/icon/user-default.svg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>pmoq5onl6r</Fingerprint>
+      <Integrity>MTSKxjOHyjgyXUVoE8CUoO8lwA7HEDKDPeL0l2yuBF8=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\icon\user-default.svg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\icon\user_edit_icon.svg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>assets/img/icon/user_edit_icon.svg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>dhvbwt9s5q</Fingerprint>
+      <Integrity>IbhksmEqF5sIdDkHt57FBENHDFWIly9ppNV7Q9oME6Q=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\icon\user_edit_icon.svg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\icon\user_icon.svg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>assets/img/icon/user_icon.svg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>5gr8girari</Fingerprint>
+      <Integrity>C/sndJ+9zIKyeTMrWzB0S5nAW4omyqDS5owz3F8m40g=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\icon\user_icon.svg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\icon\vietnam_vn_icon.svg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>assets/img/icon/vietnam_vn_icon.svg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>rddnggndeu</Fingerprint>
+      <Integrity>gVxx7dbcOe21+kE//136ZoO/ow6EjaPlxBdmZaWspxs=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\icon\vietnam_vn_icon.svg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\icon\x_icon.svg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>assets/img/icon/x_icon.svg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>p60ihtt4ee</Fingerprint>
+      <Integrity>jxknUS3tr9jFYa80KOHa1bc1UBHS+eP4eoj6sL9O6fQ=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\icon\x_icon.svg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\page-img\app store.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>assets/img/page-img/app store.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>bkka8j7kdn</Fingerprint>
+      <Integrity>ZdXxXkaQKfuVpedY31VnSOUoaPR3mT6rkNvWQDmToEg=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\page-img\app store.png'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\page-img\avt-default.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>assets/img/page-img/avt-default.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>djl0jg4611</Fingerprint>
+      <Integrity>CWD4OS7iI5NDxbWJ7nuNcjOnyPByAAEePpEs5YOaG5s=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\page-img\avt-default.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\page-img\btn-buy-now.webp'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>assets/img/page-img/btn-buy-now.webp</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>92ouo5xcip</Fingerprint>
+      <Integrity>r85r97ToXuaKjZytqkYRu3qEy1oYzVCcNC1FdpnlT3E=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\page-img\btn-buy-now.webp'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\page-img\empty-cart.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>assets/img/page-img/empty-cart.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>v7oie13rd6</Fingerprint>
+      <Integrity>5VLOkq5YvEGss3F4t3HUvFddHt7oNreaNCJ4mR8p3nw=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\page-img\empty-cart.png'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\page-img\fill.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>assets/img/page-img/fill.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>p8f9g5dnqg</Fingerprint>
+      <Integrity>aYmbMiHljvlxiHsjHJMvMSPqnAUcu2SYJkLWjFhXDRE=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\page-img\fill.png'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\page-img\gg-play.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>assets/img/page-img/gg-play.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>6rk6dq9tmz</Fingerprint>
+      <Integrity>klMN5FcTANQ9UNHs/nuShu3td/Kuy6ILXUn+GwaMzmE=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\page-img\gg-play.png'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\page-img\header-left.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>assets/img/page-img/header-left.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>7ogwu5xb9l</Fingerprint>
+      <Integrity>mQGocTXKJBrxPeWiN7jaR58ROlk0jMdE6fXVciaccCs=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\page-img\header-left.png'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\page-img\header-right.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>assets/img/page-img/header-right.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>slbl446yas</Fingerprint>
+      <Integrity>AN5GP9vo/hCaINavPWi1gnydFzA/tSwGJqsv2OD36/g=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\page-img\header-right.png'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\page-img\higlight-title.webp'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>assets/img/page-img/higlight-title.webp</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>km1nbdsti4</Fingerprint>
+      <Integrity>BFlWkJQbCDmZeZdHItdhs53JKbupFhbvq2DHmgLhKMU=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\page-img\higlight-title.webp'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\page-img\notfound.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>assets/img/page-img/notfound.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>c58rq1776e</Fingerprint>
+      <Integrity>AJBjuhKy77AQll5cTz00GEu4qNW32Kmdf9eUDc8ecjg=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\page-img\notfound.png'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\page-img\prescription-tips.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>assets/img/page-img/prescription-tips.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>5ow5hzwuir</Fingerprint>
+      <Integrity>Wy4Y/SJqvb3MWiPTXfD405dSanz0CUBz3zjxrF632Cg=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\page-img\prescription-tips.png'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\page-img\qr-code-download-app.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>assets/img/page-img/qr-code-download-app.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>kchkar3e7h</Fingerprint>
+      <Integrity>LCUCrbNsN8jygcBGkZrqsaJaYAV9oqYZD6E5pCaHpxU=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\page-img\qr-code-download-app.png'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\page-img\upoad-prescription-step-1.webp'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>assets/img/page-img/upoad-prescription-step-1.webp</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>jlpli0f878</Fingerprint>
+      <Integrity>17bHLo2lWgAiFjHdSjMbt7nSesM/CjuVyIL4Fw+V6rg=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\page-img\upoad-prescription-step-1.webp'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\page-img\upoad-prescription-step-2.webp'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>assets/img/page-img/upoad-prescription-step-2.webp</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>5mwlleg0c1</Fingerprint>
+      <Integrity>XcV/ehvoS78hI21baFy2sSa2gYHrgookKZKd1JEZX3w=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\page-img\upoad-prescription-step-2.webp'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\page-img\upoad-prescription-step-3.webp'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>assets/img/page-img/upoad-prescription-step-3.webp</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>bo2n1507g9</Fingerprint>
+      <Integrity>SwKnlM5TfvAyJVSOgE+fsu0wcNxSuRHaEcbHPRecGVo=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\page-img\upoad-prescription-step-3.webp'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\prescriptions-upload\prescription-tips.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>assets/img/prescriptions-upload/prescription-tips.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>5ow5hzwuir</Fingerprint>
+      <Integrity>Wy4Y/SJqvb3MWiPTXfD405dSanz0CUBz3zjxrF632Cg=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\img\prescriptions-upload\prescription-tips.png'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\site.css'))">
       <SourceType>Package</SourceType>
       <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
@@ -12,8 +1452,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>c2tiyv64ts</Fingerprint>
-      <Integrity>pAGv4ietcJNk/EwsQZ5BN9+K4MuNYS2a9wl4Jw+q9D0=</Integrity>
+      <Fingerprint>ouukjt0nip</Fingerprint>
+      <Integrity>MCCoN70kszwTQ9KpReKKeN3aX1Lvht+g2Rq47Iof3hs=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\site.css'))</OriginalItemSpec>
@@ -54,6 +1494,510 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\favicon.ico'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\anh2.jpeg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>images/anh2.jpeg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>juxptgkscg</Fingerprint>
+      <Integrity>ZcsjnBv5VfeUGeci/CF2+eaWDRIIKNR9kzjwtl75qi8=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\anh2.jpeg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\categories\chamsoccannhan.webp'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>images/categories/chamsoccannhan.webp</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>d3g73b6rl8</Fingerprint>
+      <Integrity>x6MoquNxNkWENLMYPu5nyzYh7aMpTeA3lcPwaP4Jti0=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\categories\chamsoccannhan.webp'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\categories\chamsocsacdep.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>images/categories/chamsocsacdep.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>gypf1iy9ue</Fingerprint>
+      <Integrity>2EVVsWrUefiqcB/kRnxbYU7J/XrA+K0dFjTRcR5+eIk=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\categories\chamsocsacdep.png'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\categories\chamsocsuckhoe.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>images/categories/chamsocsuckhoe.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>hesbrfy5hr</Fingerprint>
+      <Integrity>iVvgHkYPPipLr/1nnXuYNgjrjJ58fNmPftf7RROR7hk=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\categories\chamsocsuckhoe.png'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\categories\duocpham.webp'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>images/categories/duocpham.webp</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>we86ygo5ao</Fingerprint>
+      <Integrity>6C1/zHODNY/4UCWy13Qsf3itYHrspylbdsWhH395kO8=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\categories\duocpham.webp'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\categories\EContract_DatNT368.pdf'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>images/categories/EContract_DatNT368.pdf</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>o7agwg9nca</Fingerprint>
+      <Integrity>TLhC9eQgLGKrDe7fUJTGb0Uj7HU8H/yJWlxj1FQGg1g=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\categories\EContract_DatNT368.pdf'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\categories\mevabe.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>images/categories/mevabe.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>npzdkcjcn7</Fingerprint>
+      <Integrity>9ZWZ12dvLcGl219sCY1wKncgFl9+rbUbco6XJSj/qAk=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\categories\mevabe.png'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\categories\sanphamtienloi.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>images/categories/sanphamtienloi.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>gqsfn1my3q</Fingerprint>
+      <Integrity>ODruICycLEEQfkvhcjQnt7jNaNyjow6wvbzq6g3QGz8=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\categories\sanphamtienloi.png'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\categories\thietbiyte.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>images/categories/thietbiyte.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>61xgm5ekgm</Fingerprint>
+      <Integrity>xgpjGEW0MrbOt5gnZ1tHyiuAqqf5S7u+JNCFoBj+BYE=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\categories\thietbiyte.png'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\categories\thucphamchucnang.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>images/categories/thucphamchucnang.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>tjhmav1xih</Fingerprint>
+      <Integrity>WXjlXgcSN/pD34CkZnhSLRApDiqS6XU5NcvWtW6aoTU=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\categories\thucphamchucnang.png'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\logo.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>images/logo.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>yj6do42udx</Fingerprint>
+      <Integrity>klVqPqwKyEitXOuGBiRd6jcJPkRTCyTiX2PjKubSsrU=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\logo.png'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\alcohol.webp'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>images/products/alcohol.webp</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>zs7g2cegoi</Fingerprint>
+      <Integrity>faJaeWUB9O7A5ciDwzn3AJs3j5eAyIRPCCwzRiRosQk=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\alcohol.webp'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\amoxicillin.webp'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>images/products/amoxicillin.webp</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>5h2gszp5hy</Fingerprint>
+      <Integrity>iUgGWR2x/AolGKaqSBYfxArXlwucdYacNfC4XbHnhks=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\amoxicillin.webp'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\aspirin.webp'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>images/products/aspirin.webp</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>ynkihw9oim</Fingerprint>
+      <Integrity>Hvqco5d0kq09boRCpeh/8sYae983ZxHQptkklUXoFwo=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\aspirin.webp'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\bandage.webp'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>images/products/bandage.webp</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>r5s9e45jqw</Fingerprint>
+      <Integrity>MZvzK/XQEa+6m7D2lPKPkmbsvuAjrtd4J0aLYc05jew=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\bandage.webp'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\calcium.webp'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>images/products/calcium.webp</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>ien55a3790</Fingerprint>
+      <Integrity>Rn3XO2JYUcTUGZBCbqYw6/1C7UMIscbEkqLL5+K83+0=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\calcium.webp'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\ciprofloxacin.webp'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>images/products/ciprofloxacin.webp</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>ttrdmfmmsr</Fingerprint>
+      <Integrity>ISD6596+cFVuhH9HrFORXB2n8uB8kKhwRv/MWeXuwxY=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\ciprofloxacin.webp'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\erythromycin.webp'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>images/products/erythromycin.webp</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>wz97etn40s</Fingerprint>
+      <Integrity>XACkO7OIIWs8/SuitLDZHu4q6P/bgXtrFXtv37h3hyI=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\erythromycin.webp'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\glucose.webp'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>images/products/glucose.webp</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>la1yl4lp1e</Fingerprint>
+      <Integrity>82/Js6/Er3j7xMRx+QzA/tsz5Wh8P5o9IquL1BGd/p8=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\glucose.webp'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\ibuprofen.webp'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>images/products/ibuprofen.webp</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>68g7m7rvqb</Fingerprint>
+      <Integrity>GvD1+fnjJIXtbuKl2SuLCytMe0aVlmkYovOPAEktQ1A=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\ibuprofen.webp'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\medical-mask.webp'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>images/products/medical-mask.webp</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>tfcm0jswyk</Fingerprint>
+      <Integrity>hys2H06m8if2Ea96eRiZwLnzjt+UeyH53unNQSRSVoM=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\medical-mask.webp'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\omeprazole.webp'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>images/products/omeprazole.webp</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>6r67ywjss7</Fingerprint>
+      <Integrity>DtAp0jR2HY/auAEWgWM1K2bpkGJA9PFJ5BbPYYeJ/ZA=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\omeprazole.webp'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\paracetamol.webp'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>images/products/paracetamol.webp</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>oirhbfjb0j</Fingerprint>
+      <Integrity>cOOyx2Gp+xznSSFEAsDsa+EiZAMQLAc40OoYh7DAS+E=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\paracetamol.webp'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\thermometer.webp'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>images/products/thermometer.webp</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>hq6lwn897k</Fingerprint>
+      <Integrity>WbH33BztOsoKgNsP23z4CdbNVHoQ0Duox9EUs4DIxVg=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\thermometer.webp'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\vitaminc.webp'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>images/products/vitaminc.webp</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>k5m9bekjt6</Fingerprint>
+      <Integrity>mETJmkjwBCeM+cscnVqyvWXa5Sh/BHYPjE0XN5Oozqs=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\vitaminc.webp'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\zinc.webp'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>images/products/zinc.webp</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>sr83l5pisa</Fingerprint>
+      <Integrity>KMieRjN+T1ctJPa7m2b2lnD+TQh8oWrXnz18F0VTY4s=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\zinc.webp'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\jquery\jquery.js'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>jquery/jquery.js</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>yzc8e3s4ri</Fingerprint>
+      <Integrity>MpIBkdBrjCufmMVDcn/8GtWQklV+MHnk13wOXFuo3Qk=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\jquery\jquery.js'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\app.min.js'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppCustomer</BasePath>
+      <RelativePath>js/app.min.js</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>bsh92q6ni6</Fingerprint>
+      <Integrity>tTMVttFL6YC2fjrvDZLAeuBmK5FQqzvBk67xkmmQLt4=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\app.min.js'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\site.js'))">
       <SourceType>Package</SourceType>
       <SourceId>DA.ZenPharma.WebAppCustomer</SourceId>
@@ -66,8 +2010,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>xtxxf3hu2r</Fingerprint>
-      <Integrity>hRQyftXiu1lLX2P9Ly9xa4gHJgLeR1uGN5qegUobtGo=</Integrity>
+      <Fingerprint>mqhm4qya74</Fingerprint>
+      <Integrity>sjBvfR8zmxbLZvm6XkDfgd8nKZhMchI0HC3zlFh4t/c=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\site.js'))</OriginalItemSpec>
@@ -84,8 +2028,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>mpyigms19s</Fingerprint>
-      <Integrity>xlexqj9/k3uobVwGfciZcj/eDdooaNgcf4OFLtLUygM=</Integrity>
+      <Fingerprint>f0ucgb4onu</Fingerprint>
+      <Integrity>EYFGW+q+4JShNewO4aayCu+hKqm9aF/5ysIKD/k38V0=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\lib\bootstrap\dist\css\bootstrap.css'))</OriginalItemSpec>
@@ -876,8 +2820,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>81b7ukuj9c</Fingerprint>
-      <Integrity>ZH6pA6BSx6fuHZvdaKph1DwUJ+VSYilIiEQu8ilnvqk=</Integrity>
+      <Fingerprint>z6qzljqjd0</Fingerprint>
+      <Integrity>WzAxfJw1u28FEBxQHehmzGhSq5tlXc9ZQXM/ZkTD69A=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\lib\bootstrap\LICENSE'))</OriginalItemSpec>
@@ -894,8 +2838,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>47otxtyo56</Fingerprint>
-      <Integrity>wJQaJ0XynBE2fq6CexXXhxKu7fstVmQc7V2MHNTo+WQ=</Integrity>
+      <Fingerprint>0td7jq9nxb</Fingerprint>
+      <Integrity>XNNC8ESw29iopRLukVRazlP44TxnjGmEQanHJ5kHmtk=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js'))</OriginalItemSpec>
@@ -912,8 +2856,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>4v8eqarkd7</Fingerprint>
-      <Integrity>YJa7W8EiQdQpkk93iGEjjnLSUWRpRJbSfzfURh1kxz4=</Integrity>
+      <Fingerprint>zsyoy62yqm</Fingerprint>
+      <Integrity>zV8SHd+o2hq7FLST9WlWzpZMGfniOYeMMrQT6lTxjls=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js'))</OriginalItemSpec>
@@ -930,8 +2874,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>356vix0kms</Fingerprint>
-      <Integrity>16aFlqtpsG9RyieKZUUUjkJpqTgcJtWXwT312I4Iz1s=</Integrity>
+      <Fingerprint>4ez5mqxv2b</Fingerprint>
+      <Integrity>bJBFwc85FxNITit+4+dmzq5fRpbBEauvU+1eI+EpziQ=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\lib\jquery-validation-unobtrusive\LICENSE.txt'))</OriginalItemSpec>
@@ -948,8 +2892,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>ay5nd8zt9x</Fingerprint>
-      <Integrity>4jrcLBsi0Ugm8iLKdqDsAyaCDjkscYZdoGuNH/zqs4E=</Integrity>
+      <Fingerprint>o2fui7xoca</Fingerprint>
+      <Integrity>0IXY0aA9BMZHp1azQSgmyQTG4+8NwTeDlKmjpQYrcXs=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\lib\jquery-validation\dist\additional-methods.js'))</OriginalItemSpec>
@@ -966,8 +2910,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>9oaff4kq20</Fingerprint>
-      <Integrity>N11IyJpHTgDcSCb3AfX4VrBnpGQeem1NoNzzgcXVyCc=</Integrity>
+      <Fingerprint>3rqbzy5c3x</Fingerprint>
+      <Integrity>0Yg/eibVdKyxkuVo1Qwh0DspoUCHvSbm/oOoYVz32BQ=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\lib\jquery-validation\dist\additional-methods.min.js'))</OriginalItemSpec>
@@ -984,8 +2928,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>pzqfkb6aqo</Fingerprint>
-      <Integrity>m0l81WDPiG7CcG7CDsTuZzvcGvyFmrQY5DLIxx3aRGw=</Integrity>
+      <Fingerprint>jdpnbaa6vo</Fingerprint>
+      <Integrity>yazfaIh2SXu8rPenyD2f36pKgrkv5XT+DQCDpZ/eDao=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\lib\jquery-validation\dist\jquery.validate.js'))</OriginalItemSpec>
@@ -1002,8 +2946,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>b7iojwaux1</Fingerprint>
-      <Integrity>JwUksNJ6/R07ZiLRoXbGeNrtlFZMFDKX4hemPiHOmCA=</Integrity>
+      <Fingerprint>59qolqi738</Fingerprint>
+      <Integrity>F6h55Qw6sweK+t7SiOJX+2bpSAa3b/fnlrVCJvmEj1A=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\lib\jquery-validation\dist\jquery.validate.min.js'))</OriginalItemSpec>
@@ -1020,8 +2964,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>x0q3zqp4vz</Fingerprint>
-      <Integrity>geHEkw/WGPdaHQMRq5HuNY9snliNzU/y2OW8ycnhGXw=</Integrity>
+      <Fingerprint>xzw0cte36n</Fingerprint>
+      <Integrity>85iHjKszi4aWOL2sGurna/OsEbK4nabgtovBpkVzNEA=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\lib\jquery-validation\LICENSE.md'))</OriginalItemSpec>
@@ -1038,8 +2982,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>fwhahm2icz</Fingerprint>
-      <Integrity>H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=</Integrity>
+      <Fingerprint>vwa26bmbsk</Fingerprint>
+      <Integrity>QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\lib\jquery\dist\jquery.js'))</OriginalItemSpec>
@@ -1056,8 +3000,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>dd6z7egasc</Fingerprint>
-      <Integrity>/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=</Integrity>
+      <Fingerprint>5trh6b1mit</Fingerprint>
+      <Integrity>9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\lib\jquery\dist\jquery.min.js'))</OriginalItemSpec>
@@ -1074,8 +3018,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>5pze98is44</Fingerprint>
-      <Integrity>OZVI+w57FGwS9boYCZpH1ZSpcP7pYhLu4KtIUvPlZ4I=</Integrity>
+      <Fingerprint>dsw5v3fbc5</Fingerprint>
+      <Integrity>PVB97BePQ5JED6qSU7EvSun5iseF5FinCKtqsv5X9uA=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\lib\jquery\dist\jquery.min.map'))</OriginalItemSpec>
@@ -1092,8 +3036,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>mlv21k5csn</Fingerprint>
-      <Integrity>hjIBkvmgxQXbNXK3B9YQ3t06RwLuQSQzC/dpvuB/lMk=</Integrity>
+      <Fingerprint>rkkog0v3vw</Fingerprint>
+      <Integrity>Kz7YukJEI6ULAj5yhTDZS8OFz8fDKK1lo9/unHwFMcU=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\lib\jquery\LICENSE.txt'))</OriginalItemSpec>

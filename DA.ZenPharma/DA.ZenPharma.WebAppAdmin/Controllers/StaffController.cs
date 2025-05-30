@@ -1,4 +1,5 @@
 ﻿using DA.ZenPharma.Application.Dtos.BaseDto;
+using DA.ZenPharma.Application.Dtos.BranchDto;
 using DA.ZenPharma.Application.Dtos.RoleDtos;
 using DA.ZenPharma.Application.Dtos.UserDto;
 using Microsoft.AspNetCore.Mvc;
@@ -44,7 +45,6 @@ namespace DA.ZenPharma.WebAppAdmin.Controllers
 
             return View(staff);
         }
-
         [HttpGet]
         public async Task<IActionResult> Create()
         {
@@ -54,8 +54,13 @@ namespace DA.ZenPharma.WebAppAdmin.Controllers
                             !string.Equals(r.RoleName, "Admin", StringComparison.OrdinalIgnoreCase)).ToList();
             ViewBag.Roles = new SelectList(roles, "Id", "RoleName");
 
+            // Lấy danh sách chi nhánh từ API (ví dụ API chi nhánh)
+            var branches = await _httpClient.GetFromJsonAsync<List<BranchDto>>("https://localhost:7034/api/Branch");
+            ViewBag.Branches = new SelectList(branches, "Id", "BranchName");
+
             return View();
         }
+
         [HttpPost]
         public async Task<IActionResult> Create(UserCreateDto dto)
         {
@@ -63,9 +68,12 @@ namespace DA.ZenPharma.WebAppAdmin.Controllers
             {
                 var roles = await _httpClient.GetFromJsonAsync<List<RoleDto>>("https://localhost:7034/api/Role");
                 roles = roles?.Where(r =>
-                            !string.Equals(r.RoleName, "Customer", StringComparison.OrdinalIgnoreCase) &&
-                            !string.Equals(r.RoleName, "Admin", StringComparison.OrdinalIgnoreCase)).ToList();
-                ViewBag.Roles = new SelectList(roles, "Id", "Name");
+                                !string.Equals(r.RoleName, "Customer", StringComparison.OrdinalIgnoreCase) &&
+                                !string.Equals(r.RoleName, "Admin", StringComparison.OrdinalIgnoreCase)).ToList();
+                ViewBag.Roles = new SelectList(roles, "Id", "RoleName");
+
+                var branches = await _httpClient.GetFromJsonAsync<List<BranchDto>>("https://localhost:7034/api/Branch");
+                ViewBag.Branches = new SelectList(branches, "Id", "BranchName");
 
                 return View(dto);
             }
@@ -81,6 +89,15 @@ namespace DA.ZenPharma.WebAppAdmin.Controllers
             }
 
             TempData["ErrorMessage"] = "Đã có lỗi xảy ra khi thêm nhân viên.";
+
+            var rolesRetry = await _httpClient.GetFromJsonAsync<List<RoleDto>>("https://localhost:7034/api/Role");
+            rolesRetry = rolesRetry?.Where(r =>
+                            !string.Equals(r.RoleName, "Customer", StringComparison.OrdinalIgnoreCase) &&
+                            !string.Equals(r.RoleName, "Admin", StringComparison.OrdinalIgnoreCase)).ToList();
+            ViewBag.Roles = new SelectList(rolesRetry, "Id", "RoleName");
+
+            var branchesRetry = await _httpClient.GetFromJsonAsync<List<BranchDto>>("https://localhost:7034/api/Branch");
+            ViewBag.Branches = new SelectList(branchesRetry, "Id", "BranchName");
 
             return View(dto);
         }
@@ -100,6 +117,10 @@ namespace DA.ZenPharma.WebAppAdmin.Controllers
                             !string.Equals(r.RoleName, "Admin", StringComparison.OrdinalIgnoreCase)).ToList();
             ViewBag.Roles = new SelectList(roles, "Id", "RoleName", staff.RoleId);
 
+            // Lấy danh sách chi nhánh
+            var branches = await _httpClient.GetFromJsonAsync<List<BranchDto>>("https://localhost:7034/api/Branch");
+            ViewBag.Branches = new SelectList(branches, "Id", "BranchName", staff.BranchId);
+
             return View(staff);
         }
 
@@ -114,6 +135,10 @@ namespace DA.ZenPharma.WebAppAdmin.Controllers
                                 !string.Equals(r.RoleName, "Admin", StringComparison.OrdinalIgnoreCase))
                               .ToList();
                 ViewBag.Roles = new SelectList(roles, "Id", "RoleName", dto.RoleId);
+
+                var branches = await _httpClient.GetFromJsonAsync<List<BranchDto>>("https://localhost:7034/api/Branch");
+                ViewBag.Branches = new SelectList(branches, "Id", "BranchName", dto.BranchId);
+
                 return View(dto);
             }
 
@@ -135,6 +160,9 @@ namespace DA.ZenPharma.WebAppAdmin.Controllers
                             !string.Equals(r.RoleName, "Admin", StringComparison.OrdinalIgnoreCase))
                           .ToList();
             ViewBag.Roles = new SelectList(rolesAgain, "Id", "RoleName", dto.RoleId);
+
+            var branchesAgain = await _httpClient.GetFromJsonAsync<List<BranchDto>>("https://localhost:7034/api/Branch");
+            ViewBag.Branches = new SelectList(branchesAgain, "Id", "BranchName", dto.BranchId);
 
             return View(dto);
         }

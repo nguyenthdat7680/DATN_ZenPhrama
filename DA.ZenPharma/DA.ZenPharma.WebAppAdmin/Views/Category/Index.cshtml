@@ -12,6 +12,21 @@
     <div class="container-fluid">
         <div class="nk-content-inner">
             <div class="nk-content-body">
+
+                @if (TempData["ErrorMessage"] != null)
+                {
+                    <div id="error-alert" class="alert alert-danger alert-dismissible fade show" role="alert">
+                        @TempData["ErrorMessage"]
+                    </div>
+                }
+
+                @if (TempData["SuccessMessage"] != null)
+                {
+                    <div id="success-alert" class="alert alert-success alert-dismissible fade show" role="alert">
+                        @TempData["SuccessMessage"]
+                    </div>
+                }
+
                 <div class="nk-block-head nk-block-head-sm">
                     <div class="nk-block-between g-3">
                         <div class="nk-block-head-content">
@@ -145,3 +160,23 @@
         </div>
     </div>
 </div>
+
+@section Scripts {
+    <script>
+        setTimeout(function () {
+            var alert = document.getElementById("error-alert");
+            if (alert) {
+                alert.classList.remove("show");
+                alert.classList.add("fade");
+                setTimeout(() => alert.style.display = "none", 500); 
+            }
+
+            var success = document.getElementById("success-alert");
+            if (success) {
+                success.classList.remove("show");
+                success.classList.add("fade");
+                setTimeout(() => success.style.display = "none", 500);
+            }
+        }, 3000); 
+    </script>
+}

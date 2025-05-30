@@ -1,0 +1,25 @@
+﻿@model DA.ZenPharma.Application.Dtos.RoleDtos.RoleDto
+@{
+    ViewData["Title"] = "Chi tiết vai trò";
+}
+
+<div class="container mt-5 pt-5">
+    <h2>Chi tiết vai trò</h2>
+
+    <dl class="row">
+        <dt class="col-sm-3">Tên vai trò</dt>
+        <dd class="col-sm-9">@Model.RoleName</dd>
+
+        <dt class="col-sm-3">Mô tả</dt>
+        <dd class="col-sm-9">@Model.Description</dd>
+
+        <dt class="col-sm-3">Ngày tạo</dt>
+        <dd class="col-sm-9">@Model.CreateDate.ToString("dd/MM/yyyy HH:mm")</dd>
+
+        <dt class="col-sm-3">Ngày cập nhật</dt>
+        <dd class="col-sm-9">@Model.UpdateDate.ToString("dd/MM/yyyy HH:mm")</dd>
+    </dl>
+
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">Sửa</a>
+    <a asp-action="Index" class="btn btn-secondary">Quay lại</a>
+</div>

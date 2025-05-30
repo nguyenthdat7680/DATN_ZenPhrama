@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DA.ZenPharma.Domain.Entity;
+using DA.ZenPharma.Infrastructure.Repositories;
 using DA.ZenPharma.Infrastructure.Repositories.Interfaces;
 
 namespace DA.ZenPharma.Infrastructure.UnitOfWork
@@ -24,7 +26,8 @@ namespace DA.ZenPharma.Infrastructure.UnitOfWork
         IImportInvoiceDetailRepository ImportInvoiceDetails { get; }
         IAddressRepository Addresses { get; }
         IInventoryBatchRepository InventoryBatches { get; }
-
+        IReportRepository Reports { get; }
+        IGenericRepository<ProductUnit> ProductUnits { get; }
         Task<int> SaveChangesAsync();
     }
 }

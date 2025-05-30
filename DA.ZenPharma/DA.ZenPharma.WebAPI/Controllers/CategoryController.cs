@@ -48,9 +48,15 @@ namespace DA.ZenPharma.WebAPI.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(Guid id)
         {
-            await _categoryService.DeleteAsync(id);
-            return Ok();
+            var success = await _categoryService.DeleteAsync(id);
+            if (!success)
+            {
+                return BadRequest("Không thể xóa danh mục vì vẫn còn sản phẩm thuộc danh mục này.");
+            }
+
+            return Ok("Danh mục đã được xóa thành công.");
         }
+
 
         [HttpGet("paged")]
         public async Task<IActionResult> GetPaged([FromQuery] int page = 1, [FromQuery] int pageSize = 10, [FromQuery] string? keyword = null, [FromQuery] bool? isActive = null)

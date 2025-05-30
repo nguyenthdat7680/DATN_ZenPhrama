@@ -483,6 +483,9 @@ namespace DA.ZenPharma.Infrastructure.Migrations
                     b.Property<DateTime>("CreateDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<Guid?>("InventoryBatchId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<Guid>("OrderId")
                         .HasColumnType("uniqueidentifier");
 
@@ -494,6 +497,10 @@ namespace DA.ZenPharma.Infrastructure.Migrations
 
                     b.Property<decimal>("TotalAmount")
                         .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("Unit")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("UnitPrice")
                         .HasColumnType("decimal(18,2)");
@@ -563,6 +570,10 @@ namespace DA.ZenPharma.Infrastructure.Migrations
                     b.Property<string>("Barcode")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("BaseUnit")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<Guid>("CategoryId")
                         .HasColumnType("uniqueidentifier");
 
@@ -583,7 +594,7 @@ namespace DA.ZenPharma.Infrastructure.Migrations
                     b.Property<decimal?>("DiscountPrice")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<bool?>("IsPrescriptionRequired")
+                    b.Property<bool>("IsPrescriptionRequired")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bit")
                         .HasDefaultValue(false);
@@ -595,7 +606,7 @@ namespace DA.ZenPharma.Infrastructure.Migrations
 
                     b.Property<string>("ProductCode")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ProductName")
                         .IsRequired()
@@ -617,9 +628,6 @@ namespace DA.ZenPharma.Infrastructure.Migrations
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
 
-                    b.Property<int>("Unit")
-                        .HasColumnType("int");
-
                     b.Property<int>("UpdateBy")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
@@ -637,7 +645,35 @@ namespace DA.ZenPharma.Infrastructure.Migrations
 
                     b.HasIndex("CategoryId");
 
+                    b.HasIndex("ProductCode")
+                        .IsUnique();
+
                     b.ToTable("Product", (string)null);
+                });
+
+            modelBuilder.Entity("DA.ZenPharma.Domain.Entity.ProductUnit", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<decimal>("ConversionFactor")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<Guid>("ProductId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Unit")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId", "Unit")
+                        .IsUnique();
+
+                    b.ToTable("ProductUnit", (string)null);
                 });
 
             modelBuilder.Entity("DA.ZenPharma.Domain.Entity.Province", b =>
@@ -1048,10 +1084,21 @@ namespace DA.ZenPharma.Infrastructure.Migrations
                     b.HasOne("DA.ZenPharma.Domain.Entity.Category", "Category")
                         .WithMany("Products")
                         .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Category");
+                });
+
+            modelBuilder.Entity("DA.ZenPharma.Domain.Entity.ProductUnit", b =>
+                {
+                    b.HasOne("DA.ZenPharma.Domain.Entity.Product", "Product")
+                        .WithMany("ProductUnits")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("DA.ZenPharma.Domain.Entity.User", b =>
@@ -1124,6 +1171,11 @@ namespace DA.ZenPharma.Infrastructure.Migrations
             modelBuilder.Entity("DA.ZenPharma.Domain.Entity.Order", b =>
                 {
                     b.Navigation("OrderDetails");
+                });
+
+            modelBuilder.Entity("DA.ZenPharma.Domain.Entity.Product", b =>
+                {
+                    b.Navigation("ProductUnits");
                 });
 
             modelBuilder.Entity("DA.ZenPharma.Domain.Entity.Province", b =>

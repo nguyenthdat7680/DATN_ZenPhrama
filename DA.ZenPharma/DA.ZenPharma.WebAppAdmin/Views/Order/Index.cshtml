@@ -8,7 +8,6 @@
     int endPage = Math.Min(totalPages, currentPage + 1);
 }
 
-
 <div class="nk-content mt-5 pt-5">
     <div class="container-fluid">
         <div class="nk-content-inner">
@@ -39,9 +38,10 @@
                         <select name="status" class="form-select">
                             <option value="">-- Tất cả trạng thái --</option>
                             @{
-                                var statusOptions = new[] { "Pending", "Confirmed", "Cancelled", "Đã giao" };
+                                var statusOptions = new[] { "Draft", "Pending", "Confirmed", "Cancelled", "Đã giao" };
                                 var statusTexts = new Dictionary<string, string>
                                 {
+                                    { "Draft", "Tạm thời" },
                                     { "Pending", "Chờ xử lý" },
                                     { "Confirmed", "Đã xác nhận" },
                                     { "Cancelled", "Đã hủy" },
@@ -60,8 +60,6 @@
                         <button type="submit" class="btn btn-primary">Lọc</button>
                     </div>
                 </form>
-
-
 
                 <div class="nk-block">
                     <div class="card card-bordered card-stretch">
@@ -94,9 +92,9 @@
                                             </div>
                                             <div class="nk-tb-col">
                                                 <div class="user-card">
-                                                    <div class="user-avatar bg-primary-dim"><span>@item.CustomerName.Substring(0,1)</span></div>
+                                                    <div class="user-avatar bg-primary-dim"><span>@(!string.IsNullOrEmpty(item.CustomerName) ? item.CustomerName.Substring(0, 1) : "K")</span></div>
                                                     <div class="user-info">
-                                                        <span class="tb-lead">@item.CustomerName</span>
+                                                        <span class="tb-lead">@(item.CustomerName ?? "Khách lẻ")</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -110,7 +108,10 @@
                                                           item.OrderStatus == "Confirmed" ? "bg-info" :
                                                           item.OrderStatus == "Completed" ? "bg-success" :
                                                           item.OrderStatus == "Cancelled" ? "bg-danger" : "bg-secondary")">
-                                                         @item.OrderStatus
+                                                         @(item.OrderStatus == "Draft" ? "Tạm thời" :
+                                                           item.OrderStatus == "Pending" ? "Chờ xử lý" :
+                                                           item.OrderStatus == "Confirmed" ? "Đã xác nhận" :
+                                                           item.OrderStatus == "Cancelled" ? "Đã hủy" : "Hoàn thành")
                                                     </span>
                                                 </div>
                                             </div>
@@ -118,8 +119,13 @@
                                                 <a class="btn btn-sm btn-primary" href="@Url.Action("Details", new { id = item.Id })" title="Chi tiết">
                                                     <em class="icon ni ni-eye"></em>
                                                 </a>
+                                                @if (item.OrderStatus == "Draft")
+                                                {
+                                                    <a class="btn btn-sm btn-warning" href="@Url.Action("Edit", new { id = item.Id })" title="Sửa">
+                                                        <em class="icon ni ni-edit"></em>
+                                                    </a>
+                                                }
                                             </div>
-                                            
                                         </div>
                                     }
                                 </div>
@@ -188,11 +194,10 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div><!-- .card-inner -->
+                            </div>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>

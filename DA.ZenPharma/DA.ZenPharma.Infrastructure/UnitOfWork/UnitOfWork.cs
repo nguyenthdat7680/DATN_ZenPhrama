@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DA.ZenPharma.Domain.Entity;
 using DA.ZenPharma.Infrastructure.Context;
+using DA.ZenPharma.Infrastructure.Repositories;
 using DA.ZenPharma.Infrastructure.Repositories.Implementation;
 using DA.ZenPharma.Infrastructure.Repositories.Interfaces;
 
@@ -32,6 +33,8 @@ namespace DA.ZenPharma.Infrastructure.UnitOfWork
             ImportInvoiceDetails = new ImportInvoiceDetailRepository(_context);
             Addresses = new AddressRepository(_context);
             InventoryBatches = new InventoryBatchRepository(_context);
+            Reports = new ReportRepository(_context);
+            ProductUnits = new GenericRepository<ProductUnit>(_context);
         }
 
         public IUserRepository Users { get; }
@@ -49,6 +52,8 @@ namespace DA.ZenPharma.Infrastructure.UnitOfWork
         public IImportInvoiceDetailRepository ImportInvoiceDetails { get; }
         public IAddressRepository Addresses { get; }
         public IInventoryBatchRepository InventoryBatches { get; }
+        public IReportRepository Reports { get; }
+        public IGenericRepository<ProductUnit> ProductUnits { get; }
 
         public async Task<int> SaveChangesAsync()
         {

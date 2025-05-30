@@ -39,12 +39,7 @@ namespace DA.ZenPharma.WebAPI.Controllers
             return Ok();
         }
 
-        [HttpPut]
-        public async Task<IActionResult> Update([FromBody] OrderUpdateDto dto)
-        {
-            await _service.UpdateAsync(dto);
-            return Ok();
-        }
+        
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(Guid id)

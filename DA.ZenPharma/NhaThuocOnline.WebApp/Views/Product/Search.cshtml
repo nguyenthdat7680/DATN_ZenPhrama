@@ -1,0 +1,181 @@
+﻿@using NhaThuocOnline.ViewModel.Common;
+@model PagedResult<NhaThuocOnline.ViewModel.Product.ProductBasicVm>
+@{
+    ViewData["Title"] = "Sản phẩm";
+
+    var imageFolderUrl = "https://localhost:7128/user-content/";
+}
+
+<link href="~/assets/css/dropdown.css" rel="stylesheet">
+<script src="~/js/app.min.js"></script>
+
+<div class="showProduct row p-0 m-0 ">
+    <div class="col-2  "></div>
+    <div class="col-xl-8 p-0 my-4 ">
+        <div class="h6 p-2 ">
+            Tìm thấy <span>@ViewBag.TotalRecords</span> kết quả phù hợp với yêu cầu
+        </div>
+        <div class=" row p-0 m-0">
+            <div class=" left-content   col-md-3 p-0 py-3 position-relative  ">
+                <!-- ======= Sidebar ======= -->
+                <div class="side-nav  " style="top: 12px; ">
+                    <h5 class="ml-2 pb-2 ">Danh mục sản phẩm</h5>
+                    <div class="side-nav-inner">
+                        <ul class="side-nav-menu scrollable">
+
+
+                            <li class="nav-item dropdown">
+                                <a class="dropdown-toggle" href="javascript:void(0);">
+                                    <span>
+                                    <i class="anticon anticon-build"></i>
+                                    </span>
+                                    <span class="title">Dược phẩm</span>
+                                    <span class="arrow">
+                                        <i class="arrow-icon"></i>
+                                    </span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="avatar.html">Thuốc kê đơn</a>
+                                    </li>
+                                    <li>
+                                        <a href="alert.html">Thuốc không kê đơn</a>
+                                    </li>
+
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="dropdown-toggle" href="javascript:void(0);">
+                                    <span>
+                                    <i class="anticon anticon-hdd"></i>
+                                    </span>
+                                    <span class="title">Chăm sóc sức khỏe</span>
+                                    <span class="arrow">
+                                        <i class="arrow-icon"></i>
+                                    </span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="accordion.html">Thực phẩm dinh dưỡng</a>
+                                    </li>
+                                    <li>
+                                        <a href="carousel.html">Tai mũi họng</a>
+                                    </li>
+
+
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="dropdown-toggle" href="javascript:void(0);">
+                                    <span>
+                                    <i class="anticon anticon-form"></i>
+                                    </span>
+                                    <span class="title">Sản phẩm tiện lợi</span>
+                                    <span class="arrow">
+                                        <i class="arrow-icon"></i>
+                                    </span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="form-elements.html">Hàng tổng hợp</a>
+                                    </li>
+
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+                <!-- End Sidebar-->
+            </div>
+            <div class="right-content col-12 col-md-9 p-0  py-2 ">
+
+                <main id="main" class="categoryBtn main ml-2 mt-2 mb-3">
+                    <div class="btn-list" data-toggle="offcanvas" data-target="#listItem" role="button"
+                         aria-controls="listItem">
+                        <span>
+                            <svg height="24px" id="Layer_1" style="enable-background: new 0 0 32 32;" version="1.1"
+                                 viewBox="0 0 32 32" width="32px" xml:space="preserve"
+                                 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <path d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2  s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2  S29.104,22,28,22z" />
+                                </svg>
+
+                        </span>
+                    </div>
+                </main>
+                <!--  -->
+
+                <div class="row select-search-for align-items-center ml-2 ">
+                    <div class=" col-lg-2 col-2  p-0">
+                        <div class="form-group" style="min-width: 100px;">
+                            <form id="orderByForm" method="get" action="@Url.Action("Search")">
+                                <select class="form-control" id="orderBy" name="orderBy">
+                                    <option selected>Lọc</option>
+                                    <option value="nameAsc">A->Z</option>
+
+                                    <option value="latestProduct">Mới nhất</option>
+                                    <option value="priceAsc">Giá tăng dần</option>
+
+                                    <option value="priceDesc">Giá giảm dần</option>
+
+                                </select>
+
+                            </form>
+       
+                        </div>
+                    </div>
+                    <div class="col-lg offset-lg-4"></div>
+
+                </div>
+
+                <div class="row  p-0  ml-2 ">
+
+                    @foreach (var item in Model.Items)
+                    {
+
+                        <div class="product-item col-2 m-0 p-0 card position-relative card-container" data-product-id="@item.Id">
+                          
+                            <img src="@imageFolderUrl@item.ImagePath" class="card-img-top" alt="...">
+                            <div class="card-body p-2">
+                                <h6 class="card-title truncate-text">@item.ProductName</h6>
+                                <div class="price text-primary fw-bold mb-1">@item.DiscountPrice.ToString("N0").Replace(",", ".")<span>đ</span></div>
+                                <del>@item.RegularPrice.ToString("N0").Replace(",", ".")<span>đ</span></del>
+                                <div class="d-grid gap-2 mt-2 mb-1">
+                                    <button class="btn btn-success w-100" type="button">
+                                        Thêm vào giỏ hàng
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+                </div>
+               
+            <div class="ml-2 text-center mt-2">
+                <a class="text-primary border-bottom cursor">Xem thêm</a>
+            </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-2"></div>
+
+
+</div>
+
+<div class="row p-4"></div>
+<script>
+    $(document).ready(function () {
+
+        $(".product-item").click(function () {
+            var productId = $(this).data("product-id");
+            var url = "/Product/Details/" + productId;
+            window.location.href = url;
+        });
+
+        // Xử lý sự kiện onchange
+        $("#orderBy").change(function () {
+            $("#orderByForm").submit();
+        });
+
+    });
+</script>

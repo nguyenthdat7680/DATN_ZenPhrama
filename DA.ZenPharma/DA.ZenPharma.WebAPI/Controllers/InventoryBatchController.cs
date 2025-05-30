@@ -18,9 +18,9 @@ namespace DA.ZenPharma.WebAPI.Controllers
         }
 
         [HttpGet("by-product/{productId}")]
-        public async Task<IActionResult> GetByProductId(Guid productId)
+        public async Task<IActionResult> GetByProductId(Guid productId, [FromQuery] Guid? branchId = null)
         {
-            var result = await _service.GetByProductIdAsync(productId);
+            var result = await _service.GetByProductIdAsync(productId, branchId);
             return Ok(result);
         }
 

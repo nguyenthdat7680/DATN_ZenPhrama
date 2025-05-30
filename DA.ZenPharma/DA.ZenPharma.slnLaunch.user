@@ -9,6 +9,10 @@
       {
         "Path": "DA.ZenPharma.WebAppAdmin\\DA.ZenPharma.WebAppAdmin.csproj",
         "Action": "Start"
+      },
+      {
+        "Path": "DA.ZenPharma.WebAppCustomer\\DA.ZenPharma.WebAppCustomer.csproj",
+        "Action": "Start"
       }
     ]
   }

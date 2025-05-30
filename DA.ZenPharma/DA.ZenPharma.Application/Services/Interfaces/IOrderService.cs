@@ -13,7 +13,7 @@ namespace DA.ZenPharma.Application.Services.Interfaces
         Task<IEnumerable<OrderDto>> GetAllAsync();
         Task<OrderDto?> GetByIdAsync(Guid id);
         Task AddAsync(OrderCreateDto dto);
-        Task UpdateAsync(OrderUpdateDto dto);
+        Task UpdateAsync(OrderCreateDto dto);
         Task DeleteAsync(Guid id);
         Task<PageResultDto<OrderDto>> GetOrderPagedAsync(int page, int pageSize, string? branchId, string? status);
     }

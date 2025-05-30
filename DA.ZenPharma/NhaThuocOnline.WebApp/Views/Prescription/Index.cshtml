@@ -1,0 +1,157 @@
+﻿@model NhaThuocOnline.ViewModel.Prescription.PrescriptionCreateRequest
+
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="row p-4"></div>
+
+<div class="prescription-upload row">
+    <div class="col-2"></div>
+    <div class="col-8 d-flex justify-content-between flex-wrap ">
+        <div class="prescription-upload_area bg-white p-3">
+            <div class="prescription-upload_content">
+                <h4><span class="badge badge-primary badge-pill  mr-2">1 </span>Chụp ảnh toa thuốc</h4>
+                <p>
+                    Tối đa 5 hình và dung lượng mỗi hình không quá 10MB.
+                    <br>
+                    Toa thuốc phải hợp lệ: đủ và rõ thông tin, còn nguyên vẹn và còn hiệu lực (trong 5 ngày).
+                </p>
+                <div class="upload-content">
+                    <label class="file-upload d-flex flex-column" for="upload">
+
+                        <h6>Đăng ảnh toa thuốc ở đây</h6>
+
+                        <p class="w-100 text-center mt-2">
+                            <a class="btn btn-primary text-white ">Chọn ảnh</a>
+
+                        </p>
+
+
+                    </label>
+                    <div id="fileList"></div>
+                    <input type="file" name="ImagePath" id="upload" multiple accept=".jpg, .jpeg, .png" hidden>
+
+                </div>
+                <div class="file-upload_list-items d-flex">
+                    <div class="file-upload_item position-relative">
+                        <img class="image-upload img-fluid" src="/assets/img/prescriptions-upload/prescription-tips.png">
+                        <img class="position-absolute" style="right: 0px" src="/assets/img/icon/x_icon.svg">
+                    </div>
+                    <div class="file-upload_item">
+                        <img class="image-upload img-fluid" src="/assets/img/prescriptions-upload/prescription-tips.png">
+                    </div>
+                    <div class="file-upload_item">
+                        <img class="image-upload img-fluid" src="/assets/img/prescriptions-upload/prescription-tips.png">
+                    </div>
+                    <div class="file-upload_item">
+                        <img class="image-upload img-fluid" src="/assets/img/prescriptions-upload/prescription-tips.png">
+                    </div>
+                    <div class="file-upload_item">
+                        <img class="image-upload img-fluid" src="/assets/img/prescriptions-upload/prescription-tips.png">
+                    </div>
+
+                </div>
+                <div class="form w-100 mt-3">
+                    <label>Ghi chú</label>
+                    <input class="note-input w-100" type="text" placeholder="Vui lòng nhập để lại thông tin ghi chú cho dược sĩ Pharmacity" name="CustomerNote">
+
+                    <h4 class="mt-4"><span class="badge badge-primary badge-pill mr-2 ">2</span>Nhập thông tin liên hệ</h4>
+                    <div class="user-info mb-2 d-flex justify-content-between">
+                        <div class="input-text-field">
+                            <label>Họ tên<span class="text-danger">*</span></label>
+                            <input class="w-100" type="text" value="Khach hang" name="CustomerName">
+                        </div>
+                        <div class="input-text-field">
+                            <label>Số điện thoại<span class="text-danger">*</span></label>
+                            <input class="w-100" type="tel" value="0912312231" name="CustomerPhone">
+                        </div>
+                    </div>
+                    <button class="prescription-btn btn btn-primary px-4 my-2 w-100" type="submit">Gửi toa thuốc</button>
+                </div>
+
+            </div>
+        </div>
+        <div class="prescription-upload_tips bg-warning p-4">
+            <h4>Toa thuốc minh họa</h4>
+            <div class="prescription-image">
+                <img class="img-fluid" src="/assets/img/page-img/prescription-tips.png">
+            </div>
+            <div class="description my-2" style="font-size: 14px;">
+                1. Có thông tin đơn vị phát hành toa thuốc
+                <br>
+                2. Có chi tiết thông tin bệnh nhân, chẩn đoán bệnh
+                <br>
+                3. Có tên thuốc, hàm lượng, số lượng, liều dùng
+                <br>
+                4. Còn hiệu lực: Toa thuốc chỉ có hiệu lực trong vòng <b>5 ngày</b> kể từ ngày kê toa
+                <br>
+                5. Có chữ ký và họ tên bác sĩ kê toa
+                <br>
+                Lưu ý: Hình ảnh toa thuốc phải đầy đủ, không cắt xén, mất nét
+            </div>
+        </div>
+    </div>
+    <div class="col-2"></div>
+</div>
+<div class="row p-4"></div>
+<div class="row p-4"></div>
+
+<div class="row p-4"></div>
+
+<script>
+
+    $(document).ready(function () {
+        // Gán sự kiện click cho nút "Gửi toa thuốc"
+        $(".prescription-btn").click(function () {
+            // Lấy giá trị từ các trường dữ liệu
+            var fileInput = document.getElementById('upload');
+            var imageFile = fileInput.files[0];
+            var customerNote = $("input[name='CustomerNote']").val();
+            var customerName = $("input[name='CustomerName']").val();
+            var customerPhone = $("input[name='CustomerPhone']").val();
+
+            // Tạo đối tượng FormData chứa dữ liệu gửi đi
+            var formData = new FormData();
+            formData.append('ImagePath', imageFile);
+            formData.append('CustomerNote', customerNote);
+            formData.append('CustomerName', customerName);
+            formData.append('CustomerPhone', customerPhone);
+
+            // Gửi yêu cầu POST đến controller "prescription/create"
+            $.ajax({
+                url: "/prescription/create",
+                type: "POST",
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: function (response) {
+                    // Xử lý kết quả thành công
+                    alert("Gửi đơn thuốc thành công!");
+                },
+                error: function (xhr, status, error) {
+                    // Xử lý lỗi
+                    console.log("Đã xảy ra lỗi: " + error);
+                }
+            });
+        });
+    });
+
+    const fileInput = document.getElementById('upload');
+    const fileList = document.getElementById('fileList');
+
+    fileInput.addEventListener('change', function () {
+        fileList.innerHTML = '';
+        const files = Array.from(fileInput.files);
+
+        files.forEach(function (file) {
+            const fileName = document.createElement('p');
+            fileName.textContent = file.name;
+            fileList.appendChild(fileName);
+        });
+    });
+</script>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

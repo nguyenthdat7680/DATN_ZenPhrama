@@ -15,6 +15,8 @@ using DA.ZenPharma.Application.Dtos.OrderDetailDtos;
 using DA.ZenPharma.Application.Dtos.OrderDto;
 using DA.ZenPharma.Application.Dtos.PrescriptionDto;
 using DA.ZenPharma.Application.Dtos.ProductDto;
+using DA.ZenPharma.Application.Dtos.ProductUnitDtos;
+using DA.ZenPharma.Application.Dtos.ReportDtos;
 using DA.ZenPharma.Application.Dtos.RoleDtos;
 using DA.ZenPharma.Application.Dtos.SupplierDto;
 using DA.ZenPharma.Application.Dtos.UserDto;
@@ -35,15 +37,41 @@ namespace DA.ZenPharma.Application.Mappings
             CreateMap<User, UserUpdateDto>().ReverseMap();
 
             // Product
-            CreateMap<Product, ProductDto>().ReverseMap();
-            CreateMap<Product, ProductCreateDto>().ReverseMap();
-            CreateMap<Product, ProductUpdateDto>().ReverseMap();
-            CreateMap<Product, ProductSearchDto>()
-                .ForMember(dest => dest.UnitDisplayName,
-                           opt => opt.MapFrom(src =>
-                               Enum.IsDefined(typeof(UnitType), src.Unit)
-                                   ? EnumHelper.GetDisplayName(src.Unit)
-                                   : "Không xác định"));
+            CreateMap<Product, RevenueByDateDto>().ReverseMap();
+            CreateMap<Product, HotProductDto>().ReverseMap();
+            // Product -> ProductDto
+            CreateMap<Product, ProductDto>()
+                .ForMember(dest => dest.CategoryName, opt => opt.MapFrom(src => src.Category.CategoryName))
+                .ForMember(dest => dest.ProductUnits, opt => opt.MapFrom(src => src.ProductUnits));
+
+            // ProductCreateDto -> Product
+            CreateMap<ProductCreateDto, Product>()
+                .ForMember(dest => dest.Id, opt => opt.Ignore())
+                .ForMember(dest => dest.ProductUnits, opt => opt.Ignore());
+
+            // ProductUpdateDto -> Product
+            CreateMap<ProductUpdateDto, Product>()
+                .ForMember(dest => dest.Id, opt => opt.Ignore())
+                .ForMember(dest => dest.ProductUnits, opt => opt.Ignore())
+                .ForMember(dest => dest.CreateDate, opt => opt.MapFrom(src => src.CreatedAt))
+                .ForMember(dest => dest.UpdateDate, opt => opt.MapFrom(src => src.UpdatedAt));
+
+            // Product -> ProductUpdateDto
+            CreateMap<Product, ProductUpdateDto>()
+                .ForMember(dest => dest.CreatedAt, opt => opt.MapFrom(src => src.CreateDate))
+                .ForMember(dest => dest.UpdatedAt, opt => opt.MapFrom(src => src.UpdateDate))
+                .ForMember(dest => dest.ProductUnits, opt => opt.MapFrom(src => src.ProductUnits));
+
+            // Product -> ProductSearchDto
+            CreateMap<Product, ProductSearchDto>();
+
+            // ProductUnit -> ProductUnitDto
+            CreateMap<ProductUnit, ProductUnitDto>();
+
+            // ProductUnitDto -> ProductUnit
+            CreateMap<ProductUnitDto, ProductUnit>()
+                .ForMember(dest => dest.Id, opt => opt.Ignore())
+                .ForMember(dest => dest.ProductId, opt => opt.Ignore());
 
 
             // Category

@@ -10,7 +10,7 @@ namespace DA.ZenPharma.Application.Services.Interfaces
 {
     public interface IInventoryBatchService
     {
-        Task<List<InventoryBatchDto>> GetByProductIdAsync(Guid productId);
+        Task<List<InventoryBatchDto>> GetByProductIdAsync(Guid productId, Guid? branchId = null);
         Task<IEnumerable<InventoryBatchDto>> GetAllAsync();
         Task<InventoryBatchDto?> GetByIdAsync(Guid id);
         Task AddAsync(InventoryBatchCreateDto dto);

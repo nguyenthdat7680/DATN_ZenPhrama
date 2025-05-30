@@ -1,8 +1,368 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model DA.ZenPharma.WebAppCustomer.Controllers.HomeViewModel
+
+@{
+    ViewData["Title"] = "Trang chủ";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<!-- Bao gồm các tài nguyên cần thiết -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css" />
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+<style>
+    .product-item_title {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    /* CSS cho banner */
+    .banner-left {
+        width: 70%;
+        overflow: hidden;
+    }
+
+    .banner-right {
+        width: 30%;
+    }
+
+    .carousel-inner {
+        overflow: hidden;
+    }
+
+    .carousel-item {
+        height: 300px;
+    }
+
+        .carousel-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+    .btn-carousel-left, .btn-carousel-right {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        background-color: #fff;
+    }
+
+        .btn-carousel-left:hover, .btn-carousel-right:hover {
+            background-color: #f0f0f0;
+        }
+
+    .btn-carousel-container {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .slick-prev, .slick-next {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        background-color: #fff;
+        z-index: 1;
+    }
+
+        .slick-prev:hover, .slick-next:hover {
+            background-color: #f0f0f0;
+        }
+
+    .slick-prev {
+        left: -50px;
+    }
+
+    .slick-next {
+        right: -50px;
+    }
+
+    .st0 {
+        fill: #134563;
+    }
+
+    .banner-right img {
+        width: 100%;
+        height: 142px;
+        object-fit: cover;
+    }
+</style>
+
+<!-- Banner -->
+<div class="banner-container row p-4">
+    <div class="col-2"></div>
+    <div class="col-xl-8 p-0">
+        <div class="banner d-flex">
+            <div id="carouselExampleIndicators" class="banner-left mr-3 position-relative carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active" style="height: 300px;">
+                        <img src="/assets/img/banner/banner6.webp" class="d-block w-100 h-100 skeleton" alt="Banner 1" loading="eager">
+                    </div>
+                    <div class="carousel-item" style="height: 300px;">
+                        <img src="/assets/img/banner/banner8.webp" class="d-block w-100 h-100 skeleton" alt="Banner 2" loading="lazy">
+                    </div>
+                    <div class="carousel-item" style="height: 300px;">
+                        <img src="/assets/img/banner/banner9.jpg" class="d-block w-100 h-100 skeleton" alt="Banner 3" loading="lazy">
+                    </div>
+                </div>
+                <div class="btn-carousel-container position-absolute w-100" style="top: 50%; transform: translateY(-50%);">
+                    <div class="btn-carousel-group d-flex justify-content-between p-3">
+                        <a class="btn-carousel-left btn-light" href="#carouselExampleIndicators" data-slide="prev">
+                            <svg style="enable-background: new 0 0 64 64;" version="1.1" height="32" width="32" viewBox="0 0 64 64" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <g>
+                            <g id="Icon-Chevron-Left" transform="translate(237.000000, 335.000000)">
+                            <polyline class="st0" points="-199.1,-289 -212.9,-302.7 -199.1,-316.4 -197.1,-314.4 -208.9,-302.7 -197.1,-291 -199.1,-289" />
+                                    </g>
+                                </g>
+                            </svg>
+                        </a>
+                        <a class="btn-carousel-right btn-light" href="#carouselExampleIndicators" data-slide="next">
+                            <svg style="enable-background: new 0 0 64 64;" version="1.1" viewBox="0 0 56 64" height="32" width="32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <g>
+                            <g id="Icon-Chevron-Left" transform="translate(237.000000, 335.000000)">
+                            <polyline class="st0" points="-210.9,-289 -212.9,-291 -201.1,-302.7 -212.9,-314.4 -210.9,-316.4 -197.1,-302.7 -210.9,-289" />
+                                    </g>
+                                </g>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="banner-right d-flex" style="flex-wrap: wrap;">
+                <img class="skeleton mb-3 w-100" height="142px" data-src="/assets/img/banner/banner1.webp" loading="eager">
+                <img class="skeleton w-100" height="142px" data-src="/assets/img/banner/banner7.webp" loading="eager">
+            </div>
+        </div>
+    </div>
+    <div class="col-2"></div>
 </div>
+
+<!-- Categories -->
+<div class="row p-3"></div>
+<div class="row p-2 split-content"></div>
+<div class="row p-2"></div>
+<div class="category-container row py-4">
+    <div class="col-2"></div>
+    <div class="category col-xl-8">
+        <div class="category-header">
+            <p class="h5">Danh mục sản phẩm</p>
+        </div>
+        <div class="category-body w-100">
+            <ul class="w-100 m-0 p-0 d-flex flex-wrap justify-content-between">
+                @foreach (var category in Model.Categories)
+                {
+                    <li>
+                        <a class="cursor" asp-controller="Category" asp-action="Index" asp-route-id="@category.Id">
+                            <img class="img-fluid skeleton" loading="lazy" data-src="@category.ImagePath" alt="@category.CategoryName">
+                            <p style="color: black !important; text-decoration: none;">@category.CategoryName</p>
+                        </a>
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+    <div class="col-2"></div>
+</div>
+
+<!-- Top Selling Products -->
+<div class="row p-1"></div>
+<div class="row p-2 split-content"></div>
+<div class="product-carousel-container row py-4">
+    <div class="col-2"></div>
+    <div class="product-carousel col-xl-8">
+        <div class="product_header my-4">
+            <h5>Top sản phẩm bán chạy</h5>
+        </div>
+        <div class="product_list-items w-100 d-flex flex-wrap">
+            @foreach (var product in Model.TopSellingProducts)
+            {
+                <div class="product-item my-2 mx-2" style="width: 200px;">
+                    <a asp-controller="Product" asp-action="Details" asp-route-id="@product.Id">
+                        <img class="img-fluid w-100 skeleton" loading="lazy" data-src="@product.ThumbnailImagePath" alt="@product.ProductName">
+                    </a>
+                    <div class="product-item_body m-2">
+                        <div class="product-item_title">
+                            @product.ProductName
+                        </div>
+                        <div class="product-item_price text-primary" style="font-weight: 600">
+                            @(product.DiscountPrice?.ToString("N0") ?? product.RegularPrice.ToString("N0"))đ /@product.BaseUnit
+                        </div>
+                        @if (product.DiscountPrice.HasValue && product.DiscountPrice < product.RegularPrice)
+                        {
+                            <div class="product-item_originalPrice">
+                                <del>@product.RegularPrice.ToString("N0")đ</del>
+                            </div>
+                        }
+                        <button class="product-item_add-to-cart btn btn-success my-2 w-100 cursor">
+                            Thêm vào giỏ hàng
+                        </button>
+                    </div>
+                </div>
+            }
+        </div>
+        <div class="row p-2"></div>
+    </div>
+    <div class="col-2"></div>
+</div>
+
+<!-- Prescription Banner -->
+<div class="row p-2 split-content"></div>
+<div class="banner-prescription-container row py-4">
+    <div class="col-2"></div>
+    <div class="banner-prescription col-xl-8">
+        <div class="banner-prescription_upload-step">
+            <img class="img-fluid" src="/assets/img/page-img/upoad-prescription-step-1.webp" alt="Step 1">
+            <img class="img-fluid" src="/assets/img/page-img/upoad-prescription-step-2.webp" alt="Step 2">
+            <img class="img-fluid" src="/assets/img/page-img/upoad-prescription-step-3.webp" alt="Step 3">
+        </div>
+        <div class="banner-prescription_buy-now">
+            <img class="img-fluid h-75 w-100" src="/assets/img/page-img/higlight-title.webp" alt="Highlight">
+            <a class="h-25" asp-action="Index" asp-controller="Prescription">
+                <img class="img-fluid h-100 cursor" src="/assets/img/page-img/btn-buy-now.webp" alt="Buy Now">
+            </a>
+        </div>
+    </div>
+    <div class="col-2"></div>
+</div>
+
+<!-- Discounted Products -->
+<div class="row p-2 split-content"></div>
+<div class="product-carousel-container row">
+    <div class="col-2"></div>
+    <div class="product-carousel col-xl-8">
+        <div class="product_header my-4">
+            <h5>Giảm giá cực sốc !!!</h5>
+        </div>
+        <div class="product_list-items w-100 d-flex flex-wrap">
+            @foreach (var product in Model.DiscountedProducts)
+            {
+                <div class="product-item my-2 mx-2" style="width: 200px;">
+                    <a asp-controller="Product" asp-action="Details" asp-route-id="@product.Id">
+                        <img class="img-fluid w-100 skeleton" loading="lazy" data-src="@product.ThumbnailImagePath" alt="@product.ProductName">
+                    </a>
+                    <div class="product-item_body m-2">
+                        <div class="product-item_title">
+                            @product.ProductName
+                        </div>
+                        <div class="product-item_originalPrice">
+                            @product.RegularPrice.ToString("N0")đ
+                        </div>
+                        <div class="product-item_price text-primary" style="font-weight: 600">
+                            @(product.DiscountPrice?.ToString("N0") ?? "N/A")đ /@product.BaseUnit
+                        </div>
+                        <button class="product-item_add-to-cart btn btn-success my-2 w-100 cursor">
+                            Thêm vào giỏ hàng
+                        </button>
+                    </div>
+                </div>
+            }
+        </div>
+        <div class="row p-2"></div>
+    </div>
+    <div class="col-2"></div>
+</div>
+
+<!-- Outstanding Brands -->
+<div class="row p-2 split-content"></div>
+<div class="outstanding-brand-container row py-4">
+    <div class="col-2"></div>
+    <div class="outstanding-brand col-xl-8">
+        <h5 class="mb-3">Thương hiệu nổi bật</h5>
+        <div class="outstanding-brand_list-items">
+            <ul class="p-0 m-0 d-flex flex-wrap">
+                <li class="mr-4 my-2">
+                    <img class="img-fluid skeleton" loading="lazy" data-src="/assets/img/brand-img/pmc.webp" alt="Brand 1">
+                    <p class="p-2 mt-2">Thương hiệu</p>
+                </li>
+                <li class="mr-4 my-2">
+                    <img class="img-fluid skeleton" loading="lazy" data-src="/assets/img/brand-img/PF_1.webp" alt="Brand 2">
+                    <p class="p-2 mt-2">Thương hiệu</p>
+                </li>
+                <li class="mr-4 my-2">
+                    <img class="img-fluid skeleton" loading="lazy" data-src="/assets/img/brand-img/7_Vitabella.webp" alt="Brand 3">
+                    <p class="p-2 mt-2">Thương hiệu</p>
+                </li>
+                <li class="mr-4 my-2">
+                    <img class="img-fluid skeleton" loading="lazy" data-src="/assets/img/brand-img/Group_23973.webp" alt="Brand 4">
+                    <p class="p-2 mt-2">Thương hiệu</p>
+                </li>
+                <li class="mr-4 my-2">
+                    <img class="img-fluid skeleton" loading="lazy" data-src="/assets/img/brand-img/Life_Space_logo.webp" alt="Brand 5">
+                    <p class="p-2 mt-2">Thương hiệu</p>
+                </li>
+                <li class="mr-4 my-2">
+                    <img class="img-fluid skeleton" loading="lazy" data-src="/assets/img/brand-img/Nutrigen.png" alt="Brand 6">
+                    <p class="p-2 mt-2">Thương hiệu</p>
+                </li>
+                <li class="my-2">
+                    <img class="img-fluid skeleton" loading="lazy" data-src="https://data-service.pharmacity.io/pmc-upload-media/production/pmc-ecm-core/brand-images/Kudos_logo.png" alt="Brand 7">
+                    <p class="p-2 mt-2">Thương hiệu</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-2"></div>
+</div>
+
+@section ScriptsIndex {
+    <script>
+        // Lazy load images with error handling
+        const lazyImages = document.querySelectorAll('img[data-src]');
+        lazyImages.forEach(img => {
+            const src = img.getAttribute('data-src');
+            if (src) {
+                const image = new Image();
+                image.src = src;
+                image.onload = () => {
+                    img.src = src;
+                    img.removeAttribute('data-src');
+                    img.classList.remove('skeleton');
+                };
+                image.onerror = () => {
+                    console.error(`Failed to load image: ${src}`);
+                    img.src = '/assets/img/placeholder.jpg';
+                    img.removeAttribute('data-src');
+                    img.classList.remove('skeleton');
+                };
+            } else {
+                console.error('No data-src attribute found for image:', img);
+            }
+        });
+
+        // Initialize Slick carousel for products
+        $(document).ready(function () {
+            $('.product_list-items').slick({
+                slidesToShow: 4,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 3000,
+                arrows: true,
+                prevArrow: '<button type="button" class="slick-prev btn-light"><svg style="enable-background:new 0 0 64 64;" version="1.1" height="32" width="32" viewBox="0 0 64 64" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g><g transform="translate(237.000000, 335.000000)"><polyline class="st0" points="-199.1,-289 -212.9,-302.7 -199.1,-316.4 -197.1,-314.4 -208.9,-302.7 -197.1,-291 -199.1,-289"/></g></g></svg></button>',
+                nextArrow: '<button type="button" class="slick-next btn-light"><svg style="enable-background:new 0 0 64 64;" version="1.1" viewBox="0 0 56 64" height="32" width="32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g><g transform="translate(237.000000, 335.000000)"><polyline class="st0" points="-210.9,-289 -212.9,-291 -201.1,-302.7 -212.9,-314.4 -210.9,-316.4 -197.1,-302.7 -210.9,-289"/></g></g></svg></button>',
+                responsive: [
+                    { breakpoint: 1024, settings: { slidesToShow: 3 } },
+                    { breakpoint: 768, settings: { slidesToShow: 2 } },
+                    { breakpoint: 480, settings: { slidesToShow: 1 } }
+                ]
+            });
+        });
+    </script>
+}

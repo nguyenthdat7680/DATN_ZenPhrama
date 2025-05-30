@@ -1,116 +1,116 @@
-﻿@using DA.ZenPharma.Domain.Enums
-@using DA.ZenPharma.WebAppAdmin.Helpers
-@model DA.ZenPharma.Application.Dtos.ProductDto.ProductCreateDto
+﻿@* @using DA.ZenPharma.Domain.Enums *@
+@* @using DA.ZenPharma.WebAppAdmin.Helpers *@
+@* @model DA.ZenPharma.Application.Dtos.ProductDto.ProductCreateDto *@
 
-@{
-    ViewData["Title"] = "Thêm sản phẩm";
-}
+@* @{ *@
+@*     ViewData["Title"] = "Thêm sản phẩm"; *@
+@* } *@
 
-<div class="container mt-5 pt-5">
-    <h2 class="mb-4">Thêm sản phẩm</h2>
+@* <div class="container mt-5 pt-5"> *@
+@*     <h2 class="mb-4">Thêm sản phẩm</h2> *@
 
-    <form asp-action="Create" method="post" class="needs-validation" novalidate>
-        <div class="row mb-3">
-            <div class="col-md-6">
-                <label asp-for="ProductCode" class="form-label">Mã code sản phẩm *</label>
-                <input asp-for="ProductCode" class="form-control" required />
-                <span asp-validation-for="ProductCode" class="text-danger"></span>
-            </div>
+@*     <form asp-action="Create" method="post" class="needs-validation" novalidate> *@
+@*         <div class="row mb-3"> *@
+@*             <div class="col-md-6"> *@
+@*                 <label asp-for="ProductCode" class="form-label">Mã code sản phẩm *</label> *@
+@*                 <input asp-for="ProductCode" class="form-control" required /> *@
+@*                 <span asp-validation-for="ProductCode" class="text-danger"></span> *@
+@*             </div> *@
 
-            <div class="col-md-6">
-                <label asp-for="ProductName" class="form-label">Tên sản phẩm *</label>
-                <input asp-for="ProductName" class="form-control" required />
-                <span asp-validation-for="ProductName" class="text-danger"></span>
-            </div>
-        </div>
+@*             <div class="col-md-6"> *@
+@*                 <label asp-for="ProductName" class="form-label">Tên sản phẩm *</label> *@
+@*                 <input asp-for="ProductName" class="form-control" required /> *@
+@*                 <span asp-validation-for="ProductName" class="text-danger"></span> *@
+@*             </div> *@
+@*         </div> *@
 
-        <div class="row mb-3">
-            <div class="col-md-6">
-                <label asp-for="SKU" class="form-label">SKU</label>
-                <input asp-for="SKU" class="form-control" />
-                <span asp-validation-for="SKU" class="text-danger"></span>
-            </div>
+@*         <div class="row mb-3"> *@
+@*             <div class="col-md-6"> *@
+@*                 <label asp-for="SKU" class="form-label">SKU</label> *@
+@*                 <input asp-for="SKU" class="form-control" /> *@
+@*                 <span asp-validation-for="SKU" class="text-danger"></span> *@
+@*             </div> *@
 
-            <div class="col-md-6">
-                <label asp-for="Unit" class="form-label">Đơn vị tính *</label>
-                <select asp-for="Unit" class="form-select">
-                    <option value="">-- Chọn đơn vị --</option>
-                    @foreach (var item in Enum.GetValues(typeof(UnitType)).Cast<UnitType>())
-                    {
-                        <option value="@item">@EnumHelper.GetDisplayName(item)</option>
-                    }
-                </select>
-                <span asp-validation-for="Unit" class="text-danger"></span>
-            </div>
-        </div>
+@*             <div class="col-md-6"> *@
+@*                 <label asp-for="Unit" class="form-label">Đơn vị tính *</label> *@
+@*                 <select asp-for="Unit" class="form-select"> *@
+@*                     <option value="">-- Chọn đơn vị --</option> *@
+@*                     @foreach (var item in Enum.GetValues(typeof(UnitType)).Cast<UnitType>()) *@
+@*                     { *@
+@*                         <option value="@item">@EnumHelper.GetDisplayName(item)</option> *@
+@*                     } *@
+@*                 </select> *@
+@*                 <span asp-validation-for="Unit" class="text-danger"></span> *@
+@*             </div> *@
+@*         </div> *@
 
-        <div class="row mb-3">
-            <div class="col-md-6">
-                <label asp-for="RegularPrice" class="form-label">Giá gốc *</label>
-                <input asp-for="RegularPrice" class="form-control" type="number" step="0.01" required />
-                <span asp-validation-for="RegularPrice" class="text-danger"></span>
-            </div>
-            <div class="col-md-6">
-                <label asp-for="DiscountPrice" class="form-label">Giá khuyến mãi</label>
-                <input asp-for="DiscountPrice" class="form-control" type="number" step="0.01" />
-                <span asp-validation-for="DiscountPrice" class="text-danger"></span>
-            </div>
-        </div>
+@*         <div class="row mb-3"> *@
+@*             <div class="col-md-6"> *@
+@*                 <label asp-for="RegularPrice" class="form-label">Giá gốc *</label> *@
+@*                 <input asp-for="RegularPrice" class="form-control" type="number" step="0.01" required /> *@
+@*                 <span asp-validation-for="RegularPrice" class="text-danger"></span> *@
+@*             </div> *@
+@*             <div class="col-md-6"> *@
+@*                 <label asp-for="DiscountPrice" class="form-label">Giá khuyến mãi</label> *@
+@*                 <input asp-for="DiscountPrice" class="form-control" type="number" step="0.01" /> *@
+@*                 <span asp-validation-for="DiscountPrice" class="text-danger"></span> *@
+@*             </div> *@
+@*         </div> *@
 
-        <div class="row mb-3">
-            <div class="col-md-6">
-                <label asp-for="StockQuantity" class="form-label">Số lượng *</label>
-                <input asp-for="StockQuantity" class="form-control" type="number" required />
-                <span asp-validation-for="StockQuantity" class="text-danger"></span>
-            </div>
-            <div class="col-md-6">
-                <label asp-for="CategoryId" class="form-label">Danh mục *</label>
-                <select asp-for="CategoryId" asp-items="ViewBag.Categories" class="form-select" required>
-                    <option value="">-- Chọn danh mục --</option>
-                </select>
-                <span asp-validation-for="CategoryId" class="text-danger"></span>
-            </div>
-        </div>
+@*         <div class="row mb-3"> *@
+@*             <div class="col-md-6"> *@
+@*                 <label asp-for="StockQuantity" class="form-label">Số lượng *</label> *@
+@*                 <input asp-for="StockQuantity" class="form-control" type="number" required /> *@
+@*                 <span asp-validation-for="StockQuantity" class="text-danger"></span> *@
+@*             </div> *@
+@*             <div class="col-md-6"> *@
+@*                 <label asp-for="CategoryId" class="form-label">Danh mục *</label> *@
+@*                 <select asp-for="CategoryId" asp-items="ViewBag.Categories" class="form-select" required> *@
+@*                     <option value="">-- Chọn danh mục --</option> *@
+@*                 </select> *@
+@*                 <span asp-validation-for="CategoryId" class="text-danger"></span> *@
+@*             </div> *@
+@*         </div> *@
 
-        <div class="mb-3">
-            <label asp-for="ThumbnailImagePath" class="form-label">Ảnh đại diện</label>
-            <input asp-for="ThumbnailImagePath" class="form-control" />
-            <span asp-validation-for="ThumbnailImagePath" class="text-danger"></span>
-        </div>
+@*         <div class="mb-3"> *@
+@*             <label asp-for="ThumbnailImagePath" class="form-label">Ảnh đại diện</label> *@
+@*             <input asp-for="ThumbnailImagePath" class="form-control" /> *@
+@*             <span asp-validation-for="ThumbnailImagePath" class="text-danger"></span> *@
+@*         </div> *@
 
-        <div class="mb-3">
-            <label asp-for="Description" class="form-label">Mô tả</label>
-            <textarea asp-for="Description" class="form-control" rows="4"></textarea>
-            <span asp-validation-for="Description" class="text-danger"></span>
-        </div>
+@*         <div class="mb-3"> *@
+@*             <label asp-for="Description" class="form-label">Mô tả</label> *@
+@*             <textarea asp-for="Description" class="form-control" rows="4"></textarea> *@
+@*             <span asp-validation-for="Description" class="text-danger"></span> *@
+@*         </div> *@
 
-        <div class="mb-3">
-            <label asp-for="Barcode" class="form-label">Mã vạch (Barcode)</label>
-            <input asp-for="Barcode" class="form-control" />
-            <span asp-validation-for="Barcode" class="text-danger"></span>
-        </div>
-        <div class="mb-3">
-            <label asp-for="UsageInstructions" class="form-label">Hướng dẫn sử dụng</label>
-            <textarea asp-for="UsageInstructions" class="form-control" rows="4"></textarea>
-            <span asp-validation-for="UsageInstructions" class="text-danger"></span>
-        </div>
+@*         <div class="mb-3"> *@
+@*             <label asp-for="Barcode" class="form-label">Mã vạch (Barcode)</label> *@
+@*             <input asp-for="Barcode" class="form-control" /> *@
+@*             <span asp-validation-for="Barcode" class="text-danger"></span> *@
+@*         </div> *@
+@*         <div class="mb-3"> *@
+@*             <label asp-for="UsageInstructions" class="form-label">Hướng dẫn sử dụng</label> *@
+@*             <textarea asp-for="UsageInstructions" class="form-control" rows="4"></textarea> *@
+@*             <span asp-validation-for="UsageInstructions" class="text-danger"></span> *@
+@*         </div> *@
 
-        <div class="form-check mb-3">
-            <input asp-for="IsPrescriptionRequired" class="form-check-input" />
-            <label asp-for="IsPrescriptionRequired" class="form-check-label">Yêu cầu đơn thuốc</label>
-        </div>
+@*         <div class="form-check mb-3"> *@
+@*             <input asp-for="IsPrescriptionRequired" class="form-check-input" /> *@
+@*             <label asp-for="IsPrescriptionRequired" class="form-check-label">Yêu cầu đơn thuốc</label> *@
+@*         </div> *@
 
-        <div class="form-check mb-3">
-            <input asp-for="IsPublished" class="form-check-input" />
-            <label asp-for="IsPublished" class="form-check-label">Hiển thị trên website</label>
-        </div>
+@*         <div class="form-check mb-3"> *@
+@*             <input asp-for="IsPublished" class="form-check-input" /> *@
+@*             <label asp-for="IsPublished" class="form-check-label">Hiển thị trên website</label> *@
+@*         </div> *@
 
-        <button type="submit" class="btn btn-primary">Thêm sản phẩm</button>
-        <a asp-action="Index" class="btn btn-secondary">Quay lại</a>
-    </form>
+@*         <button type="submit" class="btn btn-primary">Thêm sản phẩm</button> *@
+@*         <a asp-action="Index" class="btn btn-secondary">Quay lại</a> *@
+@*     </form> *@
 
-</div>
+@* </div> *@
 
-@section Scripts {
-    <partial name="_ValidationScriptsPartial" />
-}
+@* @section Scripts { *@
+@*     <partial name="_ValidationScriptsPartial" /> *@
+@* } *@

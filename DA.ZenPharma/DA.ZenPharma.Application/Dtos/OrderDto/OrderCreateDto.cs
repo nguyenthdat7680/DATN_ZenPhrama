@@ -9,11 +9,13 @@ namespace DA.ZenPharma.Application.Dtos.OrderDto
 {
     public class OrderCreateDto
     {
+        public Guid? Id { get; set; }
         public string? OrderCode { get; set; }
         public Guid? HandledById { get; set; }
         public decimal TotalAmount { get; set; }
         public string? CustomerName { get; set; }
         public string? CustomerPhone { get; set; }
+        public string? OrderStatus { get; set; }
         public Guid BranchId { get; set; }
         public List<OrderDetailCreateDto> Details { get; set; } = new();
         public DateTime CreatedAt { get; set; }

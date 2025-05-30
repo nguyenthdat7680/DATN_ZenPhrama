@@ -17,7 +17,7 @@ namespace DA.ZenPharma.Application.Dtos.UserDto
         public string PasswordHash { get; set; }
         public bool IsActive { get; set; }
         public DateTime CreatedAt { get; set; }
-
+        public Guid? BranchId { get; set; }
         public Guid? RoleId { get; set; }
     }
 }

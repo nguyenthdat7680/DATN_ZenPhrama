@@ -8,9 +8,11 @@ namespace DA.ZenPharma.Application.Dtos.OrderDetailDtos
 {
     public class OrderDetailCreateDto
     {
+        public Guid? Id { get; set; }
         public Guid ProductId { get; set; }
         public Guid InventoryBatchId { get; set; }  
         public int Quantity { get; set; }
+        public string? Unit { get; set; }
         public decimal UnitPrice { get; set; }
     }
 }

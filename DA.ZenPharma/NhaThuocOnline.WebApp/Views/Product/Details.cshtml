@@ -1,0 +1,158 @@
+﻿@model NhaThuocOnline.ViewModel.Product.ProductVm
+
+@{
+    ViewData["Title"] = Model.SeoTitle;
+    var imageFolderUrl = "https://localhost:7128/user-content/";
+}
+
+<link rel="stylesheet" href="/assets/css/productdetail.css">
+
+<body>
+<div class="product-detail row" style="background-color: #F0F2F5; padding: 24px 0 64px 0">
+    <div class="col-2 "></div>
+    <div class="col-xl-8">
+        <div class="row py-2 my-2 bg-white  rounded-custom">
+            <div class="col-md-5 col-12 p-0">
+                <div class="card">
+                    <div class="demo">
+                        <ul id="lightSlider">
+                            <li>
+                                <img src="@imageFolderUrl@Model.ImagePath" class="img-thumbnail" loading="lazy"/>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-7 col-12  p-0 mt-2 mt-md-0">
+                <div class="card">
+                    <div class="brand">
+                        <span class="h6 text-muted ">Thương hiệu</span>
+                        <span class="text-primary ">@Model.Brand</span>
+                    </div>
+                    <div class="about mt-2 ">
+                        <h4>
+                            @Model.ProductName
+                        </h4>
+                    </div>
+
+                    <div class="price mt-2">
+                        <h3 class="font-weight-bold text-primary" style="font-size: 32px">@Model.DiscountPrice.ToString("N0").Replace(",", ".")<span>đ</span> / <small>sản phẩm</small></h3>
+                        <del class="text-decoration-line-through" style="font-size: 24px;">@Model.RegularPrice.ToString("N0").Replace(",", ".")<span>đ</span></del>
+                    </div>
+                    <div class="product-description">
+
+
+                        <div class="row mt-2 align-items-center ">
+                            <small class="col col-sm-3">Danh mục</small>
+                            <span class="col text-primary ">
+                                @Model.CategoryName
+                            </span>
+                        </div>
+
+                        <div class="row mt-2 align-items-center ">
+                            <small class="col col-sm-3">Quy cách</small>
+                            <span class="col ">
+                                @Model.Packaging
+                            </span>
+                        </div>
+
+                        <div class="row mt-2 align-items-center ">
+                            <small class="col col-sm-3">Xuất xứ thương hiệu</small>
+                            <span class="col ">
+                                @Model.Origin
+                            </span>
+                        </div>
+
+                        <div class="row mt-2 align-items-center ">
+                            <small class="col col-sm-3">Nhà sản xuất</small>
+                            <span class="col ">
+                                @Model.Manufacturer
+                            </span>
+                        </div>
+
+                        <div class="row mt-2 align-items-center ">
+                            <small class="col col-sm-3">Nơi sản xuất</small>
+                            <span class="col ">
+                                @Model.ProductionLocation
+                            </span>
+                        </div>
+
+                        <div class="row mt-2 align-items-center ">
+                            <small class="col col-sm-3">Thành phần</small>
+                            <span class="col ">
+                                @Model.Ingredients
+                            </span>
+                        </div>
+
+                        <div class="row mt-2 align-items-baseline ">
+                            <small class="col col-sm-3">Mô tả ngắn</small>
+                            <span class="col ">
+                               @Model.Description
+                            </span>
+                        </div>
+
+                        <div class="card border p-0 mt-3">
+                            <div class="card-header bg-warning text-white ">
+                                <i class="bi bi-check-circle-fill"></i>
+                                Khuyến mãi đang được áp dụng
+                            </div>
+                            <div class="card-body my-2 ">
+                                <div class="item1 d-flex align-items-center p-2 ">
+                                    <img style="width: 60px; height: 60px;" class="card-img img-thumbnail "
+                                         src="https://cdn-icons-png.flaticon.com/512/2575/2575287.png" alt="">
+                                    <span class="ml-4">
+                                       Giảm giá thêm 30.000đ khi mua hàng lần đầu 
+                                    </span>
+                                </div>
+                            </div>
+
+
+
+
+                        </div>
+                        <input value="@Model.Id" hidden name="ProductId" id="ProductId" />
+
+                        <div class="quantity mt-3 d-flex align-items-center ">
+                            <small>Chọn số lượng</small>
+                            <div style="border-radius: 7px;" class="d-flex border ml-3">
+                                <button style="border: none; border-right: 1px solid #d5d5d5; border-top-left-radius: 5px; border-bottom-left-radius: 5px; width: 30px; height: 35px;">
+                                    <svg width="10" height="2" viewBox="0 0 10 2" fill="none">
+                                        <path d="M1 1L9 1" stroke="#0072BC" stroke-width="2"
+                                              stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                </button>
+                                <input style="width: 40px; height: 35px; border: none; text-align: center; background-color: #F0F0F0; outline: none;"
+                                       value="1" name="Quantity" id="Quantity">
+                                <button style="border: none; border-top-right-radius: 5px; border-left: 1px solid #d5d5d5; border-bottom-right-radius: 5px; width: 30px; height: 35px;">
+                                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+                                        <path d="M1 5H9" stroke="#0072BC" stroke-width="2"
+                                              stroke-linecap="round" stroke-linejoin="round"></path>
+                                        <path d="M5 9V1" stroke="#0072BC" stroke-width="2"
+                                              stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        
+                        
+                        <div class="buttons">
+                            <button class="btn btn-outline-info btn-long rounded-custom mr-2 my-1">Mua ngay</button>
+                            <button class="btn btn-primary btn-long rounded-custom my-1" type="submit" id="AddToCartBtn">Thêm vào giỏ hàng</button>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="col-2 "></div>
+</div>
+</body>
+
+

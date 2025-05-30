@@ -1,7 +1,32 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
+
 var builder = WebApplication.CreateBuilder(args);
+
+// AJAX CORS policy
+var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: MyAllowSpecificOrigins, policy =>
+    {
+        policy.WithOrigins("https://localhost:7034")
+              .AllowAnyMethod()
+              .AllowAnyHeader()
+              .AllowCredentials();
+    });
+});
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddSession();
+builder.Services.AddHttpClient();
+
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(options =>
+    {
+        options.LoginPath = "/Auth/Login";
+        options.AccessDeniedPath = "/Auth/AccessDenied";
+    });
 
 var app = builder.Build();
 
@@ -17,7 +42,9 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-
+app.UseSession();
+app.UseCors(MyAllowSpecificOrigins);
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(

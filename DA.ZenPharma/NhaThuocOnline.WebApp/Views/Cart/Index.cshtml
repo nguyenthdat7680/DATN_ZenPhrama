@@ -1,0 +1,187 @@
+﻿@using Microsoft.AspNetCore.Http
+@model IEnumerable<NhaThuocOnline.ViewModel.Cart.CartItemVm>
+@{
+    ViewData["Title"] = "Giỏ hàng";
+    var sessions = Context.Session.GetString("Token")?.ToString();
+   
+    
+    var imageFolderUrl = "https://localhost:7128/user-content/";
+    var clientUrl = "https://localhost:7286";
+}
+
+<div class="row p-3 primary-bg-color"></div>
+
+<div class="cart row p-0 primary-bg-color">
+        <div class="col-2  "></div>
+
+        <!-- cart -->
+
+        <div class="box-container col-xl-8 p-0 d-flex my-2 ">
+        <div class="p-2 left_box-content rounded-custom  bg-white  w-100">
+                <div style="padding-right: 0; margin-top: 10px;" class=" container  p-1">
+                    <div class="d-flex justify-content-between">
+                        <a style="font-weight: bold;" class=" text-dark text-decoration-none" href="#">
+                            <span>
+                            <svg viewBox="0 0 32 34" width="24px" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <style>
+                                        .cls-1 {
+                                            fill: none;
+                                        }
+                                    </style>
+                                </defs>
+                                <title />
+                                <g data-name="Layer 2" id="Layer_2"><path d="M20,25a1,1,0,0,1-.71-.29l-8-8a1,1,0,0,1,0-1.42l8-8a1,1,0,1,1,1.42,1.42L13.41,16l7.3,7.29a1,1,0,0,1,0,1.42A1,1,0,0,1,20,25Z" /></g>
+                                <g id="frame"><rect class="cls-1" height="32" width="32" /></g>
+                            </svg>
+
+
+
+                            </span>
+                            Giỏ hàng
+                        </a>
+                        <a style="font-size: 14px; " class=" text-primary text-decoration-none" href="#">
+                            Xóa tất cả giỏ hàng
+                        </a>
+                    </div>
+                  
+               
+                    <div class="pr-2 py-2 w-100">
+                         @if (sessions != null && Model.Count() > 0)
+                            {
+                        <table class="w-100">
+                        <thead class="border-bottom" >
+                                <tr>
+                                 <th class="px-2 productName">Sản phẩm</th>
+                                 <th class="px-2">Đơn giá</th>
+                                <th class="px-2">Số lượng</th>
+                                <th class="px-1 primary-red-color">Thành tiền</th>
+                                    <th></th>
+                                </tr>
+                                
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr class="border-bottom">
+                                        <td class=" d-flex align-items-center py-2">
+                                            <img width="70px" height="70px" class="img-product img-fluid"
+                                                 src="@imageFolderUrl@item.ProductImagePath"
+                                                 alt="">
+                                            <span class="ml-1">@item.ProductName</span>
+                                        </td>
+                                        <td class=" px-2">@item.Price.ToString("N0").Replace(",", ".") đ</td>
+                                        <td class="px-2">
+                                            <div class="quantityBtnGroup d-flex">
+                                                <button class="decrease-btn border-right " style="border: none; border-top-left-radius: 5px; border-bottom-left-radius: 5px; width: 24px; height: 24px;">
+                                                    <svg width="10" viewBox="0 0 10 7" fill="none">
+                                                        <path d="M1 1L9 1" stroke="#0072BC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                    </svg>
+                                                </button>
+                                                <input class="text-center" style="width: 40px; height: 24px; border: none; background-color:#F0F0F0" value="@item.Quantity" type="number" max="50" min="1" />
+                                                <button class="increase-btn border-left" style="border: none; border-top-right-radius: 5px; border-bottom-right-radius: 5px; width: 24px; height: 24px;">
+                                                    <svg width="10" viewBox="0 0 10 16" fill="none">
+                                                        <path d="M1 5H9" stroke="#0072BC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                        <path d="M5 9V1" stroke="#0072BC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                        </td>
+                                        <td class="price-highlight-color px-2">@item.TotalPrice.ToString("N0").Replace(",", ".") đ</td>
+                                        <td class="px-2">
+                                            <span>
+                                                <svg viewBox="0 0 32 32" width="24" xmlns="http://www.w3.org/2000/svg">
+                                                    <defs>
+                                                        <style>
+                                                            .cls1-trash {
+                                                                fill: none;
+                                                                stroke: #212529;
+                                                                stroke-linecap: round;
+                                                                stroke-linejoin: round;
+                                                                stroke-width: 2px;
+                                                            }
+                                                        </style>
+                                                    </defs>
+                                                    <title />
+                                                    <g id="trash">
+                                                        <rect class="cls1-trash" height="22" width="18" x="7" y="7" />
+                                                        <line class="cls1-trash" x1="3" x2="29" y1="7" y2="7" />
+                                                        <line class="cls1-trash" x1="13" x2="19" y1="3" y2="3" />
+                                                        <line class="cls1-trash" x1="13" x2="13" y1="12" y2="22" />
+                                                        <line class="cls1-trash" x1="19" x2="19" y1="12" y2="22" />
+                                                    </g>
+                                                </svg>
+                                            </span>
+                                        </td>
+                                    </tr>
+                                }
+
+                            
+                            
+                              
+                            </tbody>
+                        </table>
+                    }
+                    else
+                    {
+                        <div class="cart text-center col-12 ">
+                            <div>
+                                <img src="@imageFolderUrl/empty-cart.png">
+                            </div>
+                            <p>
+                                Tiếc quá! Pharmacity không tìm thấy sản phẩm
+                                <br>
+                                nào trong giỏ hàng của bạn.
+                            </p>
+                            <button class="empty-cart_btn btn btn-primary px-4">Tiếp tục mua hàng</button>
+                        </div>
+                    }
+                </div>
+                </div>
+            </div>
+        @if (sessions != null && Model.Count() > 0)
+        {
+            <div class="right_box-content col-lg-4 d-lg-block p-0 ml-4 ">
+                <div class="card rounded-custom ">
+                    <div class="card-header">
+                        <h5 class="card-title">Tổng tiền</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between ">
+                            <span>Tạm tính</span>
+                            <span class="price-highlight-color mr-2">@ViewBag.TotalPayment.ToString("N0").Replace(",", ".") đ</span>
+                        </div>
+                        <div style="margin-top: 12px;" class="right-box_btn d-flex justify-content-between ">
+
+                        <button class="btn btn-primary rounded-custom" onclick="window.location.href='/product/search'">
+                                Mua thêm
+                            </button>
+                           
+                            <button style="background-color: rgb(255, 174, 0);"
+                                    class="btn text-white rounded-custom" onclick="window.location.href='/checkout'">
+                                <div>
+                                    Đặt hàng
+                                    <i class="bi bi-chevron-right"></i>
+                                </div>
+                            </button>
+
+                            
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            
+        }
+        </div>
+
+
+        <!-- end cart -->
+        <div class="col-2  "></div>
+
+    </div>
+<div class="row p-4 primary-bg-color"></div>
+<div class="row p-4 primary-bg-color"></div>
+
+<div class="row p-4 primary-bg-color"></div>
+

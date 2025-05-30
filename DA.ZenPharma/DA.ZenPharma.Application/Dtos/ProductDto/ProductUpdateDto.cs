@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DA.ZenPharma.Application.Dtos.ProductUnitDtos;
 
 namespace DA.ZenPharma.Application.Dtos.ProductDto
 {
@@ -13,15 +14,18 @@ namespace DA.ZenPharma.Application.Dtos.ProductDto
         public string ProductName { get; set; }
         public string ProductCode { get; set; }
         public string SKU { get; set; }
+        public string BaseUnit { get; set; }
         public decimal RegularPrice { get; set; }
-        public decimal DiscountPrice { get; set; }
+        public decimal? DiscountPrice { get; set; }
         public int StockQuantity { get; set; }
         public bool IsPrescriptionRequired { get; set; }
         public bool IsPublished { get; set; }
         public string ThumbnailImagePath { get; set; }
         public string Description { get; set; }
-        public string SeoAlias { get; set; }
+        public string Barcode { get; set; }
+        public string UsageInstructions { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
+        public List<ProductUnitDto> ProductUnits { get; set; } = new List<ProductUnitDto>();
     }
 }

@@ -60,8 +60,16 @@ namespace DA.ZenPharma.WebAppAdmin.Controllers
             var staff = await _httpClient.GetFromJsonAsync<UserDto>($"https://localhost:7034/api/User/{staffId}");
             ViewBag.StaffName = staff?.LastName ?? "Không xác định";
 
-            var branches = await _httpClient.GetFromJsonAsync<List<BranchDto>>("https://localhost:7034/api/Branch");
-            ViewBag.Branches = new SelectList(branches, "Id", "BranchName");
+            if (User.IsInRole("Admin"))
+            {
+                var branches = await _httpClient.GetFromJsonAsync<List<BranchDto>>("https://localhost:7034/api/Branch");
+                ViewBag.Branches = new SelectList(branches, "Id", "BranchName");
+            }
+            else
+            {
+                ViewBag.BranchName = HttpContext.Session.GetString("branchName");
+                ViewBag.BranchId = HttpContext.Session.GetString("branchId");
+            }
 
             return View();
         }
@@ -82,8 +90,16 @@ namespace DA.ZenPharma.WebAppAdmin.Controllers
                 var staff = await _httpClient.GetFromJsonAsync<UserDto>($"https://localhost:7034/api/User/{staffId}");
                 ViewBag.StaffName = staff?.LastName ?? "Không xác định";
 
-                var branches = await _httpClient.GetFromJsonAsync<List<BranchDto>>("https://localhost:7034/api/Branch");
-                ViewBag.Branches = new SelectList(branches, "Id", "BranchName");
+                if (User.IsInRole("Admin"))
+                {
+                    var branches = await _httpClient.GetFromJsonAsync<List<BranchDto>>("https://localhost:7034/api/Branch");
+                    ViewBag.Branches = new SelectList(branches, "Id", "BranchName");
+                }
+                else
+                {
+                    ViewBag.BranchName = HttpContext.Session.GetString("branchName");
+                    ViewBag.BranchId = HttpContext.Session.GetString("branchId");
+                }
 
 
                 return View(dto);

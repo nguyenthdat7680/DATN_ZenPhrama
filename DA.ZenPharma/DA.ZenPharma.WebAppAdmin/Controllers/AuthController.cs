@@ -110,7 +110,7 @@ namespace DA.ZenPharma.WebAppAdmin.Controllers
             await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
 
 
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "Report");
         }
 
         [HttpGet]

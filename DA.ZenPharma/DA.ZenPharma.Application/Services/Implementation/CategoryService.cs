@@ -54,14 +54,23 @@ namespace DA.ZenPharma.Application.Services.Implementation
             await _unitOfWork.SaveChangesAsync();
         }
 
-        public async Task DeleteAsync(Guid id)
+        public async Task<bool> DeleteAsync(Guid id)
         {
             var category = await _unitOfWork.Categories.GetByIdAsync(id);
-            if (category == null) return;
+            if (category == null) return false;
+
+            var hasProducts = await _unitOfWork.Products.AnyAsync(p => p.CategoryId == id);
+            if (hasProducts)
+            {
+                return false; 
+            }
 
             _unitOfWork.Categories.Delete(category);
             await _unitOfWork.SaveChangesAsync();
+            return true;
         }
+
+
         public async Task<PageResultDto<CategoryDto>> GetPagedAsync(int page, int pageSize, string? keyword = null, bool? isActive = null)
         {
             var query = _unitOfWork.Categories.GetAllForPaging();

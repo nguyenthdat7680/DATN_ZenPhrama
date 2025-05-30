@@ -1,0 +1,546 @@
+﻿@{
+    ViewData["Title"] = "Trang chủ";
+    var imgFolderUrl = "https://localhost:7128/user-content/";
+}
+
+<link rel="stylesheet" type="text/css"
+      href="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css" />
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<style>
+    .product-item_title {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+</style>
+   <!-- -->
+<div class="row p-2"></div>
+        <!--  -->
+
+        <!-- banner -->
+        <div class="banner-container row p-4">
+            <div class="col-2"></div>
+            <div class="col-xl-8 p-0">
+                <div class="banner d-flex">
+            <div id="carouselExampleIndicators" class="banner-left mr-3 position-relative  carousel slide" data-ride="carousel" style="overflow: hidden;">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                </ol>
+
+                <div id="carousel-items">
+                    <div class="carousel-item active" style="height: 300px;">
+                        <img src="~/assets/img/banner/banner6.webp" class="d-block w-100  h-100 skeleton" alt="..." loading="eager">
+                    </div>
+                    <div class="carousel-item" style="height: 300px;">
+                        <img src="~/assets/img/banner/banner8.webp" class=" d-block w-100 h-100" alt="..." loading="lazy">
+                    </div>
+                    <div class="carousel-item" style="height: 300px;">
+                        <img src="~/assets/img/banner/banner9.jpg" class=" d-block w-100 h-100" alt="..." loading="lazy">
+                    </div>
+                </div>
+
+                <div class="btn-carousel-container position-absolute w-100" style="top: 40%">
+                    <div class="btn-carousel-group d-flex justify-content-between p-3">
+                        <a class="btn-carousel-left btn-light">
+                            <span>
+
+                                <svg id="Layer_1" style="enable-background: new 0 0 64 64;" version="1.1"
+                                     height="32" width="32" viewBox="0 0 64 64" xml:space="preserve"
+                                     xmlns="http://www.w3.org/2000/svg"
+                                     xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <style type="text/css">
+                                    .st0 {
+                                        fill: #134563;
+                                    }
+</style>
+                                <g>
+                                <g id="Icon-Chevron-Left" transform="translate(237.000000, 335.000000)">
+                                <polyline class="st0" id="Fill-35"
+                                          points="-199.1,-289 -212.9,-302.7 -199.1,-316.4 -197.1,-314.4 -208.9,-302.7 -197.1,-291      -199.1,-289    " />
+                                                </g>
+                                            </g>
+                                        </svg>
+
+                            </span>
+                        </a>
+                        <a class="btn-carousel-right btn-light">
+                            <span>
+
+                                <svg id="Layer_1" style="enable-background: new 0 0 64 64;" version="1.1" viewBox="0 0 56 64" height="32" width="32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <style type="text/css">
+                                    .st0 {
+                                        fill: #134563;
+                                    }
+</style>
+                                <g>
+                                <g id="Icon-Chevron-Left" transform="translate(237.000000, 335.000000)"><polyline class="st0" id="Fill-35" points="-210.9,-289 -212.9,-291 -201.1,-302.7 -212.9,-314.4 -210.9,-316.4 -197.1,-302.7      -210.9,-289    " /></g>
+                                            </g>
+                                        </svg>
+
+                            </span>
+
+                        </a>
+                    </div>
+                </div>
+            </div>
+                    <div class="banner-right d-flex  " style="flex-wrap: wrap;">
+                        <img class="skeleton  mb-3 w-100"  height="142px"
+                            data-src="/assets/img/banner/banner1.webp" loading="eager">
+                      
+                        <img class="skeleton w-100 " height="142px"
+                            data-src="/assets/img/banner/banner7.webp" loading="eager">
+                    </div>
+                </div>
+
+                <div class="col-2"></div>
+            </div>
+            <div class="col-2"></div>
+        </div>
+        <!-- end banner -->
+
+         <!--  -->
+<div class="row p-3"></div>
+<div class="row p-2 split-content"></div>
+<div class="row p-2"></div>
+
+         <!-- -->
+        
+        <div class="category-container row  py-4">
+            <div class="col-2">
+            </div>
+            <div class="category col-xl-8">
+                <div class="category-header">
+                    <p class="h5">Danh mục sản phẩm</p>
+
+                </div>
+                <div class="category-body  w-100">
+                    <ul class="w-100 m-0 p-0 d-flex flex-wrap justify-content-between">
+                        <li >
+                    <a class="cursor">
+                        <img class="img-fluid skeleton" loading="lazy" data-src="https://data-service.pharmacity.io/pmc-upload-media/production/pmc-ecm-core/category-icons/MicrosoftTeams-image_24.png">
+                                <p>Dược phẩm</p>
+                            </a>
+                        </li>
+                        <li >
+                    <a class="cursor">
+                        <img class="img-fluid skeleton" loading="lazy" data-src="https://data-service.pharmacity.io/pmc-upload-media/production/pmc-ecm-core/category-icons/Group_10378.png" ">
+                                <p>Chăm sóc sức khỏe</p>
+                            </a>
+                        </li>
+                        <li >
+                    <a class="cursor">
+                        <img class="img-fluid skeleton" loading="lazy" data-src="https://data-service.pharmacity.io/pmc-upload-media/production/pmc-ecm-core/category-icons/Group_10378-1.png">
+                                <p>Chăm sóc cá nhân</p>
+                            </a>
+                        </li>
+                        <li >
+                    <a class="cursor">
+                        <img class="img-fluid skeleton" loading="lazy" data-src="https://data-service.pharmacity.io/pmc-upload-media/production/pmc-ecm-core/category-icons/Group_10378-2.png">
+                                <p>Sản phẩm tiện lợi</p>
+                            </a>
+                        </li>
+
+                        <li >
+                    <a class="cursor">
+                        <img class="img-fluid skeleton" loading="lazy" data-src="https://data-service.pharmacity.io/pmc-upload-media/production/pmc-ecm-core/category-icons/Group_10378-3.png">
+                                <p>Thực phẩm chức năng</p>
+                            </a>
+                        </li>
+
+
+                        <li >
+                    <a class="cursor">
+                        <img class="img-fluid skeleton" loading="lazy" data-src="https://data-service.pharmacity.io/pmc-upload-media/production/pmc-ecm-core/category-icons/Group_10378-4.png">
+                                <p>Mẹ và Bé</p>
+                            </a>
+                        </li>
+
+                        <li >
+                    <a class="cursor">
+                        <img class="img-fluid skeleton" loading="lazy" data-src="https://data-service.pharmacity.io/pmc-upload-media/production/pmc-ecm-core/category-icons/Group_10378-5.png">
+                                <p>Chăm sóc sắc đẹp</p>
+                            </a>
+                        </li>
+
+                        <li >
+                    <a class="cursor">
+                        <img class="img-fluid skeleton" loading="lazy" data-src="https://data-service.pharmacity.io/pmc-upload-media/production/pmc-ecm-core/category-icons/Group_10378-6.png">
+                                <p>Thiết bị y tế</p>
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+            <div class="col-2">
+            </div>
+        </div>
+        <!--  -->
+<div class="row p-1 "></div>
+
+<div class="row p-2 split-content"></div>
+<div class="product-carousel-container row py-4 " >
+    <div class="col-2"></div>
+    <div class="product-carousel col-xl-8 ">
+        <div class="product_header my-4">
+            <h5>
+               Top sản phẩm bán chạy
+            </h5>
+        </div>
+        <div class="product_list-items w-100  ">
+            <div class="product-item my-2 ">
+                <img class="img-fluid w-100" loading="lazy" src="@imgFolderUrl/sp1.jpg">
+                <div class="product-item_body m-2">
+                    <div class="product-item_title">
+                        Nước muối Pharmacity 0,9%asaddddddddddfsddddddddddsaa
+                    </div>
+                    <div class="product-item_price text-primary" style="font-weight: 600">
+                        8000đ /Chai
+                    </div>
+                    <div class="product-item_originalPrice">
+                        <del>10.500đ</del>
+                    </div>
+                   
+                    <button class="product-item_add-to-cart btn btn-success my-2 w-100 cursor">
+                        Thêm vào giỏ
+                        hàng
+                    </button>
+                </div>
+            </div>
+            <div class="product-item my-2 ">
+                <img class="img-fluid w-100" loading="lazy" src="https://data-service.pharmacity.io/pmc-upload-media/production/pmc-ecm-core/__sized__/products/P17953_11-thumbnail-510x510-70.jpg">
+                <div class="product-item_body m-2">
+                    <div class="product-item_title">
+                        Nhụy hoa nghệ tây đỏ hữu cơ Krokos Kozanis
+                    </div>
+                    <div class="product-item_price text-primary" style="font-weight: 600">
+                        344.000đ /Chai
+                    </div>
+                    <div class="product-item_originalPrice">
+                        <del>388.500đ</del>
+                    </div>
+
+                    <button class="product-item_add-to-cart btn btn-success my-2 w-100 cursor">
+                        Thêm vào giỏ
+                        hàng
+                    </button>
+                </div>
+            </div>
+            <div class="product-item my-2 ">
+                <img class="img-fluid w-100" loading="lazy" src="https://data-service.pharmacity.io/pmc-upload-media/production/pmc-ecm-core/__sized__/products/P15652_11-thumbnail-510x510-70.jpg">
+                <div class="product-item_body m-2">
+                    <div class="product-item_title">
+                        Dung dịch bổ sung lợi khuẩn tiêu hóa 
+                    </div>
+                    <div class="product-item_price text-primary" style="font-weight: 600">
+                        415.000đ /Lọ
+                    </div>
+                    <div class="product-item_originalPrice">
+                        <del>450.000đ</del>
+                    </div>
+
+                    <button class="product-item_add-to-cart btn btn-success my-2 w-100 cursor">
+                        Thêm vào giỏ
+                        hàng
+                    </button>
+                </div>
+            </div>
+            <div class="product-item my-2 ">
+                <img class="img-fluid w-100" loading="lazy" src="https://data-service.pharmacity.io/pmc-upload-media/production/pmc-ecm-core/__sized__/products/P18601_7-thumbnail-510x510-70.jpg">
+                <div class="product-item_body m-2">
+                    <div class="product-item_title">
+                        Thực phẩm bảo vệ sức khỏe LineaBon K2+D3
+                    </div>
+                    <div class="product-item_price text-primary" style="font-weight: 600">
+                        300.000đ /Lọ
+                    </div>
+                    <div class="product-item_originalPrice">
+                        <del>295.000đ</del>
+                    </div>
+
+                    <button class="product-item_add-to-cart btn btn-success my-2 w-100 cursor">
+                        Thêm vào giỏ
+                        hàng
+                    </button>
+                </div>
+            </div>
+            <div class="product-item my-2 ">
+                <img class="img-fluid w-100" loading="lazy" src="https://data-service.pharmacity.io/pmc-upload-media/production/pmc-ecm-core/__sized__/products/P22606_21-thumbnail-510x510-70.jpg">
+                <div class="product-item_body m-2">
+                    <div class="product-item_title">
+                        Nước uống Collagen Goodlife Collagen
+                    </div>
+                    <div class="product-item_price text-primary" style="font-weight: 600">
+                        300.000đ /Lọ
+                    </div>
+                    <div class="product-item_originalPrice">
+                        <del>295.000đ</del>
+                    </div>
+
+                    <button class="product-item_add-to-cart btn btn-success my-2 w-100 cursor">
+                        Thêm vào giỏ
+                        hàng
+                    </button>
+                </div>
+            </div>
+
+
+
+           
+        </div>
+        <!--  -->
+        <div class="row p-2"></div>
+        <!--  -->
+
+    </div>
+    <div class="col-2"></div>
+</div>
+
+
+        <!-- -->
+<div class="row p-2 split-content"></div>
+
+        <!-- banner-prescription -->
+        <div class="banner-prescription-container row  py-4">
+            <div class="col-2"></div>
+            <div class="banner-prescription col-xl-8 ">
+                <div class="banner-prescription_upload-step">
+                    <img class="img-fluid" src="/assets/img/page-img/upoad-prescription-step-1.webp">
+                    <img class="img-fluid" src="/assets/img/page-img/upoad-prescription-step-2.webp">
+                    <img class="img-fluid" src="/assets/img/page-img/upoad-prescription-step-3.webp">
+                </div>
+
+                <div class="banner-prescription_buy-now ">
+                    <img class="img-fluid h-75 w-100" src="/assets/img/page-img/higlight-title.webp">
+                    <a class="h-25"  asp-action="Index" asp-controller="Prescription">  
+                    <img class="img-fluid h-100 cursor" src="/assets/img/page-img/btn-buy-now.webp">
+
+                    </a>
+           
+
+                </div>
+
+                <div class="banner-prescription_footer-content">
+
+                </div>
+
+            </div>
+            <div class="col-2"></div>
+
+        </div>
+        <!-- end banner -->
+
+       
+
+        <!-- category -->
+        <!-- end category -->
+
+        <!--  -->
+
+<div class="row p-2 split-content"></div>
+
+<!-- -->
+
+        <!-- product-carousel -->
+
+<div class="product-carousel-container row  ">
+    <div class="col-2"></div>
+    <div class="product-carousel col-xl-8 ">
+        <div class="product_header my-4">
+            <h5>
+               Giảm giá cực sốc !!!
+            </h5>
+        </div>
+        <div class="product_list-items w-100  ">
+            <div class="product-item my-2 ">
+                <img class="img-fluid" loading="lazy" src="/assets/img/products/sp1.jpg">
+                <div class="product-item_body m-2">
+                    <div class="product-item_title">
+                        Nước muối Pharmacity 0,9%asaddddddddddfsddddddddddsaa
+                    </div>
+                    <div class="product-item_originalPrice">
+                        10.500đ
+                    </div>
+                    <div class="product-item_price">
+                        8000 đ/Chai
+                    </div>
+                    <button class="product-item_add-to-cart btn btn-success my-2 w-100">
+                        Thêm vào giỏ
+                        hàng
+                    </button>
+                </div>
+            </div>
+            <div class="product-item my-2 ">
+                <img class="img-fluid" loading="lazy" src="/assets/img/products/sp1.jpg">
+                <div class="product-item_body m-2">
+                    <div class="product-item_title">
+                        Nước muối Pharmacity 0,9%asaddddddddddfsddddddddddsaa
+                    </div>
+                    <div class="product-item_originalPrice">
+                        10.500đ
+                    </div>
+                    <div class="product-item_price">
+                        8000 đ/Chai
+                    </div>
+                    <button class="product-item_add-to-cart btn btn-success mt-2 w-100">
+                        Thêm vào giỏ
+                        hàng
+                    </button>
+                </div>
+            </div>
+            <div class="product-item my-2 ">
+                <img class="img-fluid" loading="lazy" src="/assets/img/products/sp1.jpg">
+                <div class="product-item_body m-2">
+                    <div class="product-item_title">
+                        Nước muối Pharmacity 0,9%asaddddddddddfsddddddddddsaa
+                    </div>
+                    <div class="product-item_originalPrice">
+                        10.500đ
+                    </div>
+                    <div class="product-item_price">
+                        8000 đ/Chai
+                    </div>
+                    <button class="product-item_add-to-cart btn btn-success mt-2 w-100">
+                        Thêm vào giỏ
+                        hàng
+                    </button>
+                </div>
+            </div>
+            <div class="product-item my-2 ">
+                <img class="img-fluid" loading="lazy" src="/assets/img/products/sp1.jpg">
+                <div class="product-item_body m-2">
+                    <div class="product-item_title">
+                        Nước muối Pharmacity 0,9%asaddddddddddfsddddddddddsaa
+                    </div>
+                    <div class="product-item_originalPrice">
+                        10.500đ
+                    </div>
+                    <div class="product-item_price">
+                        8000 đ/Chai
+                    </div>
+                    <button class="product-item_add-to-cart btn btn-success mt-2 w-100">
+                        Thêm vào giỏ
+                        hàng
+                    </button>
+                </div>
+            </div>
+            <div class="product-item my-2 ">
+                <img class="img-fluid" loading="lazy" src="/assets/img/products/sp1.jpg">
+                <div class="product-item_body m-2">
+                    <div class="product-item_title">
+                        Nước muối Pharmacity 0,9%asaddddddddddfsddddddddddsaa
+                    </div>
+                    <div class="product-item_originalPrice">
+                        10.500đ
+                    </div>
+                    <div class="product-item_price">
+                        8000 đ/Chai
+                    </div>
+                    <button class="product-item_add-to-cart btn btn-success mt-2 w-100">
+                        Thêm vào giỏ
+                        hàng
+                    </button>
+                </div>
+            </div>
+
+        </div>
+        <!--  -->
+        <div class="row p-2"></div>
+        <!--  -->
+
+    </div>
+    <div class="col-2"></div>
+</div>
+
+
+        
+        <!--  -->
+<div class="row p-2 split-content"></div>
+
+<!--  -->
+
+        <!-- Outstanding -->
+        <div class="outstanding-brand-container row py-4">
+            <div class="col-2"></div>
+            <div class="outstanding-brand col-xl-8  ">
+                <h5 class="mb-3">Thương hiệu nổi bật</h5>
+                <div class="outstanding-brand_list-items ">
+                    <ul class="p-0 m-0 d-flex flex-wrap ">
+                        <li class=" mr-4 my-2">
+                            <img class="img-fluid skeleton" loading="lazy" data-src="/assets/img/brand-img/pmc.webp">
+                            <p class="p-2 mt-2">Thương hiệu</p>
+                        </li>
+                        <li class=" mr-4 my-2">
+                            <img class="img-fluid skeleton" loading="lazy" data-src="/assets/img/brand-img/PF_1.webp">
+                            <p class="p-2 mt-2">Thương hiệu</p>
+                        </li>
+                        <li class=" mr-4 my-2">
+                            <img class="img-fluid skeleton" loading="lazy" data-src="/assets/img/brand-img/7_Vitabella.webp">
+                            <p class="p-2 mt-2">Thương hiệu</p>
+                        </li>
+                        <li class=" mr-4 my-2">
+                            <img class="img-fluid skeleton" loading="lazy" data-src="/assets/img/brand-img/Group_23973.webp">
+                            <p class="p-2 mt-2">Thương hiệu</p>
+                        </li>
+                        <li class=" mr-4 my-2">
+                            <img class="img-fluid skeleton" loading="lazy" data-src="/assets/img/brand-img/Life_Space_logo.webp">
+                            <p class="p-2 mt-2">Thương hiệu</p>
+                        </li>
+                        <li class=" mr-4 my-2">
+                            <img class="img-fluid skeleton" loading="lazy" data-src="/assets/img/brand-img/Nutrigen.png">
+                            <p class="p-2 mt-2">Thương hiệu</p>
+                        </li>
+                
+                          <li class="  my-2">
+                    <img class="img-fluid skeleton" loading="lazy" data-src="https://data-service.pharmacity.io/pmc-upload-media/production/pmc-ecm-core/brand-images/Kudos_logo.png">
+                            <p class="p-2 mt-2">Thương hiệu</p>
+                        </li>
+           
+                      
+                       
+
+                    </ul>
+                </div>
+            </div>
+            <div class="col-2"></div>
+
+        </div>
+        <!--  -->
+
+ 
+         
+        
+@section ScriptsIndex{
+    <script>
+        // Lấy tất cả các phần tử <img> có thuộc tính data-src
+        const lazyImages = document.querySelectorAll('img[data-src]');
+
+        // Lặp qua từng phần tử <img> và thay thế thuộc tính data-src bằng src khi ảnh đã tải xong
+        lazyImages.forEach(img => {
+            const src = img.getAttribute('data-src');
+
+            // Tạo một đối tượng Image mới để tải ảnh
+            const image = new Image();
+            image.src = src;
+
+            // Khi ảnh đã tải xong, thay thế thuộc tính data-src bằng src
+            image.onload = () => {
+                img.src = src;
+                img.removeAttribute('data-src');
+                img.classList.remove('skeleton')
+            };
+        });
+
+
+    </script>
+  
+
+}

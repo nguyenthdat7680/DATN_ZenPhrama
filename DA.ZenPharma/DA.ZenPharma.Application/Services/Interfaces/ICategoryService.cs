@@ -14,7 +14,7 @@ namespace DA.ZenPharma.Application.Services.Interfaces
         Task<CategoryDto?> GetByIdAsync(Guid id);
         Task AddAsync(CategoryCreateDto dto);
         Task UpdateAsync(CategoryUpdateDto dto);
-        Task DeleteAsync(Guid id);
+        Task<bool> DeleteAsync(Guid id);
         Task<PageResultDto<CategoryDto>> GetPagedAsync(int page, int pageSize, string? keyword = null, bool? isActive = null);
 
     }

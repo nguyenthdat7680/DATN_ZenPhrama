@@ -1,0 +1,292 @@
+﻿@using Microsoft.AspNetCore.Http
+@using NhaThuocOnline.ViewModel.Customer;
+@model NhaThuocOnline.ViewModel.Order.OrderItemCustomerAddress
+@{
+    ViewData["Title"] = "Thanh toán";
+    var sessions = Context.Session.GetString("Token")?.ToString();
+
+    var imageFolderUrl = "https://localhost:7128/user-content/";
+    var clientUrl = "https://localhost:7286";
+}
+
+<div class="checkout row py-4" style="background-color: #ededed;">
+    <div class="col-2"></div>
+
+    <div class="col-xl-8 d-flex ">
+        <div class="row ">
+            <div class="col-12 col-xl-8 p-0">
+                <div class="card rounded-custom border-hover p-2">
+                    <div class="card-body">
+                        <h4 class="card-title h2">Thanh toán </h4>
+                       
+                        <span>Giỏ hàng </span>
+                        <a href="#" class="px-2">Nhấn để thay đổi</a>
+
+                        @if(sessions != null)
+                        {
+                            @foreach(var item in Model.OrderItemVm)
+                            {
+                       <div class="w-100  row mt-4 border-bottom border-dark pb-4 ">
+                            <div style="width: 10.666667%;" class="img-product col-md-2">
+                                <img style="width: 60px; height: 70px;"
+                                     src="@imageFolderUrl@item.ProductImagePath"
+                                     alt="Product 1" class="img-thumbnail ">
+                            </div>
+                            <div style="width: calc( 100% - 10.666667%);"
+                                 class="col-md-10 d-flex align-items-center justify-content-between">
+                                <div style="flex: 3;" class="mr-3 py-2"> @item.ProductName</div>
+                                        <div style="flex: 2;" class="mx-3">@item.Price.ToString("N0").Replace(",", ".")đ</div>
+                                <div style="flex: 1;" class="mx-4"><span>x</span>@item.Quantity</div>
+                                        <div style="flex: 1; text-align: right;">@item.TotalPrice.ToString("N0").Replace(",", ".")đ</div>
+                            </div>
+                        </div>
+                                
+                            }
+                        }
+
+                       
+
+
+                        <div class="row mt-4 pl-3 w-100 flex-row  justify-content-between ">
+                            <span style="width: unset;">Ghi chú</span>
+                            <a style="width: unset;" href="#">Nhập ghi chú</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-4 mx-2 ">
+                    <div class="col-md-12 d-flex  justify-content-center">
+                        <label class="mr-4 " for="Delivery1">
+                            <input class="cursor" type="radio" name="Delivery" id="Delivery1" checked>
+                            <i class="bi bi-truck"></i>
+                            Giao hàng tận nơi
+                        </label>
+                        <label for="Delivery2">
+                            <input class="cursor" type="radio" name="Delivery" id="Delivery2">
+                            <i class="bi bi-house-heart"></i>
+                            Nhận tại nhà thuốc
+                        </label>
+                    </div>
+                </div>
+                <div class="card mt-4 rounded-custom border-hover">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-12 border-bottom">
+                                <span>
+                                    <i class="bi bi-geo-alt"></i>
+                                    Địa chỉ nhận hàng
+                                </span>
+                             
+                                <div class="d-flex justify-content-between align-items-baseline mt-2 ">
+                                    @foreach(var item in Model.CustomerAddressVm)
+                                    {
+                                        
+                                    <div>
+                                        <span>Tên người nhận: @item.Addresses[0].ReceiverName</span>
+                                        |
+                                        <span>SĐT: @item.Addresses[0].ReceiverPhone</span>
+                                            <p>@item.Addresses[0].AddressLine1, @item.Addresses[0].AddressLine2, @item.Addresses[0].District, @item.Addresses[0].City</p>
+                                    </div>
+                                    <span>
+                                        <i class="bi bi-chevron-right"></i>
+                                    </span>
+                                    }
+                                </div>
+                                    
+                                
+                            </div>
+                           
+                            <div class="p-3">
+                                <span>
+                                    <i class="bi bi-truck"></i>
+                                    Phương thức vận chuyển
+                                </span>
+                                <div class="d-flex justify-content-between align-items-baseline mt-2 ">
+
+                                    <span>Ahamove</span>
+                                    <a href="#" class=" ms-auto">Miễn phí</a>
+
+                                    <span class="ms-3 ">
+                                        <i class="bi bi-chevron-right"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card my-4 py-2 rounded-custom border-hover">
+                    <div class="card-body">
+                        <div class="card-title fw-bold h4 mb-4">Chọn hình thức thanh toán</div>
+                        <div class=" flex-column">
+
+                            <div class=" d-flex align-items-center p-2 border rounded-custom" >
+                                <div class=" w-25">
+                                    <img style="width: 30px;"
+                                         src="https://png.pngtree.com/png-vector/20191028/ourlarge/pngtree-pack-cash-icon-cartoon-style-png-image_1893446.jpg"
+                                         class="img-fluid rounded-start" alt="...">
+                                </div>
+                                <label for="cash1" class="w-75  d-flex align-items-center">
+                                    <div class="col-md-10 ">
+                                        <h5 class="m-0">Tiền mặt</h5>
+                                        <span style="font-size: 12px;">
+                                            Thanh toán bằng tiền mặt khi nhận
+                                            hàng
+                                        </span>
+                                    </div>
+                                    <span class="col-md-2 text-end ">
+                                        <input type="radio" name="cashMethod" id="cash1" checked>
+                                    </span>
+                                </label>
+                            </div>
+
+                            <div class=" d-flex align-items-center mt-4 p-2 border rounded-custom ">
+                                <div class="w-25">
+                                    <img style="width: 30px;"
+                                         src="https://cdn.dribbble.com/users/1374258/screenshots/2963930/debit_card_animation.gif"
+                                         class="img-fluid rounded-start" alt="...">
+                                </div>
+                                <label for="cash2" class="w-75 d-flex align-items-center">
+                                    <div class="col-md-10">
+                                        <h5 class="m-0">Thẻ ATM <small>( đang bảo trì )</small></h5>
+                                        <span style="font-size: 12px;">
+                                            Bạn sẽ thanh toán trước số tiền của đơn hàng
+                                            qua thẻ ATM nội địa 
+                                        </span>
+                                    </div>
+                                    <span class="col-md-2 text-end ">
+                                        <input type="radio" name="cashMethod" id="cash2" disabled>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="padding-left: 24px;" class="col-12 col-lg-4">
+                <div class="card rounded-custom">
+                    <div class="card-body ">
+                        <div class="row d-flex justify-content-between px-3">
+                            <div ><b>Mã khuyến mại</b></div>
+                            <div style="text-align: end;">
+                                <a class="text-decoration-none " href="#">Nhập mã</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card mt-4 rounded-custom">
+                    <div class="card-body">
+                        <h4 class="fw-bold  card-title">Tổng tiền</h4>
+                        <div class="row align-items-center ">
+                            <div class="col-md-6">
+                                <p class="mb-0">Tạm tính</p>
+                            </div>
+                            <div class="text-end  col-md-6">
+                                <p class="h4">@ViewBag.TotalPayment.ToString("N0").Replace(",", ".")đ</p>
+                            </div>
+                        </div>
+                      @*  <div class="row align-items-center mt-2">
+                            <div class="col-md-6">
+                                <p class="mb-0">Giảm giá</p>
+                            </div>
+                            <div class="text-end  col-md-6">
+                                <p class="h4">-30.000đ</p>
+                            </div>
+                        </div>*@
+                        <div class="row mt-2  align-items-center ">
+                            <div class="col-6">
+                                <p class="mb-0 ">Phí vận chuyển</p>
+                                <small>[Nhanh]</small>
+                            </div>
+                            <div class="text-end text-primary col-6">
+                                <span>Miễn phí</span>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row mt-4">
+                            <div class="col-6">
+                                <span>
+                                    Thành tiền
+                                    <small style="font-size: 12px;">(đã bao gồm VAT)</small>
+                                </span>
+                            </div>
+                            <div class="col-6 text-end">
+                                <p class="h4 text-danger ">@ViewBag.TotalPayment.ToString("N0").Replace(",", ".")đ </p>
+                            </div>
+                        </div>
+
+                        <div class="row mt-4 ">
+                            <div class="col-6">
+                                <span>Xuất hóa đơn VAT</span>
+                            </div>
+                            <div class="col-6 text-end ">
+                                <span class="text-primary ">Yêu cầu ngay</span>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row mt-4">
+                            <div class="col col-12">
+                                <input type="checkbox" checked name="" id="">
+                                Bằng cách tích vào ô chọn, bạn đồng ý mua hàng theo các <a class="text-primary text-decoration-none " href="">Điều khoản của Pharmacy</a>
+                            </div>
+                        </div>
+                        <div class="row mt-4">
+                            <div class="col col-md-12 ">
+                                <div class="btn btn-primary cursor w-100 " onclick="SuccessModal()">
+                             
+                                    Đặt hàng
+                                   
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+             
+             
+
+            </div>
+        </div>
+    </div>
+    <div class="success-modal modal fade" id="successModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" style="top: 130px;">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                        <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none" />
+                        <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
+                    </svg>
+                    <h4 class="modal-title text-center mb-1" id="">Đặt hàng thành công</h4>
+                    <h6 class="text-center text-muted ">Cảm ơn bạn đã tin tưởng và sử dụng dịch vụ của chúng tôi!</h6>
+                    <div class="text-center mt-3">
+                        <button type="button" class="px-4 py-1 my-1 btn btn-success" data-dismiss="modal">OK</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-2"></div>
+</div>
+<script src="~/jquery/jquery.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#OrderBtn").click(
+            function () {
+                alert('a');
+                var id = $(this).data('id')
+                $.ajax({
+                    url: '/Order/Checkout',
+                    method: 'POST',
+                    data: {
+                        cartId: id
+                    },
+                    success: function () {
+                        alert("b");
+                    },
+                    error: function () { }
+                })
+            });
+    });
+
+</script>

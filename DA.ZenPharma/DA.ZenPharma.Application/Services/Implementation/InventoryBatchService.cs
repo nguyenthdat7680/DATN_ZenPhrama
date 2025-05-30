@@ -24,9 +24,9 @@ namespace DA.ZenPharma.Application.Services.Implementation
             _mapper = mapper;
         }
 
-        public async Task<List<InventoryBatchDto>> GetByProductIdAsync(Guid productId)
+        public async Task<List<InventoryBatchDto>> GetByProductIdAsync(Guid productId, Guid? branchId = null)
         {
-            var batches = await _unitOfWork.InventoryBatches.GetByProductIdAsync(productId);
+            var batches = await _unitOfWork.InventoryBatches.GetByProductIdAsync(productId, branchId);
             return _mapper.Map<List<InventoryBatchDto>>(batches);
         }
 

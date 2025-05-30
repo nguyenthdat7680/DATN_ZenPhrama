@@ -12,13 +12,10 @@ namespace DA.ZenPharma.Application.Dtos.ProductDto
     {
         public Guid Id { get; set; }
         public string ProductCode { get; set; }
-
         public string ProductName { get; set; }
-        public UnitType Unit { get; set; }
-        public string UnitDisplayName { get; set; }
+        public string BaseUnit { get; set; }
         public decimal RegularPrice { get; set; }
         public decimal? DiscountPrice { get; set; }
-
     }
 
 }

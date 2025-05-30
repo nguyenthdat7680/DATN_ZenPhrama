@@ -671,6 +671,11 @@
         "Name": "productId",
         "Type": "System.Guid",
         "IsRequired": true
+      },
+      {
+        "Name": "branchId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -732,22 +737,6 @@
       {
         "Name": "dto",
         "Type": "DA.ZenPharma.Application.Dtos.OrderDto.OrderCreateDto",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "DA.ZenPharma.WebAPI.Controllers.OrderController",
-    "Method": "Update",
-    "RelativePath": "api/Order",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "dto",
-        "Type": "DA.ZenPharma.Application.Dtos.OrderDto.OrderUpdateDto",
         "IsRequired": true
       }
     ],
@@ -988,9 +977,84 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "dto",
-        "Type": "DA.ZenPharma.Application.Dtos.ProductDto.ProductCreateDto",
-        "IsRequired": true
+        "Name": "ProductCode",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "ProductName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "BaseUnit",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "SKU",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "RegularPrice",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      },
+      {
+        "Name": "DiscountPrice",
+        "Type": "System.Nullable\u00601[[System.Decimal, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "StockQuantity",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "IsPrescriptionRequired",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      },
+      {
+        "Name": "IsPublished",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      },
+      {
+        "Name": "ThumbnailImagePath",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Description",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Barcode",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "UsageInstructions",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "CategoryId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "ProductUnits",
+        "Type": "System.Collections.Generic.List\u00601[[DA.ZenPharma.Application.Dtos.ProductUnitDtos.ProductUnitDto, DA.ZenPharma.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "ThumbnailImage",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -1045,6 +1109,22 @@
   },
   {
     "ContainingType": "DA.ZenPharma.WebAPI.Controllers.ProductController",
+    "Method": "GetProductUnits",
+    "RelativePath": "api/Product/{productId}/units",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "productId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DA.ZenPharma.WebAPI.Controllers.ProductController",
     "Method": "GetPagedProducts",
     "RelativePath": "api/Product/paged",
     "HttpMethod": "GET",
@@ -1075,6 +1155,183 @@
       {
         "Name": "keyword",
         "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "categoryId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "orderBy",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DA.ZenPharma.WebAPI.Controllers.ProductController",
+    "Method": "Search",
+    "RelativePath": "api/Product/search1",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "keyword",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DA.ZenPharma.WebAPI.Controllers.ProductController",
+    "Method": "GetUnitSuggestions",
+    "RelativePath": "api/Product/unit-suggestions",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DA.ZenPharma.WebAPI.Controllers.ReportController",
+    "Method": "GetHotProducts",
+    "RelativePath": "api/Report/hot-products",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "days",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "topN",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DA.ZenPharma.WebAPI.Controllers.ReportController",
+    "Method": "GetRecentOrders",
+    "RelativePath": "api/Report/recent-orders",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "days",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "branchId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "take",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DA.ZenPharma.WebAPI.Controllers.ReportController",
+    "Method": "GetRevenue",
+    "RelativePath": "api/Report/revenue",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "days",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DA.ZenPharma.WebAPI.Controllers.ReportController",
+    "Method": "GetRevenueChart",
+    "RelativePath": "api/Report/revenue-chart",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "days",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "branchId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DA.ZenPharma.WebAPI.Controllers.ReportController",
+    "Method": "GetSummary",
+    "RelativePath": "api/Report/summary",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "days",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "branchId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DA.ZenPharma.WebAPI.Controllers.ReportController",
+    "Method": "GetTopSellingProducts",
+    "RelativePath": "api/Report/top-selling-products",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "days",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "branchId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "take",
+        "Type": "System.Int32",
         "IsRequired": false
       }
     ],

@@ -926,6 +926,14 @@
               "type": "string",
               "format": "uuid"
             }
+          },
+          {
+            "name": "branchId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
           }
         ],
         "responses": {
@@ -1133,35 +1141,6 @@
             "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/OrderCreateDto"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "put": {
-        "tags": [
-          "Order"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/OrderUpdateDto"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/OrderUpdateDto"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/OrderUpdateDto"
               }
             }
           }
@@ -1502,6 +1481,29 @@
         }
       }
     },
+    "/api/Product/{productId}/units": {
+      "get": {
+        "tags": [
+          "Product"
+        ],
+        "parameters": [
+          {
+            "name": "productId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Product/paged": {
       "get": {
         "tags": [
@@ -1551,19 +1553,125 @@
         ],
         "requestBody": {
           "content": {
-            "application/json": {
+            "multipart/form-data": {
               "schema": {
-                "$ref": "#/components/schemas/ProductCreateDto"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ProductCreateDto"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/ProductCreateDto"
+                "required": [
+                  "BaseUnit",
+                  "CategoryId",
+                  "ProductCode",
+                  "ProductName",
+                  "RegularPrice",
+                  "StockQuantity"
+                ],
+                "type": "object",
+                "properties": {
+                  "ProductCode": {
+                    "type": "string"
+                  },
+                  "ProductName": {
+                    "type": "string"
+                  },
+                  "BaseUnit": {
+                    "type": "string"
+                  },
+                  "SKU": {
+                    "type": "string"
+                  },
+                  "RegularPrice": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "DiscountPrice": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "StockQuantity": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "IsPrescriptionRequired": {
+                    "type": "boolean"
+                  },
+                  "IsPublished": {
+                    "type": "boolean"
+                  },
+                  "ThumbnailImagePath": {
+                    "type": "string"
+                  },
+                  "Description": {
+                    "type": "string"
+                  },
+                  "Barcode": {
+                    "type": "string"
+                  },
+                  "UsageInstructions": {
+                    "type": "string"
+                  },
+                  "CategoryId": {
+                    "type": "string",
+                    "format": "uuid"
+                  },
+                  "ProductUnits": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/ProductUnitDto"
+                    }
+                  },
+                  "ThumbnailImage": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              },
+              "encoding": {
+                "ProductCode": {
+                  "style": "form"
+                },
+                "ProductName": {
+                  "style": "form"
+                },
+                "BaseUnit": {
+                  "style": "form"
+                },
+                "SKU": {
+                  "style": "form"
+                },
+                "RegularPrice": {
+                  "style": "form"
+                },
+                "DiscountPrice": {
+                  "style": "form"
+                },
+                "StockQuantity": {
+                  "style": "form"
+                },
+                "IsPrescriptionRequired": {
+                  "style": "form"
+                },
+                "IsPublished": {
+                  "style": "form"
+                },
+                "ThumbnailImagePath": {
+                  "style": "form"
+                },
+                "Description": {
+                  "style": "form"
+                },
+                "Barcode": {
+                  "style": "form"
+                },
+                "UsageInstructions": {
+                  "style": "form"
+                },
+                "CategoryId": {
+                  "style": "form"
+                },
+                "ProductUnits": {
+                  "style": "form"
+                },
+                "ThumbnailImage": {
+                  "style": "form"
+                }
               }
             }
           }
@@ -1659,6 +1767,265 @@
             "in": "query",
             "schema": {
               "type": "string"
+            }
+          },
+          {
+            "name": "categoryId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "orderBy",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 1
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 10
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Product/search1": {
+      "get": {
+        "tags": [
+          "Product"
+        ],
+        "parameters": [
+          {
+            "name": "keyword",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Product/unit-suggestions": {
+      "get": {
+        "tags": [
+          "Product"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Report/hot-products": {
+      "get": {
+        "tags": [
+          "Report"
+        ],
+        "parameters": [
+          {
+            "name": "days",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 30
+            }
+          },
+          {
+            "name": "topN",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 5
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Report/revenue": {
+      "get": {
+        "tags": [
+          "Report"
+        ],
+        "parameters": [
+          {
+            "name": "days",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 30
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Report/summary": {
+      "get": {
+        "tags": [
+          "Report"
+        ],
+        "parameters": [
+          {
+            "name": "days",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "branchId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Report/revenue-chart": {
+      "get": {
+        "tags": [
+          "Report"
+        ],
+        "parameters": [
+          {
+            "name": "days",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "branchId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Report/recent-orders": {
+      "get": {
+        "tags": [
+          "Report"
+        ],
+        "parameters": [
+          {
+            "name": "days",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "branchId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "take",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 5
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Report/top-selling-products": {
+      "get": {
+        "tags": [
+          "Report"
+        ],
+        "parameters": [
+          {
+            "name": "days",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "branchId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "take",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 5
             }
           }
         ],
@@ -2810,6 +3177,11 @@
       "OrderCreateDto": {
         "type": "object",
         "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
           "orderCode": {
             "type": "string",
             "nullable": true
@@ -2828,6 +3200,10 @@
             "nullable": true
           },
           "customerPhone": {
+            "type": "string",
+            "nullable": true
+          },
+          "orderStatus": {
             "type": "string",
             "nullable": true
           },
@@ -2856,6 +3232,11 @@
       "OrderDetailCreateDto": {
         "type": "object",
         "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
           "productId": {
             "type": "string",
             "format": "uuid"
@@ -2867,6 +3248,10 @@
           "quantity": {
             "type": "integer",
             "format": "int32"
+          },
+          "unit": {
+            "type": "string",
+            "nullable": true
           },
           "unitPrice": {
             "type": "number",
@@ -2882,69 +3267,25 @@
             "type": "string",
             "format": "uuid"
           },
-          "orderId": {
-            "type": "string",
-            "format": "uuid"
-          },
           "productId": {
             "type": "string",
             "format": "uuid"
           },
           "inventoryBatchId": {
             "type": "string",
-            "format": "uuid",
-            "nullable": true
+            "format": "uuid"
           },
           "quantity": {
             "type": "integer",
             "format": "int32"
           },
-          "price": {
-            "type": "number",
-            "format": "double"
-          }
-        },
-        "additionalProperties": false
-      },
-      "OrderUpdateDto": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "orderCode": {
+          "unit": {
             "type": "string",
             "nullable": true
           },
-          "customerId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "addressId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "userId": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "orderStatus": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "totalAmount": {
+          "unitPrice": {
             "type": "number",
             "format": "double"
-          },
-          "createdAt": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "updatedAt": {
-            "type": "string",
-            "format": "date-time"
           }
         },
         "additionalProperties": false
@@ -3031,25 +3372,49 @@
         },
         "additionalProperties": false
       },
-      "ProductCreateDto": {
+      "ProductUnitDto": {
+        "required": [
+          "conversionFactor",
+          "unit"
+        ],
         "type": "object",
         "properties": {
-          "categoryId": {
+          "unit": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "conversionFactor": {
+            "minimum": 0.01,
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ProductUpdateDto": {
+        "type": "object",
+        "properties": {
+          "id": {
             "type": "string",
             "format": "uuid"
           },
-          "productCode": {
+          "categoryId": {
             "type": "string",
-            "nullable": true
+            "format": "uuid"
           },
           "productName": {
             "type": "string",
             "nullable": true
           },
-          "unit": {
-            "$ref": "#/components/schemas/UnitType"
+          "productCode": {
+            "type": "string",
+            "nullable": true
           },
           "sku": {
+            "type": "string",
+            "nullable": true
+          },
+          "baseUnit": {
             "type": "string",
             "nullable": true
           },
@@ -3087,62 +3452,6 @@
           "usageInstructions": {
             "type": "string",
             "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "ProductUpdateDto": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "categoryId": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "productName": {
-            "type": "string",
-            "nullable": true
-          },
-          "productCode": {
-            "type": "string",
-            "nullable": true
-          },
-          "sku": {
-            "type": "string",
-            "nullable": true
-          },
-          "regularPrice": {
-            "type": "number",
-            "format": "double"
-          },
-          "discountPrice": {
-            "type": "number",
-            "format": "double"
-          },
-          "stockQuantity": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "isPrescriptionRequired": {
-            "type": "boolean"
-          },
-          "isPublished": {
-            "type": "boolean"
-          },
-          "thumbnailImagePath": {
-            "type": "string",
-            "nullable": true
-          },
-          "description": {
-            "type": "string",
-            "nullable": true
-          },
-          "seoAlias": {
-            "type": "string",
-            "nullable": true
           },
           "createdAt": {
             "type": "string",
@@ -3151,6 +3460,13 @@
           "updatedAt": {
             "type": "string",
             "format": "date-time"
+          },
+          "productUnits": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProductUnitDto"
+            },
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -3259,17 +3575,6 @@
         },
         "additionalProperties": false
       },
-      "UnitType": {
-        "enum": [
-          1,
-          2,
-          3,
-          4,
-          5
-        ],
-        "type": "integer",
-        "format": "int32"
-      },
       "UserCreateDto": {
         "type": "object",
         "properties": {
@@ -3307,6 +3612,11 @@
           "createdAt": {
             "type": "string",
             "format": "date-time"
+          },
+          "branchId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
           },
           "roleId": {
             "type": "string",
@@ -3425,6 +3735,11 @@
           },
           "isActive": {
             "type": "boolean"
+          },
+          "branchId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
           },
           "roleId": {
             "type": "string",

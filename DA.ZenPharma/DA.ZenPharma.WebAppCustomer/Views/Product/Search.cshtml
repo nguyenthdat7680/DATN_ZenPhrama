@@ -1,0 +1,193 @@
+﻿@using DA.ZenPharma.Application.Dtos.BaseDto
+@using DA.ZenPharma.Application.Dtos.ProductDto
+@model PageResultDto<ProductDto>
+@{
+    ViewData["Title"] = "Sản phẩm";
+}
+
+<link href="~/assets/css/dropdown.css" rel="stylesheet">
+<script src="~/js/app.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css" />
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<style>
+    .skeleton {
+        background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+        background-size: 200% 100%;
+        animation: skeleton-loading 1.5s infinite;
+    }
+
+    @@keyframes skeleton-loading {
+        0% {
+            background-position: 200% 0;
+        }
+
+        100% {
+            background-position: -200% 0;
+        }
+    }
+
+    .truncate-text {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+</style>
+
+<div class="showProduct row p-0 m-0">
+    <div class="col-2"></div>
+    <div class="col-xl-8 p-0 my-4">
+        <div class="h6 p-2">
+            Tìm thấy <span>@(Model?.TotalItems ?? 0)</span> kết quả phù hợp với yêu cầu
+        </div>
+        <div class="row p-0 m-0">
+            <div class="left-content col-md-3 p-0 py-3 position-relative">
+                <!-- Sidebar danh mục -->
+                <div class="side-nav" style="top: 12px;">
+                    <h5 class="ml-2 pb-2">Danh mục sản phẩm</h5>
+                    <div class="side-nav-inner">
+                        <ul class="side-nav-menu scrollable">
+                            <li class="nav-item dropdown">
+                                <a class="dropdown-toggle" href="javascript:void(0);">
+                                    <span><i class="anticon anticon-build"></i></span>
+                                    <span class="title">Dược phẩm</span>
+                                    <span class="arrow"><i class="arrow-icon"></i></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="@Url.Action("Search", "Product", new { categoryId = Guid.Parse("50000000-0000-0000-0000-000000000001") })">Thuốc kê đơn</a></li>
+                                    <li><a href="@Url.Action("Search", "Product", new { categoryId = Guid.Parse("50000000-0000-0000-0000-000000000002") })">Thuốc không kê đơn</a></li>
+                                    <li><a href="@Url.Action("Search", "Product", new { categoryId = Guid.Parse("50000000-0000-0000-0000-000000000003") })">Thực phẩm chức năng</a></li>
+                                    <li><a href="@Url.Action("Search", "Product", new { categoryId = Guid.Parse("50000000-0000-0000-0000-000000000004") })">Dụng cụ y tế</a></li>
+                                    <li><a href="@Url.Action("Search", "Product", new { categoryId = Guid.Parse("50000000-0000-0000-0000-000000000005") })">Chăm sóc cá nhân</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="right-content col-12 col-md-9 p-0 py-2">
+                <!-- Bộ lọc -->
+                <div class="row select-search-for align-items-center ml-2 mb-3">
+                    <div class="col-lg-2 col-2 p-0">
+                        <form id="orderByForm" method="get" action="@Url.Action("Search", "Product")">
+                            <select class="form-control" id="orderBy" name="orderBy">
+                                <option value="">Lọc</option>
+                                <option value="nameAsc" selected="@(ViewBag.OrderBy == "nameAsc")">A->Z</option>
+                                <option value="nameDesc" selected="@(ViewBag.OrderBy == "nameDesc")">Z->A</option>
+                                <option value="latestProduct" selected="@(ViewBag.OrderBy == "latestProduct")">Mới nhất</option>
+                                <option value="priceAsc" selected="@(ViewBag.OrderBy == "priceAsc")">Giá tăng dần</option>
+                                <option value="priceDesc" selected="@(ViewBag.OrderBy == "priceDesc")">Giá giảm dần</option>
+                            </select>
+                            <input type="hidden" name="keyword" value="@(ViewBag.Keyword ?? "")" />
+                            <input type="hidden" name="categoryId" value="@(ViewBag.CategoryId ?? "")" />
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Danh sách sản phẩm -->
+                <div class="row p-0 ml-2">
+                    @if (Model != null && Model.Items != null && Model.Items.Any())
+                    {
+                        @foreach (var item in Model.Items)
+                        {
+                            <div class="product-item col-2 m-0 p-0 card position-relative card-container" data-product-id="@(item?.Id.ToString() ?? "")">
+                                <a asp-controller="Product" asp-action="Details" asp-route-id="@(item?.Id.ToString() ?? "")">
+                                    <img class="card-img-top img-fluid skeleton" loading="lazy" data-src="@(item?.ThumbnailImagePath ?? "/assets/img/placeholder.jpg")" alt="@(item?.ProductName ?? "Sản phẩm")">
+                                </a>
+                                <div class="card-body p-2">
+                                    <h6 class="card-title truncate-text">@(item?.ProductName ?? "Không có tên")</h6>
+                                    <div class="price text-primary fw-bold mb-1">
+                                        @(item.DiscountPrice.HasValue ? item.DiscountPrice.Value.ToString("N0", System.Globalization.CultureInfo.InvariantCulture) : item.RegularPrice.ToString("N0", System.Globalization.CultureInfo.InvariantCulture))đ /@(item?.BaseUnit ?? "N/A")
+                                    </div>
+                                    @if (item.DiscountPrice.HasValue && item.DiscountPrice < item.RegularPrice)
+                                    {
+                                        <del>@item.RegularPrice.ToString("N0", System.Globalization.CultureInfo.InvariantCulture)đ</del>
+                                    }
+                                    <div class="d-grid gap-2 mt-2 mb-1">
+                                        <button class="btn btn-success w-100 product-item_add-to-cart" type="button">Thêm vào giỏ hàng</button>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    }
+                    else
+                    {
+                        <div class="col-12 text-center">
+                            <p>Không có sản phẩm nào phù hợp.</p>
+                        </div>
+                    }
+                </div>
+
+                <!-- Phân trang -->
+                <div class="ml-2 text-center mt-2">
+                    <nav aria-label="Page navigation">
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item @((Model?.Page ?? 1) == 1 ? "disabled" : "")">
+                                <a class="page-link" href="@Url.Action("Search", "Product", new { keyword = ViewBag.Keyword, orderBy = ViewBag.OrderBy, categoryId = ViewBag.CategoryId, pageIndex = (Model?.Page ?? 1) - 1, pageSize = Model?.PageSize ?? 10 })">Trước</a>
+                            </li>
+                            @if (Model != null && Model.TotalItems > 0)
+                            {
+                                var pageCount = (int)Math.Ceiling((double)Model.TotalItems / Model.PageSize);
+                                @for (var i = 1; i <= pageCount; i++)
+                                {
+                                    <li class="page-item @(i == Model.Page ? "active" : "")">
+                                        <a class="page-link" href="@Url.Action("Search", "Product", new { keyword = ViewBag.Keyword, orderBy = ViewBag.OrderBy, categoryId = ViewBag.CategoryId, pageIndex = i, pageSize = Model.PageSize })">@i</a>
+                                    </li>
+                                }
+                            }
+                            <li class="page-item @((Model?.Page ?? 1) >= (Model != null ? Math.Ceiling((double)Model.TotalItems / Model.PageSize) : 1) ? "disabled" : "")">
+                                <a class="page-link" href="@Url.Action("Search", "Product", new { keyword = ViewBag.Keyword, orderBy = ViewBag.OrderBy, categoryId = ViewBag.CategoryId, pageIndex = (Model?.Page ?? 1) + 1, pageSize = Model?.PageSize ?? 10 })">Sau</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-2"></div>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            // Lazy load images with error handling
+            const lazyImages = document.querySelectorAll('img[data-src]');
+            lazyImages.forEach(img => {
+                const src = img.getAttribute('data-src');
+                if (src) {
+                    const image = new Image();
+                    image.src = src;
+                    image.onload = () => {
+                        img.src = src;
+                        img.removeAttribute('data-src');
+                        img.classList.remove('skeleton');
+                    };
+                    image.onerror = () => {
+                        console.error(`Failed to load image: ${src}`);
+                        img.src = '/assets/img/placeholder.jpg';
+                        img.removeAttribute('data-src');
+                        img.classList.remove('skeleton');
+                    };
+                }
+            });
+
+            // Product item click handler
+            $(".product-item").click(function (e) {
+                if (!$(e.target).hasClass('product-item_add-to-cart')) {
+                    var productId = $(this).data("product-id");
+                    if (productId) {
+                        window.location.href = "/Product/Details/" + productId;
+                    }
+                }
+            });
+
+            // Filter form submission
+            $("#orderBy").change(function () {
+                $("#orderByForm").submit();
+            });
+        });
+    </script>
+}

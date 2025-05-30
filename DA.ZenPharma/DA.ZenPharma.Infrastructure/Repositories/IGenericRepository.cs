@@ -16,5 +16,6 @@ namespace DA.ZenPharma.Infrastructure.Repositories
         Task UpdateAsync(T entity);
         Task Delete(T entity);
         Task<IEnumerable<T>> FindAsync(Expression<Func<T, bool>> predicate);
+        Task RemoveRangeAsync(IEnumerable<T> entities);
     }
 }

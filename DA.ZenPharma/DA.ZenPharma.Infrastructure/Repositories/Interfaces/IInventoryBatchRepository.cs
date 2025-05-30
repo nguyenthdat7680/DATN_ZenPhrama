@@ -9,7 +9,7 @@ namespace DA.ZenPharma.Infrastructure.Repositories.Interfaces
 {
     public interface IInventoryBatchRepository : IGenericRepository<InventoryBatch>
     {
-        Task<List<InventoryBatch>> GetByProductIdAsync(Guid productId);
+        Task<List<InventoryBatch>> GetByProductIdAsync(Guid productId, Guid? branchId = null);
         IQueryable<InventoryBatch> GetAllForPaging();
     }
 }

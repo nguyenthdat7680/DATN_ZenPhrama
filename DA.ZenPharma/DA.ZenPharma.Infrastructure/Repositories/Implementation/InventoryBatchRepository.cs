@@ -18,13 +18,21 @@ namespace DA.ZenPharma.Infrastructure.Repositories.Implementation
         {
             return _context.InventoryBatches.AsNoTracking();
         }
-        public async Task<List<InventoryBatch>> GetByProductIdAsync(Guid productId)
+        public async Task<List<InventoryBatch>> GetByProductIdAsync(Guid productId, Guid? branchId = null)
         {
-            return await _context.InventoryBatches
+            IQueryable<InventoryBatch> query = _context.InventoryBatches
                 .AsNoTracking()
-                .Where(b => b.ProductId == productId)
+                .Where(b => b.ProductId == productId);
+
+            if (branchId.HasValue)
+            {
+                query = query.Where(b => b.BranchId == branchId.Value);
+            }
+
+            return await query
                 .Include(b => b.Product)
                 .ToListAsync();
         }
+
     }
 }

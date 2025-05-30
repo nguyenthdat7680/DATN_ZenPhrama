@@ -12,7 +12,7 @@ namespace DA.ZenPharma.Domain.Entity
         public Guid CategoryId { get; set; }
         public string ProductCode { get; set; }
         public string ProductName { get; set; }
-        public UnitType Unit { get; set; }
+        public string BaseUnit { get; set; }
         public string? SKU { get; set; }
         public decimal RegularPrice { get; set; }
         public decimal? DiscountPrice { get; set; }
@@ -24,6 +24,7 @@ namespace DA.ZenPharma.Domain.Entity
         public string? Barcode { get; set; }
         public string? UsageInstructions { get; set; }
         public Category Category { get; set; }
+        public List<ProductUnit> ProductUnits { get; set; } = new List<ProductUnit>();
     }
 
 }

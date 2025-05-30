@@ -1,247 +1,679 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\demo\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\DA.ZenPharma.WebAppCustomer.bundle.scp.css",
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\DA.ZenPharma.WebAppCustomer.bundle.scp.css",
       "PackagePath": "staticwebassets\\DA.ZenPharma.WebAppCustomer.djgm29xsmz.bundle.scp.css"
     },
     {
-      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\demo\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\css\\site.css",
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\assets\\css\\about.css",
+      "PackagePath": "staticwebassets\\assets\\css\\about.css"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\assets\\css\\app.css",
+      "PackagePath": "staticwebassets\\assets\\css\\app.css"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\assets\\css\\dropdown.css",
+      "PackagePath": "staticwebassets\\assets\\css\\dropdown.css"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\assets\\css\\layout.css",
+      "PackagePath": "staticwebassets\\assets\\css\\layout.css"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\assets\\css\\productdetail.css",
+      "PackagePath": "staticwebassets\\assets\\css\\productdetail.css"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\assets\\img\\banner\\banner 5.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\banner\\banner 5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\assets\\img\\banner\\banner1.webp",
+      "PackagePath": "staticwebassets\\assets\\img\\banner\\banner1.webp"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\assets\\img\\banner\\banner2.webp",
+      "PackagePath": "staticwebassets\\assets\\img\\banner\\banner2.webp"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\assets\\img\\banner\\banner3.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\banner\\banner3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\assets\\img\\banner\\banner4.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\banner\\banner4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\assets\\img\\banner\\banner6.webp",
+      "PackagePath": "staticwebassets\\assets\\img\\banner\\banner6.webp"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\assets\\img\\banner\\banner7.webp",
+      "PackagePath": "staticwebassets\\assets\\img\\banner\\banner7.webp"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\assets\\img\\banner\\banner8.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\banner\\banner8.jpg"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\assets\\img\\banner\\banner8.webp",
+      "PackagePath": "staticwebassets\\assets\\img\\banner\\banner8.webp"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\assets\\img\\banner\\banner9.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\banner\\banner9.jpg"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\assets\\img\\banner\\promotion-pmc-app-banner.png",
+      "PackagePath": "staticwebassets\\assets\\img\\banner\\promotion-pmc-app-banner.png"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\assets\\img\\brand-img\\7_Vitabella.webp",
+      "PackagePath": "staticwebassets\\assets\\img\\brand-img\\7_Vitabella.webp"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\assets\\img\\brand-img\\Group_23973.webp",
+      "PackagePath": "staticwebassets\\assets\\img\\brand-img\\Group_23973.webp"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\assets\\img\\brand-img\\Kudos_logo.webp",
+      "PackagePath": "staticwebassets\\assets\\img\\brand-img\\Kudos_logo.webp"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\assets\\img\\brand-img\\Life_Space_logo (1).webp",
+      "PackagePath": "staticwebassets\\assets\\img\\brand-img\\Life_Space_logo (1).webp"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\assets\\img\\brand-img\\Life_Space_logo.webp",
+      "PackagePath": "staticwebassets\\assets\\img\\brand-img\\Life_Space_logo.webp"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\assets\\img\\brand-img\\Nutrigen.png",
+      "PackagePath": "staticwebassets\\assets\\img\\brand-img\\Nutrigen.png"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\assets\\img\\brand-img\\PF_1.webp",
+      "PackagePath": "staticwebassets\\assets\\img\\brand-img\\PF_1.webp"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\assets\\img\\brand-img\\Sa_Sâm_Việt.webp",
+      "PackagePath": "staticwebassets\\assets\\img\\brand-img\\Sa_Sâm_Việt.webp"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\assets\\img\\brand-img\\pmc.webp",
+      "PackagePath": "staticwebassets\\assets\\img\\brand-img\\pmc.webp"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\assets\\img\\category-img\\Group_10378-1.webp",
+      "PackagePath": "staticwebassets\\assets\\img\\category-img\\Group_10378-1.webp"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\assets\\img\\category-img\\Group_10378-2.webp",
+      "PackagePath": "staticwebassets\\assets\\img\\category-img\\Group_10378-2.webp"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\assets\\img\\category-img\\Group_10378-3.webp",
+      "PackagePath": "staticwebassets\\assets\\img\\category-img\\Group_10378-3.webp"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\assets\\img\\category-img\\Group_10378-4.webp",
+      "PackagePath": "staticwebassets\\assets\\img\\category-img\\Group_10378-4.webp"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\assets\\img\\category-img\\Group_10378-5.webp",
+      "PackagePath": "staticwebassets\\assets\\img\\category-img\\Group_10378-5.webp"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\assets\\img\\category-img\\Group_10378-6.webp",
+      "PackagePath": "staticwebassets\\assets\\img\\category-img\\Group_10378-6.webp"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\assets\\img\\category-img\\Group_10378.webp",
+      "PackagePath": "staticwebassets\\assets\\img\\category-img\\Group_10378.webp"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\assets\\img\\category-img\\MicrosoftTeams-image_24.webp",
+      "PackagePath": "staticwebassets\\assets\\img\\category-img\\MicrosoftTeams-image_24.webp"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\assets\\img\\icon\\134216_menu_lines_hamburger_icon.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icon\\134216_menu_lines_hamburger_icon.svg"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\assets\\img\\icon\\4092564_profile_about_mobile ui_user_icon.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icon\\4092564_profile_about_mobile ui_user_icon.svg"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\assets\\img\\icon\\arrow_back_left_previous_icon.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icon\\arrow_back_left_previous_icon.svg"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\assets\\img\\icon\\arrow_forward_next_right_icon.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icon\\arrow_forward_next_right_icon.svg"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\assets\\img\\icon\\bell_dot_notification_icon.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icon\\bell_dot_notification_icon.svg"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\assets\\img\\icon\\bell_icon.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icon\\bell_icon.svg"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\assets\\img\\icon\\coupon_icon.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icon\\coupon_icon.svg"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\assets\\img\\icon\\delete_min_minus_icon.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icon\\delete_min_minus_icon.svg"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\assets\\img\\icon\\exclamation_triangle_fill_icon.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icon\\exclamation_triangle_fill_icon.svg"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\assets\\img\\icon\\file_image_icon.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icon\\file_image_icon.svg"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\assets\\img\\icon\\google_icon.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icon\\google_icon.svg"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\assets\\img\\icon\\history_icon.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icon\\history_icon.svg"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\assets\\img\\icon\\history_order_icon.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icon\\history_order_icon.svg"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\assets\\img\\icon\\local_phone_icon.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icon\\local_phone_icon.svg"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\assets\\img\\icon\\location_icon.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icon\\location_icon.svg"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\assets\\img\\icon\\location_map_icon.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icon\\location_map_icon.svg"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\assets\\img\\icon\\logo.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icon\\logo.svg"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\assets\\img\\icon\\menu_bars_icon.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icon\\menu_bars_icon.svg"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\assets\\img\\icon\\mxh_facebook_icon.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icon\\mxh_facebook_icon.svg"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\assets\\img\\icon\\mxh_youtube_icon.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icon\\mxh_youtube_icon.svg"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\assets\\img\\icon\\mxh_zalo_icon.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icon\\mxh_zalo_icon.svg"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\assets\\img\\icon\\plus_icon.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icon\\plus_icon.svg"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\assets\\img\\icon\\search_icon.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icon\\search_icon.svg"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\assets\\img\\icon\\search_min_icon.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icon\\search_min_icon.svg"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\assets\\img\\icon\\shopping_cart_light_icon.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icon\\shopping_cart_light_icon.svg"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\assets\\img\\icon\\trash_icon.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icon\\trash_icon.svg"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\assets\\img\\icon\\user-default.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icon\\user-default.svg"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\assets\\img\\icon\\user_edit_icon.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icon\\user_edit_icon.svg"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\assets\\img\\icon\\user_icon.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icon\\user_icon.svg"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\assets\\img\\icon\\vietnam_vn_icon.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icon\\vietnam_vn_icon.svg"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\assets\\img\\icon\\x_icon.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icon\\x_icon.svg"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\assets\\img\\page-img\\app store.png",
+      "PackagePath": "staticwebassets\\assets\\img\\page-img\\app store.png"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\assets\\img\\page-img\\avt-default.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\page-img\\avt-default.jpg"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\assets\\img\\page-img\\btn-buy-now.webp",
+      "PackagePath": "staticwebassets\\assets\\img\\page-img\\btn-buy-now.webp"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\assets\\img\\page-img\\empty-cart.png",
+      "PackagePath": "staticwebassets\\assets\\img\\page-img\\empty-cart.png"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\assets\\img\\page-img\\fill.png",
+      "PackagePath": "staticwebassets\\assets\\img\\page-img\\fill.png"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\assets\\img\\page-img\\gg-play.png",
+      "PackagePath": "staticwebassets\\assets\\img\\page-img\\gg-play.png"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\assets\\img\\page-img\\header-left.png",
+      "PackagePath": "staticwebassets\\assets\\img\\page-img\\header-left.png"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\assets\\img\\page-img\\header-right.png",
+      "PackagePath": "staticwebassets\\assets\\img\\page-img\\header-right.png"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\assets\\img\\page-img\\higlight-title.webp",
+      "PackagePath": "staticwebassets\\assets\\img\\page-img\\higlight-title.webp"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\assets\\img\\page-img\\notfound.png",
+      "PackagePath": "staticwebassets\\assets\\img\\page-img\\notfound.png"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\assets\\img\\page-img\\prescription-tips.png",
+      "PackagePath": "staticwebassets\\assets\\img\\page-img\\prescription-tips.png"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\assets\\img\\page-img\\qr-code-download-app.png",
+      "PackagePath": "staticwebassets\\assets\\img\\page-img\\qr-code-download-app.png"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\assets\\img\\page-img\\upoad-prescription-step-1.webp",
+      "PackagePath": "staticwebassets\\assets\\img\\page-img\\upoad-prescription-step-1.webp"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\assets\\img\\page-img\\upoad-prescription-step-2.webp",
+      "PackagePath": "staticwebassets\\assets\\img\\page-img\\upoad-prescription-step-2.webp"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\assets\\img\\page-img\\upoad-prescription-step-3.webp",
+      "PackagePath": "staticwebassets\\assets\\img\\page-img\\upoad-prescription-step-3.webp"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\assets\\img\\prescriptions-upload\\prescription-tips.png",
+      "PackagePath": "staticwebassets\\assets\\img\\prescriptions-upload\\prescription-tips.png"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\demo\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\favicon.ico",
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\demo\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\js\\site.js",
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\images\\anh2.jpeg",
+      "PackagePath": "staticwebassets\\images\\anh2.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\images\\categories\\EContract_DatNT368.pdf",
+      "PackagePath": "staticwebassets\\images\\categories\\EContract_DatNT368.pdf"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\images\\categories\\chamsoccannhan.webp",
+      "PackagePath": "staticwebassets\\images\\categories\\chamsoccannhan.webp"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\images\\categories\\chamsocsacdep.png",
+      "PackagePath": "staticwebassets\\images\\categories\\chamsocsacdep.png"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\images\\categories\\chamsocsuckhoe.png",
+      "PackagePath": "staticwebassets\\images\\categories\\chamsocsuckhoe.png"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\images\\categories\\duocpham.webp",
+      "PackagePath": "staticwebassets\\images\\categories\\duocpham.webp"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\images\\categories\\mevabe.png",
+      "PackagePath": "staticwebassets\\images\\categories\\mevabe.png"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\images\\categories\\sanphamtienloi.png",
+      "PackagePath": "staticwebassets\\images\\categories\\sanphamtienloi.png"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\images\\categories\\thietbiyte.png",
+      "PackagePath": "staticwebassets\\images\\categories\\thietbiyte.png"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\images\\categories\\thucphamchucnang.png",
+      "PackagePath": "staticwebassets\\images\\categories\\thucphamchucnang.png"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\images\\logo.png",
+      "PackagePath": "staticwebassets\\images\\logo.png"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\images\\products\\alcohol.webp",
+      "PackagePath": "staticwebassets\\images\\products\\alcohol.webp"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\images\\products\\amoxicillin.webp",
+      "PackagePath": "staticwebassets\\images\\products\\amoxicillin.webp"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\images\\products\\aspirin.webp",
+      "PackagePath": "staticwebassets\\images\\products\\aspirin.webp"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\images\\products\\bandage.webp",
+      "PackagePath": "staticwebassets\\images\\products\\bandage.webp"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\images\\products\\calcium.webp",
+      "PackagePath": "staticwebassets\\images\\products\\calcium.webp"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\images\\products\\ciprofloxacin.webp",
+      "PackagePath": "staticwebassets\\images\\products\\ciprofloxacin.webp"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\images\\products\\erythromycin.webp",
+      "PackagePath": "staticwebassets\\images\\products\\erythromycin.webp"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\images\\products\\glucose.webp",
+      "PackagePath": "staticwebassets\\images\\products\\glucose.webp"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\images\\products\\ibuprofen.webp",
+      "PackagePath": "staticwebassets\\images\\products\\ibuprofen.webp"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\images\\products\\medical-mask.webp",
+      "PackagePath": "staticwebassets\\images\\products\\medical-mask.webp"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\images\\products\\omeprazole.webp",
+      "PackagePath": "staticwebassets\\images\\products\\omeprazole.webp"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\images\\products\\paracetamol.webp",
+      "PackagePath": "staticwebassets\\images\\products\\paracetamol.webp"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\images\\products\\thermometer.webp",
+      "PackagePath": "staticwebassets\\images\\products\\thermometer.webp"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\images\\products\\vitaminc.webp",
+      "PackagePath": "staticwebassets\\images\\products\\vitaminc.webp"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\images\\products\\zinc.webp",
+      "PackagePath": "staticwebassets\\images\\products\\zinc.webp"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\jquery\\jquery.js",
+      "PackagePath": "staticwebassets\\jquery\\jquery.js"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\js\\app.min.js",
+      "PackagePath": "staticwebassets\\js\\app.min.js"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
-      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\demo\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\bootstrap\\LICENSE",
       "PackagePath": "staticwebassets\\lib\\bootstrap"
     },
     {
-      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\demo\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\demo\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\demo\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\demo\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\demo\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\demo\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\demo\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\demo\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\demo\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\demo\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\demo\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\demo\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\demo\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\demo\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\demo\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\demo\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\demo\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\demo\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\demo\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\demo\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\demo\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\demo\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\demo\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\demo\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\demo\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\demo\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\demo\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\demo\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\demo\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\demo\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\demo\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\demo\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\demo\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\demo\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\demo\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\demo\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\demo\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\demo\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\demo\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\demo\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\demo\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\demo\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\demo\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\demo\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\demo\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\demo\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\demo\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\demo\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\demo\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\demo\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\demo\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\demo\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\demo\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\demo\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\demo\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\demo\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppCustomer\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {

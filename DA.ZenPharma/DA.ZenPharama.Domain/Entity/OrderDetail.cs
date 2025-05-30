@@ -13,9 +13,10 @@ namespace DA.ZenPharma.Domain.Entity
         public int Quantity { get; set; }
         public decimal UnitPrice { get; set; }
         public decimal TotalAmount { get; set; }
-
+        public string Unit { get; set; }
         public Order Order { get; set; }
         public Product Product { get; set; }
+        public Guid? InventoryBatchId { get; set; }
     }
 
 }

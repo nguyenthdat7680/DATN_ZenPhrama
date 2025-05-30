@@ -11052,6 +11052,186 @@
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"yj6do42udx"},{"Name":"integrity","Value":"sha256-klVqPqwKyEitXOuGBiRd6jcJPkRTCyTiX2PjKubSsrU="},{"Name":"label","Value":"_content/DA.ZenPharma.WebAppAdmin/images/logo.png"}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"6592"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022klVqPqwKyEitXOuGBiRd6jcJPkRTCyTiX2PjKubSsrU=\u0022"},{"Name":"Last-Modified","Value":"Sat, 03 May 2025 16:14:06 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/DA.ZenPharma.WebAppAdmin/images/products/alcohol.webp">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\alcohol.webp'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-faJaeWUB9O7A5ciDwzn3AJs3j5eAyIRPCCwzRiRosQk="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"28256"},{"Name":"Content-Type","Value":"image/webp"},{"Name":"ETag","Value":"\u0022faJaeWUB9O7A5ciDwzn3AJs3j5eAyIRPCCwzRiRosQk=\u0022"},{"Name":"Last-Modified","Value":"Fri, 09 May 2025 07:00:13 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/DA.ZenPharma.WebAppAdmin/images/products/alcohol.zs7g2cegoi.webp">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\alcohol.webp'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"zs7g2cegoi"},{"Name":"integrity","Value":"sha256-faJaeWUB9O7A5ciDwzn3AJs3j5eAyIRPCCwzRiRosQk="},{"Name":"label","Value":"_content/DA.ZenPharma.WebAppAdmin/images/products/alcohol.webp"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"28256"},{"Name":"Content-Type","Value":"image/webp"},{"Name":"ETag","Value":"\u0022faJaeWUB9O7A5ciDwzn3AJs3j5eAyIRPCCwzRiRosQk=\u0022"},{"Name":"Last-Modified","Value":"Fri, 09 May 2025 07:00:13 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/DA.ZenPharma.WebAppAdmin/images/products/amoxicillin.5h2gszp5hy.webp">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\amoxicillin.webp'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"5h2gszp5hy"},{"Name":"integrity","Value":"sha256-iUgGWR2x/AolGKaqSBYfxArXlwucdYacNfC4XbHnhks="},{"Name":"label","Value":"_content/DA.ZenPharma.WebAppAdmin/images/products/amoxicillin.webp"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"81418"},{"Name":"Content-Type","Value":"image/webp"},{"Name":"ETag","Value":"\u0022iUgGWR2x/AolGKaqSBYfxArXlwucdYacNfC4XbHnhks=\u0022"},{"Name":"Last-Modified","Value":"Fri, 09 May 2025 06:55:56 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/DA.ZenPharma.WebAppAdmin/images/products/amoxicillin.webp">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\amoxicillin.webp'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-iUgGWR2x/AolGKaqSBYfxArXlwucdYacNfC4XbHnhks="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"81418"},{"Name":"Content-Type","Value":"image/webp"},{"Name":"ETag","Value":"\u0022iUgGWR2x/AolGKaqSBYfxArXlwucdYacNfC4XbHnhks=\u0022"},{"Name":"Last-Modified","Value":"Fri, 09 May 2025 06:55:56 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/DA.ZenPharma.WebAppAdmin/images/products/aspirin.webp">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\aspirin.webp'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-Hvqco5d0kq09boRCpeh/8sYae983ZxHQptkklUXoFwo="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"63900"},{"Name":"Content-Type","Value":"image/webp"},{"Name":"ETag","Value":"\u0022Hvqco5d0kq09boRCpeh/8sYae983ZxHQptkklUXoFwo=\u0022"},{"Name":"Last-Modified","Value":"Fri, 09 May 2025 06:59:02 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/DA.ZenPharma.WebAppAdmin/images/products/aspirin.ynkihw9oim.webp">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\aspirin.webp'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"ynkihw9oim"},{"Name":"integrity","Value":"sha256-Hvqco5d0kq09boRCpeh/8sYae983ZxHQptkklUXoFwo="},{"Name":"label","Value":"_content/DA.ZenPharma.WebAppAdmin/images/products/aspirin.webp"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"63900"},{"Name":"Content-Type","Value":"image/webp"},{"Name":"ETag","Value":"\u0022Hvqco5d0kq09boRCpeh/8sYae983ZxHQptkklUXoFwo=\u0022"},{"Name":"Last-Modified","Value":"Fri, 09 May 2025 06:59:02 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/DA.ZenPharma.WebAppAdmin/images/products/bandage.r5s9e45jqw.webp">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\bandage.webp'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"r5s9e45jqw"},{"Name":"integrity","Value":"sha256-MZvzK/XQEa\u002B6m7D2lPKPkmbsvuAjrtd4J0aLYc05jew="},{"Name":"label","Value":"_content/DA.ZenPharma.WebAppAdmin/images/products/bandage.webp"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"93984"},{"Name":"Content-Type","Value":"image/webp"},{"Name":"ETag","Value":"\u0022MZvzK/XQEa\u002B6m7D2lPKPkmbsvuAjrtd4J0aLYc05jew=\u0022"},{"Name":"Last-Modified","Value":"Fri, 09 May 2025 07:03:01 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/DA.ZenPharma.WebAppAdmin/images/products/bandage.webp">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\bandage.webp'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-MZvzK/XQEa\u002B6m7D2lPKPkmbsvuAjrtd4J0aLYc05jew="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"93984"},{"Name":"Content-Type","Value":"image/webp"},{"Name":"ETag","Value":"\u0022MZvzK/XQEa\u002B6m7D2lPKPkmbsvuAjrtd4J0aLYc05jew=\u0022"},{"Name":"Last-Modified","Value":"Fri, 09 May 2025 07:03:01 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/DA.ZenPharma.WebAppAdmin/images/products/calcium.ien55a3790.webp">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\calcium.webp'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"ien55a3790"},{"Name":"integrity","Value":"sha256-Rn3XO2JYUcTUGZBCbqYw6/1C7UMIscbEkqLL5\u002BK83\u002B0="},{"Name":"label","Value":"_content/DA.ZenPharma.WebAppAdmin/images/products/calcium.webp"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"39242"},{"Name":"Content-Type","Value":"image/webp"},{"Name":"ETag","Value":"\u0022Rn3XO2JYUcTUGZBCbqYw6/1C7UMIscbEkqLL5\u002BK83\u002B0=\u0022"},{"Name":"Last-Modified","Value":"Fri, 09 May 2025 07:03:45 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/DA.ZenPharma.WebAppAdmin/images/products/calcium.webp">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\calcium.webp'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-Rn3XO2JYUcTUGZBCbqYw6/1C7UMIscbEkqLL5\u002BK83\u002B0="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"39242"},{"Name":"Content-Type","Value":"image/webp"},{"Name":"ETag","Value":"\u0022Rn3XO2JYUcTUGZBCbqYw6/1C7UMIscbEkqLL5\u002BK83\u002B0=\u0022"},{"Name":"Last-Modified","Value":"Fri, 09 May 2025 07:03:45 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/DA.ZenPharma.WebAppAdmin/images/products/ciprofloxacin.ttrdmfmmsr.webp">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\ciprofloxacin.webp'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"ttrdmfmmsr"},{"Name":"integrity","Value":"sha256-ISD6596\u002BcFVuhH9HrFORXB2n8uB8kKhwRv/MWeXuwxY="},{"Name":"label","Value":"_content/DA.ZenPharma.WebAppAdmin/images/products/ciprofloxacin.webp"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"76490"},{"Name":"Content-Type","Value":"image/webp"},{"Name":"ETag","Value":"\u0022ISD6596\u002BcFVuhH9HrFORXB2n8uB8kKhwRv/MWeXuwxY=\u0022"},{"Name":"Last-Modified","Value":"Fri, 09 May 2025 06:56:34 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/DA.ZenPharma.WebAppAdmin/images/products/ciprofloxacin.webp">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\ciprofloxacin.webp'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-ISD6596\u002BcFVuhH9HrFORXB2n8uB8kKhwRv/MWeXuwxY="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"76490"},{"Name":"Content-Type","Value":"image/webp"},{"Name":"ETag","Value":"\u0022ISD6596\u002BcFVuhH9HrFORXB2n8uB8kKhwRv/MWeXuwxY=\u0022"},{"Name":"Last-Modified","Value":"Fri, 09 May 2025 06:56:34 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/DA.ZenPharma.WebAppAdmin/images/products/erythromycin.webp">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\erythromycin.webp'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-XACkO7OIIWs8/SuitLDZHu4q6P/bgXtrFXtv37h3hyI="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"102796"},{"Name":"Content-Type","Value":"image/webp"},{"Name":"ETag","Value":"\u0022XACkO7OIIWs8/SuitLDZHu4q6P/bgXtrFXtv37h3hyI=\u0022"},{"Name":"Last-Modified","Value":"Fri, 09 May 2025 06:57:24 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/DA.ZenPharma.WebAppAdmin/images/products/erythromycin.wz97etn40s.webp">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\erythromycin.webp'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"wz97etn40s"},{"Name":"integrity","Value":"sha256-XACkO7OIIWs8/SuitLDZHu4q6P/bgXtrFXtv37h3hyI="},{"Name":"label","Value":"_content/DA.ZenPharma.WebAppAdmin/images/products/erythromycin.webp"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"102796"},{"Name":"Content-Type","Value":"image/webp"},{"Name":"ETag","Value":"\u0022XACkO7OIIWs8/SuitLDZHu4q6P/bgXtrFXtv37h3hyI=\u0022"},{"Name":"Last-Modified","Value":"Fri, 09 May 2025 06:57:24 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/DA.ZenPharma.WebAppAdmin/images/products/glucose.la1yl4lp1e.webp">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\glucose.webp'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"la1yl4lp1e"},{"Name":"integrity","Value":"sha256-82/Js6/Er3j7xMRx\u002BQzA/tsz5Wh8P5o9IquL1BGd/p8="},{"Name":"label","Value":"_content/DA.ZenPharma.WebAppAdmin/images/products/glucose.webp"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"39362"},{"Name":"Content-Type","Value":"image/webp"},{"Name":"ETag","Value":"\u002282/Js6/Er3j7xMRx\u002BQzA/tsz5Wh8P5o9IquL1BGd/p8=\u0022"},{"Name":"Last-Modified","Value":"Fri, 09 May 2025 07:04:03 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/DA.ZenPharma.WebAppAdmin/images/products/glucose.webp">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\glucose.webp'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-82/Js6/Er3j7xMRx\u002BQzA/tsz5Wh8P5o9IquL1BGd/p8="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"39362"},{"Name":"Content-Type","Value":"image/webp"},{"Name":"ETag","Value":"\u002282/Js6/Er3j7xMRx\u002BQzA/tsz5Wh8P5o9IquL1BGd/p8=\u0022"},{"Name":"Last-Modified","Value":"Fri, 09 May 2025 07:04:03 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/DA.ZenPharma.WebAppAdmin/images/products/ibuprofen.68g7m7rvqb.webp">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\ibuprofen.webp'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"68g7m7rvqb"},{"Name":"integrity","Value":"sha256-GvD1\u002BfnjJIXtbuKl2SuLCytMe0aVlmkYovOPAEktQ1A="},{"Name":"label","Value":"_content/DA.ZenPharma.WebAppAdmin/images/products/ibuprofen.webp"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"74716"},{"Name":"Content-Type","Value":"image/webp"},{"Name":"ETag","Value":"\u0022GvD1\u002BfnjJIXtbuKl2SuLCytMe0aVlmkYovOPAEktQ1A=\u0022"},{"Name":"Last-Modified","Value":"Fri, 09 May 2025 06:55:21 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/DA.ZenPharma.WebAppAdmin/images/products/ibuprofen.webp">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\ibuprofen.webp'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-GvD1\u002BfnjJIXtbuKl2SuLCytMe0aVlmkYovOPAEktQ1A="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"74716"},{"Name":"Content-Type","Value":"image/webp"},{"Name":"ETag","Value":"\u0022GvD1\u002BfnjJIXtbuKl2SuLCytMe0aVlmkYovOPAEktQ1A=\u0022"},{"Name":"Last-Modified","Value":"Fri, 09 May 2025 06:55:21 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/DA.ZenPharma.WebAppAdmin/images/products/medical-mask.tfcm0jswyk.webp">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\medical-mask.webp'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"tfcm0jswyk"},{"Name":"integrity","Value":"sha256-hys2H06m8if2Ea96eRiZwLnzjt\u002BUeyH53unNQSRSVoM="},{"Name":"label","Value":"_content/DA.ZenPharma.WebAppAdmin/images/products/medical-mask.webp"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"90428"},{"Name":"Content-Type","Value":"image/webp"},{"Name":"ETag","Value":"\u0022hys2H06m8if2Ea96eRiZwLnzjt\u002BUeyH53unNQSRSVoM=\u0022"},{"Name":"Last-Modified","Value":"Fri, 09 May 2025 07:01:47 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/DA.ZenPharma.WebAppAdmin/images/products/medical-mask.webp">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\medical-mask.webp'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-hys2H06m8if2Ea96eRiZwLnzjt\u002BUeyH53unNQSRSVoM="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"90428"},{"Name":"Content-Type","Value":"image/webp"},{"Name":"ETag","Value":"\u0022hys2H06m8if2Ea96eRiZwLnzjt\u002BUeyH53unNQSRSVoM=\u0022"},{"Name":"Last-Modified","Value":"Fri, 09 May 2025 07:01:47 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/DA.ZenPharma.WebAppAdmin/images/products/omeprazole.6r67ywjss7.webp">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\omeprazole.webp'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"6r67ywjss7"},{"Name":"integrity","Value":"sha256-DtAp0jR2HY/auAEWgWM1K2bpkGJA9PFJ5BbPYYeJ/ZA="},{"Name":"label","Value":"_content/DA.ZenPharma.WebAppAdmin/images/products/omeprazole.webp"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"44716"},{"Name":"Content-Type","Value":"image/webp"},{"Name":"ETag","Value":"\u0022DtAp0jR2HY/auAEWgWM1K2bpkGJA9PFJ5BbPYYeJ/ZA=\u0022"},{"Name":"Last-Modified","Value":"Fri, 09 May 2025 06:58:06 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/DA.ZenPharma.WebAppAdmin/images/products/omeprazole.webp">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\omeprazole.webp'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-DtAp0jR2HY/auAEWgWM1K2bpkGJA9PFJ5BbPYYeJ/ZA="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"44716"},{"Name":"Content-Type","Value":"image/webp"},{"Name":"ETag","Value":"\u0022DtAp0jR2HY/auAEWgWM1K2bpkGJA9PFJ5BbPYYeJ/ZA=\u0022"},{"Name":"Last-Modified","Value":"Fri, 09 May 2025 06:58:06 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/DA.ZenPharma.WebAppAdmin/images/products/paracetamol.oirhbfjb0j.webp">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\paracetamol.webp'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"oirhbfjb0j"},{"Name":"integrity","Value":"sha256-cOOyx2Gp\u002BxznSSFEAsDsa\u002BEiZAMQLAc40OoYh7DAS\u002BE="},{"Name":"label","Value":"_content/DA.ZenPharma.WebAppAdmin/images/products/paracetamol.webp"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"107374"},{"Name":"Content-Type","Value":"image/webp"},{"Name":"ETag","Value":"\u0022cOOyx2Gp\u002BxznSSFEAsDsa\u002BEiZAMQLAc40OoYh7DAS\u002BE=\u0022"},{"Name":"Last-Modified","Value":"Fri, 09 May 2025 06:48:07 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/DA.ZenPharma.WebAppAdmin/images/products/paracetamol.webp">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\paracetamol.webp'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-cOOyx2Gp\u002BxznSSFEAsDsa\u002BEiZAMQLAc40OoYh7DAS\u002BE="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"107374"},{"Name":"Content-Type","Value":"image/webp"},{"Name":"ETag","Value":"\u0022cOOyx2Gp\u002BxznSSFEAsDsa\u002BEiZAMQLAc40OoYh7DAS\u002BE=\u0022"},{"Name":"Last-Modified","Value":"Fri, 09 May 2025 06:48:07 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/DA.ZenPharma.WebAppAdmin/images/products/thermometer.hq6lwn897k.webp">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\thermometer.webp'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"hq6lwn897k"},{"Name":"integrity","Value":"sha256-WbH33BztOsoKgNsP23z4CdbNVHoQ0Duox9EUs4DIxVg="},{"Name":"label","Value":"_content/DA.ZenPharma.WebAppAdmin/images/products/thermometer.webp"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"75420"},{"Name":"Content-Type","Value":"image/webp"},{"Name":"ETag","Value":"\u0022WbH33BztOsoKgNsP23z4CdbNVHoQ0Duox9EUs4DIxVg=\u0022"},{"Name":"Last-Modified","Value":"Fri, 09 May 2025 07:00:51 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/DA.ZenPharma.WebAppAdmin/images/products/thermometer.webp">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\thermometer.webp'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-WbH33BztOsoKgNsP23z4CdbNVHoQ0Duox9EUs4DIxVg="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"75420"},{"Name":"Content-Type","Value":"image/webp"},{"Name":"ETag","Value":"\u0022WbH33BztOsoKgNsP23z4CdbNVHoQ0Duox9EUs4DIxVg=\u0022"},{"Name":"Last-Modified","Value":"Fri, 09 May 2025 07:00:51 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/DA.ZenPharma.WebAppAdmin/images/products/vitaminc.k5m9bekjt6.webp">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\vitaminc.webp'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"k5m9bekjt6"},{"Name":"integrity","Value":"sha256-mETJmkjwBCeM\u002BcscnVqyvWXa5Sh/BHYPjE0XN5Oozqs="},{"Name":"label","Value":"_content/DA.ZenPharma.WebAppAdmin/images/products/vitaminc.webp"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"67312"},{"Name":"Content-Type","Value":"image/webp"},{"Name":"ETag","Value":"\u0022mETJmkjwBCeM\u002BcscnVqyvWXa5Sh/BHYPjE0XN5Oozqs=\u0022"},{"Name":"Last-Modified","Value":"Fri, 09 May 2025 06:59:30 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/DA.ZenPharma.WebAppAdmin/images/products/vitaminc.webp">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\vitaminc.webp'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-mETJmkjwBCeM\u002BcscnVqyvWXa5Sh/BHYPjE0XN5Oozqs="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"67312"},{"Name":"Content-Type","Value":"image/webp"},{"Name":"ETag","Value":"\u0022mETJmkjwBCeM\u002BcscnVqyvWXa5Sh/BHYPjE0XN5Oozqs=\u0022"},{"Name":"Last-Modified","Value":"Fri, 09 May 2025 06:59:30 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/DA.ZenPharma.WebAppAdmin/images/products/zinc.sr83l5pisa.webp">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\zinc.webp'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"sr83l5pisa"},{"Name":"integrity","Value":"sha256-KMieRjN\u002BT1ctJPa7m2b2lnD\u002BTQh8oWrXnz18F0VTY4s="},{"Name":"label","Value":"_content/DA.ZenPharma.WebAppAdmin/images/products/zinc.webp"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"77588"},{"Name":"Content-Type","Value":"image/webp"},{"Name":"ETag","Value":"\u0022KMieRjN\u002BT1ctJPa7m2b2lnD\u002BTQh8oWrXnz18F0VTY4s=\u0022"},{"Name":"Last-Modified","Value":"Fri, 09 May 2025 07:04:26 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/DA.ZenPharma.WebAppAdmin/images/products/zinc.webp">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\zinc.webp'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-KMieRjN\u002BT1ctJPa7m2b2lnD\u002BTQh8oWrXnz18F0VTY4s="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"77588"},{"Name":"Content-Type","Value":"image/webp"},{"Name":"ETag","Value":"\u0022KMieRjN\u002BT1ctJPa7m2b2lnD\u002BTQh8oWrXnz18F0VTY4s=\u0022"},{"Name":"Last-Modified","Value":"Fri, 09 May 2025 07:04:26 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/DA.ZenPharma.WebAppAdmin/js/site.js">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\site.js'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>

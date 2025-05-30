@@ -1,0 +1,231 @@
+﻿/* header */
+
+.header-pc {
+    background-color: #0072BC;
+    color: white;
+    font-size: 16px !important;
+}
+
+
+    .header-pc a {
+        text-decoration: none;
+        color: white;
+        font-size: 16px !important;
+    }
+
+.header-top {
+    justify-content: space-between;
+    align-items: start;
+}
+
+
+.header-top_right ul {
+    list-style: none;
+}
+
+.header-top_right li:not(:last-child) {
+    border-right: 2px solid rgba(158, 186, 237, .5);
+    padding: 0px 2px;
+    margin: 0px;
+}
+
+.header-top_right li a {
+    padding: 0px 4px;
+    margin: 0 1px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.header-top_right li:hover {
+    cursor: pointer;
+}
+
+.header-body {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+}
+
+.header-body_category button {
+    border-radius: 18px;
+    padding: 12px;
+}
+
+.header-body_search input {
+    min-width: 230px;
+    border-radius: 12px;
+    padding: 24px 48px 24px 18px;
+}
+
+.header-body_search .dropdown-search {
+    border-radius: 12px;
+    background-color: #ffffff;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+    .header-body_search .dropdown-search a {
+        display: block;
+        text-wrap: nowrap;
+        overflow: hidden;
+        border-radius: 8px;
+        width: 100%;
+        padding: 4px;
+    }
+
+        .header-body_search .dropdown-search a:hover {
+            background-color: #f2f4f5;
+            cursor: pointer;
+        }
+
+
+.header-body_cart,
+.header-body_login {
+    align-items: center;
+    min-width: 140px;
+}
+
+    .header-body_cart a,
+    .header-body_login a {
+        border-radius: 25px;
+        padding: 12px;
+    }
+
+.header-mobile {
+    display: none;
+}
+
+@media (max-width: 1200px) {
+    .header-pc .subHeader {
+        display: none;
+    }
+
+   
+}
+
+@media (max-width: 850px) {
+    .header-pc {
+        display: none;
+    }
+
+    .header-mobile {
+        display: block !important;
+        background-color: #0072BC;
+        padding: 12px 0 24px 0 !important;
+        border-bottom-right-radius: 50% 35px;
+        border-bottom-left-radius: 50% 35px
+    }
+
+    .header-body_search input {
+        min-width: 230px;
+        border-radius: 12px;
+        padding: 22px 48px 24px 18px;
+    }
+
+    .header-body_cart,
+    .header-body_login {
+        align-items: center;
+        min-width: 50px;
+    }
+
+        .header-body_cart a,
+        .header-body_login a {
+            padding: 12px;
+        }
+
+    .cart_quantity-product {
+        box-sizing: border-box;
+        display: block;
+        background-color: #db2017;
+        border-radius: 100px;
+        border: 1px solid white;
+        color: white;
+        min-width: 16px;
+        min-height: 16px;
+        font-size: 10px !important;
+    }
+}
+
+/* modal-login*/
+
+
+
+.modal-overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, .6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1001;
+}
+
+.modal-header {
+    border: none;
+}
+
+.modal-container {
+    background-color: #fff;
+    width: 300px;
+    padding: 1rem;
+    border-radius: 12px;
+    height: 360px;
+}
+
+.modal-content {
+    border: none;
+}
+
+    .modal-content input {
+        outline: none;
+        border: none;
+        padding: 2px 24px 4px 24px;
+        border-bottom: 2px solid #686868;
+    }
+
+        .modal-content input:focus {
+            border-color: #007BFF;
+        }
+
+.modal-footer {
+    display: block;
+}
+
+    .modal-footer button {
+        outline: none;
+        margin: 8px 4px;
+        padding: 8px 0;
+    }
+
+
+/* footer */
+.footerPC {
+    background-color: #E5E5E5;
+}
+
+    .footerPC a {
+        text-decoration: none;
+        color: #5d6572;
+    }
+
+.footerPC_download-store img {
+    height: 42.5%;
+}
+
+.footerPC .row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+
+
+@media (max-width: 1200px) {
+    .footerPC_download-app {
+        display: none;
+    }
+}
+
+
+/*banner*/
+

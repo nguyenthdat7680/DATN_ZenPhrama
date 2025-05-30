@@ -108,10 +108,14 @@ namespace DA.ZenPharma.WebAppAdmin.Controllers
             }
             else
             {
-                TempData["ErrorMessage"] = "Đã có lỗi xảy ra khi xóa danh mục!";
+                var errorMessage = await response.Content.ReadAsStringAsync();
+                TempData["ErrorMessage"] = string.IsNullOrWhiteSpace(errorMessage)
+                    ? "Đã có lỗi xảy ra khi xóa danh mục!"
+                    : errorMessage;
             }
 
             return RedirectToAction("Index");
         }
+
     }
 }

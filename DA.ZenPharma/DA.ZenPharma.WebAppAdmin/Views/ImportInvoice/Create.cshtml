@@ -37,13 +37,24 @@
                         </select>
                     </div>
 
-                    <div class="col-md-4">
-                        <label asp-for="BranchLocationId" class="form-label">Chi nhánh</label>
-                        <select asp-for="BranchLocationId" class="form-select" asp-items="ViewBag.Branches">
-                            <option value="">-- Chọn --</option>
-                        </select>
-                    </div>
-                    
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <div class="col-md-4 mb-3">
+                            <label asp-for="BranchLocationId" class="form-label">Chi nhánh</label>
+                            <select asp-for="BranchLocationId" class="form-select" asp-items="ViewBag.Branches">
+                                <option value="">-- Chọn chi nhánh --</option>
+                            </select>
+                        </div>
+                    }
+                    else
+                    {
+                        <input type="hidden" asp-for="BranchLocationId" value="@ViewBag.BranchId" />
+                        <div class="col-md-4 mb-3">
+                            <label class="form-label">Chi nhánh</label>
+                            <input class="form-control" value="@ViewBag.BranchName" disabled />
+                        </div>
+                    }
+
                 </div>
 
                 <hr class="my-4" />
@@ -77,7 +88,7 @@
                 <div class="row my-4">
                     <div class="col-md-4 ms-auto">
                         <label for="totalAmount" class="form-label">Tổng tiền</label>
-                        <input asp-for="TotalAmount" class="form-control fw-bold text-end" readonly id="totalAmount" />
+                        <input asp-for="TotalAmount" class="form-control fw-bold text-end" readonly id="totalAmount" value="0" />
                     </div>
                 </div>
 
@@ -101,18 +112,21 @@
                 <div class="modal-body">
                     <input type="hidden" id="modalProductIndex" />
                     <input type="hidden" id="modalProductId" />
+                    <input type="hidden" id="modalSmallestUnit" />
+                    <input type="hidden" id="modalMaxConversionFactor" />
+                    <input type="hidden" id="modalBaseUnit" />
 
                     <div class="mb-3">
-                        <label for="batchName" class="form-label">Tên lô hàng</label>
+                        <label for="batchName" class="form-label">Tên lô hàng <span class="text-danger">*</span></label>
                         <input type="text" id="batchName" class="form-control" required />
                     </div>
                     <div class="mb-3">
-                        <label for="expireDate" class="form-label">Hạn sử dụng</label>
+                        <label for="expireDate" class="form-label">Hạn sử dụng <span class="text-danger">*</span></label>
                         <input type="date" id="expireDate" class="form-control" required />
                     </div>
                     <div class="mb-3">
-                        <label for="batchQuantity" class="form-label">Số lượng</label>
-                        <input type="number" id="batchQuantity" class="form-control" min="1" required />
+                        <label for="batchQuantity" class="form-label">Số lượng <span class="text-danger">*</span></label>
+                        <input type="number" id="batchQuantity" class="form-control" min="1" step="1" required />
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -124,14 +138,14 @@
     </div>
 </div>
 
-
-
-
 @section Scripts {
     <script>
         let productIndex = 0;
         let batchModalInstance;
-         $('#searchProduct').on('input', function () {
+        let baseUnitConversions = {};
+
+        // Tìm kiếm sản phẩm
+        $('#searchProduct').on('input', function () {
             const keyword = $(this).val().trim();
 
             if (keyword.length < 2) {
@@ -140,7 +154,7 @@
             }
 
             $.ajax({
-                url: 'https://localhost:7034/api/product/search',
+                url: 'https://localhost:7034/api/product/search1',
                 type: 'GET',
                 data: { keyword: keyword },
                 success: function (data) {
@@ -148,51 +162,53 @@
                     data.forEach(p => {
                         const safeName = p.productName.replace(/'/g, "\\'");
                         html += `<a href="#" class="list-group-item list-group-item-action"
-                            onclick="selectProduct('${p.id}', '${safeName}', '${p.productCode}', '${p.unitDisplayName}', event)">
+                            onclick="selectProduct('${p.id}', '${safeName}', '${p.productCode}', '${p.baseUnit}', event)">
                             ${p.productName}</a>`;
                     });
                     $('#searchResults').html(html).show();
-                }   
+                },
+                error: function (xhr) {
+                    console.error('Lỗi tìm kiếm sản phẩm:', xhr);
+                    $('#searchResults').hide();
+                }
             });
         });
 
-
-        function selectProduct(id, name, productCode, unit, event) {
+        // Chọn sản phẩm
+        function selectProduct(id, name, productCode, baseUnit, event) {
             event.preventDefault();
 
+            baseUnitConversions[id] = { baseUnit };
+
             const row = `
-                <tr data-product-index="${productIndex}">
+                <tr data-product-index="${productIndex}" data-product-id="${id}">
                     <td>${productIndex + 1}</td>
                     <td>
                         <input type="hidden" name="Details[${productIndex}].ProductId" value="${id}" />
                         ${productCode}
                     </td>
                     <td>${name}</td>
-                    <td>${unit}</td>
-                    <td><input name="Details[${productIndex}].Quantity" type="number" class="form-control form-control-sm quantity" min="1" value="1" /></td>
+                    <td class="base-unit">${baseUnit}</td>
+                    <td><input name="Details[${productIndex}].Quantity" type="number" class="form-control form-control-sm quantity" min="0" value="0" readonly /></td>
                     <td><input name="Details[${productIndex}].UnitPrice" type="number" class="form-control form-control-sm unitPrice" step="0.01" min="0" value="0" /></td>
                     <td><input name="Details[${productIndex}].Discount" type="number" class="form-control form-control-sm discount" step="0.1" min="0" max="100" value="0" /></td>
-                    <td><input class="form-control form-control-sm total text-end" readonly /></td>
+                    <td><input class="form-control form-control-sm total text-end" readonly value="0" /></td>
                     <td class="text-center">
                         <button type="button" class="btn btn-sm btn-danger" onclick="removeProduct(this)">X</button>
                     </td>
                 </tr>
-                        <tr>
-            <td colspan="9" class="pt-3 pb-4 border-top-0">
-                <div class="d-flex justify-content-between align-items-start flex-wrap gap-2">
-                    <!-- Các lô hàng bên trái -->
-                    <div class="batch-list-${productIndex} d-flex flex-wrap gap-2"></div>
-
-                    <!-- Nút thêm lô bên phải, luôn thẳng hàng bên phải -->
-                    <div class="ms-auto">
-                        <button type="button" class="btn btn-outline-primary btn-sm" onclick="openBatchModal(${productIndex}, '${id}')">
-                            + Lô hàng
-                        </button>
-                    </div>
-                </div>
-            </td>
-        </tr>
-
+                <tr>
+                    <td colspan="9" class="pt-3 pb-4 border-top-0">
+                        <div class="d-flex justify-content-between align-items-start flex-wrap gap-2">
+                            <div class="batch-list-${productIndex} d-flex flex-wrap gap-2"></div>
+                            <div class="ms-auto">
+                                <button type="button" class="btn btn-outline-primary btn-sm" onclick="openBatchModal(${productIndex}, '${id}')">
+                                    + Lô hàng
+                                </button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
             `;
 
             $('#detailBody').append(row);
@@ -201,22 +217,60 @@
             productIndex++;
         }
 
+        // Xóa sản phẩm
         function removeProduct(btn) {
             $(btn).closest('tr').next().remove();
             $(btn).closest('tr').remove();
             calculateTotal();
         }
 
+        // Mở modal nhập lô
         function openBatchModal(productIndex, productId) {
             $('#modalProductIndex').val(productIndex);
             $('#modalProductId').val(productId);
             $('#batchForm')[0].reset();
+            $('#modalSmallestUnit').val('');
+            $('#modalMaxConversionFactor').val('');
+            $('#modalBaseUnit').val('');
 
-            const modalEl = document.getElementById('batchModal');
-            batchModalInstance = new bootstrap.Modal(modalEl); 
-            batchModalInstance.show(); 
+            const conversionData = baseUnitConversions[productId];
+            if (conversionData) {
+                $('#modalBaseUnit').val(conversionData.baseUnit);
+            }
+
+            $.ajax({
+                url: `https://localhost:7034/api/product/${productId}/units`,
+                type: 'GET',
+                success: function (data) {
+                    if (data && data.length > 0) {
+                        const smallestUnitEntry = data.reduce((max, u) => u.conversionFactor > max.conversionFactor ? u : max, data[0]);
+                        $('#modalSmallestUnit').val(smallestUnitEntry.unit);
+                        $('#modalMaxConversionFactor').val(smallestUnitEntry.conversionFactor);
+                        baseUnitConversions[productId].smallestUnit = smallestUnitEntry.unit;
+                        baseUnitConversions[productId].maxConversionFactor = smallestUnitEntry.conversionFactor;
+                    } else {
+                        $('#modalSmallestUnit').val(conversionData.baseUnit);
+                        $('#modalMaxConversionFactor').val(1);
+                        baseUnitConversions[productId].smallestUnit = conversionData.baseUnit;
+                        baseUnitConversions[productId].maxConversionFactor = 1;
+                    }
+                },
+                error: function (xhr) {
+                    console.error('Lỗi lấy đơn vị:', xhr);
+                    $('#modalSmallestUnit').val(conversionData.baseUnit);
+                    $('#modalMaxConversionFactor').val(1);
+                    baseUnitConversions[productId].smallestUnit = conversionData.baseUnit;
+                    baseUnitConversions[productId].maxConversionFactor = 1;
+                },
+                complete: function () {
+                    const modalEl = document.getElementById('batchModal');
+                    batchModalInstance = new bootstrap.Modal(modalEl);
+                    batchModalInstance.show();
+                }
+            });
         }
 
+        // Submit lô hàng
         $('#batchForm').on('submit', function (e) {
             e.preventDefault();
 
@@ -224,7 +278,19 @@
             const productId = $('#modalProductId').val();
             const name = $('#batchName').val();
             const expireDate = $('#expireDate').val();
-            const quantity = $('#batchQuantity').val();
+            const quantity = parseFloat($('#batchQuantity').val()) || 0;
+            const baseUnit = $('#modalBaseUnit').val();
+            const maxConversionFactor = parseFloat($('#modalMaxConversionFactor').val()) || 1;
+            const smallestUnit = $('#modalSmallestUnit').val();
+
+            // Validation
+            if (!name || !expireDate || quantity <= 0 || !smallestUnit || !maxConversionFactor) {
+                alert('Vui lòng nhập đầy đủ thông tin lô hàng hoặc kiểm tra đơn vị sản phẩm.');
+                return;
+            }
+
+            // Quy đổi số lượng về đơn vị nhỏ nhất
+            const quantityInSmallestUnit = Math.round(quantity * maxConversionFactor);
 
             const container = $(`.batch-list-${index}`);
             const count = container.children().length;
@@ -232,11 +298,12 @@
             const html = `
                 <div class="border px-3 py-2 bg-light rounded-pill small d-flex align-items-center gap-2">
                     <div class="text-nowrap">
-                        <strong>${name}</strong> | SL: ${quantity} | HSD: ${expireDate}
+                        <strong>${name}</strong> | SL: ${quantity} ${baseUnit} | HSD: ${expireDate}
                         <input type="hidden" name="Details[${index}].Batches[${count}].ProductId" value="${productId}" />
                         <input type="hidden" name="Details[${index}].Batches[${count}].BatchName" value="${name}" />
                         <input type="hidden" name="Details[${index}].Batches[${count}].ExpireDate" value="${expireDate}" />
-                        <input type="hidden" name="Details[${index}].Batches[${count}].Quantity" value="${quantity}" />
+                        <input type="hidden" name="Details[${index}].Batches[${count}].Unit" value="${smallestUnit}" />
+                        <input type="hidden" name="Details[${index}].Batches[${count}].Quantity" value="${quantityInSmallestUnit}" />
                     </div>
                     <button type="button" class="btn btn-outline-danger btn-sm px-2 py-0" onclick="removeBatch(this, ${index})" title="Xóa lô">×</button>
                 </div>
@@ -245,7 +312,6 @@
             container.append(html);
             updateBatchQuantity(index);
 
-            // Đóng modal
             if (batchModalInstance) {
                 batchModalInstance.hide();
             }
@@ -253,8 +319,8 @@
             $('#batchForm')[0].reset();
         });
 
-
-        $(document).on('input', '.quantity, .unitPrice, .discount', function () {
+        // Tính tổng tiền
+        $(document).on('input', '.unitPrice, .discount', function () {
             const row = $(this).closest('tr');
             const qty = parseFloat(row.find('.quantity').val()) || 0;
             const price = parseFloat(row.find('.unitPrice').val()) || 0;
@@ -272,23 +338,29 @@
             $('#totalAmount').val(total.toFixed(2));
         }
 
+        // Cập nhật tổng số lượng lô
         function updateBatchQuantity(index) {
-            let total = 0;
+            let totalSmallestUnit = 0;
+            const productId = $(`tr[data-product-index="${index}"]`).data('product-id');
+            const maxConversionFactor = baseUnitConversions[productId]?.maxConversionFactor || 1;
+
             $(`.batch-list-${index} input[name^="Details[${index}].Batches"]`).each(function () {
                 if (this.name.includes("Quantity")) {
-                    total += parseInt($(this).val()) || 0;
+                    totalSmallestUnit += parseFloat($(this).val()) || 0;
                 }
             });
-            $(`input[name="Details[${index}].Quantity"]`).val(total).trigger('input');
+
+            // Quy đổi ngược về BaseUnit
+            const totalBaseUnit = Math.round(totalSmallestUnit / maxConversionFactor);
+            $(`input[name="Details[${index}].Quantity"]`).val(totalBaseUnit).trigger('input');
         }
 
+        // Xóa lô
         function removeBatch(btn, index) {
             $(btn).parent().remove();
             updateBatchQuantity(index);
         }
-
     </script>
-
 
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
@@ -322,7 +394,4 @@
             });
         });
     </script>
-
-
-
 }

@@ -59,10 +59,16 @@ namespace DA.ZenPharma.Infrastructure.Configuration
 
             builder.HasOne(p => p.Category)
                 .WithMany(c => c.Products)
-                .HasForeignKey(p => p.CategoryId);
+                .HasForeignKey(p => p.CategoryId)
+                .OnDelete(DeleteBehavior.Restrict);
 
-            builder.Property(p => p.Unit)
-                .HasConversion<int>();
+            builder.HasMany(p => p.ProductUnits)
+                .WithOne(pu => pu.Product)
+                .HasForeignKey(pu => pu.ProductId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            builder.HasIndex(p => p.ProductCode)
+                .IsUnique();
         }
 
     }

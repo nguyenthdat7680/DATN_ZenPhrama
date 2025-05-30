@@ -1,0 +1,81 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2d3436;
+}
+
+.about-us {
+    user-select: none;
+    min-width: 500px;
+    min-height: 500px;
+    padding: 16px;
+    margin: 16px;
+}
+
+    .about-us a {
+        font-size: 18px;
+        margin-bottom: 100px;
+        color: #fff;
+    }
+
+    .about-us h1, h3 {
+        color: #fff;
+        font-family: 'Oswald', sans-serif;
+        font-size: 70px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 700;
+        background: url(/assets/img/page-img/fill.png) repeat-y;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: animate 80s linear infinite;
+    }
+
+    .about-us h1 {
+        font-size: 70px;
+    }
+
+    .about-us h3 {
+        font-size: 50px;
+    }
+
+    .about-us h4 {
+        color: #fff;
+        margin: 12px 0;
+        font-size: 30px;
+        border-bottom: 4px solid #fff;
+    }
+
+    .about-us h5 {
+        color: #fff;
+        margin: 8px 0;
+        font-size: 24px;
+    }
+
+        .about-us h5:hover {
+            cursor: pointer;
+            color: #EE5100;
+        }
+
+@keyframes animate {
+    from {
+        background-position: 0% 50%;
+    }
+
+    to {
+        background-position: 100% 50%;
+    }
+}
