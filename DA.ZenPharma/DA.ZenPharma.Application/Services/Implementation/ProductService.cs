@@ -77,11 +77,13 @@ namespace DA.ZenPharma.Application.Services.Implementation
 
         public async Task UpdateAsync(ProductUpdateDto dto)
         {
+            // Tải sản phẩm với tracking
             var product = await _unitOfWork.Products.GetAllForPaging()
+                .Include(p => p.ProductUnits) // Đảm bảo tải ProductUnits
                 .FirstOrDefaultAsync(p => p.Id == dto.Id);
 
             if (product == null)
-                throw new Exception("Sản phẩm không tồn tại.");
+                throw new Exception($"Sản phẩm với ID {dto.Id} không tồn tại.");
 
             var baseUnit = dto.BaseUnit?.Trim();
             if (string.IsNullOrWhiteSpace(baseUnit))
@@ -94,24 +96,38 @@ namespace DA.ZenPharma.Application.Services.Implementation
                 throw new Exception("Đơn vị trùng lặp!");
             }
 
+            // Ánh xạ DTO sang entity
             _mapper.Map(dto, product);
             product.BaseUnit = baseUnit;
 
-            await _unitOfWork.ProductUnits.RemoveRangeAsync(product.ProductUnits);
-            product.ProductUnits.Clear();
+            // Xóa và thêm ProductUnits
+            //await _unitOfWork.ProductUnits.RemoveRangeAsync(product.ProductUnits);
+            //product.ProductUnits.Clear();
+            //product.ProductUnits = dto.ProductUnits.Select(pu => new ProductUnit
+            //{
+            //    Id = Guid.NewGuid(),
+            //    ProductId = product.Id,
+            //    Unit = pu.Unit.Trim(),
+            //    ConversionFactor = pu.ConversionFactor
+            //}).ToList();
 
-            product.ProductUnits = dto.ProductUnits.Select(pu => new ProductUnit
+            // Đánh dấu entity là Modified
+            _unitOfWork.Products.UpdateAsync(product);
+
+            try
             {
-                Id = Guid.NewGuid(),
-                ProductId = product.Id,
-                Unit = pu.Unit.Trim(),
-                ConversionFactor = pu.ConversionFactor
-            }).ToList();
+                await _unitOfWork.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException ex)
+            {
 
-            await _unitOfWork.Products.UpdateAsync(product);
-            await _unitOfWork.SaveChangesAsync();
+                // Kiểm tra xem sản phẩm còn tồn tại không
+                var exists = await _unitOfWork.Products.GetAllForPaging().AnyAsync(p => p.Id == dto.Id);
+                if (!exists)
+                    throw new Exception($"Sản phẩm với ID {dto.Id} không tồn tại.");
+                throw; // Ném lại để xử lý ở tầng trên
+            }
         }
-
         public async Task DeleteAsync(Guid id)
         {
             var product = await _unitOfWork.Products.GetByIdAsync(id);

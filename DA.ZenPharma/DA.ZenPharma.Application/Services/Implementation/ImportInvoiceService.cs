@@ -89,7 +89,7 @@ namespace DA.ZenPharma.Application.Services.Implementation
         public async Task<Guid> CreateAsync(ImportInvoiceCreateDto dto)
         {
             var invoice = _mapper.Map<ImportInvoice>(dto);
-            invoice.InvoiceNumber = dto.InvoiceNumber ?? $"HDN-{DateTime.Now.Ticks}";
+            invoice.InvoiceNumber = dto.InvoiceNumber ?? $"INV-{DateTime.Now.Ticks}";
             
             foreach (var detailDto in dto.Details)
             {

@@ -30,13 +30,40 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Search Bar -->
                 <div class="nk-block mb-3">
-                    <form method="get" action="@Url.Action("Index")" class="form-inline">
+                    <form method="get" action="@Url.Action("Search", "Product")" class="form-inline">
+                        <!-- Keyword Search -->
                         <div class="form-group mx-sm-3 mb-2">
-                            <input type="text" name="search" class="form-control" placeholder="Tìm kiếm sản phẩm..." value="@ViewBag.Search">
+                            <input type="text" name="keyword" class="form-control" placeholder="Tìm kiếm sản phẩm..." value="@ViewBag.Keyword">
                         </div>
+
+                        <!-- Category Filter -->
+                        <div class="form-group mx-sm-3 mb-2">
+                            <select name="categoryId" class="form-control">
+                                <option value="">Tất cả danh mục</option>
+                                @foreach (var category in ViewBag.Categories)
+                                {
+                                    <option value="@category.Value" selected="@(ViewBag.CategoryId == category.Value ? "selected" : null)">@category.Text</option>
+                                }
+                            </select>
+                        </div>
+
+                        <!-- Order By -->
+                        <div class="form-group mx-sm-3 mb-2">
+                            <select name="orderBy" class="form-control">
+                                <option value="">Sắp xếp mặc định</option>
+                                <option value="name_asc" selected="@(ViewBag.OrderBy == "name_asc" ? "selected" : null)">Tên (A-Z)</option>
+                                <option value="name_desc" selected="@(ViewBag.OrderBy == "name_desc" ? "selected" : null)">Tên (Z-A)</option>
+                                <option value="price_asc" selected="@(ViewBag.OrderBy == "price_asc" ? "selected" : null)">Giá (Thấp-Cao)</option>
+                                <option value="price_desc" selected="@(ViewBag.OrderBy == "price_desc" ? "selected" : null)">Giá (Cao-Thấp)</option>
+                            </select>
+                        </div>
+
+                        <!-- Hidden Fields for Pagination -->
+                        <input type="hidden" name="page" value="@ViewBag.Page" />
+                        <input type="hidden" name="pageSize" value="@ViewBag.PageSize" />
+
+                        <!-- Submit Button -->
                         <button type="submit" class="btn btn-primary mb-2">Tìm kiếm</button>
                     </form>
                 </div>
@@ -90,6 +117,11 @@
                                                         <li>
                                                             <a class="btn btn-sm btn-primary" href="@Url.Action("Details", new { id = item.Id })" title="Chi tiết">
                                                                 <em class="icon ni ni-eye"></em>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-warning" title="Chỉnh sửa">
+                                                                <em class="icon ni ni-edit"></em>
                                                             </a>
                                                         </li>
                                                         <li>
@@ -185,7 +217,6 @@
         </div>
     </div>
 </div>
-
 <!-- Include _CreateProductModal.cshtml -->
 @await Html.PartialAsync("~/Views/Shared/_CreateProductModal.cshtml", new DA.ZenPharma.Application.Dtos.ProductDto.ProductCreateDto())
 
@@ -210,6 +241,7 @@
                         $('.js-select2').select2({ minimumResultsForSearch: Infinity });
                     });
                 });
+                
             } catch (error) {
                 console.error('Lỗi khởi tạo trang:', error);
             }

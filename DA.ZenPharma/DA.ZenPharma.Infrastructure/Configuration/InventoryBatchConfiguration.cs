@@ -22,6 +22,17 @@ namespace DA.ZenPharma.Infrastructure.Configuration
                 .WithMany()
                 .HasForeignKey(b => b.ProductId);
 
+            builder.Property(p => p.CreateDate)
+                .HasDefaultValueSql("GETDATE()");
+
+            builder.Property(p => p.UpdateDate)
+                .HasDefaultValueSql("GETDATE()");
+
+            builder.Property(p => p.CreateBy)
+                .HasDefaultValue(0);
+
+            builder.Property(p => p.UpdateBy)
+                .HasDefaultValue(0);
             builder.HasOne(b => b.ImportInvoiceDetail)
                 .WithMany(d => d.InventoryBatches)
                 .HasForeignKey(b => b.ImportInvoiceDetailId)

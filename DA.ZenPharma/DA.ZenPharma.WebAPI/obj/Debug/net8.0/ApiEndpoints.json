@@ -1050,11 +1050,6 @@
         "Name": "ProductUnits",
         "Type": "System.Collections.Generic.List\u00601[[DA.ZenPharma.Application.Dtos.ProductUnitDtos.ProductUnitDto, DA.ZenPharma.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "IsRequired": false
-      },
-      {
-        "Name": "ThumbnailImage",
-        "Type": "Microsoft.AspNetCore.Http.IFormFile",
-        "IsRequired": false
       }
     ],
     "ReturnTypes": []

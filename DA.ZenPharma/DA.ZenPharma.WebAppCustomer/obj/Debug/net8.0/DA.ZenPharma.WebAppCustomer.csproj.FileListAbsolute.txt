@@ -123,3 +123,8 @@ C:\Users\nguye\OneDrive\Documents\DATN\DATN_ZenPhrama\DA.ZenPharma\DA.ZenPharma.
 C:\Users\nguye\OneDrive\Documents\DATN\DATN_ZenPhrama\DA.ZenPharma\DA.ZenPharma.WebAppCustomer\bin\Debug\net8.0\DA.ZenPharma.Application.pdb
 C:\Users\nguye\OneDrive\Documents\DATN\DATN_ZenPhrama\DA.ZenPharma\DA.ZenPharma.WebAppCustomer\bin\Debug\net8.0\DA.ZenPharma.Domain.pdb
 C:\Users\nguye\OneDrive\Documents\DATN\DATN_ZenPhrama\DA.ZenPharma\DA.ZenPharma.WebAppCustomer\bin\Debug\net8.0\DA.ZenPharma.Infrastructure.pdb
+C:\Users\nguye\OneDrive\Documents\DATN\DATN_ZenPhrama\DA.ZenPharma\DA.ZenPharma.WebAppCustomer\bin\Debug\net8.0\Microsoft.Extensions.Configuration.FileExtensions.dll
+C:\Users\nguye\OneDrive\Documents\DATN\DATN_ZenPhrama\DA.ZenPharma\DA.ZenPharma.WebAppCustomer\bin\Debug\net8.0\Microsoft.Extensions.Diagnostics.Abstractions.dll
+C:\Users\nguye\OneDrive\Documents\DATN\DATN_ZenPhrama\DA.ZenPharma\DA.ZenPharma.WebAppCustomer\bin\Debug\net8.0\Microsoft.Extensions.Hosting.Abstractions.dll
+C:\Users\nguye\OneDrive\Documents\DATN\DATN_ZenPhrama\DA.ZenPharma\DA.ZenPharma.WebAppCustomer\bin\Debug\net8.0\Microsoft.Extensions.Logging.Debug.dll
+C:\Users\nguye\OneDrive\Documents\DATN\DATN_ZenPhrama\DA.ZenPharma\DA.ZenPharma.WebAppCustomer\bin\Debug\net8.0\Microsoft.Extensions.ObjectPool.dll

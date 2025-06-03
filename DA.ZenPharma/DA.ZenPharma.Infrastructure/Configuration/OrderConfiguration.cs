@@ -30,6 +30,17 @@ namespace DA.ZenPharma.Infrastructure.Configuration
                 .HasForeignKey(o => o.AddressId)
                 .OnDelete(DeleteBehavior.Restrict);
 
+            builder.Property(p => p.CreateDate)
+                .HasDefaultValueSql("GETDATE()");
+
+            builder.Property(p => p.UpdateDate)
+                .HasDefaultValueSql("GETDATE()");
+
+            builder.Property(p => p.CreateBy)
+                .HasDefaultValue(0);
+
+            builder.Property(p => p.UpdateBy)
+                .HasDefaultValue(0);
 
             builder.Property(o => o.TotalAmount)
                 .HasColumnType("decimal(18,2)");

@@ -4,17 +4,15 @@
             <li class="nav-item dropdown open">
                 <a class="dropdown-toggle" asp-action="Index" asp-controller="Report">
                     <span class="icon-holder">
-                        <i class="anticon anticon-dashboard"></i>
+                        <i class="icon ni ni-home"></i>
                     </span>
                     <span class="title">Trang chủ</span>
-
                 </a>
-
             </li>
             <li class="nav-item dropdown">
                 <a class="dropdown-toggle" href="javascript:void(0);">
                     <span class="icon-holder">
-                        <i class="anticon anticon-form"></i>
+                        <i class="icon ni ni-cart"></i>
                     </span>
                     <span class="title">Quản lý đơn hàng</span>
                     <span class="arrow">
@@ -23,25 +21,17 @@
                 </a>
                 <ul class="dropdown-menu">
                     <li>
-                        <a asp-action="Create" asp-controller="Order">Bán hàng</a>
+                        <a asp-action="Create" asp-controller="Order"><i class="icon ni ni-plus"></i> Bán hàng</a>
                     </li>
                     <li>
-                        <a asp-action="Index" asp-controller="Order">Danh sách đơn đặt hàng</a>
-                    </li>
-
-
-                    <li>
-                        <a asp-action="AddReturn" asp-controller="Order">Thêm đổi trả đơn hàng</a>
-                    </li>
-                    <li>
-                        <a asp-action="ListReturn" asp-controller="Order">Danh sách đổi trả đơn hàng</a>
+                        <a asp-action="Index" asp-controller="Order"><i class="icon ni ni-list"></i> Danh sách đơn hàng</a>
                     </li>
                 </ul>
             </li>
             <li class="nav-item dropdown">
                 <a class="dropdown-toggle" href="javascript:void(0);">
                     <span class="icon-holder">
-                        <i class="anticon anticon-shopping"></i>
+                        <i class="icon ni ni-grid-alt"></i>
                     </span>
                     <span class="title">Quản lý sản phẩm</span>
                     <span class="arrow">
@@ -50,18 +40,17 @@
                 </a>
                 <ul class="dropdown-menu">
                     <li>
-                        <a asp-action="Create" asp-controller="Product">Thêm sản phẩm</a>
+                        <a asp-action="Index" asp-controller="Product"><i class="icon ni ni-plus"></i> Thêm sản phẩm</a>
                     </li>
                     <li>
-                        <a asp-action="Index" asp-controller="Product">Danh sách sản phẩm</a>
+                        <a asp-action="Index" asp-controller="Product"><i class="icon ni ni-list"></i> Danh sách sản phẩm</a>
                     </li>
-
                 </ul>
             </li>
             <li class="nav-item dropdown">
                 <a class="dropdown-toggle" href="javascript:void(0);">
                     <span class="icon-holder">
-                        <i class="anticon anticon-shopping"></i>
+                        <i class="icon ni ni-swap"></i>
                     </span>
                     <span class="title">Giao dịch</span>
                     <span class="arrow">
@@ -70,19 +59,17 @@
                 </a>
                 <ul class="dropdown-menu">
                     <li>
-                        <a asp-action="Index" asp-controller="ImportInvoice">Danh sách đơn nhập</a>
+                        <a asp-action="Index" asp-controller="ImportInvoice"><i class="icon ni ni-list"></i> Danh sách đơn nhập</a>
                     </li>
                     <li>
-                        <a asp-action="Create" asp-controller="ImportInvoice">Nhập hàng</a>
+                        <a asp-action="Create" asp-controller="ImportInvoice"><i class="icon ni ni-upload"></i> Nhập hàng</a>
                     </li>
-
                 </ul>
             </li>
-
             <li class="nav-item dropdown">
                 <a class="dropdown-toggle" href="javascript:void(0);">
                     <span class="icon-holder">
-                        <i class="anticon anticon-shopping"></i>
+                        <i class="icon ni ni-users"></i>
                     </span>
                     <span class="title">Đối tác</span>
                     <span class="arrow">
@@ -91,114 +78,101 @@
                 </a>
                 <ul class="dropdown-menu">
                     <li>
-                        <a asp-action="Index" asp-controller="Supplier">Nhà cung cấp</a>
+                        <a asp-action="Index" asp-controller="Supplier"><i class="icon ni ni-list"></i> Danh sách nhà cung cấp</a>
                     </li>
                     <li>
-                        <a asp-action="Index" asp-controller="Product">Danh sách sản phẩm</a>
+                        <a asp-action="Create" asp-controller="Supplier"><i class="icon ni ni-user-add"></i> Thêm nhà cung cấp</a>
                     </li>
-
                 </ul>
             </li>
-
-            <li class="nav-item dropdown">
-                <a class="dropdown-toggle" href="javascript:void(0);">
-                    <span class="icon-holder">
-                        <i class="anticon anticon-user"></i>
-                    </span>
-                    <span class="title">Quản lý khách hàng</span>
-                    <span class="arrow">
-                        <i class="arrow-icon"></i>
-                    </span>
-                </a>
-                <ul class="dropdown-menu">
-                    <li>
-                        <a asp-action="Create" asp-controller="Customer">Thêm khách hàng</a>
-                    </li>
-                    <li>
-                        <a asp-action="Index" asp-controller="Customer">Danh sách khách hàng</a>
-                    </li>
-
-
-                </ul>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="dropdown-toggle" href="javascript:void(0);">
-                    <span class="icon-holder">
-                        <i class="anticon anticon-team"></i>
-                    </span>
-                    <span class="title">Quản lý nhân viên</span>
-                    <span class="arrow">
-                        <i class="arrow-icon"></i>
-                    </span>
-                </a>
-                <ul class="dropdown-menu">
-                    <li>
-                        <a asp-action="Create" asp-controller="Staff">Thêm nhân viên</a>
-                    </li>
-                    <li>
-                        <a asp-action="Index" asp-controller="Staff">Danh sách nhân viên</a>
-                    </li>
-
-                </ul>
-            </li>
-
-            <li class="nav-item dropdown">
-                <a class="dropdown-toggle" href="javascript:void(0);">
-                    <span class="icon-holder">
-                        <i class="anticon anticon-ellipsis"></i>
-                    </span>
-                    <span class="title">Quản lý khác</span>
-                    <span class="arrow">
-                        <i class="arrow-icon"></i>
-                    </span>
-                </a>
-                <ul class="dropdown-menu">
-                    <li>
-                        <a asp-action="Index" asp-controller="Prescription">Đơn thuốc khách hàng</a>
-                    </li>
-                    <li>
-                        <a asp-action="Create" asp-controller="Category">Thêm danh mục</a>
-                    </li>
-                    <li>
-                        <a asp-action="Index" asp-controller="Category">Danh sách danh mục</a>
-                    </li>
-                    <li>
-                        <a asp-action="Create" asp-controller="Role">Thêm quyền truy cập</a>
-                    </li>
-                    <li>
-                        <a asp-action="Index" asp-controller="Role">Quản lý quyền truy cập</a>
-                    </li>
-                    </li>
-                    <li>
-                        <a asp-action="Index" asp-controller="Page">Quản lý page</a>
-                    </li>
-
-
-                </ul>
-            </li>
-
-            <li class="nav-item dropdown">
-                <a class="dropdown-toggle" href="javascript:void(0);">
-                    <span class="icon-holder">
-                        <i class="anticon anticon-line-chart"></i>
-                    </span>
-                    <span class="title">Thống kê</span>
-                    <span class="arrow">
-                        <i class="arrow-icon"></i>
-                    </span>
-                </a>
-                <ul class="dropdown-menu">
-
-                    <li>
-                    <a asp-action="Index" asp-controller="InventoryBatch">Sản phẩm còn tồn kho</a>
-                    </li>
-
-                    <li>
-                        <a asp-action="Index" asp-controller="Report">Báo cáo bán hàng</a>
-                    </li>
-
-                </ul>
-            </li>
+            @if (User.IsInRole("Admin"))
+            {
+                <li class="nav-item dropdown">
+                    <a class="dropdown-toggle" href="javascript:void(0);">
+                        <span class="icon-holder">
+                            <i class="icon ni ni-user-list"></i>
+                        </span>
+                        <span class="title">Quản lý nhân viên</span>
+                        <span class="arrow">
+                            <i class="arrow-icon"></i>
+                        </span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a asp-action="Create" asp-controller="Staff"><i class="icon ni ni-plus"></i> Thêm nhân viên</a>
+                        </li>
+                        <li>
+                            <a asp-action="Index" asp-controller="Staff"><i class="icon ni ni-list"></i> Danh sách nhân viên</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="dropdown-toggle" href="javascript:void(0);">
+                        <span class="icon-holder">
+                            <i class="icon ni ni-setting"></i>
+                        </span>
+                        <span class="title">Quản lý khác</span>
+                        <span class="arrow">
+                            <i class="arrow-icon"></i>
+                        </span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a asp-action="Create" asp-controller="Category"><i class="icon ni ni-plus"></i> Thêm danh mục</a>
+                        </li>
+                        <li>
+                            <a asp-action="Index" asp-controller="Category"><i class="icon ni ni-list"></i> Danh sách danh mục</a>
+                        </li>
+                        <li>
+                            <a asp-action="Create" asp-controller="Role"><i class="icon ni ni-plus"></i> Thêm quyền truy cập</a>
+                        </li>
+                        <li>
+                            <a asp-action="Index" asp-controller="Role"><i class="icon ni ni-shield-star"></i> Quản lý quyền truy cập</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="dropdown-toggle" href="javascript:void(0);">
+                        <span class="icon-holder">
+                            <i class="icon ni ni-bar-chart"></i>
+                        </span>
+                        <span class="title">Thống kê</span>
+                        <span class="arrow">
+                            <i class="arrow-icon"></i>
+                        </span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a asp-action="Index" asp-controller="InventoryBatch"><i class="icon ni ni-box"></i> Sản phẩm còn tồn kho</a>
+                        </li>
+                        <li>
+                            <a asp-action="Index" asp-controller="Report"><i class="icon ni ni-chart-up"></i> Báo cáo bán hàng</a>
+                        </li>
+                    </ul>
+                </li>
+            }
+            else
+            {
+                <li class="nav-item dropdown">
+                    <a class="dropdown-toggle" href="javascript:void(0);">
+                        <span class="icon-holder">
+                            <i class="icon ni ni-setting"></i>
+                        </span>
+                        <span class="title">Quản lý khác</span>
+                        <span class="arrow">
+                            <i class="arrow-icon"></i>
+                        </span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a asp-action="Create" asp-controller="Category"><i class="icon ni ni-plus"></i> Thêm danh mục</a>
+                        </li>
+                        <li>
+                            <a asp-action="Index" asp-controller="Category"><i class="icon ni ni-list"></i> Danh sách danh mục</a>
+                        </li>
+                    </ul>
+                </li>
+            }
         </ul>
     </div>
 </div>

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DA.ZenPharma.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+46e4579f8ac9d56b4928a0835a5e6a0500a7f699")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f75cb9999c2cef05349da927359bab7d3c5dea13")]
 [assembly: System.Reflection.AssemblyProductAttribute("DA.ZenPharma.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DA.ZenPharma.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

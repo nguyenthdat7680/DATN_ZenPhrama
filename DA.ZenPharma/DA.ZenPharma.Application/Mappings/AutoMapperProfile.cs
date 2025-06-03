@@ -52,14 +52,10 @@ namespace DA.ZenPharma.Application.Mappings
             // ProductUpdateDto -> Product
             CreateMap<ProductUpdateDto, Product>()
                 .ForMember(dest => dest.Id, opt => opt.Ignore())
-                .ForMember(dest => dest.ProductUnits, opt => opt.Ignore())
-                .ForMember(dest => dest.CreateDate, opt => opt.MapFrom(src => src.CreatedAt))
-                .ForMember(dest => dest.UpdateDate, opt => opt.MapFrom(src => src.UpdatedAt));
+                .ForMember(dest => dest.ProductUnits, opt => opt.Ignore());
 
             // Product -> ProductUpdateDto
             CreateMap<Product, ProductUpdateDto>()
-                .ForMember(dest => dest.CreatedAt, opt => opt.MapFrom(src => src.CreateDate))
-                .ForMember(dest => dest.UpdatedAt, opt => opt.MapFrom(src => src.UpdateDate))
                 .ForMember(dest => dest.ProductUnits, opt => opt.MapFrom(src => src.ProductUnits));
 
             // Product -> ProductSearchDto

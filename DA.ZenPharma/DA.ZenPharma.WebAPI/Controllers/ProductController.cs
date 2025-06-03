@@ -11,10 +11,12 @@ namespace DA.ZenPharma.WebAPI.Controllers
     public class ProductController : ControllerBase
     {
         private readonly IProductService _service;
+        private readonly ILogger<ProductController> _logger;
 
-        public ProductController(IProductService service)
+        public ProductController(IProductService service, ILogger<ProductController> logger)
         {
             _service = service;
+            _logger = logger;
         }
         [HttpGet("{productId}/units")]
         public async Task<IActionResult> GetProductUnits(Guid productId)
@@ -53,37 +55,28 @@ namespace DA.ZenPharma.WebAPI.Controllers
             return Ok(product);
         }
 
+
         [HttpPost]
-        public async Task<IActionResult> Add([FromForm] ProductCreateDto dto, IFormFile? ThumbnailImage)
+        public async Task<IActionResult> Add([FromForm] ProductCreateDto dto)
         {
+            _logger.LogInformation("Bắt đầu xử lý yêu cầu thêm sản phẩm.");
+
             if (!ModelState.IsValid)
             {
                 var errors = ModelState.ToDictionary(
                     kvp => kvp.Key,
                     kvp => kvp.Value.Errors.Select(e => e.ErrorMessage).ToArray()
                 );
+                _logger.LogWarning("ModelState không hợp lệ: {Errors}", errors);
                 return BadRequest(new { success = false, errors });
-            }
-
-            if (ThumbnailImage != null && ThumbnailImage.Length > 0)
-            {
-                var fileName = Guid.NewGuid() + Path.GetExtension(ThumbnailImage.FileName);
-                var filePath = Path.Combine("wwwroot/images/products", fileName);
-                Directory.CreateDirectory(Path.GetDirectoryName(filePath)!);
-                using (var stream = new FileStream(filePath, FileMode.Create))
-                {
-                    await ThumbnailImage.CopyToAsync(stream);
-                }
-                dto.ThumbnailImagePath = $"/images/products/{fileName}";
-            }
-            else
-            {
-                dto.ThumbnailImagePath = null; // Không bắt buộc
             }
 
             try
             {
+                _logger.LogInformation("Gọi _service.AddAsync với ProductCreateDto.");
                 var product = await _service.AddAsync(dto);
+                _logger.LogInformation("Thêm sản phẩm thành công, ID: {ProductId}", product.Id);
+
                 return Ok(new
                 {
                     success = true,
@@ -101,6 +94,7 @@ namespace DA.ZenPharma.WebAPI.Controllers
             }
             catch (Exception ex)
             {
+                _logger.LogError(ex, "Lỗi khi thêm sản phẩm.");
                 return BadRequest(new
                 {
                     success = false,
@@ -112,8 +106,29 @@ namespace DA.ZenPharma.WebAPI.Controllers
         [HttpPut]
         public async Task<IActionResult> Update([FromBody] ProductUpdateDto dto)
         {
-            await _service.UpdateAsync(dto);
-            return Ok();
+            _logger.LogInformation("Bắt đầu xử lý yêu cầu cập nhật sản phẩm ID: {ProductId}", dto.Id);
+
+            if (!ModelState.IsValid)
+            {
+                var errors = ModelState.ToDictionary(
+                    kvp => kvp.Key,
+                    kvp => kvp.Value.Errors.Select(e => e.ErrorMessage).ToArray()
+                );
+                _logger.LogWarning("ModelState không hợp lệ: {Errors}", errors);
+                return BadRequest(new { success = false, errors });
+            }
+
+            try
+            {
+                await _service.UpdateAsync(dto);
+                _logger.LogInformation("Cập nhật sản phẩm thành công, ID: {ProductId}", dto.Id);
+                return Ok(new { success = true });
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Lỗi khi cập nhật sản phẩm.");
+                return BadRequest(new { success = false, message = ex.Message });
+            }
         }
 
         [HttpDelete("{id}")]

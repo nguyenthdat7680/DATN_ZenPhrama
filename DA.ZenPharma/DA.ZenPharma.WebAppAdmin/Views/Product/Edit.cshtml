@@ -1,0 +1,229 @@
+﻿@model DA.ZenPharma.Application.Dtos.ProductDto.ProductUpdateDto
+@{
+    ViewData["Title"] = "Chỉnh sửa sản phẩm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Chỉnh sửa sản phẩm</h2>
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["SuccessMessage"]
+    </div>
+}
+
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["ErrorMessage"]
+    </div>
+}
+
+<div class="nk-block">
+    <form asp-action="Edit" method="post" enctype="multipart/form-data">
+        @Html.AntiForgeryToken()
+        <input type="hidden" asp-for="Id" />
+        <input type="hidden" asp-for="ThumbnailImagePath" />
+
+        <div class="row g-3">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="ProductCode" class="form-label">Mã code sản phẩm <span class="text-danger">*</span></label>
+                    <input asp-for="ProductCode" class="form-control" maxlength="50" required />
+                    <span asp-validation-for="ProductCode" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="ProductName" class="form-label">Tên sản phẩm <span class="text-danger">*</span></label>
+                    <input asp-for="ProductName" class="form-control" maxlength="100" required />
+                    <span asp-validation-for="ProductName" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-3 mt-3">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="SKU" class="form-label">SKU</label>
+                    <input asp-for="SKU" class="form-control" maxlength="50" />
+                    <span asp-validation-for="SKU" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="BaseUnit" class="form-label">Đơn vị cơ bản <span class="text-danger">*</span></label>
+                    <input asp-for="BaseUnit" class="form-control" list="baseUnitSuggestions" required />
+                    <datalist id="baseUnitSuggestions">
+                        @foreach (var unit in (List<string>)ViewBag.UnitSuggestions ?? new List<string>())
+                        {
+                            <option value="@unit" />
+                        }
+                    </datalist>
+                    <span asp-validation-for="BaseUnit" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group mt-3">
+            <label class="form-label">Đơn vị khác</label>
+            <div id="unit-list" class="mb-2">
+                @if (Model?.ProductUnits != null)
+                {
+                    @for (int i = 0; i < Model.ProductUnits.Count; i++)
+                    {
+                        <div class="row g-3 mb-2">
+                            <div class="col-md-5">
+                                <input name="ProductUnits[@i].Unit" value="@Model.ProductUnits[i].Unit" class="form-control" list="additionalUnitSuggestions_@i" placeholder="Nhập đơn vị" required />
+                                <datalist id="additionalUnitSuggestions_@i">
+                                    @foreach (var unit in (List<string>)ViewBag.UnitSuggestions ?? new List<string>())
+                                    {
+                                        <option value="@unit" />
+                                    }
+                                </datalist>
+                            </div>
+                            <div class="col-md-5">
+                                <input name="ProductUnits[@i].ConversionFactor" value="@Model.ProductUnits[i].ConversionFactor" class="form-control" type="number" step="0.01" min="0.01" placeholder="Hệ số quy đổi" required />
+                            </div>
+                            <div class="col-md-2">
+                                <button type="button" class="btn btn-danger btn-sm" onclick="this.parentElement.parentElement.remove(); return false;">
+                                    <em class="icon ni ni-trash"></em>
+                                </button>
+                            </div>
+                        </div>
+                    }
+                }
+            </div>
+            <button type="button" class="btn btn-outline-primary btn-sm" onclick="addUnitField()">
+                <em class="icon ni ni-plus"></em> Thêm đơn vị
+            </button>
+        </div>
+
+        <div class="row g-3 mt-3">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="RegularPrice" class="form-label">Giá gốc <span class="text-danger">*</span></label>
+                    <input asp-for="RegularPrice" type="number" step="0.01" min="0" class="form-control" required />
+                    <span asp-validation-for="RegularPrice" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="DiscountPrice" class="form-label">Giá khuyến mãi</label>
+                    <input asp-for="DiscountPrice" type="number" step="0.01" min="0" class="form-control" />
+                    <span asp-validation-for="DiscountPrice" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-3 mt-3">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="StockQuantity" class="form-label">Số lượng (theo đơn vị cơ bản) <span class="text-danger">*</span></label>
+                    <input asp-for="StockQuantity" type="number" min="0" class="form-control" required />
+                    <span asp-validation-for="StockQuantity" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="CategoryId" class="form-label">Danh mục <span class="text-danger">*</span></label>
+                    <select asp-for="CategoryId" class="form-control js-select2" required>
+                        <option value="">-- Chọn danh mục --</option>
+                        @foreach (var category in (List<SelectListItem>)ViewBag.Categories ?? new List<SelectListItem>())
+                        {
+                            <option value="@category.Value" selected="@(category.Value == Model.CategoryId.ToString() ? "selected" : "")">@category.Text</option>
+                        }
+                    </select>
+                    <span asp-validation-for="CategoryId" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group mt-3">
+            <label asp-for="ThumbnailImagePath" class="form-label">Ảnh đại diện</label>
+            <input asp-for="ThumbnailImagePath" class="form-control" type="file" accept="image/*" />
+            @if (!string.IsNullOrEmpty(Model.ThumbnailImagePath))
+            {
+                <img id="currentImage" src="https://localhost:7034@Model.ThumbnailImagePath" alt="Current Image" class="mt-2" style="max-width: 100px;" />
+            }
+            <span asp-validation-for="ThumbnailImagePath" class="text-danger"></span>
+        </div>
+
+        <div class="form-group mt-3">
+            <label asp-for="Description" class="form-label">Mô tả</label>
+            <textarea asp-for="Description" class="form-control" rows="4"></textarea>
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+
+        <div class="form-group mt-3">
+            <label asp-for="Barcode" class="form-label">Mã vạch (Barcode)</label>
+            <input asp-for="Barcode" class="form-control" maxlength="50" />
+            <span asp-validation-for="Barcode" class="text-danger"></span>
+        </div>
+
+        <div class="form-group mt-3">
+            <label asp-for="UsageInstructions" class="form-label">Hướng dẫn sử dụng</label>
+            <textarea asp-for="UsageInstructions" class="form-control" rows="4"></textarea>
+            <span asp-validation-for="UsageInstructions" class="text-danger"></span>
+        </div>
+
+        <div class="form-check mt-3">
+            <input asp-for="IsPrescriptionRequired" class="form-check-input" type="checkbox" />
+            <label asp-for="IsPrescriptionRequired" class="form-check-label">Yêu cầu đơn thuốc</label>
+        </div>
+
+        <div class="form-check mt-2 mb-3">
+            <input asp-for="IsPublished" class="form-check-input" type="checkbox" />
+            <label asp-for="IsPublished" class="form-check-label">Hiển thị trên website</label>
+        </div>
+
+        <div class="form-group mt-4">
+            <button type="submit" class="btn btn-primary">Cập nhật sản phẩm</button>
+            <a asp-action="Index" class="btn btn-secondary ms-2">Hủy</a>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <script>
+        let unitIndex = @(Model?.ProductUnits?.Count ?? 0);
+
+        function addUnitField(unit = '', conversionFactor = '') {
+            console.log('Thêm đơn vị mới, unitIndex:', unitIndex);
+            const unitList = document.getElementById('unit-list');
+            const unitDiv = document.createElement('div');
+            unitDiv.className = 'row g-3 mb-2';
+            unitDiv.innerHTML = `
+                <div class="col-md-5">
+                    <input name="ProductUnits[${unitIndex}].Unit" class="form-control" list="additionalUnitSuggestions_${unitIndex}" placeholder="Nhập đơn vị" value="${unit}" required />
+                    <datalist id="additionalUnitSuggestions_${unitIndex}">
+        @foreach (var unit in (List<string>)ViewBag.UnitSuggestions ?? new List<string>())
+        {
+                                <option value="@unit" />
+        }
+                    </datalist>
+                </div>
+                <div class="col-md-5">
+                    <input name="ProductUnits[${unitIndex}].ConversionFactor" class="form-control" type="number" step="0.01" min="0.01" placeholder="Hệ số quy đổi" value="${conversionFactor}" required />
+                </div>
+                <div class="col-md-2">
+                    <button type="button" class="btn btn-danger btn-sm" onclick="this.parentElement.parentElement.remove()">
+                        <em class="icon ni ni-trash"></em>
+                    </button>
+                </div>
+            `;
+            unitList.appendChild(unitDiv);
+            unitIndex++;
+        }
+
+        $(document).ready(function () {
+            // Khởi tạo select2 cho CategoryId
+            $('#CategoryId').select2({
+                placeholder: "-- Chọn danh mục --",
+                allowClear: true
+            });
+        });
+    </script>
+    <partial name="_ValidationScriptsPartial" />
+}

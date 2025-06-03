@@ -1,105 +1,135 @@
 ﻿@model DA.ZenPharma.Application.Dtos.ImportInvoiceDtos.ImportInvoiceCreateDto
-
+@using DA.ZenPharma.Application.Dtos.ProductDto
 @{
     ViewData["Title"] = "Tạo hóa đơn nhập hàng";
-    ViewBag.BodyClass = "body-with-fixed-navbar";
+    ViewBag.BodyClass = "nk-body npc-default has-sidebar";
 }
 
-<div class="container-fluid p-4 mt-5">
-    <div class="card shadow-sm">
-        <div class="card-header">
-            <h4 class="mb-0">Tạo hóa đơn nhập hàng</h4>
-        </div>
-
-        <div class="card-body">
-            <form asp-action="Create" method="post">
-
-                <h5 class="mb-3">Thông tin chung</h5>
-
-                <div class="row g-3">
-
-                    <div class="col-md-4 mb-3">
-                        <label class="form-label">Nhân viên xử lý</label>
-                        <div class="input-group rounded-3">
-                            <span class="input-group-text bg-light">
-                                <i class="fas fa-user-circle"></i>
-                            </span>
-                            <span class="form-control bg-white rounded-end" style="font-size: 16px;">
-                                @ViewBag.StaffName
-                            </span>
+<div class="nk-content mt-5 pt-5">
+    <div class="container-fluid">
+        <div class="nk-content-inner">
+            <div class="nk-content-body">
+                <div class="nk-block-head nk-block-head-sm">
+                    <div class="nk-block-between">
+                        <div class="nk-block-head-content">
+                            <h3 class="nk-block-title page-title">Tạo hóa đơn nhập hàng</h3>
                         </div>
                     </div>
+                </div>
+                <div class="nk-block">
+                    <div class="card card-bordered">
+                        <div class="card-inner">
+                            <form asp-action="Create" method="post">
+                                <h5 class="title mb-3">Thông tin chung</h5>
+                                <div class="row g-4">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="form-label">Nhân viên xử lý</label>
+                                            <div class="form-control-wrap">
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text"><em class="icon ni ni-user"></em></span>
+                                                    </div>
+                                                    <input class="form-control" value="@ViewBag.StaffName" disabled />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="SupplierId" class="form-label">Nhà cung cấp</label>
+                                            <div class="form-control-wrap">
+                                                <select name="SupplierId" class="form-select select2-supplier" id="SupplierId">
+                                                    <option value="">-- Chọn nhà cung cấp --</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    @if (User.IsInRole("Admin"))
+                                    {
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label asp-for="BranchLocationId" class="form-label">Chi nhánh</label>
+                                                <div class="form-control-wrap">
+                                                    <select asp-for="BranchLocationId" class="form-select" asp-items="ViewBag.Branches">
+                                                        <option value="">-- Chọn chi nhánh --</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        <input type="hidden" asp-for="BranchLocationId" value="@ViewBag.BranchId" />
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label class="form-label">Chi nhánh</label>
+                                                <div class="form-control-wrap">
+                                                    <input class="form-control" value="@ViewBag.BranchName" disabled />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
+                                </div>
 
-                    <div class="col-md-4 mb-3">
-                        <label for="SupplierId" class="form-label">Nhà cung cấp</label>
-                        <select name="SupplierId" class="form-select select2-supplier" style="height: 44px; font-size: 16px;">
-                            <option value="">-- Chọn --</option>
-                        </select>
-                    </div>
+                                <hr class="preview-hr" />
 
-                    @if (User.IsInRole("Admin"))
-                    {
-                        <div class="col-md-4 mb-3">
-                            <label asp-for="BranchLocationId" class="form-label">Chi nhánh</label>
-                            <select asp-for="BranchLocationId" class="form-select" asp-items="ViewBag.Branches">
-                                <option value="">-- Chọn chi nhánh --</option>
-                            </select>
+                                <h5 class="title mb-3">Chi tiết sản phẩm</h5>
+                                <div class="form-group">
+                                    <div class="form-control-wrap">
+                                        <div class="input-group">
+                                            <input type="text" id="searchProduct" class="form-control" placeholder="Tìm sản phẩm..." autocomplete="off" />
+                                            <div class="input-group-append">
+                                                <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#createProductModal">
+                                                    <em class="icon ni ni-plus"></em>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div id="searchResults" class="dropdown-menu w-100" style="z-index: 1000;"></div>
+                                    </div>
+                                </div>
+
+                                <div class="table-responsive">
+                                    <table class="table table-bordered" id="detailTable">
+                                        <thead class="thead-light">
+                                            <tr>
+                                                <th>STT</th>
+                                                <th>Mã hàng</th>
+                                                <th>Tên hàng</th>
+                                                <th>Đơn vị tính</th>
+                                                <th>Số lượng</th>
+                                                <th>Đơn giá</th>
+                                                <th>Giảm giá (%)</th>
+                                                <th>Thành tiền</th>
+                                                <th>Thao tác</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="detailBody"></tbody>
+                                    </table>
+                                </div>
+
+                                <div class="row g-4 mt-3">
+                                    <div class="col-md-4 ms-auto">
+                                        <div class="form-group">
+                                            <label for="totalAmount" class="form-label">Tổng tiền</label>
+                                            <div class="form-control-wrap">
+                                                <input asp-for="TotalAmount" class="form-control text-end" readonly id="totalAmount" value="0" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="text-end mt-4">
+                                    <button type="submit" class="btn btn-primary">Lưu hóa đơn</button>
+                                </div>
+                            </form>
                         </div>
-                    }
-                    else
-                    {
-                        <input type="hidden" asp-for="BranchLocationId" value="@ViewBag.BranchId" />
-                        <div class="col-md-4 mb-3">
-                            <label class="form-label">Chi nhánh</label>
-                            <input class="form-control" value="@ViewBag.BranchName" disabled />
-                        </div>
-                    }
-
-                </div>
-
-                <hr class="my-4" />
-
-                <h5 class="mb-3">Chi tiết sản phẩm</h5>
-
-                <div class="mb-3 position-relative">
-                    <input type="text" id="searchProduct" class="form-control" placeholder="Tìm sản phẩm..." autocomplete="off" />
-                    <div id="searchResults" class="list-group position-absolute w-100" style="z-index: 1000;"></div>
-                </div>
-
-                <div class="table-responsive">
-                    <table class="table table-bordered align-middle" id="detailTable">
-                        <thead class="table-light">
-                            <tr>
-                                <th>STT</th>
-                                <th>Mã hàng</th>
-                                <th>Tên hàng</th>
-                                <th>Đơn vị tính</th>
-                                <th>Số lượng</th>
-                                <th>Đơn giá</th>
-                                <th>Giảm giá (%)</th>
-                                <th>Thành tiền</th>
-                                <th>Thao tác</th>
-                            </tr>
-                        </thead>
-                        <tbody id="detailBody"></tbody>
-                    </table>
-                </div>
-
-                <div class="row my-4">
-                    <div class="col-md-4 ms-auto">
-                        <label for="totalAmount" class="form-label">Tổng tiền</label>
-                        <input asp-for="TotalAmount" class="form-control fw-bold text-end" readonly id="totalAmount" value="0" />
                     </div>
                 </div>
-
-                <div class="text-end">
-                    <button type="submit" class="btn btn-success px-4">Lưu hóa đơn</button>
-                </div>
-            </form>
+            </div>
         </div>
     </div>
 </div>
-
 <!-- Modal nhập lô hàng -->
 <div class="modal fade" id="batchModal" tabindex="-1" aria-labelledby="batchModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -107,7 +137,7 @@
             <form id="batchForm">
                 <div class="modal-header">
                     <h5 class="modal-title" id="batchModalLabel">Thêm lô hàng</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <input type="hidden" id="modalProductIndex" />
@@ -115,44 +145,329 @@
                     <input type="hidden" id="modalSmallestUnit" />
                     <input type="hidden" id="modalMaxConversionFactor" />
                     <input type="hidden" id="modalBaseUnit" />
-
-                    <div class="mb-3">
+                    <div class="form-group">
                         <label for="batchName" class="form-label">Tên lô hàng <span class="text-danger">*</span></label>
-                        <input type="text" id="batchName" class="form-control" required />
+                        <div class="form-control-wrap">
+                            <input type="text" id="batchName" class="form-control" required />
+                        </div>
                     </div>
-                    <div class="mb-3">
+                    <div class="form-group mt-3">
+                        <label for="manufacturingDate" class="form-label">Ngày sản xuất</label>
+                        <div class="form-control-wrap">
+                            <input type="date" id="manufacturingDate" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-group mt-3">
                         <label for="expireDate" class="form-label">Hạn sử dụng <span class="text-danger">*</span></label>
-                        <input type="date" id="expireDate" class="form-control" required />
+                        <div class="form-control-wrap">
+                            <input type="date" id="expireDate" class="form-control" required />
+                        </div>
                     </div>
-                    <div class="mb-3">
+                    <div class="form-group mt-3">
                         <label for="batchQuantity" class="form-label">Số lượng <span class="text-danger">*</span></label>
-                        <input type="number" id="batchQuantity" class="form-control" min="1" step="1" required />
+                        <div class="form-control-wrap">
+                            <input type="number" id="batchQuantity" class="form-control" min="1" step="1" required />
+                        </div>
+                    </div>
+                    <div class="form-group mt-3">
+                        <label for="locationCode" class="form-label">Mã vị trí</label>
+                        <div class="form-control-wrap">
+                            <input type="text" id="locationCode" class="form-control" />
+                        </div>
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-primary">Lưu</button>
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                    <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Hủy</button>
                 </div>
             </form>
         </div>
     </div>
 </div>
+<!-- Modal thêm sản phẩm -->
+<div class="modal fade" id="createProductModal" tabindex="-1" aria-labelledby="createProductModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="createProductModalLabel">Thêm sản phẩm</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="nk-block">
+                    <form id="createProductForm" action="@Url.Action("Create", "Product")" method="post" enctype="multipart/form-data">
+                        @Html.AntiForgeryToken()
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="ProductCode" class="form-label">Mã code sản phẩm <span class="text-danger">*</span></label>
+                                    <div class="form-control-wrap">
+                                        <input id="ProductCode" name="ProductCode" class="form-control" maxlength="50" required />
+                                        <div id="productCodeError" class="invalid-feedback"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="ProductName" class="form-label">Tên sản phẩm <span class="text-danger">*</span></label>
+                                    <div class="form-control-wrap">
+                                        <input id="ProductName" name="ProductName" class="form-control" maxlength="100" required />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="SKU" class="form-label">SKU</label>
+                                    <div class="form-control-wrap">
+                                        <input id="SKU" name="SKU" class="form-control" maxlength="50" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="BaseUnit" class="form-label">Đơn vị cơ bản <span class="text-danger">*</span></label>
+                                    <div class="form-control-wrap">
+                                        <input id="BaseUnit" name="BaseUnit" class="form-control" list="baseUnitSuggestions" required />
+                                        <datalist id="baseUnitSuggestions">
+                                            @foreach (var unit in (List<string>)ViewBag.UnitSuggestions)
+                                            {
+                                                <option value="@unit" />
+                                            }
+                                        </datalist>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label class="form-label">Đơn vị khác</label>
+                                    <div id="unit-list" class="mb-2"></div>
+                                    <button type="button" class="btn btn-outline-primary btn-sm" onclick="addUnitField()">
+                                        <em class="icon ni ni-plus"></em> Thêm đơn vị
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="RegularPrice" class="form-label">Giá gốc <span class="text-danger">*</span></label>
+                                    <div class="form-control-wrap">
+                                        <input id="RegularPrice" name="RegularPrice" class="form-control" type="number" step="0.01" min="0" required />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="DiscountPrice" class="form-label">Giá khuyến mãi</label>
+                                    <div class="form-control-wrap">
+                                        <input id="DiscountPrice" name="DiscountPrice" class="form-control" type="number" step="0.01" min="0" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="StockQuantity" class="form-label">Số lượng (theo đơn vị cơ bản) <span class="text-danger">*</span></label>
+                                    <div class="form-control-wrap">
+                                        <input id="StockQuantity" name="StockQuantity" class="form-control" type="number" min="0" required />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="CategoryId" class="form-label">Danh mục <span class="text-danger">*</span></label>
+                                    <div class="form-control-wrap">
+                                        <select id="CategoryId" name="CategoryId" class="form-select js-select2" required>
+                                            <option value="">-- Chọn danh mục --</option>
+                                            @foreach (var category in (List<SelectListItem>)ViewBag.Categories)
+                                            {
+                                                <option value="@category.Value">@category.Text</option>
+                                            }
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label for="ThumbnailImage" class="form-label">Ảnh đại diện</label>
+                                    <div class="form-control-wrap">
+                                        <input id="ThumbnailImage" name="ThumbnailImage" class="form-control" type="file" accept="image/*" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label for="Description" class="form-label">Mô tả</label>
+                                    <div class="form-control-wrap">
+                                        <textarea id="Description" name="Description" class="form-control" rows="4"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label for="Barcode" class="form-label">Mã vạch (Barcode)</label>
+                                    <div class="form-control-wrap">
+                                        <input id="Barcode" name="Barcode" class="form-control" maxlength="50" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label for="UsageInstructions" class="form-label">Hướng dẫn sử dụng</label>
+                                    <div class="form-control-wrap">
+                                        <textarea id="UsageInstructions" name="UsageInstructions" class="form-control" rows="4"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-check">
+                                    <input id="IsPrescriptionRequired" name="IsPrescriptionRequired" class="form-check-input" type="checkbox" />
+                                    <label for="IsPrescriptionRequired" class="form-check-label">Yêu cầu đơn thuốc</label>
+                                </div>
+                                <div class="form-check mt-2">
+                                    <input id="IsPublished" name="IsPublished" class="form-check-input" type="checkbox" />
+                                    <label for="IsPublished" class="form-check-label">Hiển thị trên website</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group mt-4">
+                                    <button type="submit" id="submitProductBtn" class="btn btn-primary">Thêm sản phẩm</button>
+                                    <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Hủy</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
+    <style>
+        /* Custom Select2 Styling to match DashLite */
+        .select2-container--default .select2-selection--single {
+            border: 1px solid #e5e9f2;
+            border-radius: 4px;
+            height: 44px;
+            background: #fff;
+            display: flex;
+            align-items: center;
+        }
+
+            .select2-container--default .select2-selection--single .select2-selection__rendered {
+                line-height: 44px;
+                padding-left: 12px;
+                color: #364a63;
+                font-size: 14px;
+            }
+
+            .select2-container--default .select2-selection--single .select2-selection__arrow {
+                height: 44px;
+                width: 30px;
+            }
+
+                .select2-container--default .select2-selection--single .select2-selection__arrow b {
+                    border-color: #8094ae transparent transparent transparent;
+                }
+
+        .select2-container--default.select2-container--focus .select2-selection--single {
+            border-color: #1ee0ac;
+            box-shadow: 0 0 0 2px rgba(30, 224, 172, 0.2);
+        }
+
+        .select2-container--default .select2-dropdown {
+            border: 1px solid #e5e9f2;
+            border-radius: 4px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .select2-container--default .select2-results__option--highlighted[aria-selected] {
+            background-color: #1ee0ac;
+            color: #fff;
+        }
+
+        .select2-container--default .select2-results__option {
+            padding: 8px 12px;
+            font-size: 14px;
+            color: #364a63;
+        }
+
+        .select2-container {
+            width: 100% !important;
+        }
+
+        /* Search results dropdown */
+        #searchResults {
+            border: 1px solid #e5e9f2;
+            border-radius: 4px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+            background: #fff;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+
+            #searchResults .list-group-item {
+                padding: 8px 12px;
+                font-size: 14px;
+                color: #364a63;
+                border: none;
+            }
+
+                #searchResults .list-group-item:hover {
+                    background-color: #f5f6fa;
+                }
+
+        /* Table styling */
+        .table-responsive .table {
+            margin-bottom: 0;
+        }
+
+            .table-responsive .table th,
+            .table-responsive .table td {
+                vertical-align: middle;
+            }
+
+            .table-responsive .table .form-control-sm {
+                height: 36px;
+                font-size: 13px;
+            }
+
+        /* Modal styling */
+        .modal-content {
+            border-radius: 6px;
+        }
+
+        .modal-header,
+        .modal-footer {
+            border-color: #e5e9f2;
+        }
+
+        /* Responsive adjustments */
+        @@media (max-width: 767px) {
+            .nk-block-head {
+                margin-bottom: 1.5rem;
+            }
+
+            .form-group {
+                margin-bottom: 1.25rem;
+            }
+
+            .table-responsive .table .form-control-sm {
+                height: 32px;
+            }
+        }
+    </style>
 @section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script>
         let productIndex = 0;
         let batchModalInstance;
         let baseUnitConversions = {};
+        let unitIndex = 0;
 
         // Tìm kiếm sản phẩm
         $('#searchProduct').on('input', function () {
             const keyword = $(this).val().trim();
-
             if (keyword.length < 2) {
                 $('#searchResults').hide();
                 return;
             }
-
             $.ajax({
                 url: 'https://localhost:7034/api/product/search1',
                 type: 'GET',
@@ -177,9 +492,7 @@
         // Chọn sản phẩm
         function selectProduct(id, name, productCode, baseUnit, event) {
             event.preventDefault();
-
             baseUnitConversions[id] = { baseUnit };
-
             const row = `
                 <tr data-product-index="${productIndex}" data-product-id="${id}">
                     <td>${productIndex + 1}</td>
@@ -194,23 +507,22 @@
                     <td><input name="Details[${productIndex}].Discount" type="number" class="form-control form-control-sm discount" step="0.1" min="0" max="100" value="0" /></td>
                     <td><input class="form-control form-control-sm total text-end" readonly value="0" /></td>
                     <td class="text-center">
-                        <button type="button" class="btn btn-sm btn-danger" onclick="removeProduct(this)">X</button>
+                        <button type="button" class="btn btn-icon btn-sm btn-danger" onclick="removeProduct(this)"><em class="icon ni ni-trash"></em></button>
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="9" class="pt-3 pb-4 border-top-0">
+                    <td colspan="9" class="p-3 border-top-0">
                         <div class="d-flex justify-content-between align-items-start flex-wrap gap-2">
                             <div class="batch-list-${productIndex} d-flex flex-wrap gap-2"></div>
                             <div class="ms-auto">
                                 <button type="button" class="btn btn-outline-primary btn-sm" onclick="openBatchModal(${productIndex}, '${id}')">
-                                    + Lô hàng
+                                    <em class="icon ni ni-plus"></em> Lô hàng
                                 </button>
                             </div>
                         </div>
                     </td>
                 </tr>
             `;
-
             $('#detailBody').append(row);
             $('#searchProduct').val('');
             $('#searchResults').hide();
@@ -232,12 +544,10 @@
             $('#modalSmallestUnit').val('');
             $('#modalMaxConversionFactor').val('');
             $('#modalBaseUnit').val('');
-
             const conversionData = baseUnitConversions[productId];
             if (conversionData) {
                 $('#modalBaseUnit').val(conversionData.baseUnit);
             }
-
             $.ajax({
                 url: `https://localhost:7034/api/product/${productId}/units`,
                 type: 'GET',
@@ -271,30 +581,26 @@
         }
 
         // Submit lô hàng
+               // Submit lô hàng
         $('#batchForm').on('submit', function (e) {
             e.preventDefault();
-
             const index = $('#modalProductIndex').val();
             const productId = $('#modalProductId').val();
             const name = $('#batchName').val();
             const expireDate = $('#expireDate').val();
             const quantity = parseFloat($('#batchQuantity').val()) || 0;
+            const manufacturingDate = $('#manufacturingDate').val();
+            const locationCode = $('#locationCode').val();
             const baseUnit = $('#modalBaseUnit').val();
             const maxConversionFactor = parseFloat($('#modalMaxConversionFactor').val()) || 1;
             const smallestUnit = $('#modalSmallestUnit').val();
-
-            // Validation
             if (!name || !expireDate || quantity <= 0 || !smallestUnit || !maxConversionFactor) {
                 alert('Vui lòng nhập đầy đủ thông tin lô hàng hoặc kiểm tra đơn vị sản phẩm.');
                 return;
             }
-
-            // Quy đổi số lượng về đơn vị nhỏ nhất
             const quantityInSmallestUnit = Math.round(quantity * maxConversionFactor);
-
             const container = $(`.batch-list-${index}`);
             const count = container.children().length;
-
             const html = `
                 <div class="border px-3 py-2 bg-light rounded-pill small d-flex align-items-center gap-2">
                     <div class="text-nowrap">
@@ -304,18 +610,19 @@
                         <input type="hidden" name="Details[${index}].Batches[${count}].ExpireDate" value="${expireDate}" />
                         <input type="hidden" name="Details[${index}].Batches[${count}].Unit" value="${smallestUnit}" />
                         <input type="hidden" name="Details[${index}].Batches[${count}].Quantity" value="${quantityInSmallestUnit}" />
+                        ${manufacturingDate ? `<input type="hidden" name="Details[${index}].Batches[${count}].ManufacturingDate" value="${manufacturingDate}" />` : ''}
+                        ${locationCode ? `<input type="hidden" name="Details[${index}].Batches[${count}].LocationCode" value="${locationCode}" />` : ''}
                     </div>
-                    <button type="button" class="btn btn-outline-danger btn-sm px-2 py-0" onclick="removeBatch(this, ${index})" title="Xóa lô">×</button>
+                    <button type="button" class="btn btn-icon btn-sm btn-outline-danger" onclick="removeBatch(this, ${index})" title="Xóa lô">
+                        <em class="icon ni ni-trash"></em>
+                    </button>
                 </div>
             `;
-
             container.append(html);
             updateBatchQuantity(index);
-
             if (batchModalInstance) {
                 batchModalInstance.hide();
             }
-
             $('#batchForm')[0].reset();
         });
 
@@ -343,14 +650,11 @@
             let totalSmallestUnit = 0;
             const productId = $(`tr[data-product-index="${index}"]`).data('product-id');
             const maxConversionFactor = baseUnitConversions[productId]?.maxConversionFactor || 1;
-
             $(`.batch-list-${index} input[name^="Details[${index}].Batches"]`).each(function () {
                 if (this.name.includes("Quantity")) {
                     totalSmallestUnit += parseFloat($(this).val()) || 0;
                 }
             });
-
-            // Quy đổi ngược về BaseUnit
             const totalBaseUnit = Math.round(totalSmallestUnit / maxConversionFactor);
             $(`input[name="Details[${index}].Quantity"]`).val(totalBaseUnit).trigger('input');
         }
@@ -360,38 +664,179 @@
             $(btn).parent().remove();
             updateBatchQuantity(index);
         }
-    </script>
 
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+        // Thêm đơn vị khác
+        function addUnitField() {
+            console.log('Thêm đơn vị mới, unitIndex:', unitIndex);
+            const unitList = document.getElementById('unit-list');
+            const unitDiv = document.createElement('div');
+            unitDiv.className = 'row g-3 mb-2';
+            unitDiv.innerHTML = `
+                <div class="col-md-5">
+                    <div class="form-control-wrap">
+                        <input name="ProductUnits[${unitIndex}].Unit" class="form-control" list="additionalUnitSuggestions" placeholder="Nhập đơn vị" />
+                        <datalist id="additionalUnitSuggestions">
+        @foreach (var unit in (List<string>)ViewBag.UnitSuggestions)
+        {
+                                    <option value="@unit" />
+        }
+                        </datalist>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="form-control-wrap">
+                        <input name="ProductUnits[${unitIndex}].ConversionFactor" class="form-control" type="number" step="0.01" min="0.01" placeholder="Hệ số quy đổi" />
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <button type="button" class="btn btn-icon btn-sm btn-danger" onclick="this.parentElement.parentElement.remove()">
+                        <em class="icon ni ni-trash"></em>
+                    </button>
+                </div>
+            `;
+            unitList.appendChild(unitDiv);
+            unitIndex++;
+        }
 
-    <script>
+        // Kiểm tra ProductCode trùng lặp
+        // $('#ProductCode').on('blur', function () {
+        //     const productCode = $(this).val().trim();
+        //     if (productCode) {
+        //         $.ajax({
+        //             url: 'https:localhost:7034/api/product/check-product-code',
+        //             type: 'GET',
+        //             data: { productCode: productCode },
+        //             success: function (data) {
+        //                 if (data.exists) {
+        //                     $('#productCodeError').text('Mã sản phẩm đã tồn tại. Vui lòng chọn mã khác.');
+        //                     $('#ProductCode').addClass('is-invalid');
+        //                 } else {
+        //                     $('#productCodeError').text('');
+        //                     $('#ProductCode').removeClass('is-invalid');
+        //                 }
+        //             },
+        //             error: function (xhr) {
+        //                 console.error('Lỗi kiểm tra ProductCode:', xhr);
+        //                 $('#productCodeError').text('Không thể kiểm tra mã sản phẩm.');
+        //             }
+        //         });
+        //     }
+        // });
+
+        // Khởi tạo form
         $(document).ready(function () {
-            $('.select2-supplier').select2({
-                placeholder: "-- Chọn nhà cung cấp --",
-                allowClear: true,
-                minimumInputLength: 0,
-                width: 'resolve',
-                ajax: {
-                    url: 'https://localhost:7034/api/supplier/search',
-                    dataType: 'json',
-                    delay: 250,
-                    data: function (params) {
-                        return {
-                            keyword: params.term || ""
-                        };
-                    },
-                    processResults: function (data) {
-                        return {
-                            results: data.map(s => ({
-                                id: s.id,
-                                text: s.name
-                            }))
-                        };
-                    },
-                    cache: true
-                }
-            });
+            try {
+                console.log('#Khởi tạo form');
+
+                // Khởi tạo Select2 cho nhà cung cấp
+                $('.select2-supplier').select2({
+                    placeholder: "-- Chọn nhà cung cấp --",
+                    allowClear: true,
+                    minimumInputLength: 0,
+                    width: 'resolve',
+                    ajax: {
+                        url: 'https://localhost:7034/api/supplier/search',
+                        dataType: 'json',
+                        delay: 250,
+                        data: function (params) {
+                            return { keyword: params.term || "" };
+                        },
+                        processResults: function (data) {
+                            return {
+                                results: data.map(s => ({
+                                    id: s.id,
+                                    text: s.name
+                                }))
+                            };
+                        },
+                        cache: true
+                    }
+                });
+
+                // Khởi tạo Select2 cho danh mục sản phẩm
+                $('.js-select2').select2({
+                    placeholder: "-- Chọn danh mục --",
+                    allowClear: true,
+                    width: 'resolve'
+                });
+
+                // Xử lý submit form thêm sản phẩm
+                $('#createProductForm').off('submit').on('submit', function (e) {
+                    e.preventDefault();
+                    console.log('#Form submitted');
+                    const $form = $(this);
+                    const $submitBtn = $('#submitProductBtn');
+                    $submitBtn.prop('disabled', true); // Vô hiệu hóa nút gửi
+
+                    const productName = $('#ProductName').val();
+                    if (productName.length < 3) {
+                        alert('Tên sản phẩm phải dài ít nhất 3 ký tự.');
+                        $submitBtn.prop('disabled', false);
+                        return;
+                    }
+                    if ($('#ProductCode').hasClass('is-invalid')) {
+                        alert('Mã sản phẩm đã tồn tại. Vui lòng chọn mã khác.');
+                        $submitBtn.prop('disabled', false);
+                        return;
+                    }
+
+                    const formData = new FormData(this);
+                    for (let [key, value] of formData.entries()) {
+                        console.log(`FormData: ${key} = ${value}`);
+                    }
+
+                    $.ajax({
+                        url: $form.attr('action'), // /Product/Create
+                        method: 'POST',
+                        data: formData,
+                        contentType: false,
+                        processData: false,
+                        headers: { 'Accept': 'application/json' },
+                        beforeSend: () => {
+                            console.log('Sending AJAX request to:', $form.attr('action'));
+                        },
+                        success: (data) => {
+                            console.log('Received response:', data);
+                            if (data.success) {
+                                // Kiểm tra dữ liệu sản phẩm từ data.product hoặc data
+                                let product = data.product || data.data || data;
+                                if (!product || !product.id || !product.productName || !product.productCode || !product.baseUnit) {
+                                    console.error('Invalid product data:', product);
+                                    alert('Dữ liệu sản phẩm không đầy đủ từ server.');
+                                    return;
+                                }
+                                // Thêm sản phẩm vào bảng
+                                const safeName = product.productName.replace(/[\\']/g, '\\$&');
+                                selectProduct(product.id, safeName, product.productCode, product.baseUnit, { preventDefault: function() {} });
+
+                                // Đóng modal
+                                $('#createProductModal').modal('hide');
+                                $('.modal-backdrop').remove();
+                                $('body').removeClass('modal-open').css('padding-right', '');
+                            } else {
+                                alert('Thêm sản phẩm thất bại: ' + (data.message || 'Lỗi không xác định'));
+                            }
+                        },
+                        error: function (xhr, status, error) {
+                            console.error('Lỗi AJAX:', xhr, status, error);
+                            console.error('Response:', xhr.responseJSON);
+                            let errorMessage = 'Thêm sản phẩm thất bại!';
+                            if (xhr.responseJSON && xhr.responseJSON.message) {
+                                errorMessage += ' ' + xhr.responseJSON.message;
+                            } else if (xhr.status === 400) {
+                                errorMessage += ' Dữ liệu không hợp lệ';
+                            }
+                            alert(errorMessage);
+                        },
+                        complete: function () {
+                            $submitBtn.prop('disabled', false); // Bật lại nút gửi
+                        }
+                    });
+                });
+            } catch (error) {
+                console.error('Lỗi khởi tạo form:', error);
+                alert('Lỗi khởi tạo form: ' + error.message);
+            }
         });
     </script>
 }

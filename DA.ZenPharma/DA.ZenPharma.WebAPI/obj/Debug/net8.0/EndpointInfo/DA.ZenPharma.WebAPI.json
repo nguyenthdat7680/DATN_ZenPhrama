@@ -1616,10 +1616,6 @@
                     "items": {
                       "$ref": "#/components/schemas/ProductUnitDto"
                     }
-                  },
-                  "ThumbnailImage": {
-                    "type": "string",
-                    "format": "binary"
                   }
                 }
               },
@@ -1667,9 +1663,6 @@
                   "style": "form"
                 },
                 "ProductUnits": {
-                  "style": "form"
-                },
-                "ThumbnailImage": {
                   "style": "form"
                 }
               }
@@ -3392,29 +3385,33 @@
         "additionalProperties": false
       },
       "ProductUpdateDto": {
+        "required": [
+          "baseUnit",
+          "categoryId",
+          "productCode",
+          "productName",
+          "regularPrice",
+          "stockQuantity"
+        ],
         "type": "object",
         "properties": {
           "id": {
             "type": "string",
             "format": "uuid"
           },
-          "categoryId": {
-            "type": "string",
-            "format": "uuid"
+          "productCode": {
+            "minLength": 1,
+            "type": "string"
           },
           "productName": {
-            "type": "string",
-            "nullable": true
-          },
-          "productCode": {
-            "type": "string",
-            "nullable": true
-          },
-          "sku": {
-            "type": "string",
-            "nullable": true
+            "minLength": 1,
+            "type": "string"
           },
           "baseUnit": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "sku": {
             "type": "string",
             "nullable": true
           },
@@ -3453,13 +3450,9 @@
             "type": "string",
             "nullable": true
           },
-          "createdAt": {
+          "categoryId": {
             "type": "string",
-            "format": "date-time"
-          },
-          "updatedAt": {
-            "type": "string",
-            "format": "date-time"
+            "format": "uuid"
           },
           "productUnits": {
             "type": "array",

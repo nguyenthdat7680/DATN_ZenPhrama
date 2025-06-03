@@ -1,5 +1,6 @@
 ﻿using DA.ZenPharma.Application.Dtos.BaseDto;
 using DA.ZenPharma.Application.Dtos.BranchDto;
+using DA.ZenPharma.Application.Dtos.CategoryDto;
 using DA.ZenPharma.Application.Dtos.ImportInvoiceDtos;
 using DA.ZenPharma.Application.Dtos.ProductDto;
 using DA.ZenPharma.Application.Dtos.UserDto;
@@ -12,6 +13,8 @@ namespace DA.ZenPharma.WebAppAdmin.Controllers
     {
         private readonly HttpClient _httpClient;
         private const string ApiUrl = "https://localhost:7034/api/ImportInvoice";
+        private const string ProductApiUrl = "https://localhost:7034/api/Product";
+        private const string CategoryApiUrl = "https://localhost:7034/api/Category";
 
         public ImportInvoiceController(IHttpClientFactory httpClientFactory)
         {
@@ -70,7 +73,13 @@ namespace DA.ZenPharma.WebAppAdmin.Controllers
                 ViewBag.BranchName = HttpContext.Session.GetString("branchName");
                 ViewBag.BranchId = HttpContext.Session.GetString("branchId");
             }
-
+            ViewBag.UnitSuggestions = await _httpClient.GetFromJsonAsync<List<string>>($"{ProductApiUrl}/unit-suggestions") ?? new List<string>();
+            var categories = await _httpClient.GetFromJsonAsync<List<CategoryDto>>(CategoryApiUrl);
+            ViewBag.Categories = categories?.Select(c => new SelectListItem
+            {
+                Value = c.Id.ToString(),
+                Text = c.CategoryName
+            }).ToList() ?? new List<SelectListItem>();
             return View();
         }
 

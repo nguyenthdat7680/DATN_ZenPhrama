@@ -31,6 +31,17 @@ namespace DA.ZenPharma.Infrastructure.Configuration
             builder.Property(s => s.Address)
                    .HasMaxLength(200);
 
+            builder.Property(p => p.CreateDate)
+                .HasDefaultValueSql("GETDATE()");
+
+            builder.Property(p => p.UpdateDate)
+                .HasDefaultValueSql("GETDATE()");
+
+            builder.Property(p => p.CreateBy)
+                .HasDefaultValue(0);
+
+            builder.Property(p => p.UpdateBy)
+                .HasDefaultValue(0);
         }
 
 

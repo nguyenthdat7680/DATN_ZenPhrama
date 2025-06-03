@@ -23,6 +23,18 @@ namespace DA.ZenPharma.Infrastructure.Configuration
             builder.HasIndex(x => x.RoleName).IsUnique();
 
             builder.Property(x => x.Description).HasColumnType("NVARCHAR(MAX)");
+
+            builder.Property(p => p.CreateDate)
+                .HasDefaultValueSql("GETDATE()");
+
+            builder.Property(p => p.UpdateDate)
+                .HasDefaultValueSql("GETDATE()");
+
+            builder.Property(p => p.CreateBy)
+                .HasDefaultValue(0);
+
+            builder.Property(p => p.UpdateBy)
+                .HasDefaultValue(0);
         }
 
         

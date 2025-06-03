@@ -312,3 +312,8 @@ C:\Users\nguye\OneDrive\Documents\DATN\DATN_ZenPhrama\DA.ZenPharma\DA.ZenPharma.
 C:\Users\nguye\OneDrive\Documents\DATN\DATN_ZenPhrama\DA.ZenPharma\DA.ZenPharma.WebAPI\obj\Debug\net8.0\DA.ZenPharma.WebAPI.genruntimeconfig.cache
 C:\Users\nguye\OneDrive\Documents\DATN\DATN_ZenPhrama\DA.ZenPharma\DA.ZenPharma.WebAPI\obj\Debug\net8.0\ref\DA.ZenPharma.WebAPI.dll
 C:\Users\nguye\OneDrive\Documents\DATN\DATN_ZenPhrama\DA.ZenPharma\DA.ZenPharma.WebAPI\bin\Debug\net8.0\DA.ZenPharma.WebAPI.staticwebassets.runtime.json
+C:\Users\nguye\OneDrive\Documents\DATN\DATN_ZenPhrama\DA.ZenPharma\DA.ZenPharma.WebAPI\bin\Debug\net8.0\Microsoft.Extensions.Configuration.FileExtensions.dll
+C:\Users\nguye\OneDrive\Documents\DATN\DATN_ZenPhrama\DA.ZenPharma\DA.ZenPharma.WebAPI\bin\Debug\net8.0\Microsoft.Extensions.Diagnostics.Abstractions.dll
+C:\Users\nguye\OneDrive\Documents\DATN\DATN_ZenPhrama\DA.ZenPharma\DA.ZenPharma.WebAPI\bin\Debug\net8.0\Microsoft.Extensions.Hosting.Abstractions.dll
+C:\Users\nguye\OneDrive\Documents\DATN\DATN_ZenPhrama\DA.ZenPharma\DA.ZenPharma.WebAPI\bin\Debug\net8.0\Microsoft.Extensions.Logging.Debug.dll
+C:\Users\nguye\OneDrive\Documents\DATN\DATN_ZenPhrama\DA.ZenPharma\DA.ZenPharma.WebAPI\bin\Debug\net8.0\Microsoft.Extensions.ObjectPool.dll

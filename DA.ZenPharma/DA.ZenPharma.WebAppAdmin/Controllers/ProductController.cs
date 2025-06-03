@@ -3,6 +3,7 @@ using System.Text.Json;
 using DA.ZenPharma.Application.Dtos.BaseDto;
 using DA.ZenPharma.Application.Dtos.CategoryDto;
 using DA.ZenPharma.Application.Dtos.ProductDto;
+using DA.ZenPharma.Application.Dtos.ProductUnitDtos;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
@@ -19,11 +20,29 @@ namespace DA.ZenPharma.WebAppAdmin.Controllers
             _httpClient = httpClientFactory.CreateClient();
         }
 
-        public async Task<IActionResult> Index(int page = 1, int pageSize = 10)
+        public async Task<IActionResult> Index(
+            [FromQuery] string? keyword = null,
+            [FromQuery] Guid? categoryId = null,
+            [FromQuery] string? orderBy = null,
+            [FromQuery] int page = 1,
+            [FromQuery] int pageSize = 10)
         {
-            var response = await _httpClient.GetFromJsonAsync<PageResultDto<ProductDto>>($"{ApiUrl}/paged?page={page}&pageSize={pageSize}");
+            if (page < 1 || pageSize < 1)
+                return BadRequest("Page và pageSize phải lớn hơn 0.");
+
+            // Construct the API URL with query parameters
+            var query = new List<string>();
+            if (!string.IsNullOrEmpty(keyword)) query.Add($"keyword={Uri.EscapeDataString(keyword)}");
+            if (categoryId.HasValue) query.Add($"categoryId={categoryId.Value}");
+            if (!string.IsNullOrEmpty(orderBy)) query.Add($"orderBy={orderBy}");
+            query.Add($"page={page}");
+            query.Add($"pageSize={pageSize}");
+
+            var apiUrl = $"{ApiUrl}/search{(query.Any() ? "?" + string.Join("&", query) : "")}";
+            var response = await _httpClient.GetFromJsonAsync<PageResultDto<ProductDto>>(apiUrl);
             if (response == null) return View("Error");
 
+            // Fetch categories for the dropdown
             var categories = await _httpClient.GetFromJsonAsync<List<CategoryDto>>(CategoryApiUrl);
             ViewBag.Categories = categories?.Select(c => new SelectListItem
             {
@@ -31,8 +50,13 @@ namespace DA.ZenPharma.WebAppAdmin.Controllers
                 Text = c.CategoryName
             }).ToList() ?? new List<SelectListItem>();
 
+            // Fetch unit suggestions
             ViewBag.UnitSuggestions = await _httpClient.GetFromJsonAsync<List<string>>($"{ApiUrl}/unit-suggestions") ?? new List<string>();
 
+            // Pass search parameters to ViewBag for form persistence
+            ViewBag.Keyword = keyword;
+            ViewBag.CategoryId = categoryId?.ToString();
+            ViewBag.OrderBy = orderBy;
             ViewBag.TotalItems = response.TotalItems;
             ViewBag.PageSize = response.PageSize;
             ViewBag.TotalPages = response.TotalPages;
@@ -41,6 +65,79 @@ namespace DA.ZenPharma.WebAppAdmin.Controllers
             return View(response);
         }
 
+        [HttpGet("search")]
+        public async Task<IActionResult> Search(
+            [FromQuery] string? keyword,
+            [FromQuery] Guid? categoryId,
+            [FromQuery] string? orderBy,
+            [FromQuery] int page = 1,
+            [FromQuery] int pageSize = 10)
+        {
+            if (page < 1 || pageSize < 1)
+                return BadRequest("Page và pageSize phải lớn hơn 0.");
+
+            // Construct the API URL with query parameters
+            var query = new List<string>();
+            if (!string.IsNullOrEmpty(keyword)) query.Add($"keyword={Uri.EscapeDataString(keyword)}");
+            if (categoryId.HasValue) query.Add($"categoryId={categoryId.Value}");
+            if (!string.IsNullOrEmpty(orderBy)) query.Add($"orderBy={orderBy}");
+            query.Add($"page={page}");
+            query.Add($"pageSize={pageSize}");
+
+            var apiUrl = $"{ApiUrl}/search{(query.Any() ? "?" + string.Join("&", query) : "")}";
+            var result = await _httpClient.GetFromJsonAsync<PageResultDto<ProductDto>>(apiUrl);
+            if (result == null) return View("Error");
+
+            // Fetch categories for the dropdown
+            var categories = await _httpClient.GetFromJsonAsync<List<CategoryDto>>(CategoryApiUrl);
+            ViewBag.Categories = categories?.Select(c => new SelectListItem
+            {
+                Value = c.Id.ToString(),
+                Text = c.CategoryName
+            }).ToList() ?? new List<SelectListItem>();
+
+            // Fetch unit suggestions
+            ViewBag.UnitSuggestions = await _httpClient.GetFromJsonAsync<List<string>>($"{ApiUrl}/unit-suggestions") ?? new List<string>();
+
+            // Pass search parameters to ViewBag for form persistence
+            ViewBag.Keyword = keyword;
+            ViewBag.CategoryId = categoryId?.ToString();
+            ViewBag.OrderBy = orderBy;
+            ViewBag.TotalItems = result.TotalItems;
+            ViewBag.PageSize = result.PageSize;
+            ViewBag.TotalPages = result.TotalPages;
+            ViewBag.Page = page;
+
+            return View("Index", result);
+        }
+        [HttpPost]
+        [Route("Product/UploadImage")]
+        public async Task<IActionResult> UploadImage(IFormFile ThumbnailImage)
+        {
+            if (ThumbnailImage == null || ThumbnailImage.Length == 0)
+            {
+                return BadRequest(new { success = false, message = "Không có ảnh được chọn." });
+            }
+
+            try
+            {
+                var fileName = Guid.NewGuid() + Path.GetExtension(ThumbnailImage.FileName);
+                var filePath = Path.Combine("wwwroot/images/products", fileName);
+
+                Directory.CreateDirectory(Path.GetDirectoryName(filePath)!);
+                using (var stream = new FileStream(filePath, FileMode.Create))
+                {
+                    await ThumbnailImage.CopyToAsync(stream);
+                }
+
+                var imagePath = $"/images/products/{fileName}";
+                return Ok(new { success = true, thumbnailImagePath = imagePath });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { success = false, message = $"Lỗi khi lưu ảnh: {ex.Message}" });
+            }
+        }
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([FromForm] ProductCreateDto dto, IFormFile? ThumbnailImage)
@@ -114,31 +211,106 @@ namespace DA.ZenPharma.WebAppAdmin.Controllers
         [HttpGet]
         public async Task<IActionResult> Edit(Guid id)
         {
-            var product = await _httpClient.GetFromJsonAsync<ProductDto>($"{ApiUrl}/{id}");
-            if (product == null)
+            try
             {
-                return NotFound("Sản phẩm không tồn tại.");
+                var product = await _httpClient.GetFromJsonAsync<ProductDto>($"{ApiUrl}/{id}");
+                if (product == null)
+                {
+                    TempData["ErrorMessage"] = "Sản phẩm không tồn tại.";
+                    return RedirectToAction("Index");
+                }
+
+                var units = await _httpClient.GetFromJsonAsync<List<ProductUnitDto>>($"{ApiUrl}/{id}/units");
+                var categories = await _httpClient.GetFromJsonAsync<List<CategoryDto>>(CategoryApiUrl);
+                ViewBag.Categories = categories?.Select(c => new SelectListItem
+                {
+                    Value = c.Id.ToString(),
+                    Text = c.CategoryName
+                }).ToList() ?? new List<SelectListItem>();
+
+                ViewBag.UnitSuggestions = await _httpClient.GetFromJsonAsync<List<string>>($"{ApiUrl}/unit-suggestions") ?? new List<string>();
+
+                var model = new ProductUpdateDto
+                {
+                    Id = product.Id,
+                    ProductCode = product.ProductCode,
+                    ProductName = product.ProductName,
+                    SKU = product.SKU,
+                    BaseUnit = product.BaseUnit,
+                    RegularPrice = product.RegularPrice,
+                    DiscountPrice = product.DiscountPrice,
+                    StockQuantity = product.StockQuantity,
+                    CategoryId = product.CategoryId,
+                    Description = product.Description,
+                    Barcode = product.Barcode,
+                    UsageInstructions = product.UsageInstructions,
+                    IsPrescriptionRequired = product.IsPrescriptionRequired,
+                    IsPublished = product.IsPublished,
+                    ThumbnailImagePath = product.ThumbnailImagePath,
+                    ProductUnits = units?.Where(u => u.Unit != product.BaseUnit)
+                                        .Select(u => new ProductUnitDto { Unit = u.Unit, ConversionFactor = u.ConversionFactor })
+                                        .ToList() ?? new List<ProductUnitDto>()
+                };
+
+                return View(model);
             }
-            return View(product);
+            catch (Exception ex)
+            {
+                TempData["ErrorMessage"] = $"Lỗi khi lấy dữ liệu sản phẩm: {ex.Message}";
+                return RedirectToAction("Index");
+            }
         }
 
         [HttpPost]
-        public async Task<IActionResult> Edit(ProductUpdateDto productUpdateDto)
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(ProductUpdateDto dto, IFormFile? ThumbnailImage)
         {
             if (!ModelState.IsValid)
+                return await ReloadViewWithError(dto);
+
+            try
             {
-                return View(productUpdateDto);
+                // If no new image is uploaded, keep the existing ThumbnailImagePath
+                // No file system operations are performed
+                if (ThumbnailImage != null && ThumbnailImage.Length > 0)
+                {
+                    // Optional: Log that a new image was provided, but we won't process it
+                    // You can extend this later if needed
+                    TempData["ErrorMessage"] = "Chức năng upload ảnh mới hiện không được hỗ trợ.";
+                    return await ReloadViewWithError(dto);
+                }
+
+                // Send the DTO to the API, retaining the existing ThumbnailImagePath
+                var response = await _httpClient.PutAsJsonAsync(ApiUrl, dto);
+                if (response.IsSuccessStatusCode)
+                {
+                    TempData["SuccessMessage"] = "Cập nhật sản phẩm thành công!";
+                    return RedirectToAction("Index");
+                }
+
+                var error = await response.Content.ReadAsStringAsync();
+                TempData["ErrorMessage"] = $"Cập nhật sản phẩm thất bại: {error}";
+            }
+            catch (Exception ex)
+            {
+                TempData["ErrorMessage"] = $"Cập nhật sản phẩm thất bại: {ex.Message}";
             }
 
-            var response = await _httpClient.PutAsJsonAsync($"{ApiUrl}", productUpdateDto);
-            if (response.IsSuccessStatusCode)
-            {
-                TempData["SuccessMessage"] = "Sản phẩm đã được cập nhật thành công!";
-                return RedirectToAction("Index");
-            }
+            return await ReloadViewWithError(dto);
+        }
 
-            TempData["ErrorMessage"] = "Đã có lỗi xảy ra khi cập nhật sản phẩm!";
-            return View(productUpdateDto);
+        private async Task<IActionResult> ReloadViewWithError(ProductUpdateDto dto)
+        {
+            var categories = await _httpClient.GetFromJsonAsync<List<CategoryDto>>(CategoryApiUrl);
+            ViewBag.Categories = categories?.Select(c => new SelectListItem
+            {
+                Value = c.Id.ToString(),
+                Text = c.CategoryName
+            }).ToList() ?? new List<SelectListItem>();
+
+            ViewBag.UnitSuggestions = await _httpClient.GetFromJsonAsync<List<string>>($"{ApiUrl}/unit-suggestions") ?? new List<string>();
+
+            return View(dto);
         }
 
         [HttpGet]
@@ -155,5 +327,6 @@ namespace DA.ZenPharma.WebAppAdmin.Controllers
             }
             return RedirectToAction("Index");
         }
+        
     }
 }

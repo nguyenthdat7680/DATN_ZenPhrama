@@ -146,6 +146,7 @@ namespace DA.ZenPharma.Application.Services.Implementation
 
             // Lưu đơn hàng
             var order = _mapper.Map<Order>(dto);
+            order.OrderCode = dto.OrderCode ?? $"HDB-{DateTime.Now.Ticks}";
             order.Id = Guid.NewGuid();
             order.CustomerName = string.IsNullOrEmpty(dto.CustomerName) ? "Khách lẻ" : dto.CustomerName;
             order.OrderStatus = dto.OrderStatus ?? "Confirmed"; // Mặc định Confirmed nếu null

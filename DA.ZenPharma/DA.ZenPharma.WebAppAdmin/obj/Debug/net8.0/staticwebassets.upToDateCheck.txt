@@ -918,12 +918,14 @@ wwwroot\css\site.css
 wwwroot\favicon.ico
 wwwroot\images\anh2.jpeg
 wwwroot\images\logo.png
+wwwroot\images\products\4a2bd940-b5dd-4bf9-a271-55e1f3f91c60.jpeg
 wwwroot\images\products\alcohol.webp
 wwwroot\images\products\amoxicillin.webp
 wwwroot\images\products\aspirin.webp
 wwwroot\images\products\bandage.webp
 wwwroot\images\products\calcium.webp
 wwwroot\images\products\ciprofloxacin.webp
+wwwroot\images\products\dd8057ed-3596-44f8-a968-f2668b302733.jpeg
 wwwroot\images\products\erythromycin.webp
 wwwroot\images\products\glucose.webp
 wwwroot\images\products\ibuprofen.webp

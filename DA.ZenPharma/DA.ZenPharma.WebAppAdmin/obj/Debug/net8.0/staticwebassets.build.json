@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "62UCBtpUbarfRUbqRRi+0mf8W0Vp4ifn9Tq21hal7/U=",
+  "Hash": "mjDNVFApDcEIed+RJsAegdkS6cFYkLhYfm8cZrj48tA=",
   "Source": "DA.ZenPharma.WebAppAdmin",
   "BasePath": "_content/DA.ZenPharma.WebAppAdmin",
   "Mode": "Default",
@@ -19379,6 +19379,27 @@
       "OriginalItemSpec": "wwwroot\\images\\logo.png"
     },
     {
+      "Identity": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppAdmin\\wwwroot\\images\\products\\4a2bd940-b5dd-4bf9-a271-55e1f3f91c60.jpeg",
+      "SourceId": "DA.ZenPharma.WebAppAdmin",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppAdmin\\wwwroot\\",
+      "BasePath": "_content/DA.ZenPharma.WebAppAdmin",
+      "RelativePath": "images/products/4a2bd940-b5dd-4bf9-a271-55e1f3f91c60#[.{fingerprint}]?.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "juxptgkscg",
+      "Integrity": "ZcsjnBv5VfeUGeci/CF2+eaWDRIIKNR9kzjwtl75qi8=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\products\\4a2bd940-b5dd-4bf9-a271-55e1f3f91c60.jpeg"
+    },
+    {
       "Identity": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppAdmin\\wwwroot\\images\\products\\alcohol.webp",
       "SourceId": "DA.ZenPharma.WebAppAdmin",
       "SourceType": "Discovered",
@@ -19503,6 +19524,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\products\\ciprofloxacin.webp"
+    },
+    {
+      "Identity": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppAdmin\\wwwroot\\images\\products\\dd8057ed-3596-44f8-a968-f2668b302733.jpeg",
+      "SourceId": "DA.ZenPharma.WebAppAdmin",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppAdmin\\wwwroot\\",
+      "BasePath": "_content/DA.ZenPharma.WebAppAdmin",
+      "RelativePath": "images/products/dd8057ed-3596-44f8-a968-f2668b302733#[.{fingerprint}]?.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "juxptgkscg",
+      "Integrity": "ZcsjnBv5VfeUGeci/CF2+eaWDRIIKNR9kzjwtl75qi8=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\products\\dd8057ed-3596-44f8-a968-f2668b302733.jpeg"
     },
     {
       "Identity": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppAdmin\\wwwroot\\images\\products\\erythromycin.webp",
@@ -96518,6 +96560,88 @@
       ]
     },
     {
+      "Route": "images/products/4a2bd940-b5dd-4bf9-a271-55e1f3f91c60.jpeg",
+      "AssetFile": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppAdmin\\wwwroot\\images\\products\\4a2bd940-b5dd-4bf9-a271-55e1f3f91c60.jpeg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "9471661"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ZcsjnBv5VfeUGeci/CF2+eaWDRIIKNR9kzjwtl75qi8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 01 Jun 2025 05:36:43 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ZcsjnBv5VfeUGeci/CF2+eaWDRIIKNR9kzjwtl75qi8="
+        }
+      ]
+    },
+    {
+      "Route": "images/products/4a2bd940-b5dd-4bf9-a271-55e1f3f91c60.juxptgkscg.jpeg",
+      "AssetFile": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppAdmin\\wwwroot\\images\\products\\4a2bd940-b5dd-4bf9-a271-55e1f3f91c60.jpeg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "9471661"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ZcsjnBv5VfeUGeci/CF2+eaWDRIIKNR9kzjwtl75qi8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 01 Jun 2025 05:36:43 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "juxptgkscg"
+        },
+        {
+          "Name": "label",
+          "Value": "images/products/4a2bd940-b5dd-4bf9-a271-55e1f3f91c60.jpeg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ZcsjnBv5VfeUGeci/CF2+eaWDRIIKNR9kzjwtl75qi8="
+        }
+      ]
+    },
+    {
       "Route": "images/products/alcohol.webp",
       "AssetFile": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppAdmin\\wwwroot\\images\\products\\alcohol.webp",
       "Selectors": [],
@@ -97006,6 +97130,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-ISD6596+cFVuhH9HrFORXB2n8uB8kKhwRv/MWeXuwxY="
+        }
+      ]
+    },
+    {
+      "Route": "images/products/dd8057ed-3596-44f8-a968-f2668b302733.jpeg",
+      "AssetFile": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppAdmin\\wwwroot\\images\\products\\dd8057ed-3596-44f8-a968-f2668b302733.jpeg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "9471661"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ZcsjnBv5VfeUGeci/CF2+eaWDRIIKNR9kzjwtl75qi8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 01 Jun 2025 08:48:56 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ZcsjnBv5VfeUGeci/CF2+eaWDRIIKNR9kzjwtl75qi8="
+        }
+      ]
+    },
+    {
+      "Route": "images/products/dd8057ed-3596-44f8-a968-f2668b302733.juxptgkscg.jpeg",
+      "AssetFile": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAppAdmin\\wwwroot\\images\\products\\dd8057ed-3596-44f8-a968-f2668b302733.jpeg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "9471661"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ZcsjnBv5VfeUGeci/CF2+eaWDRIIKNR9kzjwtl75qi8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 01 Jun 2025 08:48:56 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "juxptgkscg"
+        },
+        {
+          "Name": "label",
+          "Value": "images/products/dd8057ed-3596-44f8-a968-f2668b302733.jpeg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ZcsjnBv5VfeUGeci/CF2+eaWDRIIKNR9kzjwtl75qi8="
         }
       ]
     },

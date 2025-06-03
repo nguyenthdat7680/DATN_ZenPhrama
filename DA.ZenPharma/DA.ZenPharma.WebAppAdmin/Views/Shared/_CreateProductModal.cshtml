@@ -13,7 +13,7 @@
             </div>
             <div class="modal-body">
                 <div class="nk-block">
-                    <form id="createProductForm" action="@Url.Action("Create", "Product")" method="post" enctype="multipart/form-data">
+                    <form id="createProductForm" method="post" enctype="multipart/form-data">
                         @Html.AntiForgeryToken()
                         <div class="row g-3">
                             <div class="col-md-6">
@@ -135,7 +135,6 @@
         </div>
     </div>
 </div>
-
 <script>
     let unitIndex = 0;
 
@@ -169,41 +168,100 @@
 
     $(document).ready(function () {
         try {
-            console.log('Khởi tạo form');
+            console.log('#Khởi tạo form');
 
-            // Xử lý submit form
-            $('#createProductForm').on('submit', function (e) {
+            $('#createProductForm').on('submit', async function (e) {
                 e.preventDefault();
-                console.log('Sự kiện submit được kích hoạt');
+                console.log('#Form submitted');
 
                 const formData = new FormData(this);
+                let thumbnailImagePath = null;
+
+                // Tải ảnh lên MVC
+                const thumbnailInput = document.getElementById('ThumbnailImage');
+                if (thumbnailInput.files.length > 0) {
+                    console.log('ThumbnailImage selected:', thumbnailInput.files[0].name);
+                    const imageFormData = new FormData();
+                    imageFormData.append('ThumbnailImage', thumbnailInput.files[0]);
+
+                    try {
+                        const response = await $.ajax({
+                            url: '/Product/UploadImage',
+                            method: 'POST',
+                            data: imageFormData,
+                            contentType: false,
+                            processData: false
+                        });
+
+                        if (response.success) {
+                            thumbnailImagePath = response.thumbnailImagePath;
+                            console.log('Ảnh tải lên thành công, ThumbnailImagePath:', thumbnailImagePath);
+                        } else {
+                            console.error('Lỗi tải ảnh:', response.message);
+                            alert('Lỗi tải ảnh: ' + response.message);
+                            return;
+                        }
+                    } catch (error) {
+                        console.error('Lỗi gọi UploadImage:', error);
+                        alert('Lỗi tải ảnh: ' + error.statusText);
+                        return;
+                    }
+                } else {
+                    console.log('No ThumbnailImage selected');
+                }
+
+                // Xử lý checkbox IsPublished và IsPrescriptionRequired
+                const isPublishedCheckbox = document.getElementById('IsPublished');
+                const isPrescriptionRequiredCheckbox = document.getElementById('IsPrescriptionRequired');
+
+                // Xóa các giá trị cũ
+                formData.delete('IsPublished');
+                formData.delete('IsPrescriptionRequired');
+                formData.delete('ThumbnailImage');
+
+                // Thêm giá trị boolean
+                formData.append('IsPublished', isPublishedCheckbox.checked.toString()); // true/false
+                formData.append('IsPrescriptionRequired', isPrescriptionRequiredCheckbox.checked.toString()); // true/false
+
+                // Thêm ThumbnailImagePath
+                if (thumbnailImagePath) {
+                    formData.append('ThumbnailImagePath', thumbnailImagePath);
+                }
+
+                // Log FormData
                 for (let [key, value] of formData.entries()) {
                     console.log(`FormData: ${key} = ${value}`);
                 }
 
+                // Gửi tới API
                 $.ajax({
-                    url: $(this).attr('action'),
+                    url: 'https://localhost:7034/api/Product',
                     method: 'POST',
                     data: formData,
                     contentType: false,
                     processData: false,
                     headers: { 'Accept': 'application/json' },
-                    beforeSend: function () {
-                        console.log('Đang gửi yêu cầu AJAX tới:', $(this).attr('action'));
+                    beforeSend: () => {
+                        console.log('Sending AJAX request to: https://localhost:7034/api/Product');
                     },
-                    success: function (data) {
-                        console.log('Phản hồi thành công:', data);
+                    success: (data) => {
+                        console.log('Received response:', data);
                         if (data.success) {
-                            $('#createProductModal').modal('hide'); // Close the modal
-                            window.location.href = '@Url.Action("Index", "Product")'; // Redirect to Product Index
+                            $('#createProductModal').modal('hide');
+                            $('.modal-backdrop').remove();
+                            $('body').removeClass('modal-open').css('padding-right', '');
+                            location.reload();
                         } else {
-                            alert('Thêm không thành công: ' + (data.message || 'Lỗi không xác định'));
+                            console.error('Error from server:', data.errors);
+                            alert('Thêm sản phẩm thất bại: ' + (data.errors?.General?.[0] || 'Lỗi không xác định'));
                         }
                     },
-                    error: function (xhr) {
-                        console.error('Lỗi AJAX:', xhr);
-                        let errorMessage = 'Thêm không thành công!';
-                        if (xhr.responseJSON && xhr.responseJSON.message) {
+                    error: (xhr, status, error) => {
+                        console.error('AJAX error:', xhr, status, error);
+                        let errorMessage = 'Thêm sản phẩm thất bại!';
+                        if (xhr.responseJSON && xhr.responseJSON.errors) {
+                            errorMessage += ' ' + Object.values(xhr.responseJSON.errors).flat().join(' ');
+                        } else if (xhr.responseJSON && xhr.responseJSON.message) {
                             errorMessage += ' ' + xhr.responseJSON.message;
                         }
                         alert(errorMessage);

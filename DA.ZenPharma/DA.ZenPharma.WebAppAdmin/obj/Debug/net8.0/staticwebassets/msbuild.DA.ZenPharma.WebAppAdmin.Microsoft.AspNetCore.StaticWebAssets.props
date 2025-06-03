@@ -16578,6 +16578,24 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\logo.png'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\4a2bd940-b5dd-4bf9-a271-55e1f3f91c60.jpeg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppAdmin</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppAdmin</BasePath>
+      <RelativePath>images/products/4a2bd940-b5dd-4bf9-a271-55e1f3f91c60.jpeg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>juxptgkscg</Fingerprint>
+      <Integrity>ZcsjnBv5VfeUGeci/CF2+eaWDRIIKNR9kzjwtl75qi8=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\4a2bd940-b5dd-4bf9-a271-55e1f3f91c60.jpeg'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\alcohol.webp'))">
       <SourceType>Package</SourceType>
       <SourceId>DA.ZenPharma.WebAppAdmin</SourceId>
@@ -16685,6 +16703,24 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\ciprofloxacin.webp'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\dd8057ed-3596-44f8-a968-f2668b302733.jpeg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DA.ZenPharma.WebAppAdmin</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DA.ZenPharma.WebAppAdmin</BasePath>
+      <RelativePath>images/products/dd8057ed-3596-44f8-a968-f2668b302733.jpeg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>juxptgkscg</Fingerprint>
+      <Integrity>ZcsjnBv5VfeUGeci/CF2+eaWDRIIKNR9kzjwtl75qi8=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\dd8057ed-3596-44f8-a968-f2668b302733.jpeg'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\products\erythromycin.webp'))">
       <SourceType>Package</SourceType>

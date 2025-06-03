@@ -1,12 +1,96 @@
 {
   "Files": [
     {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAPI\\wwwroot\\images\\products\\00ce5192-a241-4328-b50b-0947b46189ad.jpeg",
+      "PackagePath": "staticwebassets\\images\\products\\00ce5192-a241-4328-b50b-0947b46189ad.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAPI\\wwwroot\\images\\products\\0a9cd682-048a-4461-bb18-aa403237b41e.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\0a9cd682-048a-4461-bb18-aa403237b41e.jpg"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAPI\\wwwroot\\images\\products\\12cbbe7d-b1d3-4b19-b250-c84c30b5797b.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\12cbbe7d-b1d3-4b19-b250-c84c30b5797b.jpg"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAPI\\wwwroot\\images\\products\\1fea542c-0aeb-46ad-85d3-3755b024f562.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\1fea542c-0aeb-46ad-85d3-3755b024f562.jpg"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAPI\\wwwroot\\images\\products\\21eb4b11-3074-4acf-ab7b-b175b4ce27fb.jpeg",
+      "PackagePath": "staticwebassets\\images\\products\\21eb4b11-3074-4acf-ab7b-b175b4ce27fb.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAPI\\wwwroot\\images\\products\\266e12e8-befb-491c-ad16-ee0cd844b273.jpeg",
+      "PackagePath": "staticwebassets\\images\\products\\266e12e8-befb-491c-ad16-ee0cd844b273.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAPI\\wwwroot\\images\\products\\2772b850-6587-4f9e-a6eb-2cb43f91f76f.jpeg",
+      "PackagePath": "staticwebassets\\images\\products\\2772b850-6587-4f9e-a6eb-2cb43f91f76f.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAPI\\wwwroot\\images\\products\\2b9922b6-9808-416f-88fb-344c7b8f7cc8.jpeg",
+      "PackagePath": "staticwebassets\\images\\products\\2b9922b6-9808-416f-88fb-344c7b8f7cc8.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAPI\\wwwroot\\images\\products\\2db9505f-552f-4816-92b1-43d383fa2eea.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\2db9505f-552f-4816-92b1-43d383fa2eea.jpg"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAPI\\wwwroot\\images\\products\\30fd68d0-e816-4501-b947-cd99d64d02dc.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\30fd68d0-e816-4501-b947-cd99d64d02dc.jpg"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAPI\\wwwroot\\images\\products\\35d35801-7bfb-4c19-852b-833bc5ef951c.jpeg",
+      "PackagePath": "staticwebassets\\images\\products\\35d35801-7bfb-4c19-852b-833bc5ef951c.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAPI\\wwwroot\\images\\products\\3603aee8-f4d4-4d6b-992b-9ebe93cb4cce.jpeg",
+      "PackagePath": "staticwebassets\\images\\products\\3603aee8-f4d4-4d6b-992b-9ebe93cb4cce.jpeg"
+    },
+    {
       "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAPI\\wwwroot\\images\\products\\46f954cf-2514-4fce-9f4c-5086ed81d4e8.png",
       "PackagePath": "staticwebassets\\images\\products\\46f954cf-2514-4fce-9f4c-5086ed81d4e8.png"
     },
     {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAPI\\wwwroot\\images\\products\\4a04b8cc-8263-43e5-92b9-552e66058700.jpeg",
+      "PackagePath": "staticwebassets\\images\\products\\4a04b8cc-8263-43e5-92b9-552e66058700.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAPI\\wwwroot\\images\\products\\55236549-9a66-4a12-86a0-ab683713c462.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\55236549-9a66-4a12-86a0-ab683713c462.jpg"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAPI\\wwwroot\\images\\products\\55f78c28-0465-453e-8751-7ebc4347967e.jpeg",
+      "PackagePath": "staticwebassets\\images\\products\\55f78c28-0465-453e-8751-7ebc4347967e.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAPI\\wwwroot\\images\\products\\5ac060e8-96fd-426f-a6ee-eff63ecfa6ab.jpeg",
+      "PackagePath": "staticwebassets\\images\\products\\5ac060e8-96fd-426f-a6ee-eff63ecfa6ab.jpeg"
+    },
+    {
       "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAPI\\wwwroot\\images\\products\\6b7209f4-20c7-4e28-9baa-bb76cc8242c3.jpg",
       "PackagePath": "staticwebassets\\images\\products\\6b7209f4-20c7-4e28-9baa-bb76cc8242c3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAPI\\wwwroot\\images\\products\\7840a9ab-6676-46ad-9d41-8550a6daf06c.jpeg",
+      "PackagePath": "staticwebassets\\images\\products\\7840a9ab-6676-46ad-9d41-8550a6daf06c.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAPI\\wwwroot\\images\\products\\787f752e-b9e1-4ea7-8078-83bc31079fd6.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\787f752e-b9e1-4ea7-8078-83bc31079fd6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAPI\\wwwroot\\images\\products\\7c04c67d-0ee5-428f-9603-c181d0d58e33.jpeg",
+      "PackagePath": "staticwebassets\\images\\products\\7c04c67d-0ee5-428f-9603-c181d0d58e33.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAPI\\wwwroot\\images\\products\\7f8fbaa4-42a5-46ea-903d-257d60ec5ba8.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\7f8fbaa4-42a5-46ea-903d-257d60ec5ba8.jpg"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAPI\\wwwroot\\images\\products\\805ae03b-7d78-4cd7-9edc-2d59100e9e8d.jpeg",
+      "PackagePath": "staticwebassets\\images\\products\\805ae03b-7d78-4cd7-9edc-2d59100e9e8d.jpeg"
     },
     {
       "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAPI\\wwwroot\\images\\products\\8329c0fc-5bac-4c61-a2c8-e07f1d2e46da.jpg",
@@ -17,12 +101,20 @@
       "PackagePath": "staticwebassets\\images\\products\\8c361076-654e-4354-b049-6b07712fc2b2.png"
     },
     {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAPI\\wwwroot\\images\\products\\94515ca6-048d-4089-aa9a-f02b2aeef540.jpeg",
+      "PackagePath": "staticwebassets\\images\\products\\94515ca6-048d-4089-aa9a-f02b2aeef540.jpeg"
+    },
+    {
       "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAPI\\wwwroot\\images\\products\\9611c10c-f507-4cdc-ba31-07b1010b979a.png",
       "PackagePath": "staticwebassets\\images\\products\\9611c10c-f507-4cdc-ba31-07b1010b979a.png"
     },
     {
       "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAPI\\wwwroot\\images\\products\\973b5127-8e86-484b-95a3-bc54b5d65fd3.png",
       "PackagePath": "staticwebassets\\images\\products\\973b5127-8e86-484b-95a3-bc54b5d65fd3.png"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAPI\\wwwroot\\images\\products\\9be2ac8e-5964-4d03-8e8c-f7a83e0e8a6c.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\9be2ac8e-5964-4d03-8e8c-f7a83e0e8a6c.jpg"
     },
     {
       "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAPI\\wwwroot\\images\\products\\a72af4ce-e86f-437a-8ff6-2e268a75dcb2.png",
@@ -33,16 +125,56 @@
       "PackagePath": "staticwebassets\\images\\products\\ad0c2672-536b-4696-888e-26f5cd09ebbd.png"
     },
     {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAPI\\wwwroot\\images\\products\\af16fcbd-b883-4796-9bb9-ecc101ce59a4.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\af16fcbd-b883-4796-9bb9-ecc101ce59a4.jpg"
+    },
+    {
       "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAPI\\wwwroot\\images\\products\\b0ddbdff-28ea-4061-9073-be9961fd4b0d.png",
       "PackagePath": "staticwebassets\\images\\products\\b0ddbdff-28ea-4061-9073-be9961fd4b0d.png"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAPI\\wwwroot\\images\\products\\b73f2263-1c5b-4f57-b833-4d46170915b2.jpeg",
+      "PackagePath": "staticwebassets\\images\\products\\b73f2263-1c5b-4f57-b833-4d46170915b2.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAPI\\wwwroot\\images\\products\\bc891da7-a986-4354-bf38-f3740bb2e3f4.jpeg",
+      "PackagePath": "staticwebassets\\images\\products\\bc891da7-a986-4354-bf38-f3740bb2e3f4.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAPI\\wwwroot\\images\\products\\c293514e-ebcd-4db8-a198-d06b1bcf9562.jpeg",
+      "PackagePath": "staticwebassets\\images\\products\\c293514e-ebcd-4db8-a198-d06b1bcf9562.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAPI\\wwwroot\\images\\products\\c3f3c161-2a54-4ef1-bd8f-be61eb4019dc.jpeg",
+      "PackagePath": "staticwebassets\\images\\products\\c3f3c161-2a54-4ef1-bd8f-be61eb4019dc.jpeg"
     },
     {
       "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAPI\\wwwroot\\images\\products\\c695dffc-eb7e-4dc5-97d7-57df887a8bb4.png",
       "PackagePath": "staticwebassets\\images\\products\\c695dffc-eb7e-4dc5-97d7-57df887a8bb4.png"
     },
     {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAPI\\wwwroot\\images\\products\\d240c1f7-0c51-4813-acf7-163a8cc819ff.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\d240c1f7-0c51-4813-acf7-163a8cc819ff.jpg"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAPI\\wwwroot\\images\\products\\dabd5a11-b425-4a31-84b7-c9a163a121b4.jpeg",
+      "PackagePath": "staticwebassets\\images\\products\\dabd5a11-b425-4a31-84b7-c9a163a121b4.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAPI\\wwwroot\\images\\products\\dc916c4c-e269-4e2b-89db-a348b79e193e.jpeg",
+      "PackagePath": "staticwebassets\\images\\products\\dc916c4c-e269-4e2b-89db-a348b79e193e.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAPI\\wwwroot\\images\\products\\dec26fc8-e5f3-47f8-92fa-d68e2497c446.jpeg",
+      "PackagePath": "staticwebassets\\images\\products\\dec26fc8-e5f3-47f8-92fa-d68e2497c446.jpeg"
+    },
+    {
       "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAPI\\wwwroot\\images\\products\\eb3ccf20-d809-4993-ac69-5e214f53e66d.jpg",
       "PackagePath": "staticwebassets\\images\\products\\eb3ccf20-d809-4993-ac69-5e214f53e66d.jpg"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\OneDrive\\Documents\\DATN\\DATN_ZenPhrama\\DA.ZenPharma\\DA.ZenPharma.WebAPI\\wwwroot\\images\\products\\f5695322-8352-40ff-8de5-3a88d8aaa1df.jpeg",
+      "PackagePath": "staticwebassets\\images\\products\\f5695322-8352-40ff-8de5-3a88d8aaa1df.jpeg"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.DA.ZenPharma.WebAPI.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
